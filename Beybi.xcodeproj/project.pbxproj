@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
 		FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */; };
-		FAAC8CFD2C9456B000264E4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFC2C9456B000264E4B /* ViewController.swift */; };
+		FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */; };
 		FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8CFE2C9456B000264E4B /* Main.storyboard */; };
 		FAAC8D022C9456B200264E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D012C9456B200264E4B /* Assets.xcassets */; };
 		FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */; };
 		FAAC8D102C9456B200264E4B /* BeybiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D0F2C9456B200264E4B /* BeybiTests.swift */; };
 		FAAC8D1A2C9456B200264E4B /* BeybiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D192C9456B200264E4B /* BeybiUITests.swift */; };
 		FAAC8D1C2C9456B200264E4B /* BeybiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D1B2C9456B200264E4B /* BeybiUITestsLaunchTests.swift */; };
+		FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D292C95C50F00264E4B /* AllFoodsPageViewController.swift */; };
+		FAAC8D2C2C95C53000264E4B /* AllFoodsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D2B2C95C53000264E4B /* AllFoodsPageViewModel.swift */; };
+		FAAC8D2F2C95C94500264E4B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D2E2C95C94500264E4B /* HomeViewModel.swift */; };
+		FAAC8D322C95CC1800264E4B /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D312C95CC1800264E4B /* UICollectionViewCell+Extension.swift */; };
+		FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D332C95CC4200264E4B /* UICollectionView+Extension.swift */; };
+		FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D362C95CE1100264E4B /* FoodSliderCellViewModel.swift */; };
+		FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D382C95CF1100264E4B /* FoodSliderCellController.swift */; };
+		FAAC8D3B2C95CF1100264E4B /* FoodSliderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */; };
+		FAAC8D3E2C96F81E00264E4B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */; };
+		FAAC8D3F2C96F81E00264E4B /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +49,7 @@
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAC8CF82C9456B000264E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAAC8CFC2C9456B000264E4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAAC8CFF2C9456B000264E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAAC8D012C9456B200264E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAC8D042C9456B200264E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +59,16 @@
 		FAAC8D152C9456B200264E4B /* BeybiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeybiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAC8D192C9456B200264E4B /* BeybiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeybiUITests.swift; sourceTree = "<group>"; };
 		FAAC8D1B2C9456B200264E4B /* BeybiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeybiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAAC8D292C95C50F00264E4B /* AllFoodsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFoodsPageViewController.swift; sourceTree = "<group>"; };
+		FAAC8D2B2C95C53000264E4B /* AllFoodsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFoodsPageViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D2E2C95C94500264E4B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D312C95CC1800264E4B /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		FAAC8D332C95CC4200264E4B /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		FAAC8D362C95CE1100264E4B /* FoodSliderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSliderCellViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D382C95CF1100264E4B /* FoodSliderCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSliderCellController.swift; sourceTree = "<group>"; };
+		FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSliderCellController.xib; sourceTree = "<group>"; };
+		FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +119,18 @@
 		FAAC8CF72C9456B000264E4B /* Beybi */ = {
 			isa = PBXGroup;
 			children = (
+				FAAC8D352C95CD9D00264E4B /* FoodSliderCell */,
+				FAAC8D302C95CBEA00264E4B /* Extensions */,
+				FAAC8D2D2C95C8EA00264E4B /* HomeView */,
+				FAAC8D282C95C3C700264E4B /* AllFoodsPageView */,
 				FAAC8CF82C9456B000264E4B /* AppDelegate.swift */,
 				FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */,
-				FAAC8CFC2C9456B000264E4B /* ViewController.swift */,
 				FAAC8CFE2C9456B000264E4B /* Main.storyboard */,
 				FAAC8D012C9456B200264E4B /* Assets.xcassets */,
 				FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */,
 				FAAC8D062C9456B200264E4B /* Info.plist */,
+				FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */,
+				FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */,
 			);
 			path = Beybi;
 			sourceTree = "<group>";
@@ -125,6 +150,43 @@
 				FAAC8D1B2C9456B200264E4B /* BeybiUITestsLaunchTests.swift */,
 			);
 			path = BeybiUITests;
+			sourceTree = "<group>";
+		};
+		FAAC8D282C95C3C700264E4B /* AllFoodsPageView */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D292C95C50F00264E4B /* AllFoodsPageViewController.swift */,
+				FAAC8D2B2C95C53000264E4B /* AllFoodsPageViewModel.swift */,
+			);
+			path = AllFoodsPageView;
+			sourceTree = "<group>";
+		};
+		FAAC8D2D2C95C8EA00264E4B /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */,
+				FAAC8D2E2C95C94500264E4B /* HomeViewModel.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		FAAC8D302C95CBEA00264E4B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D312C95CC1800264E4B /* UICollectionViewCell+Extension.swift */,
+				FAAC8D332C95CC4200264E4B /* UICollectionView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAAC8D352C95CD9D00264E4B /* FoodSliderCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D362C95CE1100264E4B /* FoodSliderCellViewModel.swift */,
+				FAAC8D382C95CF1100264E4B /* FoodSliderCellController.swift */,
+				FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */,
+			);
+			path = FoodSliderCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +293,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAC8D3B2C95CF1100264E4B /* FoodSliderCellController.xib in Resources */,
 				FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */,
 				FAAC8D022C9456B200264E4B /* Assets.xcassets in Resources */,
 				FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */,
+				FAAC8D3F2C96F81E00264E4B /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +322,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAC8CFD2C9456B000264E4B /* ViewController.swift in Sources */,
+				FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */,
+				FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */,
+				FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */,
+				FAAC8D2F2C95C94500264E4B /* HomeViewModel.swift in Sources */,
+				FAAC8D322C95CC1800264E4B /* UICollectionViewCell+Extension.swift in Sources */,
 				FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */,
+				FAAC8D2C2C95C53000264E4B /* AllFoodsPageViewModel.swift in Sources */,
+				FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */,
+				FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,
+				FAAC8D3E2C96F81E00264E4B /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
