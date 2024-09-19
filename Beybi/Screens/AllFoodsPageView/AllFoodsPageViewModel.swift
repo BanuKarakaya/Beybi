@@ -11,6 +11,7 @@ protocol AllFoodsPageViewModelProtocol {
     var delegate: AllFoodsPageViewModelDelegate? { get set }
     
     func viewDidLoad()
+    func numberOfItemsInSection() -> Int
 }
 
 protocol AllFoodsPageViewModelDelegate: AnyObject {
@@ -20,9 +21,17 @@ protocol AllFoodsPageViewModelDelegate: AnyObject {
 
 class AllFoodsPageViewModel {
     weak var delegate: AllFoodsPageViewModelDelegate?
+    
+    init(delegate: AllFoodsPageViewModelDelegate) {
+        self.delegate = delegate
+    }
 }
 
 extension AllFoodsPageViewModel: AllFoodsPageViewModelProtocol {
+    func numberOfItemsInSection() -> Int {
+        7
+    }
+    
     func viewDidLoad() {
         delegate?.setUI()
         delegate?.prepareCollectionView()

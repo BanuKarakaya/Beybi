@@ -12,13 +12,26 @@ class AllFoodsPageViewController: UIViewController {
 
     @IBOutlet weak var allFoodsCollectionView: UICollectionView!
     
-    var viewModel: AllFoodsPageViewModelProtocol = AllFoodsPageViewModel()
+    private lazy var viewModel: AllFoodsPageViewModelProtocol = AllFoodsPageViewModel(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
         viewModel.viewDidLoad()
-        allFoodsCollectionView.backgroundColor = .systemGray6
+    }
+}
+
+extension AllFoodsPageViewController: UICollectionViewDelegate {
+    
+}
+
+extension AllFoodsPageViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.numberOfItemsInSection()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell =  collectionView.dequeCell(cellType: FoodSliderCellController.self, indexPath: indexPath)
+        return cell
     }
 }
 
@@ -32,22 +45,6 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
     
     func setUI() {
         allFoodsCollectionView.backgroundColor = .white
+        allFoodsCollectionView.backgroundColor = .systemGray6
     }
-}
-
-extension AllFoodsPageViewController: UICollectionViewDelegate {
-    
-}
-
-extension AllFoodsPageViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        7
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell =  collectionView.dequeCell(cellType: FoodSliderCellController.self, indexPath: indexPath)
-        return cell
-    }
-    
-    
 }

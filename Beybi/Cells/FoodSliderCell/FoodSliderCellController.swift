@@ -13,13 +13,11 @@ class FoodSliderCellController: UICollectionViewCell {
     @IBOutlet weak var foodTypeLabel: UILabel!
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
     
+    private lazy var viewModel: FoodSliderCellViewModelProtocol = FoodSliderCellViewModel(delegate: self)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        horizontalCollectionView.delegate = self
-        horizontalCollectionView.dataSource = self
-        foodTypeImage.layer.cornerRadius = 10
-
-        horizontalCollectionView.register(cellType: CollectionViewCell.self)
+        viewModel.viewDidLoad()
     }
 
     @IBAction func viewMoreButtonTapped(_ sender: Any) {
@@ -32,11 +30,11 @@ extension FoodSliderCellController: UICollectionViewDelegate {
   
 extension FoodSliderCellController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        9
+        viewModel.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeCell(cellType: CollectionViewCell.self, indexPath: indexPath)
+        let cell = collectionView.dequeCell(cellType: FoodSliderMiniCell.self, indexPath: indexPath)
         return cell
     }
 }
@@ -47,11 +45,11 @@ extension FoodSliderCellController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 3
+        viewModel.minimumInteritemSpacingForSectionAt()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        viewModel.minimumLineSpacingForSectionAt()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -59,3 +57,15 @@ extension FoodSliderCellController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension FoodSliderCellController: FoodSliderCellViewModelDelegate {
+    func prepareCollectionView() {
+        horizontalCollectionView.delegate = self
+        horizontalCollectionView.dataSource = self
+        
+        horizontalCollectionView.register(cellType: FoodSliderMiniCell.self)
+    }
+    
+    func prepareUI() {
+        foodTypeImage.layer.cornerRadius = 10
+    }
+}

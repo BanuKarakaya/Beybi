@@ -11,14 +11,12 @@ class DailyMenuCell: UICollectionViewCell {
 
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
+    private lazy var viewModel: DailyMenuCellViewModelProtocol = DailyMenuCellViewModel(delegate: self)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        menuCollectionView.delegate = self
-        menuCollectionView.dataSource = self
-        
-        menuCollectionView.register(cellType: FoodCell.self)
+        viewModel.viewDidLoad()
     }
-
 }
 
 extension DailyMenuCell: UICollectionViewDelegate {
@@ -27,7 +25,7 @@ extension DailyMenuCell: UICollectionViewDelegate {
 
 extension DailyMenuCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        viewModel.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -43,5 +41,14 @@ extension DailyMenuCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 2, left: 6, bottom: 12, right: 10 )
+    }
+}
+
+extension DailyMenuCell: DailyMenuCellViewModelDelegate {
+    func prepareCollectionView() {
+        menuCollectionView.delegate = self
+        menuCollectionView.dataSource = self
+        
+        menuCollectionView.register(cellType: FoodCell.self)
     }
 }

@@ -11,14 +11,11 @@ class BabiesFavCell: UICollectionViewCell {
 
     @IBOutlet weak var babiesFavMiniCollection: UICollectionView!
     
+    private lazy var viewModel: BabiesFavCellViewModelProtocol = BabiesFavCellViewModel(delegate: self)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        babiesFavMiniCollection.delegate = self
-        babiesFavMiniCollection.dataSource = self
-        babiesFavMiniCollection.isScrollEnabled = false
-        
-        
-        babiesFavMiniCollection.register(cellType: BabiesFavMiniCell.self)
+        viewModel.viewDidLoad()
     }
 }
 
@@ -28,15 +25,13 @@ extension BabiesFavCell: UICollectionViewDelegate {
 
 extension BabiesFavCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        8
+        viewModel.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: BabiesFavMiniCell.self, indexPath: indexPath)
         return cell
     }
-    
-    
 }
 
 extension BabiesFavCell: UICollectionViewDelegateFlowLayout {
@@ -49,6 +44,17 @@ extension BabiesFavCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        5
+        viewModel.minimumLineSpacingForSectionAt()
+    }
+}
+
+extension BabiesFavCell: BabiesFavCellViewModelDelegate {
+    func prepareCollectionView() {
+        babiesFavMiniCollection.delegate = self
+        babiesFavMiniCollection.dataSource = self
+        babiesFavMiniCollection.isScrollEnabled = false
+        
+        
+        babiesFavMiniCollection.register(cellType: BabiesFavMiniCell.self)
     }
 }

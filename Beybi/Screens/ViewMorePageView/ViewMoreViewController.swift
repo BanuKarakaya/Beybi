@@ -11,13 +11,11 @@ class ViewMoreViewController: UIViewController {
 
     @IBOutlet weak var viewMoreCollectionView: UICollectionView!
     
+    private lazy var viewModel: ViewMoreViewModelProtocol = ViewMoreViewModel(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewMoreCollectionView.delegate = self
-        viewMoreCollectionView.dataSource = self
-        
-        viewMoreCollectionView.register(cellType: CollectionViewCell.self)
+        viewModel.viewDidLoad()
     }
 }
 
@@ -27,13 +25,20 @@ extension ViewMoreViewController: UICollectionViewDelegate {
 
 extension ViewMoreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        15
+        viewModel.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeCell(cellType: CollectionViewCell.self, indexPath: indexPath)
+        let cell = collectionView.dequeCell(cellType: FoodSliderMiniCell.self, indexPath: indexPath)
         return cell
     }
-    
-    
+}
+
+extension ViewMoreViewController: ViewMoreViewModelDelegate {
+    func prepareCollectionView() {
+        viewMoreCollectionView.delegate = self
+        viewMoreCollectionView.dataSource = self
+        
+        viewMoreCollectionView.register(cellType: FoodSliderMiniCell.self)
+    }
 }

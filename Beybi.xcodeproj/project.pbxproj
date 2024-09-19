@@ -24,8 +24,8 @@
 		FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D362C95CE1100264E4B /* FoodSliderCellViewModel.swift */; };
 		FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D382C95CF1100264E4B /* FoodSliderCellController.swift */; };
 		FAAC8D3B2C95CF1100264E4B /* FoodSliderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */; };
-		FAAC8D3E2C96F81E00264E4B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */; };
-		FAAC8D3F2C96F81E00264E4B /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */; };
+		FAAC8D3E2C96F81E00264E4B /* FoodSliderMiniCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D3C2C96F81E00264E4B /* FoodSliderMiniCell.swift */; };
+		FAAC8D3F2C96F81E00264E4B /* FoodSliderMiniCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D3D2C96F81E00264E4B /* FoodSliderMiniCell.xib */; };
 		FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D402C97393B00264E4B /* BabiesAgeCell.swift */; };
 		FAAC8D432C97393B00264E4B /* BabiesAgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D412C97393B00264E4B /* BabiesAgeCell.xib */; };
 		FAAC8D462C973ADC00264E4B /* DailyMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D442C973ADC00264E4B /* DailyMenuCell.swift */; };
@@ -37,6 +37,13 @@
 		FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D542C9ACBAA00264E4B /* BabiesFavMiniCell.swift */; };
 		FAAC8D572C9ACBAA00264E4B /* BabiesFavMiniCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D552C9ACBAA00264E4B /* BabiesFavMiniCell.xib */; };
 		FAAC8D592C9C2C5000264E4B /* ViewMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D582C9C2C5000264E4B /* ViewMoreViewController.swift */; };
+		FAAC8D5C2C9C552700264E4B /* ViewMoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D5B2C9C552700264E4B /* ViewMoreViewModel.swift */; };
+		FAAC8D5F2C9C650200264E4B /* BabiesAgeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D5E2C9C650200264E4B /* BabiesAgeCellViewModel.swift */; };
+		FAAC8D622C9C654F00264E4B /* BabiesFavCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D612C9C654F00264E4B /* BabiesFavCellViewModel.swift */; };
+		FAAC8D652C9C685A00264E4B /* DailyMenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D642C9C685A00264E4B /* DailyMenuCellViewModel.swift */; };
+		FAAC8D682C9C6A0C00264E4B /* FoodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D672C9C6A0C00264E4B /* FoodCellViewModel.swift */; };
+		FAAC8D6B2C9C76B700264E4B /* BabiesFavMiniCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D6A2C9C76B700264E4B /* BabiesFavMiniCellViewModel.swift */; };
+		FAAC8D6F2C9C79B700264E4B /* FoodSliderMiniCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D6E2C9C79B700264E4B /* FoodSliderMiniCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +85,8 @@
 		FAAC8D362C95CE1100264E4B /* FoodSliderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSliderCellViewModel.swift; sourceTree = "<group>"; };
 		FAAC8D382C95CF1100264E4B /* FoodSliderCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSliderCellController.swift; sourceTree = "<group>"; };
 		FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSliderCellController.xib; sourceTree = "<group>"; };
-		FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		FAAC8D3C2C96F81E00264E4B /* FoodSliderMiniCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSliderMiniCell.swift; sourceTree = "<group>"; };
+		FAAC8D3D2C96F81E00264E4B /* FoodSliderMiniCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSliderMiniCell.xib; sourceTree = "<group>"; };
 		FAAC8D402C97393B00264E4B /* BabiesAgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesAgeCell.swift; sourceTree = "<group>"; };
 		FAAC8D412C97393B00264E4B /* BabiesAgeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BabiesAgeCell.xib; sourceTree = "<group>"; };
 		FAAC8D442C973ADC00264E4B /* DailyMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMenuCell.swift; sourceTree = "<group>"; };
@@ -91,6 +98,13 @@
 		FAAC8D542C9ACBAA00264E4B /* BabiesFavMiniCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesFavMiniCell.swift; sourceTree = "<group>"; };
 		FAAC8D552C9ACBAA00264E4B /* BabiesFavMiniCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BabiesFavMiniCell.xib; sourceTree = "<group>"; };
 		FAAC8D582C9C2C5000264E4B /* ViewMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreViewController.swift; sourceTree = "<group>"; };
+		FAAC8D5B2C9C552700264E4B /* ViewMoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D5E2C9C650200264E4B /* BabiesAgeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesAgeCellViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D612C9C654F00264E4B /* BabiesFavCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesFavCellViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D642C9C685A00264E4B /* DailyMenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMenuCellViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D672C9C6A0C00264E4B /* FoodCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCellViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D6A2C9C76B700264E4B /* BabiesFavMiniCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesFavMiniCellViewModel.swift; sourceTree = "<group>"; };
+		FAAC8D6E2C9C79B700264E4B /* FoodSliderMiniCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSliderMiniCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,29 +155,15 @@
 		FAAC8CF72C9456B000264E4B /* Beybi */ = {
 			isa = PBXGroup;
 			children = (
-				FAAC8D352C95CD9D00264E4B /* FoodSliderCell */,
+				FAAC8D702C9C7B4900264E4B /* Screens */,
+				FAAC8D712C9C7BB400264E4B /* Cells */,
 				FAAC8D302C95CBEA00264E4B /* Extensions */,
-				FAAC8D2D2C95C8EA00264E4B /* HomeView */,
-				FAAC8D282C95C3C700264E4B /* AllFoodsPageView */,
-				FAAC8CF82C9456B000264E4B /* AppDelegate.swift */,
 				FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */,
+				FAAC8CF82C9456B000264E4B /* AppDelegate.swift */,
 				FAAC8CFE2C9456B000264E4B /* Main.storyboard */,
 				FAAC8D012C9456B200264E4B /* Assets.xcassets */,
 				FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */,
 				FAAC8D062C9456B200264E4B /* Info.plist */,
-				FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */,
-				FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */,
-				FAAC8D402C97393B00264E4B /* BabiesAgeCell.swift */,
-				FAAC8D412C97393B00264E4B /* BabiesAgeCell.xib */,
-				FAAC8D442C973ADC00264E4B /* DailyMenuCell.swift */,
-				FAAC8D452C973ADC00264E4B /* DailyMenuCell.xib */,
-				FAAC8D482C97689D00264E4B /* FoodCell.swift */,
-				FAAC8D492C97689D00264E4B /* FoodCell.xib */,
-				FAAC8D502C9AC89C00264E4B /* BabiesFavCell.swift */,
-				FAAC8D512C9AC89C00264E4B /* BabiesFavCell.xib */,
-				FAAC8D542C9ACBAA00264E4B /* BabiesFavMiniCell.swift */,
-				FAAC8D552C9ACBAA00264E4B /* BabiesFavMiniCell.xib */,
-				FAAC8D582C9C2C5000264E4B /* ViewMoreViewController.swift */,
 			);
 			path = Beybi;
 			sourceTree = "<group>";
@@ -220,6 +220,99 @@
 				FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */,
 			);
 			path = FoodSliderCell;
+			sourceTree = "<group>";
+		};
+		FAAC8D5A2C9C550000264E4B /* ViewMorePageView */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D582C9C2C5000264E4B /* ViewMoreViewController.swift */,
+				FAAC8D5B2C9C552700264E4B /* ViewMoreViewModel.swift */,
+			);
+			path = ViewMorePageView;
+			sourceTree = "<group>";
+		};
+		FAAC8D5D2C9C64BD00264E4B /* BabiesAgeCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D402C97393B00264E4B /* BabiesAgeCell.swift */,
+				FAAC8D412C97393B00264E4B /* BabiesAgeCell.xib */,
+				FAAC8D5E2C9C650200264E4B /* BabiesAgeCellViewModel.swift */,
+			);
+			path = BabiesAgeCell;
+			sourceTree = "<group>";
+		};
+		FAAC8D602C9C651B00264E4B /* BabiesFavCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D502C9AC89C00264E4B /* BabiesFavCell.swift */,
+				FAAC8D612C9C654F00264E4B /* BabiesFavCellViewModel.swift */,
+				FAAC8D512C9AC89C00264E4B /* BabiesFavCell.xib */,
+			);
+			path = BabiesFavCell;
+			sourceTree = "<group>";
+		};
+		FAAC8D632C9C682F00264E4B /* DailyMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D442C973ADC00264E4B /* DailyMenuCell.swift */,
+				FAAC8D452C973ADC00264E4B /* DailyMenuCell.xib */,
+				FAAC8D642C9C685A00264E4B /* DailyMenuCellViewModel.swift */,
+			);
+			path = DailyMenuCell;
+			sourceTree = "<group>";
+		};
+		FAAC8D662C9C69F400264E4B /* FoodCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D482C97689D00264E4B /* FoodCell.swift */,
+				FAAC8D672C9C6A0C00264E4B /* FoodCellViewModel.swift */,
+				FAAC8D492C97689D00264E4B /* FoodCell.xib */,
+			);
+			path = FoodCell;
+			sourceTree = "<group>";
+		};
+		FAAC8D692C9C767A00264E4B /* BabiesFavMiniCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D542C9ACBAA00264E4B /* BabiesFavMiniCell.swift */,
+				FAAC8D6A2C9C76B700264E4B /* BabiesFavMiniCellViewModel.swift */,
+				FAAC8D552C9ACBAA00264E4B /* BabiesFavMiniCell.xib */,
+			);
+			path = BabiesFavMiniCell;
+			sourceTree = "<group>";
+		};
+		FAAC8D6D2C9C799600264E4B /* FoodSliderMiniCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D3C2C96F81E00264E4B /* FoodSliderMiniCell.swift */,
+				FAAC8D6E2C9C79B700264E4B /* FoodSliderMiniCellViewModel.swift */,
+				FAAC8D3D2C96F81E00264E4B /* FoodSliderMiniCell.xib */,
+			);
+			path = FoodSliderMiniCell;
+			sourceTree = "<group>";
+		};
+		FAAC8D702C9C7B4900264E4B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D2D2C95C8EA00264E4B /* HomeView */,
+				FAAC8D282C95C3C700264E4B /* AllFoodsPageView */,
+				FAAC8D5A2C9C550000264E4B /* ViewMorePageView */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FAAC8D712C9C7BB400264E4B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC8D632C9C682F00264E4B /* DailyMenuCell */,
+				FAAC8D662C9C69F400264E4B /* FoodCell */,
+				FAAC8D5D2C9C64BD00264E4B /* BabiesAgeCell */,
+				FAAC8D602C9C651B00264E4B /* BabiesFavCell */,
+				FAAC8D692C9C767A00264E4B /* BabiesFavMiniCell */,
+				FAAC8D352C95CD9D00264E4B /* FoodSliderCell */,
+				FAAC8D6D2C9C799600264E4B /* FoodSliderMiniCell */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +428,7 @@
 				FAAC8D432C97393B00264E4B /* BabiesAgeCell.xib in Resources */,
 				FAAC8D4B2C97689D00264E4B /* FoodCell.xib in Resources */,
 				FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */,
-				FAAC8D3F2C96F81E00264E4B /* CollectionViewCell.xib in Resources */,
+				FAAC8D3F2C96F81E00264E4B /* FoodSliderMiniCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,23 +453,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAC8D6F2C9C79B700264E4B /* FoodSliderMiniCellViewModel.swift in Sources */,
 				FAAC8D462C973ADC00264E4B /* DailyMenuCell.swift in Sources */,
 				FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */,
 				FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */,
 				FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */,
 				FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */,
 				FAAC8D2F2C95C94500264E4B /* HomeViewModel.swift in Sources */,
+				FAAC8D6B2C9C76B700264E4B /* BabiesFavMiniCellViewModel.swift in Sources */,
+				FAAC8D622C9C654F00264E4B /* BabiesFavCellViewModel.swift in Sources */,
 				FAAC8D322C95CC1800264E4B /* UICollectionViewCell+Extension.swift in Sources */,
 				FAAC8D522C9AC89C00264E4B /* BabiesFavCell.swift in Sources */,
 				FAAC8D592C9C2C5000264E4B /* ViewMoreViewController.swift in Sources */,
 				FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */,
 				FAAC8D2C2C95C53000264E4B /* AllFoodsPageViewModel.swift in Sources */,
 				FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */,
+				FAAC8D5C2C9C552700264E4B /* ViewMoreViewModel.swift in Sources */,
+				FAAC8D682C9C6A0C00264E4B /* FoodCellViewModel.swift in Sources */,
 				FAAC8D4A2C97689D00264E4B /* FoodCell.swift in Sources */,
 				FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */,
 				FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */,
+				FAAC8D5F2C9C650200264E4B /* BabiesAgeCellViewModel.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,
-				FAAC8D3E2C96F81E00264E4B /* CollectionViewCell.swift in Sources */,
+				FAAC8D3E2C96F81E00264E4B /* FoodSliderMiniCell.swift in Sources */,
+				FAAC8D652C9C685A00264E4B /* DailyMenuCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
