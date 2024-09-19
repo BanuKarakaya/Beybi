@@ -9,6 +9,7 @@ import UIKit
 
 class AllFoodsPageViewController: UIViewController {
     
+
     @IBOutlet weak var allFoodsCollectionView: UICollectionView!
     
     var viewModel: AllFoodsPageViewModelProtocol = AllFoodsPageViewModel()

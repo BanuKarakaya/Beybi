@@ -26,6 +26,17 @@
 		FAAC8D3B2C95CF1100264E4B /* FoodSliderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */; };
 		FAAC8D3E2C96F81E00264E4B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */; };
 		FAAC8D3F2C96F81E00264E4B /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */; };
+		FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D402C97393B00264E4B /* BabiesAgeCell.swift */; };
+		FAAC8D432C97393B00264E4B /* BabiesAgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D412C97393B00264E4B /* BabiesAgeCell.xib */; };
+		FAAC8D462C973ADC00264E4B /* DailyMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D442C973ADC00264E4B /* DailyMenuCell.swift */; };
+		FAAC8D472C973ADC00264E4B /* DailyMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D452C973ADC00264E4B /* DailyMenuCell.xib */; };
+		FAAC8D4A2C97689D00264E4B /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D482C97689D00264E4B /* FoodCell.swift */; };
+		FAAC8D4B2C97689D00264E4B /* FoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D492C97689D00264E4B /* FoodCell.xib */; };
+		FAAC8D522C9AC89C00264E4B /* BabiesFavCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D502C9AC89C00264E4B /* BabiesFavCell.swift */; };
+		FAAC8D532C9AC89C00264E4B /* BabiesFavCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D512C9AC89C00264E4B /* BabiesFavCell.xib */; };
+		FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D542C9ACBAA00264E4B /* BabiesFavMiniCell.swift */; };
+		FAAC8D572C9ACBAA00264E4B /* BabiesFavMiniCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D552C9ACBAA00264E4B /* BabiesFavMiniCell.xib */; };
+		FAAC8D592C9C2C5000264E4B /* ViewMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D582C9C2C5000264E4B /* ViewMoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +80,17 @@
 		FAAC8D392C95CF1100264E4B /* FoodSliderCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSliderCellController.xib; sourceTree = "<group>"; };
 		FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		FAAC8D402C97393B00264E4B /* BabiesAgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesAgeCell.swift; sourceTree = "<group>"; };
+		FAAC8D412C97393B00264E4B /* BabiesAgeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BabiesAgeCell.xib; sourceTree = "<group>"; };
+		FAAC8D442C973ADC00264E4B /* DailyMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMenuCell.swift; sourceTree = "<group>"; };
+		FAAC8D452C973ADC00264E4B /* DailyMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyMenuCell.xib; sourceTree = "<group>"; };
+		FAAC8D482C97689D00264E4B /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		FAAC8D492C97689D00264E4B /* FoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCell.xib; sourceTree = "<group>"; };
+		FAAC8D502C9AC89C00264E4B /* BabiesFavCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesFavCell.swift; sourceTree = "<group>"; };
+		FAAC8D512C9AC89C00264E4B /* BabiesFavCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BabiesFavCell.xib; sourceTree = "<group>"; };
+		FAAC8D542C9ACBAA00264E4B /* BabiesFavMiniCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabiesFavMiniCell.swift; sourceTree = "<group>"; };
+		FAAC8D552C9ACBAA00264E4B /* BabiesFavMiniCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BabiesFavMiniCell.xib; sourceTree = "<group>"; };
+		FAAC8D582C9C2C5000264E4B /* ViewMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +153,17 @@
 				FAAC8D062C9456B200264E4B /* Info.plist */,
 				FAAC8D3C2C96F81E00264E4B /* CollectionViewCell.swift */,
 				FAAC8D3D2C96F81E00264E4B /* CollectionViewCell.xib */,
+				FAAC8D402C97393B00264E4B /* BabiesAgeCell.swift */,
+				FAAC8D412C97393B00264E4B /* BabiesAgeCell.xib */,
+				FAAC8D442C973ADC00264E4B /* DailyMenuCell.swift */,
+				FAAC8D452C973ADC00264E4B /* DailyMenuCell.xib */,
+				FAAC8D482C97689D00264E4B /* FoodCell.swift */,
+				FAAC8D492C97689D00264E4B /* FoodCell.xib */,
+				FAAC8D502C9AC89C00264E4B /* BabiesFavCell.swift */,
+				FAAC8D512C9AC89C00264E4B /* BabiesFavCell.xib */,
+				FAAC8D542C9ACBAA00264E4B /* BabiesFavMiniCell.swift */,
+				FAAC8D552C9ACBAA00264E4B /* BabiesFavMiniCell.xib */,
+				FAAC8D582C9C2C5000264E4B /* ViewMoreViewController.swift */,
 			);
 			path = Beybi;
 			sourceTree = "<group>";
@@ -295,7 +328,12 @@
 			files = (
 				FAAC8D3B2C95CF1100264E4B /* FoodSliderCellController.xib in Resources */,
 				FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */,
+				FAAC8D572C9ACBAA00264E4B /* BabiesFavMiniCell.xib in Resources */,
+				FAAC8D532C9AC89C00264E4B /* BabiesFavCell.xib in Resources */,
+				FAAC8D472C973ADC00264E4B /* DailyMenuCell.xib in Resources */,
 				FAAC8D022C9456B200264E4B /* Assets.xcassets in Resources */,
+				FAAC8D432C97393B00264E4B /* BabiesAgeCell.xib in Resources */,
+				FAAC8D4B2C97689D00264E4B /* FoodCell.xib in Resources */,
 				FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */,
 				FAAC8D3F2C96F81E00264E4B /* CollectionViewCell.xib in Resources */,
 			);
@@ -322,15 +360,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAC8D462C973ADC00264E4B /* DailyMenuCell.swift in Sources */,
 				FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */,
+				FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */,
 				FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */,
 				FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */,
 				FAAC8D2F2C95C94500264E4B /* HomeViewModel.swift in Sources */,
 				FAAC8D322C95CC1800264E4B /* UICollectionViewCell+Extension.swift in Sources */,
+				FAAC8D522C9AC89C00264E4B /* BabiesFavCell.swift in Sources */,
+				FAAC8D592C9C2C5000264E4B /* ViewMoreViewController.swift in Sources */,
 				FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */,
 				FAAC8D2C2C95C53000264E4B /* AllFoodsPageViewModel.swift in Sources */,
 				FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */,
+				FAAC8D4A2C97689D00264E4B /* FoodCell.swift in Sources */,
 				FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */,
+				FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,
 				FAAC8D3E2C96F81E00264E4B /* CollectionViewCell.swift in Sources */,
 			);

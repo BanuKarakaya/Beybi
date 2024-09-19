@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BabiesFavMiniCell" customModule="Beybi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTf-O8-J8T">
+                        <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Balkabaklı püre" translatesAutoresizingMaskIntoConstraints="NO" id="VeC-Y2-Z6d">
+                                <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="f3z-m0-4ev"/>
+                                    <constraint firstAttribute="height" constant="40" id="oDz-53-jVW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el2-NP-cmA">
+                                <rect key="frame" x="50" y="5" width="113" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="2Ki-Rb-1V1"/>
+                                    <constraint firstAttribute="width" constant="113" id="4bA-za-2sP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VeC-Y2-Z6d" firstAttribute="top" secondItem="CTf-O8-J8T" secondAttribute="top" constant="5" id="0S0-tw-izu"/>
+                            <constraint firstAttribute="bottom" secondItem="VeC-Y2-Z6d" secondAttribute="bottom" constant="5" id="6Sx-dD-0Tc"/>
+                            <constraint firstAttribute="width" constant="175" id="El0-Uh-GCx"/>
+                            <constraint firstItem="VeC-Y2-Z6d" firstAttribute="leading" secondItem="CTf-O8-J8T" secondAttribute="leading" constant="5" id="G0L-n4-rJk"/>
+                            <constraint firstItem="el2-NP-cmA" firstAttribute="top" secondItem="CTf-O8-J8T" secondAttribute="top" constant="5" id="IQC-CI-qEd"/>
+                            <constraint firstItem="VeC-Y2-Z6d" firstAttribute="leading" secondItem="CTf-O8-J8T" secondAttribute="leading" constant="5" id="J4F-Nm-gVh"/>
+                            <constraint firstItem="VeC-Y2-Z6d" firstAttribute="top" secondItem="CTf-O8-J8T" secondAttribute="top" constant="5" id="PyQ-6m-014"/>
+                            <constraint firstItem="el2-NP-cmA" firstAttribute="leading" secondItem="VeC-Y2-Z6d" secondAttribute="trailing" constant="5" id="SB7-hZ-DZV"/>
+                            <constraint firstAttribute="bottom" secondItem="el2-NP-cmA" secondAttribute="bottom" constant="32" id="Vhj-RM-f5j"/>
+                            <constraint firstAttribute="height" constant="50" id="kBh-y8-p1i"/>
+                            <constraint firstAttribute="bottom" secondItem="VeC-Y2-Z6d" secondAttribute="bottom" constant="5" id="lbY-kb-OQs"/>
+                            <constraint firstItem="el2-NP-cmA" firstAttribute="leading" secondItem="VeC-Y2-Z6d" secondAttribute="trailing" constant="5" id="nJX-ML-7w7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="CTf-O8-J8T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2jA-oF-Va5"/>
+                <constraint firstAttribute="bottom" secondItem="CTf-O8-J8T" secondAttribute="bottom" id="5la-1n-F0Q"/>
+                <constraint firstItem="CTf-O8-J8T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AEL-uG-NVM"/>
+                <constraint firstAttribute="trailing" secondItem="CTf-O8-J8T" secondAttribute="trailing" id="yba-9E-PMn"/>
+            </constraints>
+            <size key="customSize" width="176" height="28"/>
+            <connections>
+                <outlet property="foodImage" destination="VeC-Y2-Z6d" id="Dau-Lw-Zb3"/>
+            </connections>
+            <point key="canvasLocation" x="43.511450381679388" y="33.802816901408455"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Balkabaklı püre" width="1402" height="1402"/>
+    </resources>
+</document>
