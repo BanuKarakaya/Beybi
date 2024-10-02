@@ -29,34 +29,15 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="wJr-sI-iDc">
                                                 <rect key="frame" x="10" y="20" width="370" height="30"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpg-x1-HM6" userLabel="leftView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
-                                                        <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Balkabaklı püre sembolü" translatesAutoresizingMaskIntoConstraints="NO" id="liK-eO-b86">
-                                                                <rect key="frame" x="25" y="3" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="25" id="SdQ-N9-KDo"/>
-                                                                    <constraint firstAttribute="height" constant="25" id="pgP-i7-rdo"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                        <constraints>
-                                                            <constraint firstItem="liK-eO-b86" firstAttribute="leading" secondItem="Gpg-x1-HM6" secondAttribute="leading" constant="25" id="2ei-Lg-sIr"/>
-                                                            <constraint firstAttribute="bottom" secondItem="liK-eO-b86" secondAttribute="bottom" constant="2" id="Cg7-hP-DdX"/>
-                                                            <constraint firstAttribute="trailing" secondItem="liK-eO-b86" secondAttribute="trailing" constant="0.67000000000000004" id="xgI-a7-qbu"/>
-                                                            <constraint firstItem="liK-eO-b86" firstAttribute="top" secondItem="Gpg-x1-HM6" secondAttribute="top" constant="3" id="xkd-F2-PsW"/>
-                                                        </constraints>
-                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yen-Fa-ve0">
-                                                        <rect key="frame" x="59" y="0.0" width="53" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Br-Fs-Rw4">
-                                                        <rect key="frame" x="111.99999999999999" y="0.0" width="153.66666666666663" height="30"/>
-                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <rect key="frame" x="62.999999999999986" y="0.0" width="202.66666666666663" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0T-K1-pfg">
                                                         <rect key="frame" x="265.66666666666669" y="0.0" width="104.33333333333331" height="30"/>
@@ -134,7 +115,6 @@
             </constraints>
             <size key="customSize" width="344" height="280"/>
             <connections>
-                <outlet property="foodTypeImage" destination="liK-eO-b86" id="ciY-bZ-YXy"/>
                 <outlet property="foodTypeLabel" destination="yen-Fa-ve0" id="Ju9-st-l4p"/>
                 <outlet property="horizontalCollectionView" destination="CYj-4Y-94J" id="xVa-T7-3tY"/>
             </connections>
@@ -142,12 +122,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Balkabaklı püre sembolü" width="500" height="500"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -29,8 +29,14 @@ extension ViewMoreViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeCell(cellType: FoodSliderMiniCell.self, indexPath: indexPath)
+        let cell = collectionView.dequeCell(cellType: ViewMoreCell.self, indexPath: indexPath)
         return cell
+    }
+}
+
+extension ViewMoreViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .init(width: 380, height: 100)
     }
 }
 
@@ -39,6 +45,6 @@ extension ViewMoreViewController: ViewMoreViewModelDelegate {
         viewMoreCollectionView.delegate = self
         viewMoreCollectionView.dataSource = self
         
-        viewMoreCollectionView.register(cellType: FoodSliderMiniCell.self)
+        viewMoreCollectionView.register(cellType: ViewMoreCell.self)
     }
 }

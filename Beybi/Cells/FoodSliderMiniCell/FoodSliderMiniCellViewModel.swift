@@ -11,21 +11,27 @@ protocol FoodSliderMiniCellViewModelProtocol {
     var delegate: FoodSliderMiniCellViewModelDelegate? { get set }
     
     func viewDidLoad()
+    func load()
 }
 
 protocol FoodSliderMiniCellViewModelDelegate: AnyObject {
     func setUI()
+    func configureCell(food: Food?)
+    func prepareBannerImage(with urlString: String?)
 }
 
 class FoodSliderMiniCellViewModel {
     weak var delegate: FoodSliderMiniCellViewModelDelegate?
-    
-    init(delegate: FoodSliderMiniCellViewModelDelegate) {
-        self.delegate = delegate
-    }
+    var food: Food?
 }
 
 extension FoodSliderMiniCellViewModel: FoodSliderMiniCellViewModelProtocol {
+    func load() {
+        if let food = food {
+            delegate?.configureCell(food: food)
+        }
+    }
+    
     func viewDidLoad() {
         delegate?.setUI()
     }

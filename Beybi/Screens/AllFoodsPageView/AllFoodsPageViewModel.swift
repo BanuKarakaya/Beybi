@@ -12,6 +12,7 @@ protocol AllFoodsPageViewModelProtocol {
     
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
+    func typeAtIndex(index: Int) -> String
 }
 
 protocol AllFoodsPageViewModelDelegate: AnyObject {
@@ -21,6 +22,7 @@ protocol AllFoodsPageViewModelDelegate: AnyObject {
 
 class AllFoodsPageViewModel {
     weak var delegate: AllFoodsPageViewModelDelegate?
+    var types = ["Soups","Main Dishes","Purees","Snacks","x","y","z"]
     
     init(delegate: AllFoodsPageViewModelDelegate) {
         self.delegate = delegate
@@ -28,6 +30,11 @@ class AllFoodsPageViewModel {
 }
 
 extension AllFoodsPageViewModel: AllFoodsPageViewModelProtocol {
+    func typeAtIndex(index: Int) -> String {
+        let type = types[index]
+        return type
+    }
+    
     func numberOfItemsInSection() -> Int {
         7
     }

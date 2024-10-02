@@ -7,11 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA22AA032C9F73E400F6B169 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA022C9F73E400F6B169 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		FA22AA052C9F73E400F6B169 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA042C9F73E400F6B169 /* FirebaseFirestore */; };
+		FA22AA072C9F73E400F6B169 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA062C9F73E400F6B169 /* FirebaseStorage */; };
+		FA22AA092C9F751E00F6B169 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA082C9F751E00F6B169 /* GoogleService-Info.plist */; };
+		FA22AA0C2CA446BC00F6B169 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA0B2CA446BC00F6B169 /* Foods.swift */; };
+		FA22AA102CA748CC00F6B169 /* EnjoyYourMealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA0E2CA748CC00F6B169 /* EnjoyYourMealCell.swift */; };
+		FA22AA112CA748CC00F6B169 /* EnjoyYourMealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA0F2CA748CC00F6B169 /* EnjoyYourMealCell.xib */; };
+		FA22AA132CAAD7F100F6B169 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA122CAAD7F100F6B169 /* NotificationCenter+Extension.swift */; };
+		FA22AA172CAADD9300F6B169 /* ViewMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA152CAADD9300F6B169 /* ViewMoreCell.swift */; };
+		FA22AA182CAADD9300F6B169 /* ViewMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA162CAADD9300F6B169 /* ViewMoreCell.xib */; };
+		FA22AA1A2CABC95F00F6B169 /* ViewMoreCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA192CABC95F00F6B169 /* ViewMoreCellViewModel.swift */; };
+		FA22AA1C2CAD5D9400F6B169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA1B2CAD5D9400F6B169 /* Assets.xcassets */; };
+		FA22AA1F2CAD95A700F6B169 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA1E2CAD95A700F6B169 /* SDWebImage */; };
+		FA22AA212CAD95A700F6B169 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA202CAD95A700F6B169 /* SDWebImageMapKit */; };
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
 		FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */; };
 		FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */; };
 		FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8CFE2C9456B000264E4B /* Main.storyboard */; };
-		FAAC8D022C9456B200264E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D012C9456B200264E4B /* Assets.xcassets */; };
 		FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */; };
 		FAAC8D102C9456B200264E4B /* BeybiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D0F2C9456B200264E4B /* BeybiTests.swift */; };
 		FAAC8D1A2C9456B200264E4B /* BeybiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D192C9456B200264E4B /* BeybiUITests.swift */; };
@@ -64,12 +77,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA22AA082C9F751E00F6B169 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA22AA0B2CA446BC00F6B169 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		FA22AA0E2CA748CC00F6B169 /* EnjoyYourMealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnjoyYourMealCell.swift; sourceTree = "<group>"; };
+		FA22AA0F2CA748CC00F6B169 /* EnjoyYourMealCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnjoyYourMealCell.xib; sourceTree = "<group>"; };
+		FA22AA122CAAD7F100F6B169 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
+		FA22AA152CAADD9300F6B169 /* ViewMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreCell.swift; sourceTree = "<group>"; };
+		FA22AA162CAADD9300F6B169 /* ViewMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewMoreCell.xib; sourceTree = "<group>"; };
+		FA22AA192CABC95F00F6B169 /* ViewMoreCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreCellViewModel.swift; sourceTree = "<group>"; };
+		FA22AA1B2CAD5D9400F6B169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAC8CF82C9456B000264E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAAC8CFF2C9456B000264E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FAAC8D012C9456B200264E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAC8D042C9456B200264E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAC8D062C9456B200264E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAC8D0B2C9456B200264E4B /* BeybiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeybiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +133,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA22AA032C9F73E400F6B169 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				FA22AA212CAD95A700F6B169 /* SDWebImageMapKit in Frameworks */,
+				FA22AA052C9F73E400F6B169 /* FirebaseFirestore in Frameworks */,
+				FA22AA1F2CAD95A700F6B169 /* SDWebImage in Frameworks */,
+				FA22AA072C9F73E400F6B169 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +158,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA22AA0A2CA446AD00F6B169 /* Foods */ = {
+			isa = PBXGroup;
+			children = (
+				FA22AA0B2CA446BC00F6B169 /* Foods.swift */,
+			);
+			path = Foods;
+			sourceTree = "<group>";
+		};
+		FA22AA0D2CA748A200F6B169 /* EnjoyYourMealCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA22AA0E2CA748CC00F6B169 /* EnjoyYourMealCell.swift */,
+				FA22AA0F2CA748CC00F6B169 /* EnjoyYourMealCell.xib */,
+			);
+			path = EnjoyYourMealCell;
+			sourceTree = "<group>";
+		};
+		FA22AA142CAADD6900F6B169 /* ViewMoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA22AA152CAADD9300F6B169 /* ViewMoreCell.swift */,
+				FA22AA162CAADD9300F6B169 /* ViewMoreCell.xib */,
+				FA22AA192CABC95F00F6B169 /* ViewMoreCellViewModel.swift */,
+			);
+			path = ViewMoreCell;
+			sourceTree = "<group>";
+		};
 		FAAC8CEC2C9456B000264E4B = {
 			isa = PBXGroup;
 			children = (
@@ -155,15 +208,17 @@
 		FAAC8CF72C9456B000264E4B /* Beybi */ = {
 			isa = PBXGroup;
 			children = (
+				FA22AA0A2CA446AD00F6B169 /* Foods */,
 				FAAC8D702C9C7B4900264E4B /* Screens */,
 				FAAC8D712C9C7BB400264E4B /* Cells */,
 				FAAC8D302C95CBEA00264E4B /* Extensions */,
 				FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */,
 				FAAC8CF82C9456B000264E4B /* AppDelegate.swift */,
 				FAAC8CFE2C9456B000264E4B /* Main.storyboard */,
-				FAAC8D012C9456B200264E4B /* Assets.xcassets */,
 				FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */,
 				FAAC8D062C9456B200264E4B /* Info.plist */,
+				FA22AA082C9F751E00F6B169 /* GoogleService-Info.plist */,
+				FA22AA1B2CAD5D9400F6B169 /* Assets.xcassets */,
 			);
 			path = Beybi;
 			sourceTree = "<group>";
@@ -208,6 +263,7 @@
 			children = (
 				FAAC8D312C95CC1800264E4B /* UICollectionViewCell+Extension.swift */,
 				FAAC8D332C95CC4200264E4B /* UICollectionView+Extension.swift */,
+				FA22AA122CAAD7F100F6B169 /* NotificationCenter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,6 +360,8 @@
 		FAAC8D712C9C7BB400264E4B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FA22AA142CAADD6900F6B169 /* ViewMoreCell */,
+				FA22AA0D2CA748A200F6B169 /* EnjoyYourMealCell */,
 				FAAC8D632C9C682F00264E4B /* DailyMenuCell */,
 				FAAC8D662C9C69F400264E4B /* FoodCell */,
 				FAAC8D5D2C9C64BD00264E4B /* BabiesAgeCell */,
@@ -331,6 +389,13 @@
 			dependencies = (
 			);
 			name = Beybi;
+			packageProductDependencies = (
+				FA22AA022C9F73E400F6B169 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				FA22AA042C9F73E400F6B169 /* FirebaseFirestore */,
+				FA22AA062C9F73E400F6B169 /* FirebaseStorage */,
+				FA22AA1E2CAD95A700F6B169 /* SDWebImage */,
+				FA22AA202CAD95A700F6B169 /* SDWebImageMapKit */,
+			);
 			productName = Beybi;
 			productReference = FAAC8CF52C9456B000264E4B /* Beybi.app */;
 			productType = "com.apple.product-type.application";
@@ -403,6 +468,10 @@
 				Base,
 			);
 			mainGroup = FAAC8CEC2C9456B000264E4B;
+			packageReferences = (
+				FA22AA012C9F73E400F6B169 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FA22AA1D2CAD948200F6B169 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = FAAC8CF62C9456B000264E4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -423,10 +492,13 @@
 				FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */,
 				FAAC8D572C9ACBAA00264E4B /* BabiesFavMiniCell.xib in Resources */,
 				FAAC8D532C9AC89C00264E4B /* BabiesFavCell.xib in Resources */,
+				FA22AA182CAADD9300F6B169 /* ViewMoreCell.xib in Resources */,
 				FAAC8D472C973ADC00264E4B /* DailyMenuCell.xib in Resources */,
-				FAAC8D022C9456B200264E4B /* Assets.xcassets in Resources */,
+				FA22AA1C2CAD5D9400F6B169 /* Assets.xcassets in Resources */,
+				FA22AA112CA748CC00F6B169 /* EnjoyYourMealCell.xib in Resources */,
 				FAAC8D432C97393B00264E4B /* BabiesAgeCell.xib in Resources */,
 				FAAC8D4B2C97689D00264E4B /* FoodCell.xib in Resources */,
+				FA22AA092C9F751E00F6B169 /* GoogleService-Info.plist in Resources */,
 				FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */,
 				FAAC8D3F2C96F81E00264E4B /* FoodSliderMiniCell.xib in Resources */,
 			);
@@ -458,6 +530,8 @@
 				FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */,
 				FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */,
 				FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */,
+				FA22AA132CAAD7F100F6B169 /* NotificationCenter+Extension.swift in Sources */,
+				FA22AA102CA748CC00F6B169 /* EnjoyYourMealCell.swift in Sources */,
 				FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */,
 				FAAC8D2F2C95C94500264E4B /* HomeViewModel.swift in Sources */,
 				FAAC8D6B2C9C76B700264E4B /* BabiesFavMiniCellViewModel.swift in Sources */,
@@ -465,6 +539,7 @@
 				FAAC8D322C95CC1800264E4B /* UICollectionViewCell+Extension.swift in Sources */,
 				FAAC8D522C9AC89C00264E4B /* BabiesFavCell.swift in Sources */,
 				FAAC8D592C9C2C5000264E4B /* ViewMoreViewController.swift in Sources */,
+				FA22AA1A2CABC95F00F6B169 /* ViewMoreCellViewModel.swift in Sources */,
 				FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */,
 				FAAC8D2C2C95C53000264E4B /* AllFoodsPageViewModel.swift in Sources */,
 				FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */,
@@ -473,10 +548,12 @@
 				FAAC8D4A2C97689D00264E4B /* FoodCell.swift in Sources */,
 				FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */,
 				FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */,
+				FA22AA0C2CA446BC00F6B169 /* Foods.swift in Sources */,
 				FAAC8D5F2C9C650200264E4B /* BabiesAgeCellViewModel.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,
 				FAAC8D3E2C96F81E00264E4B /* FoodSliderMiniCell.swift in Sources */,
 				FAAC8D652C9C685A00264E4B /* DailyMenuCellViewModel.swift in Sources */,
+				FA22AA172CAADD9300F6B169 /* ViewMoreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,6 +900,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA22AA012C9F73E400F6B169 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.0;
+			};
+		};
+		FA22AA1D2CAD948200F6B169 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA22AA022C9F73E400F6B169 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA22AA012C9F73E400F6B169 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		FA22AA042C9F73E400F6B169 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA22AA012C9F73E400F6B169 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		FA22AA062C9F73E400F6B169 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA22AA012C9F73E400F6B169 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		FA22AA1E2CAD95A700F6B169 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA22AA1D2CAD948200F6B169 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		FA22AA202CAD95A700F6B169 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA22AA1D2CAD948200F6B169 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAAC8CED2C9456B000264E4B /* Project object */;
 }

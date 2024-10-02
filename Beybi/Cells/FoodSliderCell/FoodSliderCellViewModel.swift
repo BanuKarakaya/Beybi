@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseStorage
 
 protocol FoodSliderCellViewModelProtocol {
     var delegate: FoodSliderCellViewModelDelegate? { get set }
@@ -14,22 +16,63 @@ protocol FoodSliderCellViewModelProtocol {
     func numberOfItemsInSection() -> Int
     func minimumInteritemSpacingForSectionAt() -> CGFloat
     func minimumLineSpacingForSectionAt() -> CGFloat
+    func foodAtIndex(index: Int) -> Food?
+    func load()
 }
 
 protocol FoodSliderCellViewModelDelegate: AnyObject {
-    func prepareUI()
     func prepareCollectionView()
+    func reloadData()
+    func configureCell(type: String)
 }
 
 class FoodSliderCellViewModel {
     weak var delegate: FoodSliderCellViewModelDelegate?
+    var soups: [Food]? = []
+    var type: String?
+    let firestore = Firestore.firestore()
     
-    init(delegate: FoodSliderCellViewModelDelegate) {
-        self.delegate = delegate
+    func readrecipe() {
+        firestore.collection("main dishes").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Hata: \(error.localizedDescription)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let name = data["name"] as? String ?? "İsim yok"
+                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
+                    let recipe = data["recipe"] as? String ?? "Tarif yok"
+                    let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    
+                    print("Çorba Adı: \(name)")
+                    print("Pişirme Süresi: \(cookingTime)")
+                    print("Tarif: \(recipe)")
+                    
+                    
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    self.soups?.append(soup)
+                   
+                }
+                self.delegate?.reloadData()
+            }
+        }
     }
 }
 
 extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
+    func load() {
+        if let type = type {
+            delegate?.configureCell(type: type)
+        }
+    }
+    
+    func foodAtIndex(index: Int) -> Food? {
+        if let food = soups?[index] {
+            return food
+        }
+         return nil
+    }
+    
     func minimumLineSpacingForSectionAt() -> CGFloat {
         10
     }
@@ -39,11 +82,11 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
     
     func numberOfItemsInSection() -> Int {
-        9
+        return soups!.count
     }
     
     func viewDidLoad() {
-        delegate?.prepareUI()
         delegate?.prepareCollectionView()
+        readrecipe()
     }
 }

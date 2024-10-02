@@ -54,8 +54,32 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-kA-i79">
+                                                <rect key="frame" x="8" y="24" width="40" height="12"/>
+                                                <color key="backgroundColor" red="0.89411771299999998" green="0.94509804249999996" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="12" id="JbV-zA-r9x"/>
+                                                    <constraint firstAttribute="width" constant="40" id="NFU-jd-Lop"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-8a-ojN">
+                                                <rect key="frame" x="14" y="23" width="25" height="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="dhc-kA-i79" firstAttribute="top" secondItem="G9r-D6-LLq" secondAttribute="top" constant="29" id="QcO-mj-zVe"/>
+                                            <constraint firstItem="dhc-kA-i79" firstAttribute="leading" secondItem="G9r-D6-LLq" secondAttribute="leading" constant="8" id="UQu-sI-qAN"/>
+                                            <constraint firstItem="9nn-8a-ojN" firstAttribute="top" secondItem="G9r-D6-LLq" secondAttribute="top" constant="23" id="dd8-OG-kha"/>
+                                            <constraint firstAttribute="bottom" secondItem="dhc-kA-i79" secondAttribute="bottom" constant="25" id="imO-Wk-UJT"/>
+                                            <constraint firstItem="dhc-kA-i79" firstAttribute="top" secondItem="G9r-D6-LLq" secondAttribute="top" constant="24" id="teq-SH-jOO"/>
+                                            <constraint firstItem="9nn-8a-ojN" firstAttribute="leading" secondItem="G9r-D6-LLq" secondAttribute="leading" constant="14" id="xAk-9j-XbG"/>
+                                            <constraint firstAttribute="bottom" secondItem="9nn-8a-ojN" secondAttribute="bottom" constant="24" id="z9x-pW-4R2"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -77,6 +101,11 @@
                 <constraint firstAttribute="bottom" secondItem="ugs-xA-uib" secondAttribute="bottom" id="KVY-cn-WoH"/>
             </constraints>
             <size key="customSize" width="106" height="155"/>
+            <connections>
+                <outlet property="foodName" destination="1SJ-Ua-WOH" id="CLG-MH-bXT"/>
+                <outlet property="typeName" destination="9nn-8a-ojN" id="27J-yD-HeQ"/>
+                <outlet property="typeView" destination="dhc-kA-i79" id="eHg-MA-UqV"/>
+            </connections>
             <point key="canvasLocation" x="94.656488549618317" y="24.295774647887324"/>
         </collectionViewCell>
     </objects>
@@ -85,11 +114,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

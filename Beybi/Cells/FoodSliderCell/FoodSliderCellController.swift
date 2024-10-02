@@ -13,14 +13,16 @@ class FoodSliderCellController: UICollectionViewCell {
     @IBOutlet weak var foodTypeLabel: UILabel!
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
     
-    private lazy var viewModel: FoodSliderCellViewModelProtocol = FoodSliderCellViewModel(delegate: self)
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        viewModel.viewDidLoad()
+    var viewModel: FoodSliderCellViewModelProtocol! {
+        didSet {
+            viewModel.delegate = self
+            viewModel.viewDidLoad()
+            viewModel.load()
+        }
     }
 
     @IBAction func viewMoreButtonTapped(_ sender: Any) {
+        NotificationCenter.default.post(name: .viewMoreButtonTapped, object: nil)
     }
 }
 
@@ -35,6 +37,11 @@ extension FoodSliderCellController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: FoodSliderMiniCell.self, indexPath: indexPath)
+        if let food = viewModel.foodAtIndex(index: indexPath.item) {
+            let cellViewModel = FoodSliderMiniCellViewModel()
+            cellViewModel.food = food
+            cell.viewModel = cellViewModel
+        }
         return cell
     }
 }
@@ -58,14 +65,19 @@ extension FoodSliderCellController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FoodSliderCellController: FoodSliderCellViewModelDelegate {
+    func configureCell(type: String) {
+        foodTypeLabel.text = type
+    }
+    
+    
+    func reloadData() {
+        horizontalCollectionView.reloadData()
+    }
+    
     func prepareCollectionView() {
         horizontalCollectionView.delegate = self
         horizontalCollectionView.dataSource = self
         
         horizontalCollectionView.register(cellType: FoodSliderMiniCell.self)
-    }
-    
-    func prepareUI() {
-        foodTypeImage.layer.cornerRadius = 10
     }
 }

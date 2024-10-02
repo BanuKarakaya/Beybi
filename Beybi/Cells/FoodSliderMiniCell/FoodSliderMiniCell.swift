@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FoodSliderMiniCell: UICollectionViewCell {
 
@@ -13,17 +14,29 @@ class FoodSliderMiniCell: UICollectionViewCell {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var foodImage: UIImageView!
     
-    private lazy var viewModel: FoodSliderMiniCellViewModelProtocol = FoodSliderMiniCellViewModel(delegate: self)
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        viewModel.viewDidLoad()
+    var viewModel: FoodSliderMiniCellViewModelProtocol! {
+        didSet {
+            viewModel.delegate = self
+            viewModel.load()
+            viewModel.viewDidLoad()
+        }
     }
 }
 
 extension FoodSliderMiniCell: FoodSliderMiniCellViewModelDelegate {
+    func prepareBannerImage(with urlString: String?) {
+        if let imageUrlString = urlString, let url = URL(string:imageUrlString){
+            foodImage.sd_setImage(with: url)
+        }
+    }
+    
     func setUI() {
         self.layer.cornerRadius = 10
         foodImage.layer.cornerRadius = 10
+    }
+    
+    func configureCell(food: Food?) {
+        foodName.text = food?.name
+        prepareBannerImage(with: food?.imageUrl)
     }
 }

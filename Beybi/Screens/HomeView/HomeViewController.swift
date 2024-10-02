@@ -6,16 +6,38 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseStorage
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    
     private lazy var viewModel: HomeViewModelProtocol = HomeViewModel(delegate: self)
-  
+    let firestore = Firestore.firestore()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        readrecipe()
+    }
+    
+    func readrecipe() {
+        firestore.collection("soups").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Hata: \(error.localizedDescription)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let name = data["name"] as? String ?? "İsim yok"
+                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
+                    let recipe = data["recipe"] as? String ?? "Tarif yok"
+                    
+                    print("Çorba Adı: \(name)")
+                    print("Pişirme Süresi: \(cookingTime)")
+                    print("Tarif: \(recipe)")
+                }
+            }
+        }
     }
 }
 
