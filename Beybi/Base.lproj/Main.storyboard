@@ -212,7 +212,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.9529411793" green="0.74901962280000001" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" red="0.96078431610000004" green="0.75294119120000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.63404888188073394" green="0.037503724947916088" blue="0.11717577087408312" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="mnd-jF-aGv" kind="relationship" relationship="viewControllers" id="hdi-73-vhe"/>

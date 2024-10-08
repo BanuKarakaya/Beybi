@@ -16,6 +16,7 @@ protocol DailyMenuCellViewModelProtocol {
 
 protocol DailyMenuCellViewModelDelegate: AnyObject {
     func prepareCollectionView()
+    func prepareUI()
 }
 
 class DailyMenuCellViewModel {
@@ -33,5 +34,6 @@ extension DailyMenuCellViewModel: DailyMenuCellViewModelProtocol {
     
     func viewDidLoad() {
         delegate?.prepareCollectionView()
+        delegate?.prepareUI()
     }
 }

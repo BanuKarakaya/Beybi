@@ -30,13 +30,13 @@
                                                 <rect key="frame" x="10" y="20" width="370" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yen-Fa-ve0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="265.66666666666669" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="122.33333333333333" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Br-Fs-Rw4">
-                                                        <rect key="frame" x="265.66666666666669" y="0.0" width="0.0" height="30"/>
+                                                        <rect key="frame" x="122.33333333333331" y="0.0" width="143.33333333333337" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0T-K1-pfg">
@@ -46,7 +46,7 @@
                                                             <constraint firstAttribute="height" constant="50.670000000000002" id="lOY-6c-Lck"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <color key="tintColor" red="0.96078431610000004" green="0.75294119120000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.63404888188073394" green="0.037503724947916088" blue="0.11717577087408312" alpha="0.89803921568627454" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="View More"/>
                                                         <connections>
