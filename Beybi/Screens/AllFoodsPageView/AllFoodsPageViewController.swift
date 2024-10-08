@@ -9,9 +9,8 @@ import UIKit
 
 class AllFoodsPageViewController: UIViewController {
     
-    @IBOutlet weak var enjoyYourMealView: UIView!
     @IBOutlet weak var allFoodsCollectionView: UICollectionView!
-    @IBOutlet weak var enjoyYourMealViewHeight: NSLayoutConstraint!
+
     private lazy var viewModel: AllFoodsPageViewModelProtocol = AllFoodsPageViewModel(delegate: self)
     private var previousOffsetY: CGFloat = 0
     
@@ -36,6 +35,16 @@ extension AllFoodsPageViewController: UICollectionViewDelegate {
 }
 
 extension AllFoodsPageViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "EnjoyYourMealHeaderView", for: indexPath) as! EnjoyYourMealHeaderView
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.frame.width, height: 40)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.numberOfItemsInSection()
     }
@@ -51,27 +60,6 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
     }
 }
 
-extension AllFoodsPageViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let isScrollingDown = offsetY > previousOffsetY
-        let isScrollingUp = offsetY < previousOffsetY
-       
-        if isScrollingDown && offsetY > 50 {
-            UIView.animate(withDuration: 0.6, animations: {
-                self.enjoyYourMealViewHeight.constant = 0
-                self.view.layoutIfNeeded()
-            })
-        } else if isScrollingUp {
-            UIView.animate(withDuration: 0.4, animations: {
-                self.enjoyYourMealViewHeight.constant = 40
-                self.view.layoutIfNeeded()
-            })
-        }
-        previousOffsetY = offsetY
-    }
-}
-
 extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
   
     func prepareCollectionView() {
@@ -79,6 +67,7 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
         allFoodsCollectionView.delegate = self
         
         allFoodsCollectionView.register(cellType: FoodSliderCellController.self)
+        allFoodsCollectionView.register(UINib(nibName: "EnjoyYourMealHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "EnjoyYourMealHeaderView")
     }
     
     func setUI() {

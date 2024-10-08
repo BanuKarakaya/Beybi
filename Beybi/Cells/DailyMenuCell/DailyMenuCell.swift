@@ -17,6 +17,8 @@ class DailyMenuCell: UICollectionViewCell {
         super.awakeFromNib()
         viewModel.viewDidLoad()
     }
+    
+    
 }
 
 extension DailyMenuCell: UICollectionViewDelegate {
@@ -48,6 +50,7 @@ extension DailyMenuCell: DailyMenuCellViewModelDelegate {
     func prepareCollectionView() {
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
+        menuCollectionView.showsHorizontalScrollIndicator = false
         
         menuCollectionView.register(cellType: FoodCell.self)
     }

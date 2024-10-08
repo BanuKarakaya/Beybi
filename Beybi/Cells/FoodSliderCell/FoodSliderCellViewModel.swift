@@ -29,10 +29,34 @@ protocol FoodSliderCellViewModelDelegate: AnyObject {
 class FoodSliderCellViewModel {
     weak var delegate: FoodSliderCellViewModelDelegate?
     var soups: [Food]? = []
+    var mainDishes: [Food]? = []
+    var purees: [Food]? = []
+    var snacks: [Food]? = []
     var type: String?
     let firestore = Firestore.firestore()
+    let group = DispatchGroup()
     
-    func readrecipe() {
+    func readSoups() {
+        firestore.collection("soups").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Hata: \(error.localizedDescription)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let name = data["name"] as? String ?? "İsim yok"
+                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
+                    let recipe = data["recipe"] as? String ?? "Tarif yok"
+                    let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    self.soups?.append(soup)
+                }
+                self.delegate?.reloadData()
+            }
+        }
+    }
+    
+    func readMainDishes() {
         firestore.collection("main dishes").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
@@ -44,14 +68,48 @@ class FoodSliderCellViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     
-                    print("Çorba Adı: \(name)")
-                    print("Pişirme Süresi: \(cookingTime)")
-                    print("Tarif: \(recipe)")
-                    
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    self.mainDishes?.append(soup)
+                }
+                self.delegate?.reloadData()
+            }
+        }
+    }
+    
+    func readPurees() {
+        firestore.collection("purees").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Hata: \(error.localizedDescription)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let name = data["name"] as? String ?? "İsim yok"
+                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
+                    let recipe = data["recipe"] as? String ?? "Tarif yok"
+                    let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     
                     let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
-                    self.soups?.append(soup)
-                   
+                    self.purees?.append(soup)
+                }
+                self.delegate?.reloadData()
+            }
+        }
+    }
+    
+    func readSnacks() {
+        firestore.collection("snacks").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Hata: \(error.localizedDescription)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let name = data["name"] as? String ?? "İsim yok"
+                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
+                    let recipe = data["recipe"] as? String ?? "Tarif yok"
+                    let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    self.snacks?.append(soup)
                 }
                 self.delegate?.reloadData()
             }
@@ -67,9 +125,24 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
     
     func foodAtIndex(index: Int) -> Food? {
-        if let food = soups?[index] {
-            return food
+        if type == "Soups" {
+            if let food = soups?[index] {
+                return food
+            }
+        } else if type == "Main Dishes" {
+            if let food = mainDishes?[index] {
+                return food
+            }
+        } else if type == "Snacks" {
+            if let food = snacks?[index] {
+                return food
+            }
+        } else if type == "Purees" {
+            if let food = purees?[index] {
+                return food
+            }
         }
+        
          return nil
     }
     
@@ -87,6 +160,29 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     
     func viewDidLoad() {
         delegate?.prepareCollectionView()
-        readrecipe()
+        
+        group.enter()
+        readSoups()
+        group.leave()
+        
+        group.enter()
+        readMainDishes()
+        group.leave()
+        
+        group.enter()
+        readPurees()
+        group.leave()
+        
+        group.enter()
+        readSoups()
+        group.leave()
+        
+        group.enter()
+        readSnacks()
+        group.leave()
+        
+        group.notify(queue: .main) {
+            print("Tüm veriler çekildi!")
+        }
     }
 }
