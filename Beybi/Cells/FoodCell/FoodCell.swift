@@ -10,9 +10,9 @@ import UIKit
 class FoodCell: UICollectionViewCell {
 
     @IBOutlet weak var foodName: UILabel!
-    @IBOutlet weak var typeView: UIButton!
-    @IBOutlet weak var typeName: UILabel!
-   
+    @IBOutlet weak var typeView: UIView!
+    @IBOutlet weak var typeLabel: UILabel!
+    
     private lazy var viewModel: FoodCellViewModelProtocol = FoodCellViewModel(delegate: self)
     
     override func awakeFromNib() {
@@ -24,6 +24,6 @@ class FoodCell: UICollectionViewCell {
 extension FoodCell: FoodCellViewModelDelegate {
     func setUI() {
         self.layer.cornerRadius = 10
-        typeView.layer.cornerRadius = 3
+        typeView.layer.cornerRadius = 5
     }
 }

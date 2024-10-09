@@ -44,7 +44,7 @@ class FoodSliderCellViewModel {
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     let name = data["name"] as? String ?? "İsim yok"
-                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
+                    let cookingTime = data["cooking time"] as? String ?? "20-25 min"
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
@@ -65,7 +65,7 @@ class FoodSliderCellViewModel {
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     let name = data["name"] as? String ?? "İsim yok"
-                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
+                    let cookingTime = data["cooking time"] as? String ?? "35-40 min"
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"

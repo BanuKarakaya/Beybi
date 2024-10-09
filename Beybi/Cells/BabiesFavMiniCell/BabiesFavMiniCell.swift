@@ -10,6 +10,10 @@ import UIKit
 class BabiesFavMiniCell: UICollectionViewCell {
 
     @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var foodNameLabel: UILabel!
+    @IBOutlet weak var typeView: UIView!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var cookingTimeLabel: UILabel!
     
     private lazy var viewModel: BabiesFavMiniCellViewModelProtocol = BabiesFavMiniCellViewModel(delegate: self)
    
@@ -23,5 +27,6 @@ extension BabiesFavMiniCell: BabiesFavMiniCellViewModelDelegate {
     func setUI() {
         self.layer.cornerRadius = 10
         foodImage.layer.cornerRadius = 5
+        typeView.layer.cornerRadius = 4
     }
 }
