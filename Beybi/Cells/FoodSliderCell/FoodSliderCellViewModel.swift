@@ -47,8 +47,9 @@ class FoodSliderCellViewModel {
                     let cookingTime = data["cooking time"] as? String ?? "Süre yok"
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    let type = data["type"] as? String ?? "Type yok"
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
                     self.soups?.append(soup)
                 }
                 self.delegate?.reloadData()
@@ -67,8 +68,9 @@ class FoodSliderCellViewModel {
                     let cookingTime = data["cooking time"] as? String ?? "Süre yok"
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    let type = data["type"] as? String ?? "Type yok"
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
                     self.mainDishes?.append(soup)
                 }
                 self.delegate?.reloadData()
@@ -87,8 +89,9 @@ class FoodSliderCellViewModel {
                     let cookingTime = data["cooking time"] as? String ?? "Süre yok"
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    let type = data["type"] as? String ?? "Type yok"
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
                     self.purees?.append(soup)
                 }
                 self.delegate?.reloadData()
@@ -107,8 +110,9 @@ class FoodSliderCellViewModel {
                     let cookingTime = data["cooking time"] as? String ?? "Süre yok"
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    let type = data["type"] as? String ?? "Type yok"
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl)
+                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
                     self.snacks?.append(soup)
                 }
                 self.delegate?.reloadData()

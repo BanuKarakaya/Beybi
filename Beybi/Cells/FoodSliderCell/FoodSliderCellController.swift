@@ -78,7 +78,6 @@ extension FoodSliderCellController: FoodSliderCellViewModelDelegate {
         horizontalCollectionView.delegate = self
         horizontalCollectionView.dataSource = self
         horizontalCollectionView.showsHorizontalScrollIndicator = false
-        horizontalCollectionView.isPagingEnabled = true
         
         horizontalCollectionView.register(cellType: FoodSliderMiniCell.self)
     }

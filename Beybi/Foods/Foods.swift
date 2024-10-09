@@ -12,4 +12,5 @@ struct Food {
     var cookingTime: String?
     var recipe: String?
     var imageUrl: String?
+    var type: String?
 }

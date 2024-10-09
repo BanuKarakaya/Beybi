@@ -68,11 +68,11 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yb5-ok-poN">
-                                                                <rect key="frame" x="9.3333333333333321" y="8.6666666666666679" width="37.666666666666671" height="8"/>
+                                                                <rect key="frame" x="8.6666666666666643" y="8.6666666666666679" width="39" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="IwT-Vm-Hdi"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -106,7 +106,7 @@
                                                                     <constraint firstAttribute="height" constant="8" id="gQl-UN-9My"/>
                                                                     <constraint firstAttribute="width" constant="30" id="qw7-Yu-uNR"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -135,8 +135,8 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngg-3s-Wjo">
-                                                                <rect key="frame" x="14" y="7.666666666666667" width="26" height="9.6666666666666643"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                                <rect key="frame" x="13.666666666666659" y="7.666666666666667" width="26.666666666666671" height="9.6666666666666643"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
