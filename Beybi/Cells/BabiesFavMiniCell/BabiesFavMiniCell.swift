@@ -27,6 +27,6 @@ extension BabiesFavMiniCell: BabiesFavMiniCellViewModelDelegate {
     func setUI() {
         self.layer.cornerRadius = 10
         foodImage.layer.cornerRadius = 5
-        typeView.layer.cornerRadius = 4
+        typeView.layer.cornerRadius = 3
     }
 }

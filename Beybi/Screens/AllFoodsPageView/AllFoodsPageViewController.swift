@@ -71,7 +71,6 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
     }
     
     func setUI() {
-        allFoodsCollectionView.backgroundColor = .white
         allFoodsCollectionView.backgroundColor = .systemGray6
         self.title = "Foods"
         let appearance = UINavigationBarAppearance()

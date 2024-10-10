@@ -52,9 +52,6 @@ extension BabiesFavCell: BabiesFavCellViewModelDelegate {
     func prepareCollectionView() {
         babiesFavMiniCollection.delegate = self
         babiesFavMiniCollection.dataSource = self
-        babiesFavMiniCollection.isScrollEnabled = false
-        
-        
         babiesFavMiniCollection.register(cellType: BabiesFavMiniCell.self)
     }
 }

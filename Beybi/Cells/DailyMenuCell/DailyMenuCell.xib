@@ -68,11 +68,11 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yb5-ok-poN">
-                                                                <rect key="frame" x="8.6666666666666643" y="8.6666666666666679" width="39" height="8"/>
+                                                                <rect key="frame" x="6.3333333333333321" y="8.6666666666666679" width="43.333333333333343" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="IwT-Vm-Hdi"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -82,6 +82,8 @@
                                                             <constraint firstAttribute="trailing" secondItem="A2z-KR-6ej" secondAttribute="trailing" constant="1" id="2zF-EF-dl3"/>
                                                             <constraint firstItem="yb5-ok-poN" firstAttribute="centerY" secondItem="dO4-ot-ScW" secondAttribute="centerY" id="A2H-of-rPf"/>
                                                             <constraint firstItem="A2z-KR-6ej" firstAttribute="centerY" secondItem="dO4-ot-ScW" secondAttribute="centerY" id="Aof-RF-b9J"/>
+                                                            <constraint firstItem="yb5-ok-poN" firstAttribute="centerX" secondItem="dO4-ot-ScW" secondAttribute="centerX" id="Gtx-a2-fZ6"/>
+                                                            <constraint firstItem="yb5-ok-poN" firstAttribute="centerY" secondItem="dO4-ot-ScW" secondAttribute="centerY" id="v4L-JM-mzP"/>
                                                             <constraint firstItem="yb5-ok-poN" firstAttribute="centerX" secondItem="dO4-ot-ScW" secondAttribute="centerX" id="xDA-LH-b20"/>
                                                             <constraint firstItem="A2z-KR-6ej" firstAttribute="leading" secondItem="dO4-ot-ScW" secondAttribute="leading" constant="5" id="zUd-UT-Caj"/>
                                                         </constraints>
@@ -106,7 +108,7 @@
                                                                     <constraint firstAttribute="height" constant="8" id="gQl-UN-9My"/>
                                                                     <constraint firstAttribute="width" constant="30" id="qw7-Yu-uNR"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -116,7 +118,9 @@
                                                             <constraint firstAttribute="trailing" secondItem="NlL-RY-tNs" secondAttribute="trailing" constant="1" id="3Gh-QU-WXf"/>
                                                             <constraint firstItem="y82-D5-TTw" firstAttribute="centerY" secondItem="Xja-hL-psb" secondAttribute="centerY" id="53P-bk-0E5"/>
                                                             <constraint firstItem="NlL-RY-tNs" firstAttribute="leading" secondItem="Xja-hL-psb" secondAttribute="leading" constant="1" id="JDK-8g-5ig"/>
+                                                            <constraint firstItem="y82-D5-TTw" firstAttribute="centerY" secondItem="Xja-hL-psb" secondAttribute="centerY" id="KC4-iF-5YP"/>
                                                             <constraint firstItem="NlL-RY-tNs" firstAttribute="centerY" secondItem="Xja-hL-psb" secondAttribute="centerY" id="Unb-Sw-2WR"/>
+                                                            <constraint firstItem="y82-D5-TTw" firstAttribute="centerX" secondItem="Xja-hL-psb" secondAttribute="centerX" id="hW8-NY-42E"/>
                                                             <constraint firstItem="y82-D5-TTw" firstAttribute="centerX" secondItem="Xja-hL-psb" secondAttribute="centerX" id="tkr-Vh-qoJ"/>
                                                         </constraints>
                                                     </view>
@@ -135,8 +139,8 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngg-3s-Wjo">
-                                                                <rect key="frame" x="13.666666666666659" y="7.666666666666667" width="26.666666666666671" height="9.6666666666666643"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
+                                                                <rect key="frame" x="12.333333333333345" y="7" width="29.666666666666671" height="11"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -145,8 +149,10 @@
                                                         <constraints>
                                                             <constraint firstItem="Ngg-3s-Wjo" firstAttribute="centerX" secondItem="ieU-g1-oft" secondAttribute="centerX" id="5sB-7G-U5X"/>
                                                             <constraint firstItem="Ngg-3s-Wjo" firstAttribute="centerY" secondItem="ieU-g1-oft" secondAttribute="centerY" id="C3c-A9-0OW"/>
+                                                            <constraint firstItem="Ngg-3s-Wjo" firstAttribute="centerY" secondItem="ieU-g1-oft" secondAttribute="centerY" id="ISr-Au-Xem"/>
                                                             <constraint firstItem="jiH-xa-jmi" firstAttribute="leading" secondItem="ieU-g1-oft" secondAttribute="leading" constant="1" id="MUV-i3-vMV"/>
                                                             <constraint firstItem="jiH-xa-jmi" firstAttribute="centerY" secondItem="ieU-g1-oft" secondAttribute="centerY" id="c8f-LH-fb8"/>
+                                                            <constraint firstItem="Ngg-3s-Wjo" firstAttribute="centerX" secondItem="ieU-g1-oft" secondAttribute="centerX" id="cCC-Pf-0ff"/>
                                                             <constraint firstAttribute="trailing" secondItem="jiH-xa-jmi" secondAttribute="trailing" constant="3" id="eA5-6W-XfH"/>
                                                         </constraints>
                                                     </view>
