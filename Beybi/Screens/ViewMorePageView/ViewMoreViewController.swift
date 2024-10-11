@@ -32,6 +32,10 @@ extension ViewMoreViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeCell(cellType: ViewMoreCell.self, indexPath: indexPath)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigateToDetailVC()
+    }
 }
 
 extension ViewMoreViewController: UICollectionViewDelegateFlowLayout {
@@ -45,6 +49,11 @@ extension ViewMoreViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ViewMoreViewController: ViewMoreViewModelDelegate {
+    func navigateToDetailVC() {
+        let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     func prepareCollectionView() {
         viewMoreCollectionView.delegate = self
         viewMoreCollectionView.dataSource = self

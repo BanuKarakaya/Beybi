@@ -16,6 +16,7 @@ protocol ViewMoreViewModelProtocol {
 
 protocol ViewMoreViewModelDelegate: AnyObject {
     func prepareCollectionView()
+    func navigateToDetailVC()
 }
 
 class ViewMoreViewModel {
