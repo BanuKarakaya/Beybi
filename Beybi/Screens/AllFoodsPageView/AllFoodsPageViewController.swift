@@ -18,11 +18,24 @@ class AllFoodsPageViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToViewMoreVC), name: .viewMoreButtonTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getFoodTypeLabelValue(_:)), name: .getTypeLabelValue, object: nil)
     }
     
     @objc func navigateToViewMoreVC() {
         let viewMoreVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewMoreViewController") as! ViewMoreViewController
         navigationController?.pushViewController(viewMoreVC, animated: true)
+    }
+    
+    @objc func getFoodTypeLabelValue(_ notification: NSNotification) {
+        print(notification.userInfo)
+        if let dict = notification.userInfo as NSDictionary? {
+            if let foodType = dict["foodType"] as? String {
+                let viewMoreVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewMoreViewController") as! ViewMoreViewController
+                let viewMoreVM = ViewMoreViewModel(delegate: viewMoreVC)
+                viewMoreVM.foodType = foodType
+                viewMoreVC.viewModel = viewMoreVM
+            }
+        }
     }
     
     deinit {

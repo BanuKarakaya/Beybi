@@ -497,6 +497,7 @@ Heat olive oil in a large skillet over medium heat. Fry the meatballs in batches
                     </view>
                     <connections>
                         <outlet property="foodImage" destination="hzN-qj-PII" id="wu7-nn-gN7"/>
+                        <outlet property="foodName" destination="mgf-hN-0AQ" id="0fF-ST-DVC"/>
                         <outlet property="ingredientsCollectionView" destination="BLY-He-l00" id="D6O-c5-z2g"/>
                         <outlet property="recipeCollectionView" destination="2yV-oc-K2Q" id="4yf-8h-IFz"/>
                         <outlet property="recipeLabel" destination="91S-PZ-Qpw" id="QC1-4h-0zU"/>

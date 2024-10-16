@@ -12,7 +12,8 @@ protocol FoodDetailPageViewModelProtocol {
 }
 
 protocol FoodDetailPageViewModelDelegate: AnyObject {
-    
+    func configure(selectedFood: Food?)
+    func prepareBannerImage(with urlString: String?)
 }
 
 class FoodDetailPageViewModel {

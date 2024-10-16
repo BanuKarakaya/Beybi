@@ -11,21 +11,27 @@ protocol ViewMoreCellViewModelProtocol {
     var delegate: ViewMoreCellViewModelDelegate? { get set }
     
     func viewDidLoad()
+    func load()
 }
 
 protocol ViewMoreCellViewModelDelegate: AnyObject {
     func setUI()
+    func configure(food: Food?)
+    func prepareBannerImage(with urlString: String?)
 }
 
 class ViewMoreCellViewModel {
     weak var delegate: ViewMoreCellViewModelDelegate?
-    
-    init(delegate: ViewMoreCellViewModelDelegate) {
-        self.delegate = delegate
-    }
+    var food: Food?
 }
 
 extension ViewMoreCellViewModel: ViewMoreCellViewModelProtocol {
+    func load() {
+        if let food = food {
+            delegate?.configure(food: food)
+        }
+    }
+    
     func viewDidLoad() {
         delegate?.setUI()
     }

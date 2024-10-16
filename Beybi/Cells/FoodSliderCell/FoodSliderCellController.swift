@@ -13,6 +13,7 @@ class FoodSliderCellController: UICollectionViewCell {
     @IBOutlet weak var foodTypeLabel: UILabel!
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
     
+    
     var viewModel: FoodSliderCellViewModelProtocol! {
         didSet {
             viewModel.delegate = self
@@ -22,7 +23,9 @@ class FoodSliderCellController: UICollectionViewCell {
     }
 
     @IBAction func viewMoreButtonTapped(_ sender: Any) {
+        let foodType: [String: String] = ["foodType": foodTypeLabel.text ?? ""]
         NotificationCenter.default.post(name: .viewMoreButtonTapped, object: nil)
+        NotificationCenter.default.post(name: .getTypeLabelValue, object: nil, userInfo: foodType)
     }
 }
 

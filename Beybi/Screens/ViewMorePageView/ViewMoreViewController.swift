@@ -11,10 +11,11 @@ class ViewMoreViewController: UIViewController {
 
     @IBOutlet weak var viewMoreCollectionView: UICollectionView!
     
-    private lazy var viewModel: ViewMoreViewModelProtocol = ViewMoreViewModel(delegate: self)
+    lazy var viewModel: ViewMoreViewModelProtocol = ViewMoreViewModel(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.viewDidLoad()
     }
 }
@@ -49,6 +50,10 @@ extension ViewMoreViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ViewMoreViewController: ViewMoreViewModelDelegate {
+    func reloadData() {
+        viewMoreCollectionView.reloadData()
+    }
+    
     func navigateToDetailVC() {
         let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
         navigationController?.pushViewController(detailVC, animated: true)

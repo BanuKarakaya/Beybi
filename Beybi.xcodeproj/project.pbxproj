@@ -29,6 +29,8 @@
 		FA22AA4C2CB99E4A00F6B169 /* IngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA4A2CB99E4A00F6B169 /* IngredientsCell.xib */; };
 		FA22AA552CBBFF2900F6B169 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA532CBBFF2900F6B169 /* RecipeCell.swift */; };
 		FA22AA562CBBFF2900F6B169 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA542CBBFF2900F6B169 /* RecipeCell.xib */; };
+		FA22AA582CBD90B900F6B169 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */; };
+		FA22AA5A2CBD94F900F6B169 /* IngredientsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */; };
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
 		FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */; };
 		FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */; };
@@ -102,6 +104,8 @@
 		FA22AA4A2CB99E4A00F6B169 /* IngredientsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsCell.xib; sourceTree = "<group>"; };
 		FA22AA532CBBFF2900F6B169 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		FA22AA542CBBFF2900F6B169 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
+		FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCellViewModel.swift; sourceTree = "<group>"; };
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAC8CF82C9456B000264E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 			children = (
 				FA22AA492CB99E4A00F6B169 /* IngredientsCell.swift */,
 				FA22AA4A2CB99E4A00F6B169 /* IngredientsCell.xib */,
+				FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */,
 			);
 			path = IngredientsCell;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			children = (
 				FA22AA532CBBFF2900F6B169 /* RecipeCell.swift */,
 				FA22AA542CBBFF2900F6B169 /* RecipeCell.xib */,
+				FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */,
 			);
 			path = RecipeCell;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 				FAAC8D6F2C9C79B700264E4B /* FoodSliderMiniCellViewModel.swift in Sources */,
 				FAAC8D462C973ADC00264E4B /* DailyMenuCell.swift in Sources */,
 				FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */,
+				FA22AA582CBD90B900F6B169 /* RecipeViewModel.swift in Sources */,
 				FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */,
 				FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */,
 				FA22AA132CAAD7F100F6B169 /* NotificationCenter+Extension.swift in Sources */,
@@ -612,6 +619,7 @@
 				FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */,
 				FA22AA0C2CA446BC00F6B169 /* Foods.swift in Sources */,
 				FAAC8D5F2C9C650200264E4B /* BabiesAgeCellViewModel.swift in Sources */,
+				FA22AA5A2CBD94F900F6B169 /* IngredientsCellViewModel.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,
 				FA22AA432CB9255E00F6B169 /* FoodDetailPageViewModel.swift in Sources */,
 				FAAC8D3E2C96F81E00264E4B /* FoodSliderMiniCell.swift in Sources */,

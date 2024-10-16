@@ -16,8 +16,8 @@ class FoodDetailPageViewController: UIViewController {
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var ingredientsCollectionView: UICollectionView!
     @IBOutlet weak var recipeCollectionView: UICollectionView!
-   
-   
+    @IBOutlet weak var foodName: UILabel!
+    
     private lazy var viewModel: FoodDetailPageViewModelProtocol = FoodDetailPageViewModel(delegate: self)
     
     override func viewDidLoad() {
@@ -72,6 +72,17 @@ extension FoodDetailPageViewController: UICollectionViewDataSource {
 }
 
 extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
+    func prepareBannerImage(with urlString: String?) {
+        if let imageUrlString = urlString, let url = URL(string:imageUrlString){
+            foodImage.sd_setImage(with: url)
+        }
+    }
     
+    func configure(selectedFood: Food?) {
+        typeLabel.text = selectedFood?.type
+        foodName.text = selectedFood?.name
+        prepareBannerImage(with: selectedFood?.imageUrl)
+        recipeLabel.text = selectedFood?.recipe
+    }
 }
 

@@ -165,28 +165,9 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     func viewDidLoad() {
         delegate?.prepareCollectionView()
         
-        group.enter()
         readSoups()
-        group.leave()
-        
-        group.enter()
         readMainDishes()
-        group.leave()
-        
-        group.enter()
         readPurees()
-        group.leave()
-        
-        group.enter()
-        readSoups()
-        group.leave()
-        
-        group.enter()
         readSnacks()
-        group.leave()
-        
-        group.notify(queue: .main) {
-            print("Tüm veriler çekildi!")
-        }
     }
 }
