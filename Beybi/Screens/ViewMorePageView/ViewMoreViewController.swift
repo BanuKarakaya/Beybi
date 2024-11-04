@@ -15,7 +15,6 @@ class ViewMoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel.viewDidLoad()
     }
 }
@@ -31,11 +30,16 @@ extension ViewMoreViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: ViewMoreCell.self, indexPath: indexPath)
+        if let food = viewModel.foodAtIndex(index: indexPath.item) {
+            let cellViewModel = ViewMoreCellViewModel()
+            cellViewModel.food = food
+            cell.viewModel = cellViewModel
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigateToDetailVC()
+        viewModel.didSelectItemAt(index: indexPath.item)
     }
 }
 
@@ -54,9 +58,12 @@ extension ViewMoreViewController: ViewMoreViewModelDelegate {
         viewMoreCollectionView.reloadData()
     }
     
-    func navigateToDetailVC() {
+    func navigateToDetailVC(selectedCell: Food?) {
         let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
         navigationController?.pushViewController(detailVC, animated: true)
+        let detailViewModel = FoodDetailPageViewModel(delegate: detailVC)
+        detailVC.viewModel = detailViewModel
+        detailViewModel.selectedFood = selectedCell
     }
     
     func prepareCollectionView() {

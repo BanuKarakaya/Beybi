@@ -11,10 +11,12 @@ class RecipeCell: UICollectionViewCell {
 
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet weak var stepNumber: UILabel!
     
     var viewModel: RecipeViewModelProtocol! {
         didSet {
             viewModel.delegate = self
+            viewModel.load()
         }
     }
     
@@ -26,5 +28,8 @@ class RecipeCell: UICollectionViewCell {
 }
 
 extension RecipeCell: RecipeViewModelDelegate {
-   
+    func configure(recipeStep: String?, index: Int) {
+        stepLabel.text = recipeStep
+        stepNumber.text = "Step \(index + 1)"
+    }
 }

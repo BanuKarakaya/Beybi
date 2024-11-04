@@ -18,6 +18,7 @@ protocol FoodSliderCellViewModelProtocol {
     func minimumLineSpacingForSectionAt() -> CGFloat
     func foodAtIndex(index: Int) -> Food?
     func load()
+    func didSelectItemAt(index: Int) -> Food?
 }
 
 protocol FoodSliderCellViewModelDelegate: AnyObject {
@@ -34,7 +35,7 @@ class FoodSliderCellViewModel {
     var snacks: [Food]? = []
     var type: String?
     let firestore = Firestore.firestore()
-    let group = DispatchGroup()
+    var selectedCell: Food?
     
     func readSoups() {
         firestore.collection("soups").getDocuments { (querySnapshot, error) in
@@ -48,9 +49,12 @@ class FoodSliderCellViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
-                    self.soups?.append(soup)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
+                    self.soups?.append(food)
                 }
                 self.delegate?.reloadData()
             }
@@ -69,9 +73,12 @@ class FoodSliderCellViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
-                    self.mainDishes?.append(soup)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
+                    self.mainDishes?.append(food)
                 }
                 self.delegate?.reloadData()
             }
@@ -90,9 +97,12 @@ class FoodSliderCellViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
-                    self.purees?.append(soup)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
+                    self.purees?.append(food)
                 }
                 self.delegate?.reloadData()
             }
@@ -111,9 +121,12 @@ class FoodSliderCellViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let soup = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
-                    self.snacks?.append(soup)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
+                    self.snacks?.append(food)
                 }
                 self.delegate?.reloadData()
             }
@@ -122,6 +135,24 @@ class FoodSliderCellViewModel {
 }
 
 extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
+    func didSelectItemAt(index: Int) -> Food? {
+        
+        if type == "Soups" {
+            selectedCell = soups?[index]
+            return selectedCell
+        } else if type == "Main Dishes" {
+            selectedCell = mainDishes?[index]
+            return selectedCell
+        } else if type == "Snacks" {
+            selectedCell = snacks?[index]
+            return selectedCell
+        } else if type == "Purees" {
+            selectedCell = purees?[index]
+            return selectedCell
+        }
+        return selectedCell
+    }
+    
     func load() {
         if let type = type {
             delegate?.configureCell(type: type)
@@ -146,7 +177,6 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
                 return food
             }
         }
-        
          return nil
     }
     

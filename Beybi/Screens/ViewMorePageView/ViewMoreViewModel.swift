@@ -14,12 +14,13 @@ protocol ViewMoreViewModelProtocol {
     
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
-    
+    func foodAtIndex(index: Int) -> Food?
+    func didSelectItemAt(index: Int)
 }
 
 protocol ViewMoreViewModelDelegate: AnyObject {
     func prepareCollectionView()
-    func navigateToDetailVC()
+    func navigateToDetailVC(selectedCell: Food?)
     func reloadData()
 }
 
@@ -45,8 +46,12 @@ class ViewMoreViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
+                    print(food)
                     self.foodArray?.append(food)
                 }
                 self.delegate?.reloadData()
@@ -66,8 +71,11 @@ class ViewMoreViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
                     self.foodArray?.append(food)
                 }
                 self.delegate?.reloadData()
@@ -87,8 +95,11 @@ class ViewMoreViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
                     self.foodArray?.append(food)
                 }
                 self.delegate?.reloadData()
@@ -108,8 +119,11 @@ class ViewMoreViewModel {
                     let recipe = data["recipe"] as? String ?? "Tarif yok"
                     let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
                     let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
                     
-                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type)
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
                     self.foodArray?.append(food)
                 }
                 self.delegate?.reloadData()
@@ -119,10 +133,23 @@ class ViewMoreViewModel {
 }
 
 extension ViewMoreViewModel: ViewMoreViewModelProtocol {
-   
+    func didSelectItemAt(index: Int) {
+        var selectedCell: Food?
+        
+        selectedCell = foodArray?[index]
+        delegate?.navigateToDetailVC(selectedCell: selectedCell)
+    }
     
+    func foodAtIndex(index: Int) -> Food? {
+        if let food = foodArray?[index] {
+            return food
+        }
+        return nil
+    }
+    
+   
     func numberOfItemsInSection() -> Int {
-        15
+        foodArray?.count ?? 0
     }
     
     func viewDidLoad() {
@@ -139,3 +166,4 @@ extension ViewMoreViewModel: ViewMoreViewModelProtocol {
         }
     }
 }
+

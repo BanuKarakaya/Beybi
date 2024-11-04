@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,7 +31,7 @@
                                                 <color key="tintColor" red="0.49710290039999999" green="0.1173254524" blue="0.17905463660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="8tC-sw-zMU"/>
                                             <constraint firstAttribute="width" constant="10" id="LN7-gN-gZ2"/>
@@ -49,7 +48,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -61,27 +60,24 @@
                                 <rect key="frame" x="8" y="26" width="359" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euc-KS-PCp">
-                                        <rect key="frame" x="10" y="5" width="359" height="84"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="359" id="4rn-F3-cMr"/>
-                                        </constraints>
+                                        <rect key="frame" x="12" y="12" width="339" height="70"/>
                                         <string key="text">Headers are an extremely useful for rendering a portion of your list that isn't based on an array of information. For example, in our app we need a header that contains some highlighted apps for our product.  In this lesson, we'll go over how to register and dequeue this supplementary view for our UICollectionView component.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="0.74629934210526316" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96258600917431192" green="0.96258600917431192" blue="0.96258600917431192" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Euc-KS-PCp" secondAttribute="trailing" constant="10" id="0F4-aT-SAW"/>
-                                    <constraint firstAttribute="bottom" secondItem="Euc-KS-PCp" secondAttribute="bottom" constant="5" id="7u1-Pc-KIQ"/>
-                                    <constraint firstItem="Euc-KS-PCp" firstAttribute="leading" secondItem="gUF-dt-5ZH" secondAttribute="leading" constant="10" id="HXj-tq-RhB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Euc-KS-PCp" secondAttribute="trailing" constant="8" id="0F4-aT-SAW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Euc-KS-PCp" secondAttribute="bottom" constant="12" id="7u1-Pc-KIQ"/>
+                                    <constraint firstItem="Euc-KS-PCp" firstAttribute="leading" secondItem="gUF-dt-5ZH" secondAttribute="leading" constant="12" id="HXj-tq-RhB"/>
                                     <constraint firstAttribute="width" constant="359" id="NUV-eV-GoV"/>
-                                    <constraint firstItem="Euc-KS-PCp" firstAttribute="top" secondItem="gUF-dt-5ZH" secondAttribute="top" constant="5" id="idb-gT-Wp0"/>
+                                    <constraint firstItem="Euc-KS-PCp" firstAttribute="top" secondItem="gUF-dt-5ZH" secondAttribute="top" constant="12" id="idb-gT-Wp0"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="asZ-dV-7HR" firstAttribute="leading" secondItem="9xX-iC-1z1" secondAttribute="leading" constant="8" id="8AI-JY-b2m"/>
                             <constraint firstAttribute="trailing" secondItem="gUF-dt-5ZH" secondAttribute="trailing" constant="8" id="Fuz-0E-Vg6"/>
@@ -104,6 +100,7 @@
             <size key="customSize" width="376" height="120"/>
             <connections>
                 <outlet property="stepLabel" destination="Euc-KS-PCp" id="71F-xM-Zx4"/>
+                <outlet property="stepNumber" destination="et6-K6-h4z" id="EXT-Qa-Z1k"/>
                 <outlet property="view" destination="gUF-dt-5ZH" id="I3F-ek-bKz"/>
             </connections>
             <point key="canvasLocation" x="329.00763358778624" y="44.366197183098592"/>
@@ -111,8 +108,5 @@
     </objects>
     <resources>
         <image name="moonphase.new.moon" catalog="system" width="128" height="123"/>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

@@ -24,7 +24,6 @@ class FoodSliderCellController: UICollectionViewCell {
 
     @IBAction func viewMoreButtonTapped(_ sender: Any) {
         let foodType: [String: String] = ["foodType": foodTypeLabel.text ?? ""]
-        NotificationCenter.default.post(name: .viewMoreButtonTapped, object: nil)
         NotificationCenter.default.post(name: .getTypeLabelValue, object: nil, userInfo: foodType)
     }
 }
@@ -46,6 +45,12 @@ extension FoodSliderCellController: UICollectionViewDataSource {
             cell.viewModel = cellViewModel
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(index: indexPath.item)
+        
+        
     }
 }
 

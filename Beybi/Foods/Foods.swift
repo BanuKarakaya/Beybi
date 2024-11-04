@@ -13,4 +13,7 @@ struct Food {
     var recipe: String?
     var imageUrl: String?
     var type: String?
+    var introText: String?
+    var ingredients: [String?]
+    var recipeStep: [String?]
 }
