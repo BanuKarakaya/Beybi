@@ -11,21 +11,28 @@ protocol BabiesFavMiniCellViewModelProtocol {
     var delegate: BabiesFavMiniCellViewModelDelegate? { get set }
     
     func viewDidLoad()
+    func load()
 }
 
 protocol BabiesFavMiniCellViewModelDelegate: AnyObject {
     func setUI()
+    func configure(food: Food?)
+    func prepareBannerImage(with urlString: String?)
 }
 
 class BabiesFavMiniCellViewModel {
     weak var delegate: BabiesFavMiniCellViewModelDelegate?
-    
-    init(delegate: BabiesFavMiniCellViewModelDelegate) {
-        self.delegate = delegate
-    }
+    var food: Food?
+   
 }
 
 extension BabiesFavMiniCellViewModel: BabiesFavMiniCellViewModelProtocol {
+    func load() {
+        if let food = food {
+            delegate?.configure(food: food)
+        }
+    }
+    
     func viewDidLoad() {
         delegate?.setUI()
     }

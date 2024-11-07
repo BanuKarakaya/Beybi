@@ -46,7 +46,7 @@
                                                             <constraint firstAttribute="height" constant="50.670000000000002" id="lOY-6c-Lck"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <color key="tintColor" red="0.63404888188073394" green="0.037503724947916088" blue="0.11717577087408312" alpha="0.89803921568627454" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.63529411764705879" green="0.039215686274509803" blue="0.11764705882352941" alpha="0.89803921568627454" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="View More"/>
                                                         <connections>

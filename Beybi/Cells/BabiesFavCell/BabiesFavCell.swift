@@ -30,6 +30,11 @@ extension BabiesFavCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: BabiesFavMiniCell.self, indexPath: indexPath)
+        if let food = viewModel.foodAtIndex(index: indexPath.item) {
+            let cellViewModel = BabiesFavMiniCellViewModel()
+            cellViewModel.food = food
+            cell.viewModel = cellViewModel
+        }
         return cell
     }
 }
@@ -49,6 +54,10 @@ extension BabiesFavCell: UICollectionViewDelegateFlowLayout {
 }
 
 extension BabiesFavCell: BabiesFavCellViewModelDelegate {
+    func reloadData() {
+        babiesFavMiniCollection.reloadData()
+    }
+    
     func prepareCollectionView() {
         babiesFavMiniCollection.delegate = self
         babiesFavMiniCollection.dataSource = self

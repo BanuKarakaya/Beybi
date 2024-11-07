@@ -28,8 +28,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's menu for your baby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubt-nL-k02">
-                                                <rect key="frame" x="8" y="5" width="364" height="15"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <rect key="frame" x="8" y="0.0" width="364" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -40,7 +40,7 @@
                                             <constraint firstAttribute="height" constant="20" id="EHf-q8-ddv"/>
                                             <constraint firstAttribute="trailing" secondItem="ubt-nL-k02" secondAttribute="trailing" constant="8" id="T1w-x1-xxz"/>
                                             <constraint firstItem="ubt-nL-k02" firstAttribute="leading" secondItem="MSd-3w-MUw" secondAttribute="leading" constant="8" id="Va1-ua-Jnd"/>
-                                            <constraint firstItem="ubt-nL-k02" firstAttribute="top" secondItem="MSd-3w-MUw" secondAttribute="top" constant="5" id="Yo1-7d-4Pi"/>
+                                            <constraint firstItem="ubt-nL-k02" firstAttribute="top" secondItem="MSd-3w-MUw" secondAttribute="top" id="Yo1-7d-4Pi"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iV8-Dg-5Wt">

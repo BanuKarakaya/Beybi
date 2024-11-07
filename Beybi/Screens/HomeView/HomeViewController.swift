@@ -52,7 +52,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeCell(cellType: BabiesAgeCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeCell(cellType: EnjoyYourMealCell.self, indexPath: indexPath)
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeCell(cellType: DailyMenuCell.self, indexPath: indexPath)
@@ -92,5 +92,6 @@ extension HomeViewController: HomeViewModelDelegate {
         homeCollectionView.register(cellType: BabiesAgeCell.self)
         homeCollectionView.register(cellType: DailyMenuCell.self)
         homeCollectionView.register(cellType: BabiesFavCell.self)
+        homeCollectionView.register(cellType: EnjoyYourMealCell.self)
     }
 }

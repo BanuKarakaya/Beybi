@@ -20,16 +20,18 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71i-p8-Hp2">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="140"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ageage" translatesAutoresizingMaskIntoConstraints="NO" id="nuV-6f-oIG">
-                                <rect key="frame" x="0.0" y="5" width="380" height="125"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ageage3" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-Fh-GfK">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="125"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="nuV-6f-oIG" firstAttribute="leading" secondItem="71i-p8-Hp2" secondAttribute="leading" id="FcN-jm-ky0"/>
-                            <constraint firstItem="nuV-6f-oIG" firstAttribute="top" secondItem="71i-p8-Hp2" secondAttribute="top" constant="5" id="ssi-5E-fTI"/>
-                            <constraint firstAttribute="bottom" secondItem="nuV-6f-oIG" secondAttribute="bottom" constant="10" id="tO1-8f-WxT"/>
-                            <constraint firstAttribute="trailing" secondItem="nuV-6f-oIG" secondAttribute="trailing" id="vvt-u6-ogI"/>
+                            <constraint firstItem="5GL-Fh-GfK" firstAttribute="top" secondItem="71i-p8-Hp2" secondAttribute="top" id="7OR-Fb-dC3"/>
+                            <constraint firstAttribute="bottom" secondItem="5GL-Fh-GfK" secondAttribute="bottom" constant="15" id="9Ln-BS-KC7"/>
+                            <constraint firstAttribute="height" constant="140" id="ZFe-IV-XZb"/>
+                            <constraint firstAttribute="trailing" secondItem="5GL-Fh-GfK" secondAttribute="trailing" id="ZvK-mL-Fqe"/>
+                            <constraint firstAttribute="width" constant="380" id="h4b-a8-UrN"/>
+                            <constraint firstItem="5GL-Fh-GfK" firstAttribute="leading" secondItem="71i-p8-Hp2" secondAttribute="leading" id="lfa-GG-f3q"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -50,7 +52,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ageage" width="404" height="104"/>
+        <image name="ageage3" width="1056" height="382"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

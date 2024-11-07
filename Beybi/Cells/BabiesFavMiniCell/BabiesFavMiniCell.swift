@@ -15,15 +15,29 @@ class BabiesFavMiniCell: UICollectionViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var cookingTimeLabel: UILabel!
     
-    private lazy var viewModel: BabiesFavMiniCellViewModelProtocol = BabiesFavMiniCellViewModel(delegate: self)
-   
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        viewModel.viewDidLoad()
+     var viewModel: BabiesFavMiniCellViewModelProtocol! {
+        didSet {
+            viewModel.delegate = self
+            viewModel.load()
+            viewModel.viewDidLoad()
+        }
     }
 }
 
 extension BabiesFavMiniCell: BabiesFavMiniCellViewModelDelegate {
+    func prepareBannerImage(with urlString: String?) {
+        if let imageUrlString = urlString, let url = URL(string:imageUrlString){
+            foodImage.sd_setImage(with: url)
+        }
+    }
+    
+    func configure(food: Food?) {
+        foodNameLabel.text = food?.name
+        typeLabel.text = food?.type
+        cookingTimeLabel.text = food?.cookingTime
+        prepareBannerImage(with: food?.imageUrl)
+    }
+    
     func setUI() {
         self.layer.cornerRadius = 10
         foodImage.layer.cornerRadius = 5

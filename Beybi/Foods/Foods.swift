@@ -17,3 +17,7 @@ struct Food {
     var ingredients: [String?]
     var recipeStep: [String?]
 }
+
+struct Eym {
+    var imageUrl: String?
+}
