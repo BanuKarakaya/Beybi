@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asZ-dV-7HR">
-                                <rect key="frame" x="8" y="0.0" width="359" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="367" height="21"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5k-07-XWX">
                                         <rect key="frame" x="0.0" y="0.0" width="10" height="21"/>
@@ -38,7 +38,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="My9-Nz-5Vi">
-                                        <rect key="frame" x="10" y="0.0" width="349" height="21"/>
+                                        <rect key="frame" x="10" y="0.0" width="357" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="et6-K6-h4z">
                                                 <rect key="frame" x="4" y="0.0" width="123" height="21"/>
@@ -53,14 +53,14 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4mG-gE-Nbn"/>
-                                    <constraint firstAttribute="width" constant="359" id="aiC-zg-WIy"/>
+                                    <constraint firstAttribute="width" constant="367" id="aiC-zg-WIy" userLabel="width = 367"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUF-dt-5ZH">
-                                <rect key="frame" x="8" y="26" width="359" height="94"/>
+                                <rect key="frame" x="0.0" y="26" width="375" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euc-KS-PCp">
-                                        <rect key="frame" x="12" y="12" width="339" height="70"/>
+                                        <rect key="frame" x="12" y="12" width="355" height="70"/>
                                         <string key="text">Headers are an extremely useful for rendering a portion of your list that isn't based on an array of information. For example, in our app we need a header that contains some highlighted apps for our product.  In this lesson, we'll go over how to register and dequeue this supplementary view for our UICollectionView component.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,19 +72,19 @@
                                     <constraint firstAttribute="trailing" secondItem="Euc-KS-PCp" secondAttribute="trailing" constant="8" id="0F4-aT-SAW"/>
                                     <constraint firstAttribute="bottom" secondItem="Euc-KS-PCp" secondAttribute="bottom" constant="12" id="7u1-Pc-KIQ"/>
                                     <constraint firstItem="Euc-KS-PCp" firstAttribute="leading" secondItem="gUF-dt-5ZH" secondAttribute="leading" constant="12" id="HXj-tq-RhB"/>
-                                    <constraint firstAttribute="width" constant="359" id="NUV-eV-GoV"/>
                                     <constraint firstItem="Euc-KS-PCp" firstAttribute="top" secondItem="gUF-dt-5ZH" secondAttribute="top" constant="12" id="idb-gT-Wp0"/>
+                                    <constraint firstAttribute="width" constant="375" id="nte-KJ-ogC"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="asZ-dV-7HR" firstAttribute="leading" secondItem="9xX-iC-1z1" secondAttribute="leading" constant="8" id="8AI-JY-b2m"/>
-                            <constraint firstAttribute="trailing" secondItem="gUF-dt-5ZH" secondAttribute="trailing" constant="8" id="Fuz-0E-Vg6"/>
+                            <constraint firstItem="asZ-dV-7HR" firstAttribute="leading" secondItem="9xX-iC-1z1" secondAttribute="leading" id="8AI-JY-b2m"/>
+                            <constraint firstAttribute="trailing" secondItem="gUF-dt-5ZH" secondAttribute="trailing" id="Fuz-0E-Vg6"/>
                             <constraint firstAttribute="bottom" secondItem="gUF-dt-5ZH" secondAttribute="bottom" id="GTN-4a-OzJ"/>
                             <constraint firstItem="asZ-dV-7HR" firstAttribute="top" secondItem="9xX-iC-1z1" secondAttribute="top" id="IIg-c2-kxZ"/>
                             <constraint firstItem="gUF-dt-5ZH" firstAttribute="top" secondItem="asZ-dV-7HR" secondAttribute="bottom" constant="5" id="Qbw-2g-wYC"/>
-                            <constraint firstItem="gUF-dt-5ZH" firstAttribute="leading" secondItem="9xX-iC-1z1" secondAttribute="leading" constant="8" id="Tc3-ok-bVh"/>
+                            <constraint firstItem="gUF-dt-5ZH" firstAttribute="leading" secondItem="9xX-iC-1z1" secondAttribute="leading" id="Tc3-ok-bVh"/>
                             <constraint firstAttribute="trailing" secondItem="asZ-dV-7HR" secondAttribute="trailing" constant="8" id="jXM-rm-3zT"/>
                         </constraints>
                     </view>

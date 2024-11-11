@@ -37,9 +37,9 @@ extension HomeViewModel: HomeViewModelProtocol {
               case 1:
                   return CGSize(width: 380, height: 240)
               case 2:
-                  return CGSize(width: 380, height: 50)
+                  return CGSize(width: 380, height: 130)
               case 3:
-                  return CGSize(width: 380, height: 240)
+                  return CGSize(width: 380, height: 255)
               default:
                   return CGSize(width: 100, height: 100)
               }

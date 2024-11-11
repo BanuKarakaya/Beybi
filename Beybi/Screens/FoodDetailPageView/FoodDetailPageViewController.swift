@@ -17,6 +17,8 @@ class FoodDetailPageViewController: UIViewController {
     @IBOutlet weak var recipeCollectionView: UICollectionView!
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var ingredientsView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var beybiColor = UIColor(red: 162/255.0, green: 10/255.0, blue: 30/255.0, alpha: 0.9)
     var darkBeybiColor = UIColor(red: 113/255.0, green: 27/255.0, blue: 41/255.0, alpha: 1)
     
@@ -80,6 +82,7 @@ extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
         
         recipeCollectionView.delegate = self
         recipeCollectionView.dataSource = self
+        recipeCollectionView.isScrollEnabled = false
         recipeCollectionView.register(cellType: RecipeCell.self)
     }
     
@@ -92,6 +95,7 @@ extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
         foodImage.layer.cornerRadius = 5
         ingredientsView.layer.cornerRadius = 10
         ingredientsCollectionView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
     }
     
     func prepareBannerImage(with urlString: String?) {

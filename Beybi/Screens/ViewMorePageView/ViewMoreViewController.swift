@@ -69,7 +69,7 @@ extension ViewMoreViewController: ViewMoreViewModelDelegate {
     func prepareCollectionView() {
         viewMoreCollectionView.delegate = self
         viewMoreCollectionView.dataSource = self
-        
+        viewMoreCollectionView.showsVerticalScrollIndicator = false
         viewMoreCollectionView.register(cellType: ViewMoreCell.self)
     }
 }

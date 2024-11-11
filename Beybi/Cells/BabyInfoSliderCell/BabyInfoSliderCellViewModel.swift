@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+protocol BabyInfoSliderCellViewModelProtocol {
+    var delegate: BabyInfoSliderCellViewModelDelegate? { get set }
+    
+    func load()
+}
+
+protocol BabyInfoSliderCellViewModelDelegate: AnyObject {
+    func configureCell(info: Info?)
+    func prepareBannerImage(with urlString: String?)
+}
+
+class BabyInfoSliderCellViewModel {
+    weak var delegate: BabyInfoSliderCellViewModelDelegate?
+    var info: Info?
+}
+
+extension BabyInfoSliderCellViewModel: BabyInfoSliderCellViewModelProtocol {
+    func load() {
+        if let info = info {
+            delegate?.configureCell(info: info)
+        }
+    }
+}

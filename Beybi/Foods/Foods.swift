@@ -21,3 +21,8 @@ struct Food {
 struct Eym {
     var imageUrl: String?
 }
+
+struct Info {
+    var imageUrl: String?
+    var infoText: String?
+}

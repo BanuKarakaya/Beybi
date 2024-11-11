@@ -16,6 +16,8 @@ protocol BabiesFavCellViewModelProtocol {
     func numberOfItemsInSection() -> Int
     func minimumLineSpacingForSectionAt() -> CGFloat
     func foodAtIndex(index: Int) -> Food?
+    func didSelectItemAt(index: Int) -> Food?
+    func sendSelectedCell()
 }
 
 protocol BabiesFavCellViewModelDelegate: AnyObject {
@@ -27,6 +29,7 @@ class BabiesFavCellViewModel {
     weak var delegate: BabiesFavCellViewModelDelegate?
     let firestore = Firestore.firestore()
     var babyFavs: [Food]? = []
+    var selectedCell: Food?
     
     init(delegate: BabiesFavCellViewModelDelegate) {
         self.delegate = delegate
@@ -59,6 +62,17 @@ class BabiesFavCellViewModel {
 }
 
 extension BabiesFavCellViewModel: BabiesFavCellViewModelProtocol {
+    func sendSelectedCell() {
+        let selectedCell: [String: Food?] = ["selectedCell": selectedCell]
+        NotificationCenter.default.post(name: .favSliderCellTapped, object: nil, userInfo: selectedCell)
+    }
+    
+    func didSelectItemAt(index: Int) -> Food? {
+        selectedCell = babyFavs?[index]
+        
+        return selectedCell
+    }
+    
     func foodAtIndex(index: Int) -> Food? {
         if let food = babyFavs?[index] {
             return food

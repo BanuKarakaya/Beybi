@@ -49,6 +49,7 @@ extension FoodDetailPageViewModel: FoodDetailPageViewModelProtocol {
     
     func numberOfItemsForIngredients() -> Int{
         selectedFood?.ingredients.count ?? 0
+        
     }
     
     func ingredientsAtIndex(index: Int) -> String? {

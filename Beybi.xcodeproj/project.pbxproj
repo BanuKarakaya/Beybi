@@ -69,6 +69,9 @@
 		FAB73EDC2CDCF6540033CA8B /* EnjoyYourMealSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB73EDA2CDCF6540033CA8B /* EnjoyYourMealSliderCell.xib */; };
 		FAB73EDE2CDD04FF0033CA8B /* EnjoyYourMealSliderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB73EDD2CDD04FF0033CA8B /* EnjoyYourMealSliderCellViewModel.swift */; };
 		FAB73EE02CDD06B40033CA8B /* EnjoyYourMealCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB73EDF2CDD06B40033CA8B /* EnjoyYourMealCellViewModel.swift */; };
+		FAB73EE42CDE9B450033CA8B /* BabyInfloSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB73EE22CDE9B450033CA8B /* BabyInfloSliderCell.swift */; };
+		FAB73EE52CDE9B450033CA8B /* BabyInfloSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB73EE32CDE9B450033CA8B /* BabyInfloSliderCell.xib */; };
+		FAB73EE72CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB73EE62CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +153,9 @@
 		FAB73EDA2CDCF6540033CA8B /* EnjoyYourMealSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnjoyYourMealSliderCell.xib; sourceTree = "<group>"; };
 		FAB73EDD2CDD04FF0033CA8B /* EnjoyYourMealSliderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnjoyYourMealSliderCellViewModel.swift; sourceTree = "<group>"; };
 		FAB73EDF2CDD06B40033CA8B /* EnjoyYourMealCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnjoyYourMealCellViewModel.swift; sourceTree = "<group>"; };
+		FAB73EE22CDE9B450033CA8B /* BabyInfloSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInfloSliderCell.swift; sourceTree = "<group>"; };
+		FAB73EE32CDE9B450033CA8B /* BabyInfloSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BabyInfloSliderCell.xib; sourceTree = "<group>"; };
+		FAB73EE62CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInfoSliderCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +421,7 @@
 		FAAC8D712C9C7BB400264E4B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FAB73EE12CDE9ACC0033CA8B /* BabyInfoSliderCell */,
 				FAB73ED82CDCF62B0033CA8B /* EnjoyYourMealSliderCell */,
 				FA22AA522CBBFF1000F6B169 /* RecipeCell */,
 				FA22AA442CB99B8900F6B169 /* IngredientsCell */,
@@ -439,6 +446,16 @@
 				FAB73EDD2CDD04FF0033CA8B /* EnjoyYourMealSliderCellViewModel.swift */,
 			);
 			path = EnjoyYourMealSliderCell;
+			sourceTree = "<group>";
+		};
+		FAB73EE12CDE9ACC0033CA8B /* BabyInfoSliderCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAB73EE22CDE9B450033CA8B /* BabyInfloSliderCell.swift */,
+				FAB73EE32CDE9B450033CA8B /* BabyInfloSliderCell.xib */,
+				FAB73EE62CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift */,
+			);
+			path = BabyInfoSliderCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +586,7 @@
 				FAAC8D432C97393B00264E4B /* BabiesAgeCell.xib in Resources */,
 				FAAC8D4B2C97689D00264E4B /* FoodCell.xib in Resources */,
 				FA22AA092C9F751E00F6B169 /* GoogleService-Info.plist in Resources */,
+				FAB73EE52CDE9B450033CA8B /* BabyInfloSliderCell.xib in Resources */,
 				FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */,
 				FAAC8D3F2C96F81E00264E4B /* FoodSliderMiniCell.xib in Resources */,
 				FAB73EDC2CDCF6540033CA8B /* EnjoyYourMealSliderCell.xib in Resources */,
@@ -601,6 +619,7 @@
 				FAAC8D462C973ADC00264E4B /* DailyMenuCell.swift in Sources */,
 				FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */,
 				FA22AA582CBD90B900F6B169 /* RecipeViewModel.swift in Sources */,
+				FAB73EE42CDE9B450033CA8B /* BabyInfloSliderCell.swift in Sources */,
 				FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */,
 				FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */,
 				FA22AA132CAAD7F100F6B169 /* NotificationCenter+Extension.swift in Sources */,
@@ -626,6 +645,7 @@
 				FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */,
 				FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */,
 				FA22AA0C2CA446BC00F6B169 /* Foods.swift in Sources */,
+				FAB73EE72CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift in Sources */,
 				FAAC8D5F2C9C650200264E4B /* BabiesAgeCellViewModel.swift in Sources */,
 				FA22AA5A2CBD94F900F6B169 /* IngredientsCellViewModel.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,

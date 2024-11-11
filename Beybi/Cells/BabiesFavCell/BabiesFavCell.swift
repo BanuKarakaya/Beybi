@@ -20,7 +20,10 @@ class BabiesFavCell: UICollectionViewCell {
 }
 
 extension BabiesFavCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(index: indexPath.item)
+        viewModel.sendSelectedCell()
+    }
 }
 
 extension BabiesFavCell: UICollectionViewDataSource {
@@ -62,5 +65,6 @@ extension BabiesFavCell: BabiesFavCellViewModelDelegate {
         babiesFavMiniCollection.delegate = self
         babiesFavMiniCollection.dataSource = self
         babiesFavMiniCollection.register(cellType: BabiesFavMiniCell.self)
+        babiesFavMiniCollection.showsVerticalScrollIndicator = false
     }
 }

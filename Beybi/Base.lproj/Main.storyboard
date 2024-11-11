@@ -493,6 +493,7 @@
                         <outlet property="ingredientsView" destination="KW9-Jv-qf7" id="n8g-KX-iNi"/>
                         <outlet property="recipeCollectionView" destination="2yV-oc-K2Q" id="4yf-8h-IFz"/>
                         <outlet property="recipeLabel" destination="91S-PZ-Qpw" id="QC1-4h-0zU"/>
+                        <outlet property="scrollView" destination="ujm-gh-tYx" id="1IY-kV-Er0"/>
                         <outlet property="typeLabel" destination="PIX-Ff-d5d" id="ATB-VA-Ztb"/>
                         <outlet property="typeView" destination="440-KR-xsR" id="PiC-jW-prU"/>
                     </connections>

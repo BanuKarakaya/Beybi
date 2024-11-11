@@ -10,11 +10,28 @@ import UIKit
 class EnjoyYourMealCell: UICollectionViewCell {
 
     @IBOutlet weak var sliderCollectionView: UICollectionView!
+    var timer: Timer?
+    var currentIndex = 0
     lazy var viewModel: EnjoyYourMealCellViewModelProtocol = EnjoyYourMealCellViewModel(delegate: self)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         viewModel.viewDidLoad()
+        startAutoScroll()
+    }
+    
+    func startAutoScroll() {
+        timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(autoScrollCollectionView), userInfo: nil, repeats: true)
+    }
+    
+    @objc func autoScrollCollectionView() {
+        if currentIndex < sliderCollectionView.numberOfItems(inSection: 0) - 1 {
+            currentIndex += 1
+        } else {
+            currentIndex = 0
+        }
+        let indexPath = IndexPath(item: currentIndex, section: 0)
+        sliderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }
 

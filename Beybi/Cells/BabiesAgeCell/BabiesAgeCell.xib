@@ -11,48 +11,72 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BabiesAgeCell" customModule="Beybi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="380" height="140"/>
+            <rect key="frame" x="0.0" y="0.0" width="380" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="380" height="140"/>
+                <rect key="frame" x="0.0" y="0.0" width="380" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71i-p8-Hp2">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="140"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eM-CA-yM3">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="120"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ageage3" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-Fh-GfK">
-                                <rect key="frame" x="0.0" y="0.0" width="380" height="125"/>
-                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aEH-iR-s0d">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Y44-Ow-tNm"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gGP-7J-m0L">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-Jl-Yua">
+                                <rect key="frame" x="103" y="97" width="174" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
+                                <color key="currentPageIndicatorTintColor" red="0.64905730349724766" green="0.2487403342452062" blue="0.30054912968245551" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="5GL-Fh-GfK" firstAttribute="top" secondItem="71i-p8-Hp2" secondAttribute="top" id="7OR-Fb-dC3"/>
-                            <constraint firstAttribute="bottom" secondItem="5GL-Fh-GfK" secondAttribute="bottom" constant="15" id="9Ln-BS-KC7"/>
-                            <constraint firstAttribute="height" constant="140" id="ZFe-IV-XZb"/>
-                            <constraint firstAttribute="trailing" secondItem="5GL-Fh-GfK" secondAttribute="trailing" id="ZvK-mL-Fqe"/>
-                            <constraint firstAttribute="width" constant="380" id="h4b-a8-UrN"/>
-                            <constraint firstItem="5GL-Fh-GfK" firstAttribute="leading" secondItem="71i-p8-Hp2" secondAttribute="leading" id="lfa-GG-f3q"/>
+                            <constraint firstItem="aEH-iR-s0d" firstAttribute="top" secondItem="3eM-CA-yM3" secondAttribute="top" id="1AQ-NQ-oDm"/>
+                            <constraint firstAttribute="width" constant="380" id="8Oo-ng-iOC"/>
+                            <constraint firstAttribute="trailing" secondItem="HbA-Jl-Yua" secondAttribute="trailing" constant="103" id="GzV-yV-ah9"/>
+                            <constraint firstAttribute="height" constant="120" id="Maw-3O-sHt"/>
+                            <constraint firstAttribute="bottom" secondItem="HbA-Jl-Yua" secondAttribute="bottom" constant="-3" id="Mf2-EF-OUt"/>
+                            <constraint firstAttribute="trailing" secondItem="aEH-iR-s0d" secondAttribute="trailing" id="XHD-De-tdh"/>
+                            <constraint firstItem="HbA-Jl-Yua" firstAttribute="leading" secondItem="3eM-CA-yM3" secondAttribute="leading" constant="103" id="o2U-nj-f7b"/>
+                            <constraint firstItem="aEH-iR-s0d" firstAttribute="leading" secondItem="3eM-CA-yM3" secondAttribute="leading" id="qnZ-JN-IFb"/>
+                            <constraint firstItem="HbA-Jl-Yua" firstAttribute="top" secondItem="3eM-CA-yM3" secondAttribute="top" constant="97" id="u6f-Ag-5ye"/>
+                            <constraint firstAttribute="bottom" secondItem="aEH-iR-s0d" secondAttribute="bottom" constant="20" id="w6F-5M-83C"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="71i-p8-Hp2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5c8-6x-5Cq"/>
-                <constraint firstAttribute="bottom" secondItem="71i-p8-Hp2" secondAttribute="bottom" id="URu-YB-wbN"/>
-                <constraint firstItem="71i-p8-Hp2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wiu-8G-eGd"/>
-                <constraint firstAttribute="trailing" secondItem="71i-p8-Hp2" secondAttribute="trailing" id="aa0-w3-ciA"/>
-                <constraint firstItem="71i-p8-Hp2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kjN-uo-ciL"/>
-                <constraint firstAttribute="bottom" secondItem="71i-p8-Hp2" secondAttribute="bottom" id="mB4-jc-qda"/>
-                <constraint firstAttribute="trailing" secondItem="71i-p8-Hp2" secondAttribute="trailing" id="uwn-xK-JxH"/>
-                <constraint firstItem="71i-p8-Hp2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wRs-tU-D08"/>
+                <constraint firstAttribute="bottom" secondItem="3eM-CA-yM3" secondAttribute="bottom" id="8ik-Cn-x9C"/>
+                <constraint firstItem="3eM-CA-yM3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VuU-8Z-oMd"/>
+                <constraint firstAttribute="trailing" secondItem="3eM-CA-yM3" secondAttribute="trailing" id="iof-aa-KFQ"/>
+                <constraint firstItem="3eM-CA-yM3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uYv-ey-h5J"/>
             </constraints>
-            <size key="customSize" width="386" height="140"/>
-            <point key="canvasLocation" x="617" y="18"/>
+            <size key="customSize" width="391" height="89"/>
+            <connections>
+                <outlet property="babyInfoCollectionView" destination="aEH-iR-s0d" id="FNF-Wt-q7F"/>
+                <outlet property="pageControl" destination="HbA-Jl-Yua" id="vzB-KM-zBF"/>
+            </connections>
+            <point key="canvasLocation" x="785" y="-11"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ageage3" width="1056" height="382"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

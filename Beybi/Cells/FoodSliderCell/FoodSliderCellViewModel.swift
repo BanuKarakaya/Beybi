@@ -19,6 +19,7 @@ protocol FoodSliderCellViewModelProtocol {
     func foodAtIndex(index: Int) -> Food?
     func load()
     func didSelectItemAt(index: Int) -> Food?
+    func sendSelectedCell()
 }
 
 protocol FoodSliderCellViewModelDelegate: AnyObject {
@@ -37,8 +38,11 @@ class FoodSliderCellViewModel {
     let firestore = Firestore.firestore()
     var selectedCell: Food?
     
+    
     func readSoups() {
         firestore.collection("soups").getDocuments { (querySnapshot, error) in
+            
+            
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
             } else {
@@ -62,7 +66,10 @@ class FoodSliderCellViewModel {
     }
     
     func readMainDishes() {
+        
         firestore.collection("main dishes").getDocuments { (querySnapshot, error) in
+            
+           
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
             } else {
@@ -86,7 +93,10 @@ class FoodSliderCellViewModel {
     }
     
     func readPurees() {
+       
         firestore.collection("purees").getDocuments { (querySnapshot, error) in
+            
+            
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
             } else {
@@ -110,7 +120,10 @@ class FoodSliderCellViewModel {
     }
     
     func readSnacks() {
+        
         firestore.collection("snacks").getDocuments { (querySnapshot, error) in
+            
+            
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
             } else {
@@ -135,6 +148,11 @@ class FoodSliderCellViewModel {
 }
 
 extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
+    func sendSelectedCell() {
+        let selectedCell: [String: Food?] = ["selectedCell": selectedCell]
+        NotificationCenter.default.post(name: .foodSliderCellTapped, object: nil, userInfo: selectedCell)
+    }
+    
     func didSelectItemAt(index: Int) -> Food? {
         
         if type == "Soups" {
@@ -150,6 +168,7 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
             selectedCell = purees?[index]
             return selectedCell
         }
+        
         return selectedCell
     }
     
@@ -160,24 +179,25 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
     
     func foodAtIndex(index: Int) -> Food? {
-        if type == "Soups" {
-            if let food = soups?[index] {
-                return food
+       
+            if type == "Soups" {
+                if let food = soups?[index] {
+                    return food
+                }
+            } else if type == "Main Dishes" {
+                if let food = mainDishes?[index] {
+                    return food
+                }
+            } else if type == "Purees" {
+                if let food = purees?[index] {
+                    return food
+                }
+            } else if type == "Snacks" {
+                if let food = snacks?[index] {
+                    return food
+                }
             }
-        } else if type == "Main Dishes" {
-            if let food = mainDishes?[index] {
-                return food
-            }
-        } else if type == "Snacks" {
-            if let food = snacks?[index] {
-                return food
-            }
-        } else if type == "Purees" {
-            if let food = purees?[index] {
-                return food
-            }
-        }
-         return nil
+        return nil
     }
     
     func minimumLineSpacingForSectionAt() -> CGFloat {
@@ -189,15 +209,29 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
     
     func numberOfItemsInSection() -> Int {
-        return soups!.count
+       
+        if type == "Soups" {
+            return soups?.count ?? 0
+        } else if type == "Main Dishes" {
+            return mainDishes?.count ?? 0
+        } else if type == "Purees" {
+            return purees?.count ?? 0
+        } else {
+            return snacks?.count ?? 0
+        }
     }
     
     func viewDidLoad() {
         delegate?.prepareCollectionView()
         
-        readSoups()
-        readMainDishes()
-        readPurees()
-        readSnacks()
+        if type == "Soups" {
+            readSoups()
+        } else if type == "Main Dishes" {
+            readMainDishes()
+        } else if type == "Purees" {
+            readPurees()
+        } else {
+            readSnacks()
+        }
     }
 }
