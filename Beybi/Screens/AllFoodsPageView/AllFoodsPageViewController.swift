@@ -18,6 +18,7 @@ class AllFoodsPageViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(getFoodTypeLabelValue(_:)), name: .getTypeLabelValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToDetail(_:)), name: .foodSliderCellTapped, object: nil)
     }
  
     @objc func getFoodTypeLabelValue(_ notification: NSNotification) {
@@ -29,6 +30,18 @@ class AllFoodsPageViewController: UIViewController {
                 viewMoreVM.foodType = foodType
                 viewMoreVC.viewModel = viewMoreVM
                 navigationController?.pushViewController(viewMoreVC, animated: true)
+            }
+        }
+    }
+    
+    @objc func navigateToDetail(_ notification: NSNotification) {
+        if let dict = notification.userInfo as NSDictionary? {
+            if let selectedCell = dict["selectedCell"] as? Food {
+                let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+                let detailVM = FoodDetailPageViewModel(delegate: detailVC)
+                detailVM.selectedFood = selectedCell
+                detailVC.viewModel = detailVM
+                navigationController?.pushViewController(detailVC, animated: true)
             }
         }
     }
@@ -64,7 +77,7 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
     func prepareCollectionView() {
         allFoodsCollectionView.dataSource = self
         allFoodsCollectionView.delegate = self
-        
+        allFoodsCollectionView.showsVerticalScrollIndicator = false
         allFoodsCollectionView.register(cellType: FoodSliderCellController.self)
         allFoodsCollectionView.register(UINib(nibName: "EnjoyYourMealHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "EnjoyYourMealHeaderView")
     }
