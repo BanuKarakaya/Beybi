@@ -50,7 +50,6 @@ extension FoodSliderCellController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectItemAt(index: indexPath.item)
         viewModel.sendSelectedCell()
-        
     }
 }
 

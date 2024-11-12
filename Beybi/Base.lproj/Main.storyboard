@@ -216,7 +216,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="285" id="SfI-Vn-W6U"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -260,7 +260,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91S-PZ-Qpw">
-                                                <rect key="frame" x="16" y="354" width="360" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="354" width="360" height="20.333333333333314"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="360" id="CZd-Ha-R40"/>
                                                 </constraints>
@@ -451,7 +451,7 @@
                                             <constraint firstItem="2yV-oc-K2Q" firstAttribute="top" secondItem="IIr-No-CUA" secondAttribute="bottom" constant="5" id="6H9-cW-k2e"/>
                                             <constraint firstItem="KW9-Jv-qf7" firstAttribute="leading" secondItem="6LO-DT-s59" secondAttribute="leading" constant="8" id="6tX-Nb-lcW"/>
                                             <constraint firstAttribute="trailing" secondItem="91S-PZ-Qpw" secondAttribute="trailing" constant="8" id="9O2-Ee-2Wy"/>
-                                            <constraint firstItem="91S-PZ-Qpw" firstAttribute="leading" secondItem="6LO-DT-s59" secondAttribute="leading" constant="16" id="CaY-XG-MvL"/>
+                                            <constraint firstItem="91S-PZ-Qpw" firstAttribute="leading" secondItem="6LO-DT-s59" secondAttribute="leading" constant="8" id="CaY-XG-MvL"/>
                                             <constraint firstItem="IIr-No-CUA" firstAttribute="leading" secondItem="6LO-DT-s59" secondAttribute="leading" constant="8" id="T7P-3L-gyc"/>
                                             <constraint firstItem="hzN-qj-PII" firstAttribute="top" secondItem="6LO-DT-s59" secondAttribute="top" constant="8" id="W5L-JO-jPh"/>
                                             <constraint firstItem="2yV-oc-K2Q" firstAttribute="leading" secondItem="6LO-DT-s59" secondAttribute="leading" constant="8" id="ZL0-Zb-KUf"/>

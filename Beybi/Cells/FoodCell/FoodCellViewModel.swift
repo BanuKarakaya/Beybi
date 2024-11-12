@@ -11,21 +11,27 @@ protocol FoodCellViewModelProtocol {
     var delegate: FoodCellViewModelDelegate? { get set }
     
     func viewDidLoad()
+    func load()
 }
 
 protocol FoodCellViewModelDelegate: AnyObject {
     func setUI()
+    func configureCell(food: Food?)
+    func prepareBannerImage(with urlString: String?)
 }
 
 class FoodCellViewModel {
     weak var delegate: FoodCellViewModelDelegate?
-    
-    init(delegate: FoodCellViewModelDelegate) {
-        self.delegate = delegate
-    }
+    var food: Food?
 }
 
 extension FoodCellViewModel: FoodCellViewModelProtocol {
+    func load() {
+        if let food = food {
+            delegate?.configureCell(food: food)
+        }
+    }
+    
     func viewDidLoad() {
         delegate?.setUI()
     }

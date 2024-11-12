@@ -101,6 +101,11 @@ extension DailyMenuCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
+        if let food = viewModel.foodAtIndex(index: indexPath.item) {
+            let cellViewModel = FoodCellViewModel()
+            cellViewModel.food = food
+            cell.viewModel = cellViewModel
+        }
         return cell
     }
 }
@@ -116,6 +121,10 @@ extension DailyMenuCell: UICollectionViewDelegateFlowLayout {
 }
 
 extension DailyMenuCell: DailyMenuCellViewModelDelegate {
+    func reloadData() {
+        menuCollectionView.reloadData()
+    }
+    
     func prepareUI() {
         breakfastButton.layer.cornerRadius = 6
         lunchButton.layer.borderWidth = 0.5

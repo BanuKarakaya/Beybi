@@ -116,6 +116,7 @@
             </constraints>
             <size key="customSize" width="106" height="155"/>
             <connections>
+                <outlet property="foodImage" destination="tRn-LB-9DI" id="nQl-98-gTG"/>
                 <outlet property="foodName" destination="1SJ-Ua-WOH" id="CLG-MH-bXT"/>
                 <outlet property="typeLabel" destination="7fp-BK-DU0" id="cve-Fv-fv5"/>
                 <outlet property="typeView" destination="lLT-Vc-kv5" id="oV3-F0-Uop"/>
