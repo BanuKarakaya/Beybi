@@ -91,7 +91,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
               case 2:
                   return CGSize(width: homeCollectionView.frame.width - 13, height: 120)
               case 3:
-                  return CGSize(width: homeCollectionView.frame.width - 13, height: 255)
+                  return CGSize(width: homeCollectionView.frame.width - 13, height: 300)
               default:
                   return CGSize(width: 100, height: 100)
               }
@@ -113,7 +113,7 @@ extension HomeViewController: HomeViewModelDelegate {
     func prepareCollectionView() {
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
-        
+        homeCollectionView.showsVerticalScrollIndicator = false
         homeCollectionView.register(cellType: BabiesAgeCell.self)
         homeCollectionView.register(cellType: DailyMenuCell.self)
         homeCollectionView.register(cellType: BabiesFavCell.self)
