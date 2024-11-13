@@ -20,11 +20,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8l-PX-ekM">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info1 1" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-Qv-lk7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info1 1" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-Qv-lk7">
                                 <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="S85-ts-ipn"/>
-                                    <constraint firstAttribute="width" constant="380" id="SBm-1F-Yns"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="asdfghjklasdfghklasdfghjklsdfasdfghjksdfghjksdfghjksfghjk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXN-X8-Mfo">
@@ -41,7 +40,6 @@
                             <constraint firstItem="cxG-Qv-lk7" firstAttribute="leading" secondItem="c8l-PX-ekM" secondAttribute="leading" id="DMO-Um-wpv"/>
                             <constraint firstItem="NXN-X8-Mfo" firstAttribute="centerX" secondItem="c8l-PX-ekM" secondAttribute="centerX" id="Epl-rU-p28"/>
                             <constraint firstItem="NXN-X8-Mfo" firstAttribute="leading" secondItem="c8l-PX-ekM" secondAttribute="leading" constant="40" id="ZsC-o5-jgx"/>
-                            <constraint firstAttribute="width" constant="380" id="bXd-J4-5ny"/>
                             <constraint firstItem="NXN-X8-Mfo" firstAttribute="centerY" secondItem="c8l-PX-ekM" secondAttribute="centerY" id="dBZ-uQ-d9S"/>
                             <constraint firstAttribute="trailing" secondItem="cxG-Qv-lk7" secondAttribute="trailing" id="drv-AV-qun"/>
                             <constraint firstAttribute="height" constant="100" id="e72-Ja-gSe"/>

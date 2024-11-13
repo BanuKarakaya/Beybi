@@ -89,7 +89,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
               case 1:
                   return CGSize(width: 380, height: 240)
               case 2:
-                  return CGSize(width: 380, height: 130)
+                  return CGSize(width: homeCollectionView.frame.width - 13, height: 120)
               case 3:
                   return CGSize(width: 380, height: 255)
               default:
