@@ -45,7 +45,7 @@ extension ViewMoreViewController: UICollectionViewDataSource {
 
 extension ViewMoreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 370, height: 90)
+        .init(width: viewMoreCollectionView.frame.width - 18, height: 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
