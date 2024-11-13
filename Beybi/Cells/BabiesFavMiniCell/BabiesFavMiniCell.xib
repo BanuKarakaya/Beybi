@@ -28,10 +28,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixed Legume Soup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el2-NP-cmA">
-                                <rect key="frame" x="50" y="5" width="113" height="13"/>
+                                <rect key="frame" x="50" y="5" width="120" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="2Ki-Rb-1V1"/>
-                                    <constraint firstAttribute="width" constant="113" id="4bA-za-2sP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                 <nil key="textColor"/>
@@ -60,7 +59,6 @@
                                         <rect key="frame" x="45" y="0.0" width="6" height="10"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="KLz-YE-x8O"/>
                                             <constraint firstAttribute="width" constant="6" id="Pr3-ih-RId"/>
                                         </constraints>
                                     </view>
@@ -93,27 +91,22 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="U39-S8-EPj"/>
-                                    <constraint firstAttribute="width" constant="122" id="oUt-Lt-9bV"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VeC-Y2-Z6d" firstAttribute="top" secondItem="CTf-O8-J8T" secondAttribute="top" constant="5" id="0S0-tw-izu"/>
-                            <constraint firstAttribute="bottom" secondItem="VeC-Y2-Z6d" secondAttribute="bottom" constant="5" id="6Sx-dD-0Tc"/>
                             <constraint firstAttribute="trailing" secondItem="fQg-19-UUu" secondAttribute="trailing" constant="3" id="Aew-6w-iEI"/>
                             <constraint firstItem="fQg-19-UUu" firstAttribute="leading" secondItem="VeC-Y2-Z6d" secondAttribute="trailing" constant="5" id="CDe-ew-jMK"/>
-                            <constraint firstAttribute="width" constant="175" id="El0-Uh-GCx"/>
                             <constraint firstItem="VeC-Y2-Z6d" firstAttribute="leading" secondItem="CTf-O8-J8T" secondAttribute="leading" constant="5" id="G0L-n4-rJk"/>
                             <constraint firstItem="el2-NP-cmA" firstAttribute="top" secondItem="CTf-O8-J8T" secondAttribute="top" constant="5" id="IQC-CI-qEd"/>
-                            <constraint firstItem="VeC-Y2-Z6d" firstAttribute="leading" secondItem="CTf-O8-J8T" secondAttribute="leading" constant="5" id="J4F-Nm-gVh"/>
-                            <constraint firstItem="VeC-Y2-Z6d" firstAttribute="top" secondItem="CTf-O8-J8T" secondAttribute="top" constant="5" id="PyQ-6m-014"/>
-                            <constraint firstItem="el2-NP-cmA" firstAttribute="leading" secondItem="VeC-Y2-Z6d" secondAttribute="trailing" constant="5" id="SB7-hZ-DZV"/>
                             <constraint firstAttribute="bottom" secondItem="el2-NP-cmA" secondAttribute="bottom" constant="32" id="Vhj-RM-f5j"/>
                             <constraint firstAttribute="height" constant="50" id="kBh-y8-p1i"/>
                             <constraint firstAttribute="bottom" secondItem="VeC-Y2-Z6d" secondAttribute="bottom" constant="5" id="lbY-kb-OQs"/>
                             <constraint firstItem="el2-NP-cmA" firstAttribute="leading" secondItem="VeC-Y2-Z6d" secondAttribute="trailing" constant="5" id="nJX-ML-7w7"/>
                             <constraint firstItem="fQg-19-UUu" firstAttribute="top" secondItem="el2-NP-cmA" secondAttribute="bottom" constant="3" id="nZk-qQ-cEg"/>
+                            <constraint firstAttribute="trailing" secondItem="el2-NP-cmA" secondAttribute="trailing" constant="5" id="qfa-vc-hMu"/>
                         </constraints>
                     </view>
                 </subviews>

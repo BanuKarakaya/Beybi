@@ -44,7 +44,7 @@ extension BabiesFavCell: UICollectionViewDataSource {
 
 extension BabiesFavCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 175, height: 50)
+        .init(width: (babiesFavMiniCollection.frame.width - 30) / 2, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
