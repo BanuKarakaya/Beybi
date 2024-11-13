@@ -13,7 +13,6 @@ protocol HomeViewModelProtocol {
     func viewDidLoad()
     func numberOfSections() -> Int
     func numberOfItemsInSection() -> Int 
-    func sizeForItemAt(section: Int) -> CGSize
 }
 
 protocol HomeViewModelDelegate: AnyObject {
@@ -30,20 +29,6 @@ class HomeViewModel {
 }
 
 extension HomeViewModel: HomeViewModelProtocol {
-    func sizeForItemAt(section: Int) -> CGSize {
-        switch section {
-              case 0:
-                  return CGSize(width: 380, height: 140)
-              case 1:
-                  return CGSize(width: 380, height: 240)
-              case 2:
-                  return CGSize(width: 380, height: 130)
-              case 3:
-                  return CGSize(width: 380, height: 255)
-              default:
-                  return CGSize(width: 100, height: 100)
-              }
-    }
     
     func numberOfItemsInSection() -> Int {
         return 1

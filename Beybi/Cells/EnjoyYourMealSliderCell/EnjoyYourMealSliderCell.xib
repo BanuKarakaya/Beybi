@@ -27,7 +27,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fP5-yA-vTm" secondAttribute="trailing" id="1kW-fa-RYd"/>
-                            <constraint firstAttribute="width" constant="385" id="57z-Ay-rrJ"/>
                             <constraint firstItem="fP5-yA-vTm" firstAttribute="top" secondItem="Qmy-Bd-M8a" secondAttribute="top" id="Knb-H5-ery"/>
                             <constraint firstAttribute="bottom" secondItem="fP5-yA-vTm" secondAttribute="bottom" id="PBC-Xz-YkV"/>
                             <constraint firstAttribute="height" constant="40" id="Ze2-34-K53"/>

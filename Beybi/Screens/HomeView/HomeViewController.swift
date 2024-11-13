@@ -83,7 +83,18 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        viewModel.sizeForItemAt(section: indexPath.section)
+        switch indexPath.section {
+              case 0:
+            return CGSize(width: homeCollectionView.frame.width - 13, height: 50)
+              case 1:
+                  return CGSize(width: 380, height: 240)
+              case 2:
+                  return CGSize(width: 380, height: 130)
+              case 3:
+                  return CGSize(width: 380, height: 255)
+              default:
+                  return CGSize(width: 100, height: 100)
+              }
     }
 }
 
