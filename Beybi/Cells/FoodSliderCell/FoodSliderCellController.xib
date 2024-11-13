@@ -30,20 +30,19 @@
                                                 <rect key="frame" x="10" y="20" width="370" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yen-Fa-ve0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="122.33333333333333" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="265.66666666666669" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Br-Fs-Rw4">
-                                                        <rect key="frame" x="122.33333333333331" y="0.0" width="143.33333333333337" height="30"/>
+                                                        <rect key="frame" x="265.66666666666669" y="0.0" width="0.0" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0T-K1-pfg">
                                                         <rect key="frame" x="265.66666666666669" y="0.0" width="104.33333333333331" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="104.33" id="f4R-a6-SZp"/>
-                                                            <constraint firstAttribute="height" constant="50.670000000000002" id="lOY-6c-Lck"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <color key="tintColor" red="0.63529411764705879" green="0.039215686274509803" blue="0.11764705882352941" alpha="0.89803921568627454" colorSpace="custom" customColorSpace="displayP3"/>
@@ -60,21 +59,23 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0TJ-UE-4dm"/>
                                             <constraint firstAttribute="trailing" secondItem="wJr-sI-iDc" secondAttribute="trailing" id="5y9-Wb-Xm4"/>
-                                            <constraint firstAttribute="width" constant="380" id="V9S-bv-FXz"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="380" id="XVv-4w-rcC"/>
                                             <constraint firstItem="wJr-sI-iDc" firstAttribute="leading" secondItem="QuQ-tm-Cgf" secondAttribute="leading" constant="10" id="Ylm-hz-RQD"/>
                                             <constraint firstAttribute="bottom" secondItem="wJr-sI-iDc" secondAttribute="bottom" id="tIY-QB-cdD"/>
                                             <constraint firstItem="wJr-sI-iDc" firstAttribute="top" secondItem="QuQ-tm-Cgf" secondAttribute="top" constant="20" id="xsM-E7-zjn"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-gk-QXL">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-gk-QXL" userLabel="ContainerView">
                                         <rect key="frame" x="0.0" y="50" width="380" height="230"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CYj-4Y-94J">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="230"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="230" id="5d1-zT-OUL"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p3a-36-pB3">
                                                     <size key="itemSize" width="128" height="128"/>
+                                                    <size key="estimatedItemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -83,21 +84,23 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="HGd-IH-TrH"/>
-                                            <constraint firstItem="CYj-4Y-94J" firstAttribute="top" secondItem="Fbv-gk-QXL" secondAttribute="top" id="QI0-Bj-KQF"/>
+                                            <constraint firstItem="CYj-4Y-94J" firstAttribute="top" secondItem="Fbv-gk-QXL" secondAttribute="top" id="N1z-2N-siW"/>
                                             <constraint firstItem="CYj-4Y-94J" firstAttribute="leading" secondItem="Fbv-gk-QXL" secondAttribute="leading" id="hYN-Ck-gjc"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="380" id="iXe-w3-Pxg"/>
                                             <constraint firstAttribute="trailing" secondItem="CYj-4Y-94J" secondAttribute="trailing" id="nrr-jk-agY"/>
                                             <constraint firstAttribute="bottom" secondItem="CYj-4Y-94J" secondAttribute="bottom" id="oCx-4l-Cs8"/>
-                                            <constraint firstAttribute="width" constant="380" id="vbt-4g-DOa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Fbv-gk-QXL" firstAttribute="top" secondItem="QuQ-tm-Cgf" secondAttribute="bottom" id="0ZY-Be-sI2"/>
+                                    <constraint firstAttribute="trailing" secondItem="QuQ-tm-Cgf" secondAttribute="trailing" id="5HN-5l-4Rs"/>
+                                    <constraint firstItem="QuQ-tm-Cgf" firstAttribute="top" secondItem="aVs-Dq-0DX" secondAttribute="top" id="Xh9-cO-yrD"/>
+                                    <constraint firstItem="QuQ-tm-Cgf" firstAttribute="leading" secondItem="aVs-Dq-0DX" secondAttribute="leading" id="ZZH-Zr-Wgk"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="380" id="7bv-CV-YQF"/>
                             <constraint firstAttribute="trailing" secondItem="aVs-Dq-0DX" secondAttribute="trailing" id="ACa-TF-8Ot"/>
                             <constraint firstAttribute="height" constant="280" id="ATI-rU-tnr"/>
                             <constraint firstItem="aVs-Dq-0DX" firstAttribute="top" secondItem="E2V-Le-hm8" secondAttribute="top" id="KgZ-uK-NbG"/>
@@ -124,7 +127,7 @@
     </objects>
     <resources>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

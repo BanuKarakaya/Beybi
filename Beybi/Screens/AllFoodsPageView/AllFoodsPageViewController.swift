@@ -72,6 +72,12 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
     }
 }
 
+extension AllFoodsPageViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .init(width: allFoodsCollectionView.frame.width - 13 , height: 280)
+    }
+}
+
 extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
   
     func prepareCollectionView() {
