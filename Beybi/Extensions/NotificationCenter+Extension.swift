@@ -12,4 +12,5 @@ extension Notification.Name {
     static let getTypeLabelValue = Notification.Name("getTypeLabelValue")
     static let foodSliderCellTapped = Notification.Name("foodSliderCellTapped")
     static let favSliderCellTapped = Notification.Name("favSliderCellTapped")
+    static let foodCellTapped = Notification.Name("foodCellTapped")
 }

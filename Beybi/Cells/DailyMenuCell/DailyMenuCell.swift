@@ -47,6 +47,7 @@ class DailyMenuCell: UICollectionViewCell {
         dinnerButton.layer.cornerRadius = 6
         dinnerButton.backgroundColor = .systemGray6
         dinnerButtonLabel.textColor = .black
+        reloadData()
     }
     
     @IBAction func lunchButtonTapped(_ sender: Any) {
@@ -67,6 +68,7 @@ class DailyMenuCell: UICollectionViewCell {
         dinnerButton.layer.cornerRadius = 6
         dinnerButton.backgroundColor = .systemGray6
         dinnerButtonLabel.textColor = .black
+        reloadData()
     }
     
     @IBAction func dinnerButtonTapped(_ sender: Any) {
@@ -87,21 +89,25 @@ class DailyMenuCell: UICollectionViewCell {
         lunchButton.layer.cornerRadius = 6
         lunchButton.backgroundColor = .systemGray6
         lunchButtonLabel.textColor = .black
+        reloadData()
     }
 }
 
 extension DailyMenuCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(index: indexPath.item, breakfastTapped: isBreakfastButtonTapped, lunchTapped: isLunchButtonTapped, dinnerTapped: isDinnerButtonTapped)
+        viewModel.sendSelectedCell()
+    }
 }
 
 extension DailyMenuCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfItemsInSection()
+        viewModel.numberOfItemsInSection(breakfastTapped: isBreakfastButtonTapped, lunchTapped: isLunchButtonTapped, dinnerTapped: isDinnerButtonTapped)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
-        if let food = viewModel.foodAtIndex(index: indexPath.item) {
+        if let food = viewModel.foodAtIndex(index: indexPath.item, breakfastTapped: isBreakfastButtonTapped, lunchTapped: isLunchButtonTapped, dinnerTapped: isDinnerButtonTapped) {
             let cellViewModel = FoodCellViewModel()
             cellViewModel.food = food
             cell.viewModel = cellViewModel
@@ -126,13 +132,13 @@ extension DailyMenuCell: DailyMenuCellViewModelDelegate {
     }
     
     func prepareUI() {
-        breakfastButton.layer.cornerRadius = 6
+        dinnerButton.layer.cornerRadius = 6
         lunchButton.layer.borderWidth = 0.5
         lunchButton.layer.borderColor = UIColor.systemGray2.cgColor
         lunchButton.layer.cornerRadius = 6
-        dinnerButton.layer.borderWidth = 0.5
-        dinnerButton.layer.borderColor = UIColor.systemGray2.cgColor
-        dinnerButton.layer.cornerRadius = 6
+        breakfastButton.layer.borderWidth = 0.5
+        breakfastButton.layer.borderColor = UIColor.systemGray2.cgColor
+        breakfastButton.layer.cornerRadius = 6
     }
     
     func prepareCollectionView() {

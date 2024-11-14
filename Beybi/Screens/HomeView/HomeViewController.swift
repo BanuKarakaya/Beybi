@@ -21,9 +21,22 @@ class HomeViewController: UIViewController {
         readrecipe()
         
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToDetail(_:)), name: .favSliderCellTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(foodCellToDetail(_:)), name: .foodCellTapped, object: nil)
     }
     
     @objc func navigateToDetail(_ notification: NSNotification) {
+        if let dict = notification.userInfo as NSDictionary? {
+            if let selectedCell = dict["selectedCell"] as? Food {
+                let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+                let detailVM = FoodDetailPageViewModel(delegate: detailVC)
+                detailVM.selectedFood = selectedCell
+                detailVC.viewModel = detailVM
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
+    }
+    
+    @objc func foodCellToDetail(_ notification: NSNotification) {
         if let dict = notification.userInfo as NSDictionary? {
             if let selectedCell = dict["selectedCell"] as? Food {
                 let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController

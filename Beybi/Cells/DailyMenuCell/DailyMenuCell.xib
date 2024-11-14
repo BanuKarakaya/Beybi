@@ -54,7 +54,6 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2z-KR-6ej">
                                                                 <rect key="frame" x="5" y="5" width="50" height="15"/>
-                                                                <color key="backgroundColor" red="0.63404888189999997" green="0.037503724949999998" blue="0.1171757709" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="ZKH-im-YMK"/>
                                                                     <constraint firstAttribute="width" constant="50" id="j4O-LI-nb4" userLabel="width = 10"/>
@@ -73,7 +72,7 @@
                                                                     <constraint firstAttribute="height" constant="8" id="IwT-Vm-Hdi"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -129,6 +128,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiH-xa-jmi">
                                                                 <rect key="frame" x="1" y="5" width="50" height="15"/>
+                                                                <color key="backgroundColor" red="0.63529411759999999" green="0.039215686270000001" blue="0.1176470588" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="Jcw-qE-eKp" userLabel="width = 50"/>
                                                                     <constraint firstAttribute="height" constant="15" id="hAB-eS-Yqm"/>
@@ -141,7 +141,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngg-3s-Wjo">
                                                                 <rect key="frame" x="12.333333333333345" y="7" width="29.666666666666671" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" red="0.96258600920000004" green="0.96258600920000004" blue="0.96258600920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
