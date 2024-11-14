@@ -22,7 +22,7 @@ protocol AllFoodsPageViewModelDelegate: AnyObject {
 
 class AllFoodsPageViewModel {
     weak var delegate: AllFoodsPageViewModelDelegate?
-    var types = ["Soups","Main Dishes","Purees","Snacks"]
+    var types = ["Breakfast","Soups","Main Dishes","Purees","Snacks"]
     
     init(delegate: AllFoodsPageViewModelDelegate) {
         self.delegate = delegate
@@ -36,7 +36,7 @@ extension AllFoodsPageViewModel: AllFoodsPageViewModelProtocol {
     }
     
     func numberOfItemsInSection() -> Int {
-        4
+        5
     }
     
     func viewDidLoad() {

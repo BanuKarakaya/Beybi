@@ -34,6 +34,32 @@ class ViewMoreViewModel {
         self.delegate = delegate
     }
     
+    func readBreakfast() {
+        firestore.collection("breakfastMenu").getDocuments { (querySnapshot, error) in
+            
+            
+            if let error = error {
+                print("Hata: \(error.localizedDescription)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let name = data["name"] as? String ?? "İsim yok"
+                    let cookingTime = data["cooking time"] as? String ?? "20-25 min"
+                    let recipe = data["recipe"] as? String ?? "Tarif yok"
+                    let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    let type = data["type"] as? String ?? "Type yok"
+                    let introText = data["introText"] as? String ?? "intro text yok"
+                    let ingredients = data["ingredients"] as? [String] ?? ["Malzeme yok"]
+                    let recipeStep = data["recipeStep"] as? [String] ?? ["Tarif yok"]
+                    
+                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
+                    self.foodArray?.append(food)
+                }
+                self.delegate?.reloadData()
+            }
+        }
+    }
+    
     func readSoups() {
         firestore.collection("soups").getDocuments { (querySnapshot, error) in
             if let error = error {
@@ -155,7 +181,9 @@ extension ViewMoreViewModel: ViewMoreViewModelProtocol {
     func viewDidLoad() {
         delegate?.prepareCollectionView()
         
-        if foodType == "Soups" {
+        if foodType == "Breakfast" {
+           readBreakfast()
+        } else if foodType == "Soups" {
             readSoups()
         } else if foodType == "Main Dishes" {
             readMainDishes()
