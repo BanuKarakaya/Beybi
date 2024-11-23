@@ -29,10 +29,11 @@
 		FA22AA562CBBFF2900F6B169 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA542CBBFF2900F6B169 /* RecipeCell.xib */; };
 		FA22AA582CBD90B900F6B169 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */; };
 		FA22AA5A2CBD94F900F6B169 /* IngredientsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */; };
+		FAA9D91C2CF137BD00CB83B2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */; };
+		FAA9D91E2CF1382A00CB83B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */; };
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
 		FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */; };
 		FAAC8CFD2C9456B000264E4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */; };
-		FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8CFE2C9456B000264E4B /* Main.storyboard */; };
 		FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */; };
 		FAAC8D102C9456B200264E4B /* BeybiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D0F2C9456B200264E4B /* BeybiTests.swift */; };
 		FAAC8D1A2C9456B200264E4B /* BeybiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8D192C9456B200264E4B /* BeybiUITests.swift */; };
@@ -72,6 +73,8 @@
 		FAB73EE42CDE9B450033CA8B /* BabyInfloSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB73EE22CDE9B450033CA8B /* BabyInfloSliderCell.swift */; };
 		FAB73EE52CDE9B450033CA8B /* BabyInfloSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB73EE32CDE9B450033CA8B /* BabyInfloSliderCell.xib */; };
 		FAB73EE72CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB73EE62CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift */; };
+		FAF5C0972CF2046B000ADD1F /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */; };
+		FAF5C0992CF210D0000ADD1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5C0982CF210D0000ADD1F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,11 +112,12 @@
 		FA22AA542CBBFF2900F6B169 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCellViewModel.swift; sourceTree = "<group>"; };
+		FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAC8CF82C9456B000264E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FAAC8CFC2C9456B000264E4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FAAC8CFF2C9456B000264E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAAC8D042C9456B200264E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAC8D062C9456B200264E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAC8D0B2C9456B200264E4B /* BeybiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeybiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +160,8 @@
 		FAB73EE22CDE9B450033CA8B /* BabyInfloSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInfloSliderCell.swift; sourceTree = "<group>"; };
 		FAB73EE32CDE9B450033CA8B /* BabyInfloSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BabyInfloSliderCell.xib; sourceTree = "<group>"; };
 		FAB73EE62CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInfoSliderCellViewModel.swift; sourceTree = "<group>"; };
+		FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
+		FAF5C0982CF210D0000ADD1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +251,15 @@
 			path = RecipeCell;
 			sourceTree = "<group>";
 		};
+		FAA9D9162CF1371000CB83B2 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */,
+				FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
 		FAAC8CEC2C9456B000264E4B = {
 			isa = PBXGroup;
 			children = (
@@ -274,11 +289,12 @@
 				FAAC8D302C95CBEA00264E4B /* Extensions */,
 				FAAC8CFA2C9456B000264E4B /* SceneDelegate.swift */,
 				FAAC8CF82C9456B000264E4B /* AppDelegate.swift */,
-				FAAC8CFE2C9456B000264E4B /* Main.storyboard */,
 				FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */,
 				FAAC8D062C9456B200264E4B /* Info.plist */,
 				FA22AA082C9F751E00F6B169 /* GoogleService-Info.plist */,
 				FA22AA1B2CAD5D9400F6B169 /* Assets.xcassets */,
+				FAF5C0982CF210D0000ADD1F /* Main.storyboard */,
+				FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */,
 			);
 			path = Beybi;
 			sourceTree = "<group>";
@@ -410,6 +426,7 @@
 		FAAC8D702C9C7B4900264E4B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FAA9D9162CF1371000CB83B2 /* OnboardingView */,
 				FAAC8D2D2C95C8EA00264E4B /* HomeView */,
 				FAAC8D282C95C3C700264E4B /* AllFoodsPageView */,
 				FAAC8D5A2C9C550000264E4B /* ViewMorePageView */,
@@ -579,6 +596,7 @@
 				FAAC8D532C9AC89C00264E4B /* BabiesFavCell.xib in Resources */,
 				FA22AA182CAADD9300F6B169 /* ViewMoreCell.xib in Resources */,
 				FAAC8D472C973ADC00264E4B /* DailyMenuCell.xib in Resources */,
+				FAF5C0972CF2046B000ADD1F /* OnboardingStoryboard.storyboard in Resources */,
 				FA22AA4C2CB99E4A00F6B169 /* IngredientsCell.xib in Resources */,
 				FA22AA562CBBFF2900F6B169 /* RecipeCell.xib in Resources */,
 				FA22AA1C2CAD5D9400F6B169 /* Assets.xcassets in Resources */,
@@ -587,7 +605,7 @@
 				FAAC8D4B2C97689D00264E4B /* FoodCell.xib in Resources */,
 				FA22AA092C9F751E00F6B169 /* GoogleService-Info.plist in Resources */,
 				FAB73EE52CDE9B450033CA8B /* BabyInfloSliderCell.xib in Resources */,
-				FAAC8D002C9456B000264E4B /* Main.storyboard in Resources */,
+				FAF5C0992CF210D0000ADD1F /* Main.storyboard in Resources */,
 				FAAC8D3F2C96F81E00264E4B /* FoodSliderMiniCell.xib in Resources */,
 				FAB73EDC2CDCF6540033CA8B /* EnjoyYourMealSliderCell.xib in Resources */,
 			);
@@ -632,12 +650,14 @@
 				FAAC8D322C95CC1800264E4B /* UICollectionViewCell+Extension.swift in Sources */,
 				FAAC8D522C9AC89C00264E4B /* BabiesFavCell.swift in Sources */,
 				FAAC8D592C9C2C5000264E4B /* ViewMoreViewController.swift in Sources */,
+				FAA9D91C2CF137BD00CB83B2 /* OnboardingViewModel.swift in Sources */,
 				FA22AA1A2CABC95F00F6B169 /* ViewMoreCellViewModel.swift in Sources */,
 				FAB73EE02CDD06B40033CA8B /* EnjoyYourMealCellViewModel.swift in Sources */,
 				FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */,
 				FAB73EDB2CDCF6540033CA8B /* EnjoyYourMealSliderCell.swift in Sources */,
 				FAAC8D2C2C95C53000264E4B /* AllFoodsPageViewModel.swift in Sources */,
 				FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */,
+				FAA9D91E2CF1382A00CB83B2 /* OnboardingViewController.swift in Sources */,
 				FAAC8D5C2C9C552700264E4B /* ViewMoreViewModel.swift in Sources */,
 				FAAC8D682C9C6A0C00264E4B /* FoodCellViewModel.swift in Sources */,
 				FA22AA552CBBFF2900F6B169 /* RecipeCell.swift in Sources */,
@@ -690,14 +710,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FAAC8CFE2C9456B000264E4B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAAC8CFF2C9456B000264E4B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAAC8D032C9456B200264E4B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -840,7 +852,6 @@
 				INFOPLIST_FILE = Beybi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -868,7 +879,6 @@
 				INFOPLIST_FILE = Beybi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

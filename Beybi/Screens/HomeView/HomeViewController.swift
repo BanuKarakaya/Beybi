@@ -124,7 +124,7 @@ extension HomeViewController: HomeViewModelDelegate {
     }
     
     func prepareCollectionView() {
-        homeCollectionView.delegate = self
+         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
         homeCollectionView.showsVerticalScrollIndicator = false
         homeCollectionView.register(cellType: BabiesAgeCell.self)
