@@ -7,13 +7,13 @@
 
 import UIKit
 
-class BabiesFavMiniCell: UICollectionViewCell {
+final class BabiesFavMiniCell: UICollectionViewCell {
 
-    @IBOutlet weak var foodImage: UIImageView!
-    @IBOutlet weak var foodNameLabel: UILabel!
-    @IBOutlet weak var typeView: UIView!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var cookingTimeLabel: UILabel!
+    @IBOutlet private weak var foodImage: UIImageView!
+    @IBOutlet private weak var foodNameLabel: UILabel!
+    @IBOutlet private weak var typeView: UIView!
+    @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var cookingTimeLabel: UILabel!
     
      var viewModel: BabiesFavMiniCellViewModelProtocol! {
         didSet {

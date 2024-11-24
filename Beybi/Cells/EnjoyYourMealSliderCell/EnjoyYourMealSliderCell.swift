@@ -7,8 +7,8 @@
 
 import UIKit
 
-class EnjoyYourMealSliderCell: UICollectionViewCell {
-    @IBOutlet weak var enjoyYourMealImage: UIImageView!
+final class EnjoyYourMealSliderCell: UICollectionViewCell {
+    @IBOutlet private weak var enjoyYourMealImage: UIImageView!
     
     var viewModel: EnjoyYourMealSliderCellViewModelProtocol! {
         didSet {

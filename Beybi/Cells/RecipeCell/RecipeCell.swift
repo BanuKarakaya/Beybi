@@ -7,11 +7,11 @@
 
 import UIKit
 
-class RecipeCell: UICollectionViewCell {
+final class RecipeCell: UICollectionViewCell {
 
-    @IBOutlet weak var view: UIView!
-    @IBOutlet weak var stepLabel: UILabel!
-    @IBOutlet weak var stepNumber: UILabel!
+    @IBOutlet private weak var view: UIView!
+    @IBOutlet private weak var stepLabel: UILabel!
+    @IBOutlet private weak var stepNumber: UILabel!
     
     var viewModel: RecipeViewModelProtocol! {
         didSet {

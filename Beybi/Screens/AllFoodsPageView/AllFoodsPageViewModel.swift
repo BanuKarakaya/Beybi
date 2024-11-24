@@ -20,7 +20,7 @@ protocol AllFoodsPageViewModelDelegate: AnyObject {
     func prepareCollectionView()
 }
 
-class AllFoodsPageViewModel {
+final class AllFoodsPageViewModel {
     weak var delegate: AllFoodsPageViewModelDelegate?
     var types = ["Breakfast","Soups","Main Dishes","Purees","Snacks"]
     

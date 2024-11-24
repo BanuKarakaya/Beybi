@@ -7,15 +7,15 @@
 
 import UIKit
 
-class BabiesAgeCell: UICollectionViewCell {
+final class BabiesAgeCell: UICollectionViewCell {
     
-  @IBOutlet weak var babyInfoCollectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
+  @IBOutlet private weak var babyInfoCollectionView: UICollectionView!
+  @IBOutlet private weak var pageControl: UIPageControl!
     var viewModel: BabiesAgeCellViewModelProtocol = BabiesAgeCellViewModel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewModel.viewDidLoad()
+        viewModel.awakeFromNib()
         viewModel.delegate = self
         babyInfoCollectionView.dataSource = self
         babyInfoCollectionView.delegate = self

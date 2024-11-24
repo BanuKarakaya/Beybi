@@ -7,12 +7,12 @@
 
 import UIKit
 
-class FoodCell: UICollectionViewCell {
+final class FoodCell: UICollectionViewCell {
 
-    @IBOutlet weak var foodName: UILabel!
-    @IBOutlet weak var typeView: UIView!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet private weak var foodName: UILabel!
+    @IBOutlet private weak var typeView: UIView!
+    @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var foodImage: UIImageView!
     
     var viewModel: FoodCellViewModelProtocol! {
         didSet {

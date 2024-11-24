@@ -20,7 +20,7 @@ protocol FoodSliderMiniCellViewModelDelegate: AnyObject {
     func prepareBannerImage(with urlString: String?)
 }
 
-class FoodSliderMiniCellViewModel {
+final class FoodSliderMiniCellViewModel {
     weak var delegate: FoodSliderMiniCellViewModelDelegate?
     var food: Food?
 }

@@ -7,15 +7,15 @@
 
 import UIKit
 
-class DailyMenuCell: UICollectionViewCell {
+final class DailyMenuCell: UICollectionViewCell {
 
-    @IBOutlet weak var menuCollectionView: UICollectionView!
-    @IBOutlet weak var breakfastButton: UIButton!
-    @IBOutlet weak var lunchButton: UIButton!
-    @IBOutlet weak var dinnerButton: UIButton!
-    @IBOutlet weak var breakfastButtonLabel: UILabel!
-    @IBOutlet weak var lunchButtonLabel: UILabel!
-    @IBOutlet weak var dinnerButtonLabel: UILabel!
+    @IBOutlet private weak var menuCollectionView: UICollectionView!
+    @IBOutlet private weak var breakfastButton: UIButton!
+    @IBOutlet private weak var lunchButton: UIButton!
+    @IBOutlet private weak var dinnerButton: UIButton!
+    @IBOutlet private weak var breakfastButtonLabel: UILabel!
+    @IBOutlet private weak var lunchButtonLabel: UILabel!
+    @IBOutlet private weak var dinnerButtonLabel: UILabel!
     var isBreakfastButtonTapped = false
     var isLunchButtonTapped = false
     var isDinnerButtonTapped = false

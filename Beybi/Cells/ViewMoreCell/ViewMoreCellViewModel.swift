@@ -20,7 +20,7 @@ protocol ViewMoreCellViewModelDelegate: AnyObject {
     func prepareBannerImage(with urlString: String?)
 }
 
-class ViewMoreCellViewModel {
+final class ViewMoreCellViewModel {
     weak var delegate: ViewMoreCellViewModelDelegate?
     var food: Food?
 }

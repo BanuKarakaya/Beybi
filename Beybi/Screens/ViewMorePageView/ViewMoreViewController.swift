@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewMoreViewController: UIViewController {
+final class ViewMoreViewController: UIViewController {
 
-    @IBOutlet weak var viewMoreCollectionView: UICollectionView!
+    @IBOutlet private weak var viewMoreCollectionView: UICollectionView!
     
     lazy var viewModel: ViewMoreViewModelProtocol = ViewMoreViewModel(delegate: self)
     

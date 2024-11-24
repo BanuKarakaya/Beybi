@@ -7,11 +7,11 @@
 
 import UIKit
 
-class FoodSliderCellController: UICollectionViewCell {
+final class FoodSliderCellController: UICollectionViewCell {
 
-    @IBOutlet weak var foodTypeImage: UIImageView!
-    @IBOutlet weak var foodTypeLabel: UILabel!
-    @IBOutlet weak var horizontalCollectionView: UICollectionView!
+    @IBOutlet private weak var foodTypeImage: UIImageView!
+    @IBOutlet private weak var foodTypeLabel: UILabel!
+    @IBOutlet private weak var horizontalCollectionView: UICollectionView!
     
     
     var viewModel: FoodSliderCellViewModelProtocol! {

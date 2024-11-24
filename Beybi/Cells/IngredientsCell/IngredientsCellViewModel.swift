@@ -19,7 +19,7 @@ protocol IngredientsCellViewModelDelegate: AnyObject {
     func setUI()
 }
 
-class IngredientsCellViewModel {
+final class IngredientsCellViewModel {
     weak var delegate: IngredientsCellViewModelDelegate?
     var ingredients: String?
 }

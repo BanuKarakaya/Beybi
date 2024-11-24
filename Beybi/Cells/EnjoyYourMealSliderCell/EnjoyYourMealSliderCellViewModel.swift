@@ -18,7 +18,7 @@ protocol EnjoyYourMealSliderCellViewModelDelegate: AnyObject {
     func prepareBannerImage(with urlString: String?)
 }
 
-class EnjoyYourMealSliderCellViewModel {
+final class EnjoyYourMealSliderCellViewModel {
     weak var delegate: EnjoyYourMealSliderCellViewModelDelegate?
     var imageUrl: Eym?
 }

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var onboardingButton: UIButton!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var onboardingButton: UIButton!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     var darkBeybiColor = UIColor(red: 113/255.0, green: 27/255.0, blue: 41/255.0, alpha: 1)
     var viewModel: OnboardingViewModelProtocol! = OnboardingViewModel()
     

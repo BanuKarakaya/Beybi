@@ -9,9 +9,9 @@ import UIKit
 import FirebaseFirestore
 import FirebaseStorage
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-    @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet private weak var homeCollectionView: UICollectionView!
     private lazy var viewModel: HomeViewModelProtocol = HomeViewModel(delegate: self)
     let firestore = Firestore.firestore()
    
@@ -52,16 +52,16 @@ class HomeViewController: UIViewController {
         firestore.collection("soups").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
-            } else {
-                for document in querySnapshot!.documents {
+            } else if let querySnapshot = querySnapshot {
+                for document in querySnapshot.documents {
                     let data = document.data()
-                    let name = data["name"] as? String ?? "İsim yok"
-                    let cookingTime = data["cooking time"] as? String ?? "Süre yok"
-                    let recipe = data["recipe"] as? String ?? "Tarif yok"
+                    let name = data["name"] as? String ?? "No name"
+                    let cookingTime = data["cooking time"] as? String ?? "No time"
+                    let recipe = data["recipe"] as? String ?? "No recipe"
                     
-                    print("Çorba Adı: \(name)")
-                    print("Pişirme Süresi: \(cookingTime)")
-                    print("Tarif: \(recipe)")
+                    print("Soup Name: \(name)")
+                    print("Cooking time: \(cookingTime)")
+                    print("Recipe: \(recipe)")
                 }
             }
         }
@@ -98,7 +98,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
               case 0:
-            return CGSize(width: homeCollectionView.frame.width - 13, height: 50)
+                  return CGSize(width: homeCollectionView.frame.width - 13, height: 50)
               case 1:
                   return CGSize(width: homeCollectionView.frame.width - 13, height: 240)
               case 2:
@@ -124,7 +124,7 @@ extension HomeViewController: HomeViewModelDelegate {
     }
     
     func prepareCollectionView() {
-         homeCollectionView.delegate = self
+        homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
         homeCollectionView.showsVerticalScrollIndicator = false
         homeCollectionView.register(cellType: BabiesAgeCell.self)

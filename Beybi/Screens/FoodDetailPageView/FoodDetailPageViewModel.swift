@@ -24,11 +24,9 @@ protocol FoodDetailPageViewModelDelegate: AnyObject {
     func prepareCollectionView()
 }
 
-class FoodDetailPageViewModel {
+final class FoodDetailPageViewModel {
     weak var delegate: FoodDetailPageViewModelDelegate?
     var selectedFood: Food?
-    
-    
     
     init(delegate: FoodDetailPageViewModelDelegate) {
         self.delegate = delegate

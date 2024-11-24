@@ -14,14 +14,14 @@ protocol BabiesAgeCellViewModelProtocol {
     
     func infoAtIndex(index: Int) -> Info?
     func numberOfItems() -> Int
-    func viewDidLoad()
+    func awakeFromNib()
 }
 
 protocol BabiesAgeCellViewModelDelegate: AnyObject {
     func reloadData()
 }
 
-class BabiesAgeCellViewModel {
+final class BabiesAgeCellViewModel {
     weak var delegate: BabiesAgeCellViewModelDelegate?
     let firestore = Firestore.firestore()
     var images: [Info]? = []
@@ -30,11 +30,11 @@ class BabiesAgeCellViewModel {
         firestore.collection("info").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
-            } else {
-                for document in querySnapshot!.documents {
+            } else if let querySnapshot = querySnapshot {
+                for document in querySnapshot.documents {
                     let data = document.data()
-                    let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
-                    let infoText = data["infoText"] as? String ?? "infoText yok"
+                    let imageUrl = data["imageUrl"] as? String ?? "No foto"
+                    let infoText = data["infoText"] as? String ?? "No infoText"
         
                     let image = Info(imageUrl: imageUrl, infoText: infoText)
                     print(image)
@@ -47,7 +47,7 @@ class BabiesAgeCellViewModel {
 }
 
 extension BabiesAgeCellViewModel: BabiesAgeCellViewModelProtocol {
-    func viewDidLoad() {
+    func awakeFromNib() {
         readInfo()
     }
     

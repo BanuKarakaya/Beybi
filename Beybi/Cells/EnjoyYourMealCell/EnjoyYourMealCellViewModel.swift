@@ -22,7 +22,7 @@ protocol EnjoyYourMealCellViewModelDelegate: AnyObject {
     func setUI()
 }
 
-class EnjoyYourMealCellViewModel {
+final class EnjoyYourMealCellViewModel {
     weak var delegate: EnjoyYourMealCellViewModelDelegate?
     let firestore = Firestore.firestore()
     var images: [Eym]? = []
@@ -35,10 +35,10 @@ class EnjoyYourMealCellViewModel {
         firestore.collection("Enjoy Your Meal").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Hata: \(error.localizedDescription)")
-            } else {
-                for document in querySnapshot!.documents {
+            } else if let querySnapshot = querySnapshot {
+                for document in querySnapshot.documents {
                     let data = document.data()
-                    let imageUrl = data["imageUrl"] as? String ?? "Foto yok"
+                    let imageUrl = data["imageUrl"] as? String ?? "No image"
         
                     let image = Eym(imageUrl: imageUrl)
                     print(image)

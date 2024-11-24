@@ -17,7 +17,7 @@ protocol RecipeViewModelDelegate: AnyObject {
     func configure(recipeStep: String?, index: Int)
 }
 
-class RecipeViewModel {
+final class RecipeViewModel {
     weak var delegate: RecipeViewModelDelegate?
     var recipeStep: String?
     var recipeIndex: Int?

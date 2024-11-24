@@ -8,14 +8,14 @@
 import UIKit
 import SDWebImage
 
-class FoodSliderMiniCell: UICollectionViewCell {
+final class FoodSliderMiniCell: UICollectionViewCell {
 
-    @IBOutlet weak var foodName: UILabel!
-    @IBOutlet weak var view: UIView!
-    @IBOutlet weak var foodImage: UIImageView!
-    @IBOutlet weak var typeView: UIView!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var cookingTimeLabel: UILabel!
+    @IBOutlet private weak var foodName: UILabel!
+    @IBOutlet private weak var view: UIView!
+    @IBOutlet private weak var foodImage: UIImageView!
+    @IBOutlet private weak var typeView: UIView!
+    @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var cookingTimeLabel: UILabel!
     
     var viewModel: FoodSliderMiniCellViewModelProtocol! {
         didSet {

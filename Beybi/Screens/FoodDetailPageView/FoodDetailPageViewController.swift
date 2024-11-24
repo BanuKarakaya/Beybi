@@ -7,17 +7,17 @@
 
 import UIKit
 
-class FoodDetailPageViewController: UIViewController {
+final class FoodDetailPageViewController: UIViewController {
 
-    @IBOutlet weak var typeView: UIView!
-    @IBOutlet weak var recipeLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var foodImage: UIImageView!
-    @IBOutlet weak var ingredientsCollectionView: UICollectionView!
-    @IBOutlet weak var recipeCollectionView: UICollectionView!
-    @IBOutlet weak var foodName: UILabel!
-    @IBOutlet weak var ingredientsView: UIView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var typeView: UIView!
+    @IBOutlet private weak var recipeLabel: UILabel!
+    @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var foodImage: UIImageView!
+    @IBOutlet private weak var ingredientsCollectionView: UICollectionView!
+    @IBOutlet private weak var recipeCollectionView: UICollectionView!
+    @IBOutlet private weak var foodName: UILabel!
+    @IBOutlet private weak var ingredientsView: UIView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     var beybiColor = UIColor(red: 162/255.0, green: 10/255.0, blue: 30/255.0, alpha: 0.9)
     var darkBeybiColor = UIColor(red: 113/255.0, green: 27/255.0, blue: 41/255.0, alpha: 1)

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class EnjoyYourMealCell: UICollectionViewCell {
+final class EnjoyYourMealCell: UICollectionViewCell {
 
-    @IBOutlet weak var sliderCollectionView: UICollectionView!
+    @IBOutlet private weak var sliderCollectionView: UICollectionView!
     var timer: Timer?
     var currentIndex = 0
     lazy var viewModel: EnjoyYourMealCellViewModelProtocol = EnjoyYourMealCellViewModel(delegate: self)

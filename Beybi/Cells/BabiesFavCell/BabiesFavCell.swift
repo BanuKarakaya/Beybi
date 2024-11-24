@@ -7,22 +7,21 @@
 
 import UIKit
 
-class BabiesFavCell: UICollectionViewCell {
+final class BabiesFavCell: UICollectionViewCell {
 
-    @IBOutlet weak var babiesFavMiniCollection: UICollectionView!
+    @IBOutlet private weak var babiesFavMiniCollection: UICollectionView!
     
     private lazy var viewModel: BabiesFavCellViewModelProtocol = BabiesFavCellViewModel(delegate: self)
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewModel.viewDidLoad()
+        viewModel.awakeFromNib()
     }
 }
 
 extension BabiesFavCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectItemAt(index: indexPath.item)
-        viewModel.sendSelectedCell()
     }
 }
 

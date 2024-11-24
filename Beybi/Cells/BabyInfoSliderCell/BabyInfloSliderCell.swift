@@ -7,10 +7,10 @@
 
 import UIKit
 
-class BabyInfloSliderCell: UICollectionViewCell {
+final class BabyInfloSliderCell: UICollectionViewCell {
 
-    @IBOutlet weak var infoImage: UIImageView!
-    @IBOutlet weak var infoText: UILabel!
+    @IBOutlet private weak var infoImage: UIImageView!
+    @IBOutlet private weak var infoText: UILabel!
     
     var viewModel: BabyInfoSliderCellViewModelProtocol! {
         didSet {

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AllFoodsPageViewController: UIViewController {
+final class AllFoodsPageViewController: UIViewController {
     
-    @IBOutlet weak var allFoodsCollectionView: UICollectionView!
+    @IBOutlet private weak var allFoodsCollectionView: UICollectionView!
 
     private lazy var viewModel: AllFoodsPageViewModelProtocol = AllFoodsPageViewModel(delegate: self)
     private var previousOffsetY: CGFloat = 0

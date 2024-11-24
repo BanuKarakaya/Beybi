@@ -19,7 +19,7 @@ protocol OnboardingViewModelDelegate: AnyObject {
     func navigateToHomeVC()
 }
 
-class OnboardingViewModel {
+final class OnboardingViewModel {
     weak var delegate: OnboardingViewModelDelegate?
 }
 

@@ -20,7 +20,7 @@ protocol HomeViewModelDelegate: AnyObject {
     func prepareUI()
 }
 
-class HomeViewModel {
+final class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
     
     init(delegate: HomeViewModelDelegate) {

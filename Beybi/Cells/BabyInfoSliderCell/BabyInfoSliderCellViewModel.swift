@@ -18,7 +18,7 @@ protocol BabyInfoSliderCellViewModelDelegate: AnyObject {
     func prepareBannerImage(with urlString: String?)
 }
 
-class BabyInfoSliderCellViewModel {
+final class BabyInfoSliderCellViewModel {
     weak var delegate: BabyInfoSliderCellViewModelDelegate?
     var info: Info?
 }

@@ -8,13 +8,13 @@
 import UIKit
 import SDWebImage
 
-class ViewMoreCell: UICollectionViewCell {
+final class ViewMoreCell: UICollectionViewCell {
 
-    @IBOutlet weak var foodImage: UIImageView!
-    @IBOutlet weak var foodName: UILabel!
-    @IBOutlet weak var typeName: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var typeView: UIView!
+    @IBOutlet private weak var foodImage: UIImageView!
+    @IBOutlet private weak var foodName: UILabel!
+    @IBOutlet private weak var typeName: UILabel!
+    @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var typeView: UIView!
    
     var viewModel: ViewMoreCellViewModelProtocol! {
         didSet {
