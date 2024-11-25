@@ -8,8 +8,6 @@
 import Foundation
 
 protocol HomeViewModelProtocol {
-    var delegate: HomeViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func numberOfSections() -> Int
     func numberOfItemsInSection() -> Int 
@@ -21,7 +19,7 @@ protocol HomeViewModelDelegate: AnyObject {
 }
 
 final class HomeViewModel {
-    weak var delegate: HomeViewModelDelegate?
+    private weak var delegate: HomeViewModelDelegate?
     
     init(delegate: HomeViewModelDelegate) {
         self.delegate = delegate

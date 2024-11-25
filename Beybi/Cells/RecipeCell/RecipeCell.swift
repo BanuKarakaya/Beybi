@@ -15,7 +15,6 @@ final class RecipeCell: UICollectionViewCell {
     
     var viewModel: RecipeViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.load()
         }
     }

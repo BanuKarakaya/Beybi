@@ -8,8 +8,6 @@
 import Foundation
 
 protocol AllFoodsPageViewModelProtocol {
-    var delegate: AllFoodsPageViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func typeAtIndex(index: Int) -> String
@@ -21,8 +19,8 @@ protocol AllFoodsPageViewModelDelegate: AnyObject {
 }
 
 final class AllFoodsPageViewModel {
-    weak var delegate: AllFoodsPageViewModelDelegate?
-    var types = ["Breakfast","Soups","Main Dishes","Purees","Snacks"]
+    private weak var delegate: AllFoodsPageViewModelDelegate?
+    private var types = ["Breakfast","Soups","Main Dishes","Purees","Snacks"]
     
     init(delegate: AllFoodsPageViewModelDelegate) {
         self.delegate = delegate

@@ -16,7 +16,6 @@ final class FoodSliderCellController: UICollectionViewCell {
     
     var viewModel: FoodSliderCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.viewDidLoad()
             viewModel.load()
         }
@@ -40,8 +39,7 @@ extension FoodSliderCellController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: FoodSliderMiniCell.self, indexPath: indexPath)
         if let food = viewModel.foodAtIndex(index: indexPath.item) {
-            let cellViewModel = FoodSliderMiniCellViewModel()
-            cellViewModel.food = food
+            let cellViewModel = FoodSliderMiniCellViewModel(delegate: cell, food: food)
             cell.viewModel = cellViewModel
         }
         return cell

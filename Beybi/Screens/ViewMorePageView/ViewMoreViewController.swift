@@ -31,8 +31,7 @@ extension ViewMoreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: ViewMoreCell.self, indexPath: indexPath)
         if let food = viewModel.foodAtIndex(index: indexPath.item) {
-            let cellViewModel = ViewMoreCellViewModel()
-            cellViewModel.food = food
+            let cellViewModel = ViewMoreCellViewModel(delegate: cell, food: food)
             cell.viewModel = cellViewModel
         }
         return cell
@@ -54,6 +53,10 @@ extension ViewMoreViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ViewMoreViewController: ViewMoreViewModelDelegate {
+    func prepareUI(foodType: String?) {
+        self.title = foodType
+    }
+    
     func reloadData() {
         viewMoreCollectionView.reloadData()
     }

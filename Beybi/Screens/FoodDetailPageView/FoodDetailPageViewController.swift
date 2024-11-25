@@ -55,17 +55,14 @@ extension FoodDetailPageViewController: UICollectionViewDataSource {
         if collectionView == ingredientsCollectionView {
             let cell = collectionView.dequeCell(cellType: IngredientsCell.self, indexPath: indexPath)
             let ingredient = viewModel.ingredientsAtIndex(index: indexPath.item)
-            let cellViewModel = IngredientsCellViewModel()
-            cellViewModel.ingredients = ingredient
+            let cellViewModel = IngredientsCellViewModel(delegate: cell, ingredients: ingredient)
             cell.viewModel = cellViewModel
             
             return cell
         } else if collectionView == recipeCollectionView {
             let cell = collectionView.dequeCell(cellType: RecipeCell.self, indexPath: indexPath)
             let recipeStep = viewModel.recipeStepAtIndex(index: indexPath.item)
-            let cellViewModel = RecipeViewModel()
-            cellViewModel.recipeStep = recipeStep
-            cellViewModel.recipeIndex = indexPath.item
+            let cellViewModel = RecipeViewModel(delegate: cell, recipeStep: recipeStep, recipeIndex: indexPath.item)
             cell.viewModel = cellViewModel
                 
             return cell

@@ -11,12 +11,11 @@ final class BabiesAgeCell: UICollectionViewCell {
     
   @IBOutlet private weak var babyInfoCollectionView: UICollectionView!
   @IBOutlet private weak var pageControl: UIPageControl!
-    var viewModel: BabiesAgeCellViewModelProtocol = BabiesAgeCellViewModel()
+  private lazy var viewModel: BabiesAgeCellViewModelProtocol = BabiesAgeCellViewModel(delegate: self)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         viewModel.awakeFromNib()
-        viewModel.delegate = self
         babyInfoCollectionView.dataSource = self
         babyInfoCollectionView.delegate = self
         babyInfoCollectionView.register(cellType: BabyInfloSliderCell.self)
@@ -40,8 +39,7 @@ extension BabiesAgeCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: BabyInfloSliderCell.self, indexPath: indexPath)
         if let image = viewModel.infoAtIndex(index: indexPath.item) {
-            let cellViewModel = BabyInfoSliderCellViewModel()
-            cellViewModel.info = image
+            let cellViewModel = BabyInfoSliderCellViewModel(delegate: cell, info: image)
             cell.viewModel = cellViewModel
         }
         return cell

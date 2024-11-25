@@ -8,8 +8,6 @@
 import Foundation
 
 protocol OnboardingViewModelProtocol {
-    var delegate: OnboardingViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func navigateToHomeVC()
 }
@@ -20,7 +18,11 @@ protocol OnboardingViewModelDelegate: AnyObject {
 }
 
 final class OnboardingViewModel {
-    weak var delegate: OnboardingViewModelDelegate?
+    private weak var delegate: OnboardingViewModelDelegate?
+    
+    init(delegate: OnboardingViewModelDelegate?) {
+        self.delegate = delegate
+    }
 }
 
 extension OnboardingViewModel: OnboardingViewModelProtocol {

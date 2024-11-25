@@ -16,7 +16,6 @@ final class FoodCell: UICollectionViewCell {
     
     var viewModel: FoodCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.load()
             viewModel.viewDidLoad()
         }

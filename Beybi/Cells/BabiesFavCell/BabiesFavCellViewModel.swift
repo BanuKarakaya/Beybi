@@ -10,8 +10,6 @@ import FirebaseFirestore
 import FirebaseStorage
 
 protocol BabiesFavCellViewModelProtocol {
-    var delegate: BabiesFavCellViewModelDelegate? { get set }
-    
     func awakeFromNib()
     func numberOfItemsInSection() -> Int
     func minimumLineSpacingForSectionAt() -> CGFloat
@@ -25,9 +23,9 @@ protocol BabiesFavCellViewModelDelegate: AnyObject {
 }
 
 final class BabiesFavCellViewModel {
-    weak var delegate: BabiesFavCellViewModelDelegate?
+    private weak var delegate: BabiesFavCellViewModelDelegate?
     let firestore = Firestore.firestore()
-    var babyFavs: [Food]? = []
+    private var babyFavs: [Food]? = []
     var selectedCell: Food?
     
     init(delegate: BabiesFavCellViewModelDelegate) {

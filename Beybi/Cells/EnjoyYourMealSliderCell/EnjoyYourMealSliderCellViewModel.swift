@@ -8,8 +8,6 @@
 import Foundation
 
 protocol EnjoyYourMealSliderCellViewModelProtocol {
-    var delegate: EnjoyYourMealSliderCellViewModelDelegate? { get set }
-    
     func load()
 }
 
@@ -19,8 +17,13 @@ protocol EnjoyYourMealSliderCellViewModelDelegate: AnyObject {
 }
 
 final class EnjoyYourMealSliderCellViewModel {
-    weak var delegate: EnjoyYourMealSliderCellViewModelDelegate?
-    var imageUrl: Eym?
+    private weak var delegate: EnjoyYourMealSliderCellViewModelDelegate?
+    private var imageUrl: Eym?
+    
+    init(delegate: EnjoyYourMealSliderCellViewModelDelegate?, imageUrl: Eym?) {
+        self.delegate = delegate
+        self.imageUrl = imageUrl
+    }
 }
 
 extension EnjoyYourMealSliderCellViewModel: EnjoyYourMealSliderCellViewModelProtocol {

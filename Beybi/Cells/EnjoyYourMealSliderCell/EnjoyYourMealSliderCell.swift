@@ -12,7 +12,6 @@ final class EnjoyYourMealSliderCell: UICollectionViewCell {
     
     var viewModel: EnjoyYourMealSliderCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.load()
         }
     }

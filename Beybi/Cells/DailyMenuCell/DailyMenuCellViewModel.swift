@@ -10,8 +10,6 @@ import FirebaseFirestore
 import FirebaseStorage
 
 protocol DailyMenuCellViewModelProtocol {
-    var delegate: DailyMenuCellViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func numberOfItemsInSection(breakfastTapped: Bool, lunchTapped: Bool, dinnerTapped: Bool) -> Int
     func createDailyDinnerMenu() -> [Food]
@@ -29,16 +27,16 @@ protocol DailyMenuCellViewModelDelegate: AnyObject {
 }
 
 final class DailyMenuCellViewModel {
-    weak var delegate: DailyMenuCellViewModelDelegate?
-    let firestore = Firestore.firestore()
-    var breakfasts: [Food]? = []
-    var soups: [Food]? = []
-    var mainDishes: [Food]? = []
-    var purees: [Food]? = []
-    var snacks: [Food]? = []
-    var randomBreakfastArray: [Food] = []
-    var randomLunchArray: [Food] = []
-    var randomDinnerArray: [Food] = []
+    private weak var delegate: DailyMenuCellViewModelDelegate?
+    private let firestore = Firestore.firestore()
+    private var breakfasts: [Food]? = []
+    private var soups: [Food]? = []
+    private var mainDishes: [Food]? = []
+    private var purees: [Food]? = []
+    private var snacks: [Food]? = []
+    private var randomBreakfastArray: [Food] = []
+    private var randomLunchArray: [Food] = []
+    private var randomDinnerArray: [Food] = []
     var selectedCell: Food?
     let group = DispatchGroup()
     

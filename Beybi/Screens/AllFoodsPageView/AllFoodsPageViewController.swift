@@ -64,8 +64,7 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeCell(cellType: FoodSliderCellController.self, indexPath: indexPath)
          let type = viewModel.typeAtIndex(index: indexPath.item)
-         let cellViewModel = FoodSliderCellViewModel()
-         cellViewModel.type = type
+         let cellViewModel = FoodSliderCellViewModel(delegate: cell, type: type)
          cell.viewModel = cellViewModel
     
          return cell

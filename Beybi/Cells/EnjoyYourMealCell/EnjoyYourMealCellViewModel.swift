@@ -10,8 +10,6 @@ import FirebaseFirestore
 import FirebaseStorage
 
 protocol EnjoyYourMealCellViewModelProtocol {
-    var delegate: EnjoyYourMealCellViewModelDelegate? { get set }
-    
     func imageAtIndex(index: Int) -> Eym?
     func numberOfItems() -> Int
     func viewDidLoad()
@@ -23,8 +21,8 @@ protocol EnjoyYourMealCellViewModelDelegate: AnyObject {
 }
 
 final class EnjoyYourMealCellViewModel {
-    weak var delegate: EnjoyYourMealCellViewModelDelegate?
-    let firestore = Firestore.firestore()
+    private weak var delegate: EnjoyYourMealCellViewModelDelegate?
+    private let firestore = Firestore.firestore()
     var images: [Eym]? = []
     
     init(delegate: EnjoyYourMealCellViewModelDelegate) {

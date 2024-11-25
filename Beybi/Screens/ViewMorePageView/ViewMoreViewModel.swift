@@ -10,23 +10,23 @@ import FirebaseFirestore
 import FirebaseStorage
 
 protocol ViewMoreViewModelProtocol {
-    var delegate: ViewMoreViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func foodAtIndex(index: Int) -> Food?
     func didSelectItemAt(index: Int)
+    func setTitle(foodType: String?)
 }
 
 protocol ViewMoreViewModelDelegate: AnyObject {
     func prepareCollectionView()
+    func prepareUI(foodType: String?)
     func navigateToDetailVC(selectedCell: Food?)
     func reloadData()
 }
 
 final class ViewMoreViewModel {
-    weak var delegate: ViewMoreViewModelDelegate?
-    var foodArray: [Food]? = []
+    private weak var delegate: ViewMoreViewModelDelegate?
+    private var foodArray: [Food]? = []
     let firestore = Firestore.firestore()
     var foodType: String?
     
@@ -158,6 +158,10 @@ final class ViewMoreViewModel {
 }
 
 extension ViewMoreViewModel: ViewMoreViewModelProtocol {
+    func setTitle(foodType: String?) {
+        delegate?.prepareUI(foodType: foodType)
+    }
+    
     func didSelectItemAt(index: Int) {
         var selectedCell: Food?
         
@@ -179,6 +183,7 @@ extension ViewMoreViewModel: ViewMoreViewModelProtocol {
     
     func viewDidLoad() {
         delegate?.prepareCollectionView()
+        setTitle(foodType: foodType)
         
         if foodType == "Breakfast" {
            readBreakfast()

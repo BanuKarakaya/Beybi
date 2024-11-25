@@ -8,7 +8,6 @@
 import Foundation
 
 protocol IngredientsCellViewModelProtocol {
-    var delegate: IngredientsCellViewModelDelegate? { get set }
     
     func awakeFromNib()
     func load()
@@ -20,8 +19,13 @@ protocol IngredientsCellViewModelDelegate: AnyObject {
 }
 
 final class IngredientsCellViewModel {
-    weak var delegate: IngredientsCellViewModelDelegate?
-    var ingredients: String?
+    private weak var delegate: IngredientsCellViewModelDelegate?
+    private var ingredients: String?
+    
+    init(delegate: IngredientsCellViewModelDelegate?, ingredients: String?) {
+        self.delegate = delegate
+        self.ingredients = ingredients
+    }
 }
 
 extension IngredientsCellViewModel: IngredientsCellViewModelProtocol {

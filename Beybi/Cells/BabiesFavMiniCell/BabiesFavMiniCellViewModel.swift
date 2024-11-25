@@ -8,8 +8,6 @@
 import Foundation
 
 protocol BabiesFavMiniCellViewModelProtocol {
-    var delegate: BabiesFavMiniCellViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func load()
 }
@@ -21,9 +19,13 @@ protocol BabiesFavMiniCellViewModelDelegate: AnyObject {
 }
 
 final class BabiesFavMiniCellViewModel {
-    weak var delegate: BabiesFavMiniCellViewModelDelegate?
-    var food: Food?
+    private weak var delegate: BabiesFavMiniCellViewModelDelegate?
+    private var food: Food?
    
+    init(delegate: BabiesFavMiniCellViewModelDelegate?, food: Food?) {
+        self.delegate = delegate
+        self.food = food
+    }
 }
 
 extension BabiesFavMiniCellViewModel: BabiesFavMiniCellViewModelProtocol {

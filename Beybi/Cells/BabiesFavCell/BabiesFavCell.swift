@@ -33,8 +33,7 @@ extension BabiesFavCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: BabiesFavMiniCell.self, indexPath: indexPath)
         if let food = viewModel.foodAtIndex(index: indexPath.item) {
-            let cellViewModel = BabiesFavMiniCellViewModel()
-            cellViewModel.food = food
+            let cellViewModel = BabiesFavMiniCellViewModel(delegate: cell, food: food)
             cell.viewModel = cellViewModel
         }
         return cell

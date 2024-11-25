@@ -108,8 +108,7 @@ extension DailyMenuCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
         if let food = viewModel.foodAtIndex(index: indexPath.item, breakfastTapped: isBreakfastButtonTapped, lunchTapped: isLunchButtonTapped, dinnerTapped: isDinnerButtonTapped) {
-            let cellViewModel = FoodCellViewModel()
-            cellViewModel.food = food
+            let cellViewModel = FoodCellViewModel(delegate: cell, food: food)
             cell.viewModel = cellViewModel
         }
         return cell

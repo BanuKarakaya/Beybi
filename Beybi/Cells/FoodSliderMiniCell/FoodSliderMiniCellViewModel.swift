@@ -8,8 +8,6 @@
 import Foundation
 
 protocol FoodSliderMiniCellViewModelProtocol {
-    var delegate: FoodSliderMiniCellViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func load()
 }
@@ -21,8 +19,13 @@ protocol FoodSliderMiniCellViewModelDelegate: AnyObject {
 }
 
 final class FoodSliderMiniCellViewModel {
-    weak var delegate: FoodSliderMiniCellViewModelDelegate?
-    var food: Food?
+    private weak var delegate: FoodSliderMiniCellViewModelDelegate?
+    private var food: Food?
+    
+    init(delegate: FoodSliderMiniCellViewModelDelegate?, food: Food?) {
+        self.delegate = delegate
+        self.food = food
+    }
 }
 
 extension FoodSliderMiniCellViewModel: FoodSliderMiniCellViewModelProtocol {

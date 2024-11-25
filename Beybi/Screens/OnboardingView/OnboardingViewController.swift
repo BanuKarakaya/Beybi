@@ -13,11 +13,11 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet private weak var onboardingButton: UIButton!
     @IBOutlet private weak var descriptionLabel: UILabel!
     var darkBeybiColor = UIColor(red: 113/255.0, green: 27/255.0, blue: 41/255.0, alpha: 1)
-    var viewModel: OnboardingViewModelProtocol! = OnboardingViewModel()
+    private lazy var viewModel: OnboardingViewModelProtocol! = OnboardingViewModel(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
+        
         viewModel.viewDidLoad()
     }
     

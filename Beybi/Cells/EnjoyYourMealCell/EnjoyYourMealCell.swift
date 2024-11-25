@@ -47,8 +47,7 @@ extension EnjoyYourMealCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: EnjoyYourMealSliderCell.self, indexPath: indexPath)
         if let image = viewModel.imageAtIndex(index: indexPath.item) {
-            let cellViewModel = EnjoyYourMealSliderCellViewModel()
-            cellViewModel.imageUrl = image
+            let cellViewModel = EnjoyYourMealSliderCellViewModel(delegate: cell, imageUrl: image)
             cell.viewModel = cellViewModel
         }
         return cell

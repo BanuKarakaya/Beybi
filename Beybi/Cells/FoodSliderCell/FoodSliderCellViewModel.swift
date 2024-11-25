@@ -10,8 +10,6 @@ import FirebaseFirestore
 import FirebaseStorage
 
 protocol FoodSliderCellViewModelProtocol {
-    var delegate: FoodSliderCellViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func minimumInteritemSpacingForSectionAt() -> CGFloat
@@ -29,15 +27,20 @@ protocol FoodSliderCellViewModelDelegate: AnyObject {
 }
 
 final class FoodSliderCellViewModel {
-    weak var delegate: FoodSliderCellViewModelDelegate?
-    var breakfasts: [Food]? = []
-    var soups: [Food]? = []
-    var mainDishes: [Food]? = []
-    var purees: [Food]? = []
-    var snacks: [Food]? = []
-    var type: String?
+    private weak var delegate: FoodSliderCellViewModelDelegate?
+    private var breakfasts: [Food]? = []
+    private var soups: [Food]? = []
+    private var mainDishes: [Food]? = []
+    private var purees: [Food]? = []
+    private var snacks: [Food]? = []
+    private var type: String?
     let firestore = Firestore.firestore()
     var selectedCell: Food?
+    
+    init(delegate: FoodSliderCellViewModelDelegate?, type: String?) {
+        self.delegate = delegate
+        self.type = type
+    }
     
     func readBreakfast() {
         firestore.collection("breakfastMenu").getDocuments { (querySnapshot, error) in

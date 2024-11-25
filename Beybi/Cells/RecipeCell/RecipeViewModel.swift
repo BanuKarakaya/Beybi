@@ -8,8 +8,6 @@
 import Foundation
 
 protocol RecipeViewModelProtocol {
-    var delegate: RecipeViewModelDelegate? { get set }
-    
     func load()
 }
 
@@ -18,9 +16,15 @@ protocol RecipeViewModelDelegate: AnyObject {
 }
 
 final class RecipeViewModel {
-    weak var delegate: RecipeViewModelDelegate?
-    var recipeStep: String?
-    var recipeIndex: Int?
+    private weak var delegate: RecipeViewModelDelegate?
+    private var recipeStep: String?
+    private var recipeIndex: Int?
+    
+    init(delegate: RecipeViewModelDelegate?, recipeStep: String?, recipeIndex: Int?) {
+        self.delegate = delegate
+        self.recipeStep = recipeStep
+        self.recipeIndex = recipeIndex
+    }
 }
 
 extension RecipeViewModel: RecipeViewModelProtocol {

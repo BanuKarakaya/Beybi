@@ -18,7 +18,6 @@ final class ViewMoreCell: UICollectionViewCell {
    
     var viewModel: ViewMoreCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.load()
             viewModel.viewDidLoad()
         }

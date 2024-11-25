@@ -14,7 +14,6 @@ final class BabyInfloSliderCell: UICollectionViewCell {
     
     var viewModel: BabyInfoSliderCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.load()
         }
     }

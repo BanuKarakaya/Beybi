@@ -19,7 +19,6 @@ final class FoodSliderMiniCell: UICollectionViewCell {
     
     var viewModel: FoodSliderMiniCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.load()
             viewModel.viewDidLoad()
         }

@@ -8,8 +8,6 @@
 import Foundation
 
 protocol ViewMoreCellViewModelProtocol {
-    var delegate: ViewMoreCellViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func load()
 }
@@ -21,8 +19,13 @@ protocol ViewMoreCellViewModelDelegate: AnyObject {
 }
 
 final class ViewMoreCellViewModel {
-    weak var delegate: ViewMoreCellViewModelDelegate?
-    var food: Food?
+    private weak var delegate: ViewMoreCellViewModelDelegate?
+    private var food: Food?
+    
+    init(delegate: ViewMoreCellViewModelDelegate?, food: Food?) {
+        self.delegate = delegate
+        self.food = food
+    }
 }
 
 extension ViewMoreCellViewModel: ViewMoreCellViewModelProtocol {

@@ -8,8 +8,6 @@
 import Foundation
 
 protocol FoodDetailPageViewModelProtocol {
-    var delegate: FoodDetailPageViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func ingredientsAtIndex(index: Int) -> String?
     func recipeStepAtIndex(index: Int) -> String?
@@ -25,7 +23,7 @@ protocol FoodDetailPageViewModelDelegate: AnyObject {
 }
 
 final class FoodDetailPageViewModel {
-    weak var delegate: FoodDetailPageViewModelDelegate?
+    private weak var delegate: FoodDetailPageViewModelDelegate?
     var selectedFood: Food?
     
     init(delegate: FoodDetailPageViewModelDelegate) {

@@ -14,7 +14,6 @@ final class IngredientsCell: UICollectionViewCell {
     
     var viewModel: IngredientsCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.awakeFromNib()
             viewModel.load()
         }

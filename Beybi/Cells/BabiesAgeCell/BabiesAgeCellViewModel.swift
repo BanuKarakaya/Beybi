@@ -10,8 +10,6 @@ import FirebaseFirestore
 import FirebaseStorage
 
 protocol BabiesAgeCellViewModelProtocol {
-    var delegate: BabiesAgeCellViewModelDelegate? { get set }
-    
     func infoAtIndex(index: Int) -> Info?
     func numberOfItems() -> Int
     func awakeFromNib()
@@ -22,9 +20,13 @@ protocol BabiesAgeCellViewModelDelegate: AnyObject {
 }
 
 final class BabiesAgeCellViewModel {
-    weak var delegate: BabiesAgeCellViewModelDelegate?
-    let firestore = Firestore.firestore()
-    var images: [Info]? = []
+    private weak var delegate: BabiesAgeCellViewModelDelegate?
+    private let firestore = Firestore.firestore()
+    private var images: [Info]? = []
+    
+    init(delegate: BabiesAgeCellViewModelDelegate?) {
+        self.delegate = delegate
+    }
     
     func readInfo() {
         firestore.collection("info").getDocuments { (querySnapshot, error) in

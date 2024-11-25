@@ -8,8 +8,6 @@
 import Foundation
 
 protocol FoodCellViewModelProtocol {
-    var delegate: FoodCellViewModelDelegate? { get set }
-    
     func viewDidLoad()
     func load()
 }
@@ -21,8 +19,13 @@ protocol FoodCellViewModelDelegate: AnyObject {
 }
 
 final class FoodCellViewModel {
-    weak var delegate: FoodCellViewModelDelegate?
-    var food: Food?
+    private weak var delegate: FoodCellViewModelDelegate?
+    private var food: Food?
+    
+    init(delegate: FoodCellViewModelDelegate?, food: Food?) {
+        self.delegate = delegate
+        self.food = food
+    }
 }
 
 extension FoodCellViewModel: FoodCellViewModelProtocol {

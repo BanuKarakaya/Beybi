@@ -8,8 +8,6 @@
 import Foundation
 
 protocol BabyInfoSliderCellViewModelProtocol {
-    var delegate: BabyInfoSliderCellViewModelDelegate? { get set }
-    
     func load()
 }
 
@@ -19,8 +17,13 @@ protocol BabyInfoSliderCellViewModelDelegate: AnyObject {
 }
 
 final class BabyInfoSliderCellViewModel {
-    weak var delegate: BabyInfoSliderCellViewModelDelegate?
-    var info: Info?
+    private weak var delegate: BabyInfoSliderCellViewModelDelegate?
+    private var info: Info?
+    
+    init(delegate: BabyInfoSliderCellViewModelDelegate?, info: Info?) {
+        self.delegate = delegate
+        self.info = info
+    }
 }
 
 extension BabyInfoSliderCellViewModel: BabyInfoSliderCellViewModelProtocol {

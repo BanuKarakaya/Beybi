@@ -17,7 +17,6 @@ final class BabiesFavMiniCell: UICollectionViewCell {
     
      var viewModel: BabiesFavMiniCellViewModelProtocol! {
         didSet {
-            viewModel.delegate = self
             viewModel.load()
             viewModel.viewDidLoad()
         }
