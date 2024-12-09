@@ -121,6 +121,8 @@ extension HomeViewController: HomeViewModelDelegate {
                 tabBar.layer.shadowRadius = 1
                 tabBar.layer.masksToBounds = false
         }
+        
+        self.title = "Menu"
     }
     
     func prepareCollectionView() {
