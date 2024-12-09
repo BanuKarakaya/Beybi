@@ -28,9 +28,9 @@ final class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController: OnboardingViewModelDelegate {
     func navigateToHomeVC() {
-        if let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationController") as? UINavigationController {
-            navigationController.modalPresentationStyle = .fullScreen
-            self.present(navigationController, animated: true, completion: nil)
+        if let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UITabBarController") as? UITabBarController {
+            tabBarController.modalPresentationStyle = .fullScreen
+            self.present(tabBarController, animated: true, completion: nil)
         }
     }
     
