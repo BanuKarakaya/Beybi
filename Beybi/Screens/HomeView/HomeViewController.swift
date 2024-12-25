@@ -92,6 +92,8 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         }
     }
+    
+    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -121,8 +123,11 @@ extension HomeViewController: HomeViewModelDelegate {
                 tabBar.layer.shadowRadius = 1
                 tabBar.layer.masksToBounds = false
         }
-        
         self.title = "Menu"
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     func prepareCollectionView() {

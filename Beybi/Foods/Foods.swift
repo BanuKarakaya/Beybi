@@ -26,3 +26,9 @@ struct Info {
     var imageUrl: String?
     var infoText: String?
 }
+
+
+struct EmotionalDiary: Codable {
+    var titleText: String?
+    var diaryText: String?
+}

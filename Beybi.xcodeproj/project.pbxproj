@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA117F272D1956380024575F /* EmotionalDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA117F262D1956380024575F /* EmotionalDiaryViewController.swift */; };
+		FA117F292D1956520024575F /* EmotionalDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA117F282D1956520024575F /* EmotionalDiaryViewModel.swift */; };
+		FA117F2C2D195ED20024575F /* DiaryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA117F2B2D195ED10024575F /* DiaryCellViewModel.swift */; };
+		FA117F2F2D195F000024575F /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA117F2D2D195F000024575F /* DiaryCell.swift */; };
+		FA117F302D195F000024575F /* DiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA117F2E2D195F000024575F /* DiaryCell.xib */; };
+		FA117F332D19802E0024575F /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA117F322D19802E0024575F /* EditViewController.swift */; };
+		FA117F352D19803E0024575F /* EditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA117F342D19803E0024575F /* EditViewModel.swift */; };
 		FA22AA032C9F73E400F6B169 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA022C9F73E400F6B169 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		FA22AA052C9F73E400F6B169 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA042C9F73E400F6B169 /* FirebaseFirestore */; };
 		FA22AA072C9F73E400F6B169 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA062C9F73E400F6B169 /* FirebaseStorage */; };
@@ -29,6 +36,7 @@
 		FA22AA562CBBFF2900F6B169 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA542CBBFF2900F6B169 /* RecipeCell.xib */; };
 		FA22AA582CBD90B900F6B169 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */; };
 		FA22AA5A2CBD94F900F6B169 /* IngredientsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */; };
+		FA5BA8A32D1C4C2B00CE5E4A /* Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8A12D1C4C2B00CE5E4A /* Demo.xcdatamodeld */; };
 		FAA9D91C2CF137BD00CB83B2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */; };
 		FAA9D91E2CF1382A00CB83B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */; };
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
@@ -95,6 +103,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA117F262D1956380024575F /* EmotionalDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalDiaryViewController.swift; sourceTree = "<group>"; };
+		FA117F282D1956520024575F /* EmotionalDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalDiaryViewModel.swift; sourceTree = "<group>"; };
+		FA117F2B2D195ED10024575F /* DiaryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCellViewModel.swift; sourceTree = "<group>"; };
+		FA117F2D2D195F000024575F /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
+		FA117F2E2D195F000024575F /* DiaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCell.xib; sourceTree = "<group>"; };
+		FA117F322D19802E0024575F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		FA117F342D19803E0024575F /* EditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewModel.swift; sourceTree = "<group>"; };
 		FA22AA082C9F751E00F6B169 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA22AA0B2CA446BC00F6B169 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
 		FA22AA0E2CA748CC00F6B169 /* EnjoyYourMealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnjoyYourMealCell.swift; sourceTree = "<group>"; };
@@ -112,6 +127,7 @@
 		FA22AA542CBBFF2900F6B169 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCellViewModel.swift; sourceTree = "<group>"; };
+		FA5BA8A22D1C4C2B00CE5E4A /* Demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Demo.xcdatamodel; sourceTree = "<group>"; };
 		FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +210,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA117F252D1955F30024575F /* EmotionalDiaryView */ = {
+			isa = PBXGroup;
+			children = (
+				FA117F262D1956380024575F /* EmotionalDiaryViewController.swift */,
+				FA117F282D1956520024575F /* EmotionalDiaryViewModel.swift */,
+			);
+			path = EmotionalDiaryView;
+			sourceTree = "<group>";
+		};
+		FA117F2A2D195EB80024575F /* DiaryCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA117F2B2D195ED10024575F /* DiaryCellViewModel.swift */,
+				FA117F2D2D195F000024575F /* DiaryCell.swift */,
+				FA117F2E2D195F000024575F /* DiaryCell.xib */,
+			);
+			path = DiaryCell;
+			sourceTree = "<group>";
+		};
+		FA117F312D1980100024575F /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+				FA117F322D19802E0024575F /* EditViewController.swift */,
+				FA117F342D19803E0024575F /* EditViewModel.swift */,
+			);
+			path = EditView;
+			sourceTree = "<group>";
+		};
 		FA22AA0A2CA446AD00F6B169 /* Foods */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +339,7 @@
 				FA22AA1B2CAD5D9400F6B169 /* Assets.xcassets */,
 				FAF5C0982CF210D0000ADD1F /* Main.storyboard */,
 				FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */,
+				FA5BA8A12D1C4C2B00CE5E4A /* Demo.xcdatamodeld */,
 			);
 			path = Beybi;
 			sourceTree = "<group>";
@@ -426,6 +471,8 @@
 		FAAC8D702C9C7B4900264E4B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA117F312D1980100024575F /* EditView */,
+				FA117F252D1955F30024575F /* EmotionalDiaryView */,
 				FAA9D9162CF1371000CB83B2 /* OnboardingView */,
 				FAAC8D2D2C95C8EA00264E4B /* HomeView */,
 				FAAC8D282C95C3C700264E4B /* AllFoodsPageView */,
@@ -438,6 +485,7 @@
 		FAAC8D712C9C7BB400264E4B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FA117F2A2D195EB80024575F /* DiaryCell */,
 				FAB73EE12CDE9ACC0033CA8B /* BabyInfoSliderCell */,
 				FAB73ED82CDCF62B0033CA8B /* EnjoyYourMealSliderCell */,
 				FA22AA522CBBFF1000F6B169 /* RecipeCell */,
@@ -600,6 +648,7 @@
 				FA22AA4C2CB99E4A00F6B169 /* IngredientsCell.xib in Resources */,
 				FA22AA562CBBFF2900F6B169 /* RecipeCell.xib in Resources */,
 				FA22AA1C2CAD5D9400F6B169 /* Assets.xcassets in Resources */,
+				FA117F302D195F000024575F /* DiaryCell.xib in Resources */,
 				FA22AA112CA748CC00F6B169 /* EnjoyYourMealCell.xib in Resources */,
 				FAAC8D432C97393B00264E4B /* BabiesAgeCell.xib in Resources */,
 				FAAC8D4B2C97689D00264E4B /* FoodCell.xib in Resources */,
@@ -632,13 +681,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA117F352D19803E0024575F /* EditViewModel.swift in Sources */,
 				FAB73EDE2CDD04FF0033CA8B /* EnjoyYourMealSliderCellViewModel.swift in Sources */,
+				FA117F292D1956520024575F /* EmotionalDiaryViewModel.swift in Sources */,
 				FAAC8D6F2C9C79B700264E4B /* FoodSliderMiniCellViewModel.swift in Sources */,
 				FAAC8D462C973ADC00264E4B /* DailyMenuCell.swift in Sources */,
 				FAAC8D3A2C95CF1100264E4B /* FoodSliderCellController.swift in Sources */,
+				FA117F2F2D195F000024575F /* DiaryCell.swift in Sources */,
 				FA22AA582CBD90B900F6B169 /* RecipeViewModel.swift in Sources */,
 				FAB73EE42CDE9B450033CA8B /* BabyInfloSliderCell.swift in Sources */,
 				FAAC8D562C9ACBAA00264E4B /* BabiesFavMiniCell.swift in Sources */,
+				FA117F332D19802E0024575F /* EditViewController.swift in Sources */,
 				FAAC8D342C95CC4200264E4B /* UICollectionView+Extension.swift in Sources */,
 				FA22AA132CAAD7F100F6B169 /* NotificationCenter+Extension.swift in Sources */,
 				FA22AA102CA748CC00F6B169 /* EnjoyYourMealCell.swift in Sources */,
@@ -649,6 +702,7 @@
 				FA22AA412CB9253000F6B169 /* FoodDetailPageViewController.swift in Sources */,
 				FAAC8D322C95CC1800264E4B /* UICollectionViewCell+Extension.swift in Sources */,
 				FAAC8D522C9AC89C00264E4B /* BabiesFavCell.swift in Sources */,
+				FA117F2C2D195ED20024575F /* DiaryCellViewModel.swift in Sources */,
 				FAAC8D592C9C2C5000264E4B /* ViewMoreViewController.swift in Sources */,
 				FAA9D91C2CF137BD00CB83B2 /* OnboardingViewModel.swift in Sources */,
 				FA22AA1A2CABC95F00F6B169 /* ViewMoreCellViewModel.swift in Sources */,
@@ -658,7 +712,9 @@
 				FAAC8D2C2C95C53000264E4B /* AllFoodsPageViewModel.swift in Sources */,
 				FAAC8D372C95CE1100264E4B /* FoodSliderCellViewModel.swift in Sources */,
 				FAA9D91E2CF1382A00CB83B2 /* OnboardingViewController.swift in Sources */,
+				FA5BA8A32D1C4C2B00CE5E4A /* Demo.xcdatamodeld in Sources */,
 				FAAC8D5C2C9C552700264E4B /* ViewMoreViewModel.swift in Sources */,
+				FA117F272D1956380024575F /* EmotionalDiaryViewController.swift in Sources */,
 				FAAC8D682C9C6A0C00264E4B /* FoodCellViewModel.swift in Sources */,
 				FA22AA552CBBFF2900F6B169 /* RecipeCell.swift in Sources */,
 				FAAC8D4A2C97689D00264E4B /* FoodCell.swift in Sources */,
@@ -847,7 +903,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Beybi/Info.plist;
@@ -878,7 +934,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Beybi/Info.plist;
@@ -1065,6 +1121,19 @@
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FA5BA8A12D1C4C2B00CE5E4A /* Demo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA5BA8A22D1C4C2B00CE5E4A /* Demo.xcdatamodel */,
+			);
+			currentVersion = FA5BA8A22D1C4C2B00CE5E4A /* Demo.xcdatamodel */;
+			path = Demo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FAAC8CED2C9456B000264E4B /* Project object */;
 }
