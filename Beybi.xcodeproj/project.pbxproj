@@ -37,6 +37,8 @@
 		FA22AA582CBD90B900F6B169 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */; };
 		FA22AA5A2CBD94F900F6B169 /* IngredientsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */; };
 		FA5BA8A32D1C4C2B00CE5E4A /* Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8A12D1C4C2B00CE5E4A /* Demo.xcdatamodeld */; };
+		FA5BA8AA2D1D65F800CE5E4A /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8A92D1D65F800CE5E4A /* DiaryDetailViewController.swift */; };
+		FA5BA8AC2D1D661000CE5E4A /* DiaryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8AB2D1D661000CE5E4A /* DiaryDetailViewModel.swift */; };
 		FAA9D91C2CF137BD00CB83B2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */; };
 		FAA9D91E2CF1382A00CB83B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */; };
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
@@ -128,6 +130,8 @@
 		FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		FA22AA592CBD94F900F6B169 /* IngredientsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCellViewModel.swift; sourceTree = "<group>"; };
 		FA5BA8A22D1C4C2B00CE5E4A /* Demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Demo.xcdatamodel; sourceTree = "<group>"; };
+		FA5BA8A92D1D65F800CE5E4A /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		FA5BA8AB2D1D661000CE5E4A /* DiaryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewModel.swift; sourceTree = "<group>"; };
 		FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +297,15 @@
 				FA22AA572CBD90B900F6B169 /* RecipeViewModel.swift */,
 			);
 			path = RecipeCell;
+			sourceTree = "<group>";
+		};
+		FA5BA8A82D1D65D800CE5E4A /* DiaryDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FA5BA8A92D1D65F800CE5E4A /* DiaryDetailViewController.swift */,
+				FA5BA8AB2D1D661000CE5E4A /* DiaryDetailViewModel.swift */,
+			);
+			path = DiaryDetailView;
 			sourceTree = "<group>";
 		};
 		FAA9D9162CF1371000CB83B2 /* OnboardingView */ = {
@@ -471,6 +484,7 @@
 		FAAC8D702C9C7B4900264E4B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA5BA8A82D1D65D800CE5E4A /* DiaryDetailView */,
 				FA117F312D1980100024575F /* EditView */,
 				FA117F252D1955F30024575F /* EmotionalDiaryView */,
 				FAA9D9162CF1371000CB83B2 /* OnboardingView */,
@@ -722,6 +736,8 @@
 				FAAC8D422C97393B00264E4B /* BabiesAgeCell.swift in Sources */,
 				FA22AA0C2CA446BC00F6B169 /* Foods.swift in Sources */,
 				FAB73EE72CDE9B5A0033CA8B /* BabyInfoSliderCellViewModel.swift in Sources */,
+				FA5BA8AC2D1D661000CE5E4A /* DiaryDetailViewModel.swift in Sources */,
+				FA5BA8AA2D1D65F800CE5E4A /* DiaryDetailViewController.swift in Sources */,
 				FAAC8D5F2C9C650200264E4B /* BabiesAgeCellViewModel.swift in Sources */,
 				FA22AA5A2CBD94F900F6B169 /* IngredientsCellViewModel.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,

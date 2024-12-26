@@ -121,7 +121,6 @@ extension EditViewController: UINavigationControllerDelegate {
 }
 
 extension EditViewController: UITextFieldDelegate {
-    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }
