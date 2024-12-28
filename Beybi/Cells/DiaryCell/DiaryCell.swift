@@ -9,9 +9,15 @@ import UIKit
 
 class DiaryCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var viewModel: DiaryCellViewModelProtocol! {
+        didSet {
+            viewModel.awakeFromNib()
+        }
+    }
+}
+
+extension DiaryCell: DiaryCellViewModelDelegate {
+    func prepareUI() {
         self.layer.cornerRadius = 10
     }
-
 }

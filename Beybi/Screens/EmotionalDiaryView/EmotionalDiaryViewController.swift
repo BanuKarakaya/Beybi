@@ -11,53 +11,30 @@ import CoreData
 class EmotionalDiaryViewController: UIViewController {
 
     @IBOutlet weak var diaryCollectionView: UICollectionView!
-    var diaries: [DemoEntity] = []
+    
+    private lazy var viewModel: EmotionalDiaryViewModelProtocol! = EmotionalDiaryViewModel(delegate: self)
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithDefaultBackground()
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
-        self.title = "Emotional Diary"
-        
-        diaryCollectionView.delegate = self
-        diaryCollectionView.dataSource = self
-        diaryCollectionView.register(cellType: DiaryCell.self)
+        viewModel.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(addCell), name: .saveButtonTapped, object: nil)
-        
     }
     
     @objc func addCell() {
-        fetchDiaries()
+        viewModel.fetchDiariesFromCoreData()
     }
     
-    func fetchDiaries() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest: NSFetchRequest<DemoEntity> = DemoEntity.fetchRequest()
-        
-        do {
-            diaries = try context.fetch(fetchRequest)
-        } catch {
-            print("Failed to fetch diaries: \(error)")
-        }
-    }
     
     @IBAction func addDiaryButtonTapped(_ sender: Any) {
-    
-        let editVM = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
-        navigationController?.pushViewController(editVM, animated: true)
+        viewModel.navigateToEditView()
     }
     
 }
 
 extension EmotionalDiaryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        diaries.count + 1
+        viewModel.numberOfItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,5 +50,35 @@ extension EmotionalDiaryViewController: UICollectionViewDelegate {
 extension EmotionalDiaryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .init(top: 8, left: 0, bottom: 8, right: 0)
+    }
+}
+
+extension EmotionalDiaryViewController: EmotionalDiaryViewModelDelegate {
+    func appDelegate() -> AppDelegate {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate
+    }
+    
+    func navigateToEditVC() {
+        let editVM = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
+        navigationController?.pushViewController(editVM, animated: true)
+    }
+    
+    func reloadData() {
+        diaryCollectionView.reloadData()
+    }
+    
+    func prepareCollectionView() {
+        diaryCollectionView.delegate = self
+        diaryCollectionView.dataSource = self
+        diaryCollectionView.register(cellType: DiaryCell.self)
+    }
+    
+    func prepareUI() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        self.title = "Emotional Diary"
     }
 }

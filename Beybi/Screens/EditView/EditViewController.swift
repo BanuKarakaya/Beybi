@@ -16,19 +16,11 @@ class EditViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var placeHolderLabel: UILabel!
     
-   
+    private lazy var viewModel: EditViewModelProtocol! = EditViewModel(delegate: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleTextField.placeholder = "Please enter a title"
-        titleTextField.delegate = self
-        diaryTextView.delegate = self
-        titleTextField.isUserInteractionEnabled = true
-        diaryTextView.isScrollEnabled = false
-        scrollView.showsVerticalScrollIndicator = false
-        diaryTextView.layer.borderWidth = 0.3
-        diaryTextView.layer.borderColor = UIColor.systemGray4.cgColor
-        diaryTextView.layer.cornerRadius = 8
-        diaryPhoto.layer.cornerRadius = 8
+        viewModel.viewDidLoad()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -53,46 +45,8 @@ class EditViewController: UIViewController {
             }
     }
     
-   
-    
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Fotoğraf Seç", message: "Bir seçenek belirleyin", preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Kamera ile Çek", style: .default, handler: { _ in
-            self.openCamera()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Fotoğraf Galerisinden Seç", style: .default, handler: { _ in
-            self.openPhotoLibrary()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func openCamera() {
-            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                showAlert("Kamera Kullanılamıyor", "Bu cihazda kamera bulunmuyor.")
-                return
-            }
-            
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .camera
-            self.present(picker, animated: true, completion: nil)
-        }
-    
-    func openPhotoLibrary() {
-            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-                showAlert("Galeri Kullanılamıyor", "Bu cihazda galeriye erişilemiyor.")
-                return
-            }
-            
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-        self.present(picker, animated: true, completion: nil)
+        viewModel.addPhotoButtonTappedd()
     }
     
     func showAlert(_ title: String, _ message: String) {
@@ -100,7 +54,6 @@ class EditViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
 }
 
 extension EditViewController: UIImagePickerControllerDelegate {
@@ -129,5 +82,56 @@ extension EditViewController: UITextFieldDelegate {
 extension EditViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         placeHolderLabel.isHidden = !textView.text.isEmpty
+    }
+}
+
+extension EditViewController: EditViewModelDelegate {
+    func openPhotoLibrary() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            showAlert("Galeri Kullanılamıyor", "Bu cihazda galeriye erişilemiyor.")
+            return
+        }
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            showAlert("Kamera Kullanılamıyor", "Bu cihazda kamera bulunmuyor.")
+            return
+        }
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .camera
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    func addPhotoButtonTapped() {
+        let alert = UIAlertController(title: "Fotoğraf Seç", message: "Bir seçenek belirleyin", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Kamera ile Çek", style: .default, handler: { _ in
+            self.viewModel.openCameraa()
+        }))
+        alert.addAction(UIAlertAction(title: "Fotoğraf Galerisinden Seç", style: .default, handler: { _ in
+            self.viewModel.openPhotoLibraryy()
+        }))
+        alert.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func prepareUI() {
+        titleTextField.placeholder = "Please enter a title"
+        titleTextField.delegate = self
+        diaryTextView.delegate = self
+        titleTextField.isUserInteractionEnabled = true
+        diaryTextView.isScrollEnabled = false
+        scrollView.showsVerticalScrollIndicator = false
+        diaryTextView.layer.borderWidth = 0.3
+        diaryTextView.layer.borderColor = UIColor.systemGray4.cgColor
+        diaryTextView.layer.cornerRadius = 8
+        diaryPhoto.layer.cornerRadius = 8
     }
 }
