@@ -17,7 +17,6 @@ class EmotionalDiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(addCell), name: .saveButtonTapped, object: nil)
     }
     
@@ -25,11 +24,9 @@ class EmotionalDiaryViewController: UIViewController {
         viewModel.fetchDiariesFromCoreData()
     }
     
-    
     @IBAction func addDiaryButtonTapped(_ sender: Any) {
         viewModel.navigateToEditView()
     }
-    
 }
 
 extension EmotionalDiaryViewController: UICollectionViewDataSource {
@@ -39,7 +36,15 @@ extension EmotionalDiaryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: DiaryCell.self, indexPath: indexPath)
+        cell.delegate = self
+        let diary = viewModel.diaryAtIndex(index: indexPath.item)
+        let cellViewModel = DiaryCellViewModel(delegate: cell, diary: diary)
+        cell.viewModel = cellViewModel
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(index: indexPath.item)
     }
 }
 
@@ -53,7 +58,33 @@ extension EmotionalDiaryViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension EmotionalDiaryViewController: DiaryCellDelegate {
+    func deleteButtonTapped(in cell: DiaryCell) {
+        if let indexPath = diaryCollectionView.indexPath(for: cell) {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let objectToDelete = viewModel.diaryAtIndex(index: indexPath.item)
+            context.delete(objectToDelete)
+            
+            do {
+                try context.save()
+                print("Veri başarıyla silindi.")
+            } catch {
+                print("Hata: Veri silinemedi - \(error.localizedDescription)")
+            }
+            viewModel.fetchDiariesFromCoreData()
+        }
+    }
+}
+
 extension EmotionalDiaryViewController: EmotionalDiaryViewModelDelegate {
+    func navigateToDetailVC(selectedCell: DemoEntity?) {
+        let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiaryDetailViewController") as! DiaryDetailViewController
+        navigationController?.pushViewController(detailVC, animated: true)
+        let detailViewModel = DiaryDetailViewModel(delegate: detailVC)
+        detailVC.viewModel = detailViewModel
+        detailViewModel.selectedDiary = selectedCell
+    }
+    
     func appDelegate() -> AppDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate

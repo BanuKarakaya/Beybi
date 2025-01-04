@@ -13,10 +13,13 @@ protocol DiaryDetailViewModelProtocol {
 
 protocol DiaryDetailViewModelDelegate: AnyObject {
     func prepareUI()
+    func configure(selectedDiary: DemoEntity?)
+    func NSToUIImage(image: Data) -> Image
 }
 
 final class DiaryDetailViewModel {
     private weak var delegate: DiaryDetailViewModelDelegate?
+    var selectedDiary: DemoEntity?
     
     init(delegate: DiaryDetailViewModelDelegate?) {
         self.delegate = delegate
@@ -26,5 +29,6 @@ final class DiaryDetailViewModel {
 extension DiaryDetailViewModel: DiaryDetailViewModelProtocol {
     func viewDidLoad() {
         delegate?.prepareUI()
+        delegate?.configure(selectedDiary: selectedDiary)
     }
 }

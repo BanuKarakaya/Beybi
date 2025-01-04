@@ -40,6 +40,9 @@
                                         <color key="tintColor" red="0.44313728810000003" green="0.1058823466" blue="0.1607843041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="G0j-dA-mOE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,6 +80,10 @@
                 <constraint firstAttribute="trailing" secondItem="0IV-hM-sXf" secondAttribute="trailing" id="p1m-06-Oty"/>
             </constraints>
             <size key="customSize" width="373" height="180"/>
+            <connections>
+                <outlet property="diaryPhoto" destination="9er-7t-vqR" id="tzc-sp-WCE"/>
+                <outlet property="diaryTitle" destination="LvI-23-YkD" id="SuU-sr-4Nf"/>
+            </connections>
             <point key="canvasLocation" x="110.68702290076335" y="52.816901408450704"/>
         </collectionViewCell>
     </objects>

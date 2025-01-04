@@ -10,10 +10,11 @@ import CoreData
 
 class EditViewController: UIViewController {
 
-    @IBOutlet weak var diaryPhoto: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var diaryPhoto: UIImageView!
     @IBOutlet weak var placeHolderLabel: UILabel!
     
     private lazy var viewModel: EditViewModelProtocol! = EditViewModel(delegate: self)
@@ -23,19 +24,27 @@ class EditViewController: UIViewController {
         viewModel.viewDidLoad()
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        saveDiary(title: titleTextField.text ?? "", text: diaryTextView.text ?? "")
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @objc func saveButtonTapped() {
+        saveDiary(title: titleTextField.text ?? "",
+                  text: diaryTextView.text ?? "",
+                  image:diaryPhoto.image ?? UIImage(named: "banuş")!)
         navigationController?.popViewController(animated: true)
         NotificationCenter.default.post(name: .saveButtonTapped, object: nil)
     }
     
-    func saveDiary(title: String, text: String) {
+    func saveDiary(title: String, text: String, image: UIImage) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
         let diary = DemoEntity(context: context)
         diary.emotionalText = text
         diary.emotionalTitle = title
+        diary.emotionalImage = image.pngData()
         
         do {
                 try context.save()
@@ -88,10 +97,9 @@ extension EditViewController: UITextViewDelegate {
 extension EditViewController: EditViewModelDelegate {
     func openPhotoLibrary() {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-            showAlert("Galeri Kullanılamıyor", "Bu cihazda galeriye erişilemiyor.")
+            showAlert("Gallery Unavailable", "The gallery is not accessible on this device.")
             return
         }
-        
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
@@ -100,7 +108,7 @@ extension EditViewController: EditViewModelDelegate {
     
     func openCamera() {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            showAlert("Kamera Kullanılamıyor", "Bu cihazda kamera bulunmuyor.")
+            showAlert("Camera Unavailable", "This device does not have a camera.")
             return
         }
         
@@ -111,14 +119,14 @@ extension EditViewController: EditViewModelDelegate {
     }
     
     func addPhotoButtonTapped() {
-        let alert = UIAlertController(title: "Fotoğraf Seç", message: "Bir seçenek belirleyin", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Kamera ile Çek", style: .default, handler: { _ in
+        let alert = UIAlertController(title: "Select Photo", message: "Select an option", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Shoot with camera", style: .default, handler: { _ in
             self.viewModel.openCameraa()
         }))
-        alert.addAction(UIAlertAction(title: "Fotoğraf Galerisinden Seç", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Choose from Photo Gallery", style: .default, handler: { _ in
             self.viewModel.openPhotoLibraryy()
         }))
-        alert.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -129,9 +137,13 @@ extension EditViewController: EditViewModelDelegate {
         titleTextField.isUserInteractionEnabled = true
         diaryTextView.isScrollEnabled = false
         scrollView.showsVerticalScrollIndicator = false
-        diaryTextView.layer.borderWidth = 0.3
-        diaryTextView.layer.borderColor = UIColor.systemGray4.cgColor
-        diaryTextView.layer.cornerRadius = 8
         diaryPhoto.layer.cornerRadius = 8
+        addPhotoButton.layer.cornerRadius = 32
+        addPhotoButton.layer.masksToBounds = true
+        scrollView.showsVerticalScrollIndicator = false
+        self.tabBarController?.tabBar.isHidden = true
+        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveButtonTapped))
+        self.navigationItem.rightBarButtonItem = saveButton
+        saveButton.tintColor = .purple
     }
 }

@@ -14,4 +14,5 @@ extension Notification.Name {
     static let favSliderCellTapped = Notification.Name("favSliderCellTapped")
     static let foodCellTapped = Notification.Name("foodCellTapped")
     static let saveButtonTapped = Notification.Name("saveButtonTapped")
+    static let deleteButtonTapped = Notification.Name("deleteButtonTapped")
 }

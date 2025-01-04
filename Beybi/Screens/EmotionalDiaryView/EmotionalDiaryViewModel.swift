@@ -13,6 +13,8 @@ protocol EmotionalDiaryViewModelProtocol {
     func numberOfItems() -> Int
     func fetchDiariesFromCoreData()
     func navigateToEditView()
+    func diaryAtIndex(index: Int) -> DemoEntity
+    func didSelectItemAt(index: Int)
 }
 
 protocol EmotionalDiaryViewModelDelegate: AnyObject {
@@ -21,6 +23,7 @@ protocol EmotionalDiaryViewModelDelegate: AnyObject {
     func reloadData()
     func navigateToEditVC()
     func appDelegate() -> AppDelegate
+    func navigateToDetailVC(selectedCell: DemoEntity?)
 }
 
 final class EmotionalDiaryViewModel {
@@ -34,7 +37,6 @@ final class EmotionalDiaryViewModel {
     func fetchDiaries() {
         let appDelegate = delegate?.appDelegate()
         let context = appDelegate?.persistentContainer.viewContext
-        
         let fetchRequest: NSFetchRequest<DemoEntity> = DemoEntity.fetchRequest()
         
         do {
@@ -44,12 +46,23 @@ final class EmotionalDiaryViewModel {
         } catch {
             print("Failed to fetch diaries: \(error)")
         }
-        
         delegate?.reloadData()
     }
 }
 
 extension EmotionalDiaryViewModel: EmotionalDiaryViewModelProtocol {
+    func didSelectItemAt(index: Int) {
+        var selectedCell: DemoEntity?
+        
+        selectedCell = diaries[index]
+        delegate?.navigateToDetailVC(selectedCell: selectedCell)
+    }
+    
+    func diaryAtIndex(index: Int) -> DemoEntity {
+        let diary = diaries[index]
+        return diary
+    }
+    
     func navigateToEditView() {
         delegate?.navigateToEditVC()
     }
@@ -59,7 +72,7 @@ extension EmotionalDiaryViewModel: EmotionalDiaryViewModelProtocol {
     }
     
     func numberOfItems() -> Int {
-        diaries.count + 1
+        diaries.count
     }
     
     func viewDidLoad() {
