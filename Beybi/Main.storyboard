@@ -173,7 +173,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ujz-ya-MKi">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                                         <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LuB-Ji-8L9">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LuB-Ji-8L9">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -210,7 +210,9 @@
                             <constraint firstItem="0fz-MW-nQO" firstAttribute="top" secondItem="Jse-SU-6XK" secondAttribute="top" id="BQe-5z-gdh"/>
                             <constraint firstItem="Jse-SU-6XK" firstAttribute="trailing" secondItem="0fz-MW-nQO" secondAttribute="trailing" id="Fin-Zs-C2K"/>
                             <constraint firstItem="Jse-SU-6XK" firstAttribute="bottom" secondItem="0fz-MW-nQO" secondAttribute="bottom" id="Hgs-hL-8fc"/>
+                            <constraint firstItem="ujz-ya-MKi" firstAttribute="width" secondItem="7cK-fl-0uq" secondAttribute="width" id="cEc-nq-Rr3"/>
                             <constraint firstItem="0fz-MW-nQO" firstAttribute="leading" secondItem="Jse-SU-6XK" secondAttribute="leading" id="oPw-Fg-hFh"/>
+                            <constraint firstItem="0fz-MW-nQO" firstAttribute="width" secondItem="7cK-fl-0uq" secondAttribute="width" id="unv-z7-fx7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5t7-lc-tZh">

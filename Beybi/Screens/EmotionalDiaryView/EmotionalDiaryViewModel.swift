@@ -26,6 +26,7 @@ protocol EmotionalDiaryViewModelDelegate: AnyObject {
     func appDelegate() -> AppDelegate
     func navigateToDetailVC(selectedCell: DemoEntity?)
     func emptyImageView(hidden: Bool)
+    func deleteButtonTapped(cell: DiaryCell)
 }
 
 final class EmotionalDiaryViewModel {

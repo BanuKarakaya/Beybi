@@ -32,7 +32,7 @@ class EditViewController: UIViewController {
     @objc func saveButtonTapped() {
         saveDiary(title: titleTextField.text ?? "",
                   text: diaryTextView.text ?? "",
-                  image:diaryPhoto.image ?? UIImage(named: "banuş")!)
+                  image:diaryPhoto.image ?? UIImage(named: "adım")!)
         navigationController?.popViewController(animated: true)
         NotificationCenter.default.post(name: .saveButtonTapped, object: nil)
     }

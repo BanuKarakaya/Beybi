@@ -13,12 +13,36 @@ class EmotionalDiaryViewController: UIViewController {
     @IBOutlet weak var diaryCollectionView: UICollectionView!
     @IBOutlet weak var emptyImage: UIImageView!
     
+    var lastSwipedCell: DiaryCell?
+    
     private lazy var viewModel: EmotionalDiaryViewModelProtocol! = EmotionalDiaryViewModel(delegate: self)
    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(addCell), name: .saveButtonTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCellSwipe(_:)), name: .cellDidSwipe, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCellDelete(_:)), name: .cellDidDelete, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        diaryCollectionView.reloadData()
+    }
+    
+    @objc private func handleCellSwipe(_ notification: Notification) {
+            if let swipedCell = notification.object as? DiaryCell {
+                if swipedCell != lastSwipedCell {
+                    lastSwipedCell?.resetToOriginalState()
+                    lastSwipedCell = swipedCell
+                }
+            }
+        }
+    
+    @objc private func handleCellDelete(_ notification: Notification) {
+        if let deleteCell = notification.object as? DiaryCell {
+            deleteButtonTapped(cell: deleteCell)
+        }
     }
     
     @objc func addCell() {
@@ -38,10 +62,10 @@ extension EmotionalDiaryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: DiaryCell.self, indexPath: indexPath)
-        cell.delegate = self
         let diary = viewModel.diaryAtIndex(index: indexPath.item)
         let cellViewModel = DiaryCellViewModel(delegate: cell, diary: diary)
         cell.viewModel = cellViewModel
+        
         return cell
     }
     
@@ -51,20 +75,23 @@ extension EmotionalDiaryViewController: UICollectionViewDataSource {
 }
 
 extension EmotionalDiaryViewController: UICollectionViewDelegate {
-    
 }
 
 extension EmotionalDiaryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 8, left: 0, bottom: 8, right: 0)
+        .init(top: 8, left: 10, bottom: 8, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .init(width: diaryCollectionView.frame.width - 20, height: 180)
     }
 }
 
-extension EmotionalDiaryViewController: DiaryCellDelegate {
-    func deleteButtonTapped(in cell: DiaryCell) {
-        if let indexPath = diaryCollectionView.indexPath(for: cell) {
+extension EmotionalDiaryViewController: EmotionalDiaryViewModelDelegate {
+    func deleteButtonTapped(cell: DiaryCell) {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let objectToDelete = viewModel.diaryAtIndex(index: indexPath.item)
+        guard let indexPathItem = diaryCollectionView.indexPath(for: cell)?.item else { return }
+            let objectToDelete = viewModel.diaryAtIndex(index: indexPathItem)
             context.delete(objectToDelete)
             
             do {
@@ -75,11 +102,8 @@ extension EmotionalDiaryViewController: DiaryCellDelegate {
             }
             viewModel.fetchDiariesFromCoreData()
             viewModel.emptyImageViewIsHidden()
-        }
     }
-}
-
-extension EmotionalDiaryViewController: EmotionalDiaryViewModelDelegate {
+    
     func emptyImageView(hidden: Bool) {
         emptyImage.isHidden = hidden
     }
