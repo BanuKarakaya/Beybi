@@ -12,9 +12,10 @@ protocol EmotionalDiaryViewModelProtocol {
     func viewDidLoad()
     func numberOfItems() -> Int
     func fetchDiariesFromCoreData()
-    func navigateToEditView()
+    func addDiaryButtonTapped()
     func diaryAtIndex(index: Int) -> DemoEntity
     func didSelectItemAt(index: Int)
+    func emptyImageViewIsHidden()
 }
 
 protocol EmotionalDiaryViewModelDelegate: AnyObject {
@@ -24,6 +25,7 @@ protocol EmotionalDiaryViewModelDelegate: AnyObject {
     func navigateToEditVC()
     func appDelegate() -> AppDelegate
     func navigateToDetailVC(selectedCell: DemoEntity?)
+    func emptyImageView(hidden: Bool)
 }
 
 final class EmotionalDiaryViewModel {
@@ -51,6 +53,14 @@ final class EmotionalDiaryViewModel {
 }
 
 extension EmotionalDiaryViewModel: EmotionalDiaryViewModelProtocol {
+    func emptyImageViewIsHidden() {
+        if diaries.count == 0 {
+            delegate?.emptyImageView(hidden: false)
+        } else {
+            delegate?.emptyImageView(hidden: true)
+        }
+    }
+    
     func didSelectItemAt(index: Int) {
         var selectedCell: DemoEntity?
         
@@ -63,7 +73,7 @@ extension EmotionalDiaryViewModel: EmotionalDiaryViewModelProtocol {
         return diary
     }
     
-    func navigateToEditView() {
+    func addDiaryButtonTapped() {
         delegate?.navigateToEditVC()
     }
     
@@ -79,5 +89,6 @@ extension EmotionalDiaryViewModel: EmotionalDiaryViewModelProtocol {
         delegate?.prepareUI()
         delegate?.prepareCollectionView()
         fetchDiaries()
+        emptyImageViewIsHidden()
     }
 }

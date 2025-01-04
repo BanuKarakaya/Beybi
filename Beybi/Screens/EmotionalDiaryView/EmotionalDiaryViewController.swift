@@ -11,6 +11,7 @@ import CoreData
 class EmotionalDiaryViewController: UIViewController {
 
     @IBOutlet weak var diaryCollectionView: UICollectionView!
+    @IBOutlet weak var emptyImage: UIImageView!
     
     private lazy var viewModel: EmotionalDiaryViewModelProtocol! = EmotionalDiaryViewModel(delegate: self)
    
@@ -22,10 +23,11 @@ class EmotionalDiaryViewController: UIViewController {
     
     @objc func addCell() {
         viewModel.fetchDiariesFromCoreData()
+        viewModel.emptyImageViewIsHidden()
     }
     
     @IBAction func addDiaryButtonTapped(_ sender: Any) {
-        viewModel.navigateToEditView()
+        viewModel.addDiaryButtonTapped()
     }
 }
 
@@ -72,11 +74,16 @@ extension EmotionalDiaryViewController: DiaryCellDelegate {
                 print("Hata: Veri silinemedi - \(error.localizedDescription)")
             }
             viewModel.fetchDiariesFromCoreData()
+            viewModel.emptyImageViewIsHidden()
         }
     }
 }
 
 extension EmotionalDiaryViewController: EmotionalDiaryViewModelDelegate {
+    func emptyImageView(hidden: Bool) {
+        emptyImage.isHidden = hidden
+    }
+    
     func navigateToDetailVC(selectedCell: DemoEntity?) {
         let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiaryDetailViewController") as! DiaryDetailViewController
         navigationController?.pushViewController(detailVC, animated: true)
