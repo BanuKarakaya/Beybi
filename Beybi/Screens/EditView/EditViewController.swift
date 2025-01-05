@@ -22,6 +22,13 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
+        scrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func handleTapGesture(_ gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
