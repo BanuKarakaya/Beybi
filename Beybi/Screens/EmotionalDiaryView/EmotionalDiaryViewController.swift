@@ -83,7 +83,7 @@ extension EmotionalDiaryViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: diaryCollectionView.frame.width - 20, height: 180)
+        .init(width: diaryCollectionView.frame.width - 20, height: diaryCollectionView.frame.height / 3.7 )
     }
 }
 

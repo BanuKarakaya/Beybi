@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+typealias Button = UIButton
+
 class EditViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
@@ -62,7 +64,7 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
-        viewModel.addPhotoButtonTappedd()
+        viewModel.addPhotoButtonTappedd(sender: sender as! Button)
     }
     
     func showAlert(_ title: String, _ message: String) {
@@ -74,10 +76,10 @@ class EditViewController: UIViewController {
 
 extension EditViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
         if let selectedImage = info[.originalImage] as? UIImage {
             diaryPhoto.image = selectedImage
         }
-        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -110,6 +112,14 @@ extension EditViewController: EditViewModelDelegate {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        
+        if let popoverController = picker.popoverPresentationController {
+            popoverController.sourceView = addPhotoButton
+            popoverController.sourceRect = addPhotoButton.bounds
+            popoverController.permittedArrowDirections = .any
+        }
+        
         self.present(picker, animated: true, completion: nil)
     }
     
@@ -122,10 +132,18 @@ extension EditViewController: EditViewModelDelegate {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .camera
+        picker.allowsEditing = true
+        
+        if let popoverController = picker.popoverPresentationController {
+            popoverController.sourceView = addPhotoButton
+            popoverController.sourceRect = addPhotoButton.bounds
+            popoverController.permittedArrowDirections = .any
+        }
+        
         self.present(picker, animated: true, completion: nil)
     }
     
-    func addPhotoButtonTapped() {
+    func addPhotoButtonTapped(sender: Button) {
         let alert = UIAlertController(title: "Select Photo", message: "Select an option", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Shoot with camera", style: .default, handler: { _ in
             self.viewModel.openCameraa()
@@ -134,6 +152,12 @@ extension EditViewController: EditViewModelDelegate {
             self.viewModel.openPhotoLibraryy()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
+        
         self.present(alert, animated: true, completion: nil)
     }
     

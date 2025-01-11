@@ -9,14 +9,14 @@ import Foundation
  
 protocol EditViewModelProtocol {
     func viewDidLoad()
-    func addPhotoButtonTappedd()
+    func addPhotoButtonTappedd(sender: Button)
     func openCameraa()
     func openPhotoLibraryy()
 }
 
 protocol EditViewModelDelegate: AnyObject {
     func prepareUI()
-    func addPhotoButtonTapped()
+    func addPhotoButtonTapped(sender: Button)
     func openCamera()
     func openPhotoLibrary()
 }
@@ -38,8 +38,8 @@ extension EditViewModel: EditViewModelProtocol {
         delegate?.openCamera()
     }
     
-    func addPhotoButtonTappedd() {
-        delegate?.addPhotoButtonTapped()
+    func addPhotoButtonTappedd(sender: Button) {
+        delegate?.addPhotoButtonTapped(sender: sender)
     }
     
     func viewDidLoad() {

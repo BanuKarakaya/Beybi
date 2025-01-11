@@ -52,9 +52,6 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banuş" translatesAutoresizingMaskIntoConstraints="NO" id="9er-7t-vqR">
                                 <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="TeH-iB-fz8"/>
-                                </constraints>
                             </imageView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjw-4L-7Od">
                                 <rect key="frame" x="0.0" y="135" width="373" height="45"/>
@@ -79,11 +76,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Wjw-4L-7Od" secondAttribute="bottom" id="7gB-Kh-Yxb"/>
-                            <constraint firstAttribute="height" constant="180" id="ROP-yk-S3K"/>
                             <constraint firstItem="9er-7t-vqR" firstAttribute="top" secondItem="0IV-hM-sXf" secondAttribute="top" id="Wd1-Pt-WQr"/>
                             <constraint firstAttribute="trailing" secondItem="Wjw-4L-7Od" secondAttribute="trailing" id="aW1-ud-bpu"/>
                             <constraint firstItem="9er-7t-vqR" firstAttribute="leading" secondItem="0IV-hM-sXf" secondAttribute="leading" id="fgK-Kl-EJh"/>
                             <constraint firstAttribute="trailing" secondItem="9er-7t-vqR" secondAttribute="trailing" id="gxV-xd-ynY"/>
+                            <constraint firstAttribute="bottom" secondItem="9er-7t-vqR" secondAttribute="bottom" id="qnI-Ai-cFi"/>
                             <constraint firstItem="Wjw-4L-7Od" firstAttribute="leading" secondItem="0IV-hM-sXf" secondAttribute="leading" id="tbT-L4-C4L"/>
                         </constraints>
                     </view>
