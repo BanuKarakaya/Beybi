@@ -144,7 +144,7 @@ extension EditViewController: EditViewModelDelegate {
     }
     
     func addPhotoButtonTapped(sender: Button) {
-        let alert = UIAlertController(title: "Select Photo", message: "Select an option", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Select images for your emotional diary", message: "Select an option", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Shoot with camera", style: .default, handler: { _ in
             self.viewModel.openCameraa()
         }))

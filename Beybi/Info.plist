@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to allow you to select and add photos from your gallery to your Emotional Diary. These photos will only be visible to you.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Please allow access to take a picture</string>
+	<string>We need access to your camera to allow you to capture and add photos to your Emotional Diary. These photos will only be visible to you.</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
