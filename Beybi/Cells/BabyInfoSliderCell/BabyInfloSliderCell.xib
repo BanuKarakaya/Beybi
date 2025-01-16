@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BabyInfloSliderCell" customModule="Beybi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8l-PX-ekM">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info1 1" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-Qv-lk7">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="S85-ts-ipn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="asdfghjklasdfghklasdfghjklsdfasdfghjksdfghjksdfghjksfghjk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXN-X8-Mfo">
+                                <rect key="frame" x="40" y="25" width="300" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.4431372549" green="0.1042828621" blue="0.1591498657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NXN-X8-Mfo" secondAttribute="trailing" constant="40" id="2tU-uh-2wK"/>
+                            <constraint firstAttribute="bottom" secondItem="cxG-Qv-lk7" secondAttribute="bottom" id="9eZ-b4-t4t"/>
+                            <constraint firstItem="cxG-Qv-lk7" firstAttribute="leading" secondItem="c8l-PX-ekM" secondAttribute="leading" id="DMO-Um-wpv"/>
+                            <constraint firstItem="NXN-X8-Mfo" firstAttribute="centerX" secondItem="c8l-PX-ekM" secondAttribute="centerX" id="Epl-rU-p28"/>
+                            <constraint firstItem="NXN-X8-Mfo" firstAttribute="leading" secondItem="c8l-PX-ekM" secondAttribute="leading" constant="40" id="ZsC-o5-jgx"/>
+                            <constraint firstItem="NXN-X8-Mfo" firstAttribute="centerY" secondItem="c8l-PX-ekM" secondAttribute="centerY" id="dBZ-uQ-d9S"/>
+                            <constraint firstAttribute="trailing" secondItem="cxG-Qv-lk7" secondAttribute="trailing" id="drv-AV-qun"/>
+                            <constraint firstAttribute="height" constant="100" id="e72-Ja-gSe"/>
+                            <constraint firstItem="cxG-Qv-lk7" firstAttribute="top" secondItem="c8l-PX-ekM" secondAttribute="top" id="t2o-F7-C6u"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="c8l-PX-ekM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ATr-zn-jak"/>
+                <constraint firstAttribute="trailing" secondItem="c8l-PX-ekM" secondAttribute="trailing" id="VJ7-Up-4E3"/>
+                <constraint firstItem="c8l-PX-ekM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gR7-KJ-91c"/>
+                <constraint firstAttribute="bottom" secondItem="c8l-PX-ekM" secondAttribute="bottom" id="zTJ-t9-WKd"/>
+            </constraints>
+            <size key="customSize" width="380" height="100"/>
+            <connections>
+                <outlet property="infoImage" destination="cxG-Qv-lk7" id="u5x-jv-Cje"/>
+                <outlet property="infoText" destination="NXN-X8-Mfo" id="6Z7-jo-Zek"/>
+            </connections>
+            <point key="canvasLocation" x="381.67938931297709" y="6.3380281690140849"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="info1 1" width="380" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
