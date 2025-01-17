@@ -39,6 +39,22 @@
 		FA5BA8A32D1C4C2B00CE5E4A /* Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8A12D1C4C2B00CE5E4A /* Demo.xcdatamodeld */; };
 		FA5BA8AA2D1D65F800CE5E4A /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8A92D1D65F800CE5E4A /* DiaryDetailViewController.swift */; };
 		FA5BA8AC2D1D661000CE5E4A /* DiaryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8AB2D1D661000CE5E4A /* DiaryDetailViewModel.swift */; };
+		FA5BA8AF2D37AD7700CE5E4A /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8AE2D37AD7700CE5E4A /* HomeViewModelTests.swift */; };
+		FA5BA8B22D37B87500CE5E4A /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BA8B12D37B87500CE5E4A /* MockHomeViewController.swift */; };
+		FA9C57FB2D37E94A00196E24 /* EditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C57FA2D37E94A00196E24 /* EditViewModelTests.swift */; };
+		FA9C57FD2D37E96700196E24 /* MockEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C57FC2D37E96700196E24 /* MockEditViewController.swift */; };
+		FA9C58002D37F29C00196E24 /* DiaryDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C57FF2D37F29C00196E24 /* DiaryDetailViewModelTests.swift */; };
+		FA9C58022D37F2B000196E24 /* MockDiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58012D37F2B000196E24 /* MockDiaryDetailViewController.swift */; };
+		FA9C58052D3838C400196E24 /* EmotionalDiaryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58042D3838C400196E24 /* EmotionalDiaryViewModelTests.swift */; };
+		FA9C58072D3838D800196E24 /* MockEmotionalDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58062D3838D800196E24 /* MockEmotionalDiaryViewController.swift */; };
+		FA9C580A2D383BD600196E24 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58092D383BD600196E24 /* OnboardingViewModelTests.swift */; };
+		FA9C580C2D383BEC00196E24 /* MockOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C580B2D383BEC00196E24 /* MockOnboardingViewController.swift */; };
+		FA9C580F2D3848D200196E24 /* MockAllFoodsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C580E2D3848D200196E24 /* MockAllFoodsPageViewController.swift */; };
+		FA9C58112D38492800196E24 /* AllFoodsPageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58102D38492800196E24 /* AllFoodsPageViewModelTests.swift */; };
+		FA9C58142D384F7500196E24 /* ViewMoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58132D384F7500196E24 /* ViewMoreViewModelTests.swift */; };
+		FA9C58162D384F8B00196E24 /* MockViewMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58152D384F8B00196E24 /* MockViewMoreViewController.swift */; };
+		FA9C58192D38522E00196E24 /* FoodDetailPageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58182D38522E00196E24 /* FoodDetailPageViewModelTests.swift */; };
+		FA9C581B2D38530C00196E24 /* MockFoodDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C581A2D38530C00196E24 /* MockFoodDetailPageViewController.swift */; };
 		FAA9D91C2CF137BD00CB83B2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */; };
 		FAA9D91E2CF1382A00CB83B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */; };
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
@@ -132,6 +148,22 @@
 		FA5BA8A22D1C4C2B00CE5E4A /* Demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Demo.xcdatamodel; sourceTree = "<group>"; };
 		FA5BA8A92D1D65F800CE5E4A /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 		FA5BA8AB2D1D661000CE5E4A /* DiaryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewModel.swift; sourceTree = "<group>"; };
+		FA5BA8AE2D37AD7700CE5E4A /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		FA5BA8B12D37B87500CE5E4A /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
+		FA9C57FA2D37E94A00196E24 /* EditViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewModelTests.swift; sourceTree = "<group>"; };
+		FA9C57FC2D37E96700196E24 /* MockEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEditViewController.swift; sourceTree = "<group>"; };
+		FA9C57FF2D37F29C00196E24 /* DiaryDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewModelTests.swift; sourceTree = "<group>"; };
+		FA9C58012D37F2B000196E24 /* MockDiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiaryDetailViewController.swift; sourceTree = "<group>"; };
+		FA9C58042D3838C400196E24 /* EmotionalDiaryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalDiaryViewModelTests.swift; sourceTree = "<group>"; };
+		FA9C58062D3838D800196E24 /* MockEmotionalDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmotionalDiaryViewController.swift; sourceTree = "<group>"; };
+		FA9C58092D383BD600196E24 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
+		FA9C580B2D383BEC00196E24 /* MockOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOnboardingViewController.swift; sourceTree = "<group>"; };
+		FA9C580E2D3848D200196E24 /* MockAllFoodsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAllFoodsPageViewController.swift; sourceTree = "<group>"; };
+		FA9C58102D38492800196E24 /* AllFoodsPageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFoodsPageViewModelTests.swift; sourceTree = "<group>"; };
+		FA9C58132D384F7500196E24 /* ViewMoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreViewModelTests.swift; sourceTree = "<group>"; };
+		FA9C58152D384F8B00196E24 /* MockViewMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewMoreViewController.swift; sourceTree = "<group>"; };
+		FA9C58182D38522E00196E24 /* FoodDetailPageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailPageViewModelTests.swift; sourceTree = "<group>"; };
+		FA9C581A2D38530C00196E24 /* MockFoodDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFoodDetailPageViewController.swift; sourceTree = "<group>"; };
 		FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +340,93 @@
 			path = DiaryDetailView;
 			sourceTree = "<group>";
 		};
+		FA5BA8AD2D37ACF800CE5E4A /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C58172D38518C00196E24 /* FoodDetailPageView */,
+				FA9C58122D384F5A00196E24 /* ViewMoreView */,
+				FA9C580D2D38488600196E24 /* AllFoodsPageView */,
+				FA9C58082D383BBD00196E24 /* OnboardingView */,
+				FA9C58032D38389F00196E24 /* EmotionalDiaryView */,
+				FA9C57FE2D37F26000196E24 /* DiaryDetailView */,
+				FA9C57F92D37E92700196E24 /* EditView */,
+				FA5BA8B02D37B85000CE5E4A /* HomeView */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		FA5BA8B02D37B85000CE5E4A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				FA5BA8AE2D37AD7700CE5E4A /* HomeViewModelTests.swift */,
+				FA5BA8B12D37B87500CE5E4A /* MockHomeViewController.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		FA9C57F92D37E92700196E24 /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C57FA2D37E94A00196E24 /* EditViewModelTests.swift */,
+				FA9C57FC2D37E96700196E24 /* MockEditViewController.swift */,
+			);
+			path = EditView;
+			sourceTree = "<group>";
+		};
+		FA9C57FE2D37F26000196E24 /* DiaryDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C57FF2D37F29C00196E24 /* DiaryDetailViewModelTests.swift */,
+				FA9C58012D37F2B000196E24 /* MockDiaryDetailViewController.swift */,
+			);
+			path = DiaryDetailView;
+			sourceTree = "<group>";
+		};
+		FA9C58032D38389F00196E24 /* EmotionalDiaryView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C58042D3838C400196E24 /* EmotionalDiaryViewModelTests.swift */,
+				FA9C58062D3838D800196E24 /* MockEmotionalDiaryViewController.swift */,
+			);
+			path = EmotionalDiaryView;
+			sourceTree = "<group>";
+		};
+		FA9C58082D383BBD00196E24 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C58092D383BD600196E24 /* OnboardingViewModelTests.swift */,
+				FA9C580B2D383BEC00196E24 /* MockOnboardingViewController.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		FA9C580D2D38488600196E24 /* AllFoodsPageView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C580E2D3848D200196E24 /* MockAllFoodsPageViewController.swift */,
+				FA9C58102D38492800196E24 /* AllFoodsPageViewModelTests.swift */,
+			);
+			path = AllFoodsPageView;
+			sourceTree = "<group>";
+		};
+		FA9C58122D384F5A00196E24 /* ViewMoreView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C58132D384F7500196E24 /* ViewMoreViewModelTests.swift */,
+				FA9C58152D384F8B00196E24 /* MockViewMoreViewController.swift */,
+			);
+			path = ViewMoreView;
+			sourceTree = "<group>";
+		};
+		FA9C58172D38518C00196E24 /* FoodDetailPageView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C58182D38522E00196E24 /* FoodDetailPageViewModelTests.swift */,
+				FA9C581A2D38530C00196E24 /* MockFoodDetailPageViewController.swift */,
+			);
+			path = FoodDetailPageView;
+			sourceTree = "<group>";
+		};
 		FAA9D9162CF1371000CB83B2 /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +479,7 @@
 		FAAC8D0E2C9456B200264E4B /* BeybiTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA5BA8AD2D37ACF800CE5E4A /* ViewModelTests */,
 				FAAC8D0F2C9456B200264E4B /* BeybiTests.swift */,
 			);
 			path = BeybiTests;
@@ -753,7 +873,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9C57FB2D37E94A00196E24 /* EditViewModelTests.swift in Sources */,
+				FA9C581B2D38530C00196E24 /* MockFoodDetailPageViewController.swift in Sources */,
+				FA9C58162D384F8B00196E24 /* MockViewMoreViewController.swift in Sources */,
+				FA9C580F2D3848D200196E24 /* MockAllFoodsPageViewController.swift in Sources */,
+				FA9C58052D3838C400196E24 /* EmotionalDiaryViewModelTests.swift in Sources */,
+				FA9C58192D38522E00196E24 /* FoodDetailPageViewModelTests.swift in Sources */,
+				FA9C57FD2D37E96700196E24 /* MockEditViewController.swift in Sources */,
+				FA9C580C2D383BEC00196E24 /* MockOnboardingViewController.swift in Sources */,
+				FA5BA8B22D37B87500CE5E4A /* MockHomeViewController.swift in Sources */,
+				FA9C58142D384F7500196E24 /* ViewMoreViewModelTests.swift in Sources */,
+				FA9C58022D37F2B000196E24 /* MockDiaryDetailViewController.swift in Sources */,
+				FA9C58112D38492800196E24 /* AllFoodsPageViewModelTests.swift in Sources */,
+				FA9C580A2D383BD600196E24 /* OnboardingViewModelTests.swift in Sources */,
+				FA9C58002D37F29C00196E24 /* DiaryDetailViewModelTests.swift in Sources */,
 				FAAC8D102C9456B200264E4B /* BeybiTests.swift in Sources */,
+				FA5BA8AF2D37AD7700CE5E4A /* HomeViewModelTests.swift in Sources */,
+				FA9C58072D3838D800196E24 /* MockEmotionalDiaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

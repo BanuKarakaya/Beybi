@@ -176,7 +176,6 @@ extension ViewMoreViewModel: ViewMoreViewModelProtocol {
         return nil
     }
     
-   
     func numberOfItemsInSection() -> Int {
         foodArray?.count ?? 0
     }

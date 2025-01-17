@@ -21,7 +21,7 @@ protocol HomeViewModelDelegate: AnyObject {
 final class HomeViewModel {
     private weak var delegate: HomeViewModelDelegate?
     
-    init(delegate: HomeViewModelDelegate) {
+    init(delegate: HomeViewModelDelegate?) {
         self.delegate = delegate
     }
 }

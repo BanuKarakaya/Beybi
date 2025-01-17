@@ -19,7 +19,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var diaryPhoto: UIImageView!
     @IBOutlet weak var placeHolderLabel: UILabel!
     
-    private lazy var viewModel: EditViewModelProtocol! = EditViewModel(delegate: self)
+    private lazy var viewModel: EditViewModelProtocol = EditViewModel(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()

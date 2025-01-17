@@ -41,6 +41,4 @@ extension AllFoodsPageViewModel: AllFoodsPageViewModelProtocol {
         delegate?.setUI()
         delegate?.prepareCollectionView()
     }
-    
-    
 }

@@ -31,7 +31,7 @@ protocol EmotionalDiaryViewModelDelegate: AnyObject {
 
 final class EmotionalDiaryViewModel {
     private weak var delegate: EmotionalDiaryViewModelDelegate?
-    private var diaries: [DemoEntity] = []
+    var diaries: [DemoEntity] = []
     
     init(delegate: EmotionalDiaryViewModelDelegate?) {
         self.delegate = delegate
