@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Food
 
-protocol FoodDetailPageViewModelProtocol {
+public protocol FoodDetailPageViewModelProtocol {
     func viewDidLoad()
     func ingredientsAtIndex(index: Int) -> String?
     func recipeStepAtIndex(index: Int) -> String?
@@ -15,47 +16,47 @@ protocol FoodDetailPageViewModelProtocol {
     func numberOfItemsForRecipeStep() -> Int
 }
 
-protocol FoodDetailPageViewModelDelegate: AnyObject {
+public protocol FoodDetailPageViewModelDelegate: AnyObject {
     func configure(selectedFood: Food?)
     func prepareBannerImage(with urlString: String?)
     func prepareUI()
     func prepareCollectionView()
 }
 
-final class FoodDetailPageViewModel {
+public class FoodDetailPageViewModel {
     private weak var delegate: FoodDetailPageViewModelDelegate?
-    var selectedFood: Food?
+    public var selectedFood: Food?
     
-    init(delegate: FoodDetailPageViewModelDelegate) {
+    public init(delegate: FoodDetailPageViewModelDelegate) {
         self.delegate = delegate
     }
 }
 
 extension FoodDetailPageViewModel: FoodDetailPageViewModelProtocol {
-    func numberOfItemsForRecipeStep() -> Int {
+    public func numberOfItemsForRecipeStep() -> Int {
         selectedFood?.recipeStep.count ?? 0
     }
     
-    func recipeStepAtIndex(index: Int) -> String? {
+    public func recipeStepAtIndex(index: Int) -> String? {
         if let recipeStep = selectedFood?.recipeStep[index] {
             return recipeStep
         }
         return nil
     }
     
-    func numberOfItemsForIngredients() -> Int{
+    public func numberOfItemsForIngredients() -> Int{
         selectedFood?.ingredients.count ?? 0
         
     }
     
-    func ingredientsAtIndex(index: Int) -> String? {
+    public func ingredientsAtIndex(index: Int) -> String? {
         if let ingredient = selectedFood?.ingredients[index] {
             return ingredient
         }
         return nil
  }
    
-    func viewDidLoad() {
+    public func viewDidLoad() {
         delegate?.prepareUI()
         delegate?.prepareCollectionView()
         delegate?.configure(selectedFood: selectedFood)

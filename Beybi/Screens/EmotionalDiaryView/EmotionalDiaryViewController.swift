@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import CommonModule
 
 class EmotionalDiaryViewController: UIViewController {
 

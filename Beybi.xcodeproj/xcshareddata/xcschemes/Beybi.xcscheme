@@ -51,6 +51,17 @@
                ReferencedContainer = "container:Beybi.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FADAE4672D3F9BFF0020AF3F"
+               BuildableName = "DetailPageModuleTests.xctest"
+               BlueprintName = "DetailPageModuleTests"
+               ReferencedContainer = "container:Beybi.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

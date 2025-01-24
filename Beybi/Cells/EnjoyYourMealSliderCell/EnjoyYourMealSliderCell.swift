@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Food
 
 final class EnjoyYourMealSliderCell: UICollectionViewCell {
     @IBOutlet private weak var enjoyYourMealImage: UIImageView!

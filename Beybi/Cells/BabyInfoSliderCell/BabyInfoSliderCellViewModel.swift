@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Food
 
 protocol BabyInfoSliderCellViewModelProtocol {
     func load()

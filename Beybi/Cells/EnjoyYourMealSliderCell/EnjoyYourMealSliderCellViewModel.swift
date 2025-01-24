@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Food
 
 protocol EnjoyYourMealSliderCellViewModelProtocol {
     func load()

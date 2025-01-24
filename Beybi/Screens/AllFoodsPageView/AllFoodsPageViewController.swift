@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Food
+import FoodDetailPageModule
+import CommonModule
 
 final class AllFoodsPageViewController: UIViewController {
     
@@ -37,7 +40,7 @@ final class AllFoodsPageViewController: UIViewController {
     @objc func navigateToDetail(_ notification: NSNotification) {
         if let dict = notification.userInfo as NSDictionary? {
             if let selectedCell = dict["selectedCell"] as? Food {
-                let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+                let detailVC = UIStoryboard(name: "DetailStoryboard", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
                 let detailVM = FoodDetailPageViewModel(delegate: detailVC)
                 detailVM.selectedFood = selectedCell
                 detailVC.viewModel = detailVM

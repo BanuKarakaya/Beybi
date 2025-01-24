@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Food
 
 final class FoodSliderMiniCell: UICollectionViewCell {
 

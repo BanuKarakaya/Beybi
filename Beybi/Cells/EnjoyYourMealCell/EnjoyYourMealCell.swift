@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonModule
 
 final class EnjoyYourMealCell: UICollectionViewCell {
 

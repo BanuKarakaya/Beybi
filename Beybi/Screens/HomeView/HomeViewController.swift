@@ -8,6 +8,9 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseStorage
+import FoodDetailPageModule
+import Food
+import CommonModule
 
 final class HomeViewController: UIViewController {
 
@@ -27,7 +30,7 @@ final class HomeViewController: UIViewController {
     @objc func navigateToDetail(_ notification: NSNotification) {
         if let dict = notification.userInfo as NSDictionary? {
             if let selectedCell = dict["selectedCell"] as? Food {
-                let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+                let detailVC = UIStoryboard(name: "DetailStoryboard", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
                 let detailVM = FoodDetailPageViewModel(delegate: detailVC)
                 detailVM.selectedFood = selectedCell
                 detailVC.viewModel = detailVM
@@ -39,7 +42,7 @@ final class HomeViewController: UIViewController {
     @objc func foodCellToDetail(_ notification: NSNotification) {
         if let dict = notification.userInfo as NSDictionary? {
             if let selectedCell = dict["selectedCell"] as? Food {
-                let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+                let detailVC = UIStoryboard(name: "Main", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
                 let detailVM = FoodDetailPageViewModel(delegate: detailVC)
                 detailVM.selectedFood = selectedCell
                 detailVC.viewModel = detailVM

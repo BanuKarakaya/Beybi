@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
+import Food
 
 protocol BabiesFavCellViewModelProtocol {
     func awakeFromNib()

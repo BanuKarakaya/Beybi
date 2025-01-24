@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Food
 
 final class BabyInfloSliderCell: UICollectionViewCell {
 

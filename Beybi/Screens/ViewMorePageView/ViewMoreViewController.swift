@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Food
+import FoodDetailPageModule
 
 final class ViewMoreViewController: UIViewController {
 
@@ -62,7 +64,7 @@ extension ViewMoreViewController: ViewMoreViewModelDelegate {
     }
     
     func navigateToDetailVC(selectedCell: Food?) {
-        let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+        let detailVC = UIStoryboard(name: "DetailStoryboard", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
         navigationController?.pushViewController(detailVC, animated: true)
         let detailViewModel = FoodDetailPageViewModel(delegate: detailVC)
         detailVC.viewModel = detailViewModel

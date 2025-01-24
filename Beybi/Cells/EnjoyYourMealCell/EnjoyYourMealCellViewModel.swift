@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
+import Food
 
 protocol EnjoyYourMealCellViewModelProtocol {
     func imageAtIndex(index: Int) -> Eym?
