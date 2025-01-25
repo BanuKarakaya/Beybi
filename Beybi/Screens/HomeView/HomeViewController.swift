@@ -82,37 +82,29 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeCell(cellType: EnjoyYourMealCell.self, indexPath: indexPath)
-            return cell
-        } else if indexPath.section == 1 {
             let cell = collectionView.dequeCell(cellType: DailyMenuCell.self, indexPath: indexPath)
             return cell
-        } else if indexPath.section == 2 {
-            let cell = collectionView.dequeCell(cellType: BabiesAgeCell.self, indexPath: indexPath)
-            return cell
         } else {
-            let cell = collectionView.dequeCell(cellType: BabiesFavCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeCell(cellType: FoodSliderCellController.self, indexPath: indexPath)
             return cell
         }
     }
-    
-    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
               case 0:
-                  return CGSize(width: homeCollectionView.frame.width - 13, height: 50)
+                  return CGSize(width: homeCollectionView.frame.width - 13, height: 400)
               case 1:
-                  return CGSize(width: homeCollectionView.frame.width - 13, height: 240)
+                  return CGSize(width: homeCollectionView.frame.width, height: 272)
               case 2:
-                  return CGSize(width: homeCollectionView.frame.width - 13, height: 120)
+                  return CGSize(width: homeCollectionView.frame.width, height: 272)
               case 3:
-                  return CGSize(width: homeCollectionView.frame.width - 13, height: 300)
+                  return CGSize(width: homeCollectionView.frame.width, height: 272)
               default:
-                  return CGSize(width: 100, height: 100)
-              }
+                  return CGSize(width: 100, height: 400)
+        }
     }
 }
 
@@ -137,9 +129,8 @@ extension HomeViewController: HomeViewModelDelegate {
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
         homeCollectionView.showsVerticalScrollIndicator = false
-        homeCollectionView.register(cellType: BabiesAgeCell.self)
         homeCollectionView.register(cellType: DailyMenuCell.self)
-        homeCollectionView.register(cellType: BabiesFavCell.self)
-        homeCollectionView.register(cellType: EnjoyYourMealCell.self)
+        homeCollectionView.register(cellType: FoodSliderCellController.self)
+
     }
 }

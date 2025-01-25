@@ -14,7 +14,6 @@ protocol FoodSliderCellViewModelProtocol {
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func minimumInteritemSpacingForSectionAt() -> CGFloat
-    func minimumLineSpacingForSectionAt() -> CGFloat
     func foodAtIndex(index: Int) -> Food?
     func load()
     func didSelectItemAt(index: Int) -> Food?
@@ -235,12 +234,8 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
         return nil
     }
     
-    func minimumLineSpacingForSectionAt() -> CGFloat {
-        10
-    }
-    
     func minimumInteritemSpacingForSectionAt() -> CGFloat {
-        3
+        16
     }
     
     func numberOfItemsInSection() -> Int {
@@ -253,8 +248,10 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
             return mainDishes?.count ?? 0
         } else if type == "Purees" {
             return purees?.count ?? 0
-        } else {
+        } else if type == "Snacks" {
             return snacks?.count ?? 0
+        } else {
+            return 5
         }
     }
     

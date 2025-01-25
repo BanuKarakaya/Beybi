@@ -79,14 +79,11 @@ extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
         ingredientsCollectionView.delegate = self
         ingredientsCollectionView.dataSource = self
         ingredientsCollectionView.register(UINib(nibName: "IngredientsCell", bundle: .init(identifier: "com.banu.FoodDetailPageModule")), forCellWithReuseIdentifier: "IngredientsCell")
-
-       //ingredientsCollectionView.register(cellType: IngredientsCell.self)
         
         recipeCollectionView.delegate = self
         recipeCollectionView.dataSource = self
         recipeCollectionView.isScrollEnabled = false
         recipeCollectionView.register(UINib(nibName: "RecipeCell", bundle: .init(identifier: "com.banu.FoodDetailPageModule")), forCellWithReuseIdentifier: "RecipeCell")
-        //recipeCollectionView.register(cellType: RecipeCell.self)
     }
     
     public func prepareUI() {
