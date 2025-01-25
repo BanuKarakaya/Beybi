@@ -118,11 +118,11 @@ extension DailyMenuCell: UICollectionViewDataSource {
 
 extension DailyMenuCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: (menuCollectionView.frame.width - 20) / 3, height: 170)
+        .init(width: (menuCollectionView.frame.width - 48) / 2, height: 237)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 2, left: 6, bottom: 12, right: 10 )
+        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16 )
     }
 }
 

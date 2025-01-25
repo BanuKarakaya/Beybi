@@ -15,6 +15,9 @@ class DiaryCell: UICollectionViewCell {
     @IBOutlet weak var diaryPhoto: UIImageView!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var diaryDate: UILabel!
+    @IBOutlet weak var diaryText: UILabel!
+    
     
     var viewModel: DiaryCellViewModelProtocol! {
         didSet {
@@ -96,6 +99,10 @@ extension DiaryCell: DiaryCellViewModelDelegate {
     }
     
     func prepareUI() {
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 16
+        diaryText.numberOfLines = 0
+        diaryPhoto.layer.cornerRadius = 10
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor(red: 174/255.0, green: 165/255.0, blue: 164/255.0, alpha: 0.25).cgColor
     }
 }

@@ -35,7 +35,7 @@ extension DiaryDetailViewController: DiaryDetailViewModelDelegate {
         if let emotionalImageData = selectedDiary?.emotionalImage {
             diaryPhoto.image = NSToUIImage(image: emotionalImageData)
         } else {
-            diaryPhoto.image = UIImage(named: "banuş")
+            diaryPhoto.image = UIImage(named: "Barış")
         }
     }
     

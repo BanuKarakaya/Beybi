@@ -76,7 +76,11 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
 
 extension AllFoodsPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: allFoodsCollectionView.frame.width - 13 , height: 280)
+        .init(width: allFoodsCollectionView.frame.width, height: 272)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .init(top: 16, left: 0, bottom: 16, right: 0)
     }
 }
 
@@ -91,7 +95,6 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
     }
     
     func setUI() {
-        allFoodsCollectionView.backgroundColor = .systemGray6
         self.title = "Foods"
         let appearance = UINavigationBarAppearance()
         appearance.configureWithDefaultBackground()

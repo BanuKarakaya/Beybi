@@ -10,9 +10,8 @@ import Food
 
 final class FoodCell: UICollectionViewCell {
 
-    @IBOutlet private weak var foodName: UILabel!
-    @IBOutlet private weak var typeView: UIView!
-    @IBOutlet private weak var typeLabel: UILabel!
+    
+    @IBOutlet weak var foodName: UILabel!
     @IBOutlet private weak var foodImage: UIImageView!
     
     var viewModel: FoodCellViewModelProtocol! {
@@ -32,12 +31,11 @@ extension FoodCell: FoodCellViewModelDelegate {
     
     func configureCell(food: Food?) {
         foodName.text = food?.name
-        typeLabel.text = food?.type
         prepareBannerImage(with: food?.imageUrl)
     }
     
     func setUI() {
         self.layer.cornerRadius = 10
-        typeView.layer.cornerRadius = 5
+        foodImage.layer.cornerRadius = 10
     }
 }

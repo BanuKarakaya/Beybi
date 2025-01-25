@@ -80,11 +80,15 @@ extension EmotionalDiaryViewController: UICollectionViewDelegate {
 
 extension EmotionalDiaryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 8, left: 10, bottom: 8, right: 10)
+        .init(top: 16, left: 16, bottom: 16, right: 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: diaryCollectionView.frame.width - 20, height: diaryCollectionView.frame.height / 3.7 )
+        .init(width: diaryCollectionView.frame.width - 32, height: 305 )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
 

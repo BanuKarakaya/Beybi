@@ -11,17 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DiaryCell" customModule="Beybi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
+            <rect key="frame" x="0.0" y="0.0" width="361" height="305"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
+                <rect key="frame" x="0.0" y="0.0" width="361" height="305"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPV-xq-Wlt">
-                        <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="305"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqG-9j-ShN">
-                                <rect key="frame" x="306" y="103" width="50" height="21"/>
+                                <rect key="frame" x="294" y="228" width="50" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="S7a-Uf-dYe"/>
                                     <constraint firstAttribute="height" constant="21" id="dtQ-Ib-SSj"/>
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IOz-m3-smD">
-                                <rect key="frame" x="313" y="53.333333333333329" width="35" height="41"/>
+                                <rect key="frame" x="301" y="53.333333333333329" width="35" height="41"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40.670000000000002" id="Jyz-OH-ISR"/>
@@ -48,40 +48,58 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IV-hM-sXf" userLabel="Vieww">
-                        <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="305"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banuş" translatesAutoresizingMaskIntoConstraints="NO" id="9er-7t-vqR">
-                                <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
+                                <rect key="frame" x="12" y="12" width="337" height="160"/>
                             </imageView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjw-4L-7Od">
-                                <rect key="frame" x="0.0" y="135" width="373" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAf-0k-TgR">
+                                <rect key="frame" x="12" y="180" width="337" height="113"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Emotional Diary?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvI-23-YkD">
-                                        <rect key="frame" x="8" y="12" width="357" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri, 24 Jan, 2025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-8D-hbI">
+                                        <rect key="frame" x="8" y="4.0000000000000009" width="321" height="14.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 year first picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLg-pk-vAn">
+                                        <rect key="frame" x="8" y="22" width="321" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.23921568627450979" green="0.15686274509803921" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXN-I2-sVL">
+                                        <rect key="frame" x="8" y="45" width="321" height="64"/>
+                                        <string key="text">Our baby’s first steps! 🐾✨ It feels like just yesterday we brought you home, and now you’re on your way to exploring the world. You’re growing up so fast, but you’ll always be our little baby. We love you endlessly! 💕</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="LvI-23-YkD" secondAttribute="trailing" constant="8" id="0X5-13-Zjl"/>
-                                    <constraint firstAttribute="height" constant="45" id="foC-cz-mNZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="LvI-23-YkD" secondAttribute="bottom" constant="12" id="kSX-sT-eHy"/>
-                                    <constraint firstItem="LvI-23-YkD" firstAttribute="leading" secondItem="Wjw-4L-7Od" secondAttribute="leading" constant="8" id="nZy-AJ-6cx"/>
-                                    <constraint firstItem="LvI-23-YkD" firstAttribute="top" secondItem="Wjw-4L-7Od" secondAttribute="top" constant="12" id="t88-v0-em0"/>
+                                    <constraint firstAttribute="bottom" secondItem="QXN-I2-sVL" secondAttribute="bottom" constant="4" id="2HQ-dS-s3d"/>
+                                    <constraint firstAttribute="trailing" secondItem="QXN-I2-sVL" secondAttribute="trailing" constant="8" id="Gm1-YU-Kc2"/>
+                                    <constraint firstItem="rCf-8D-hbI" firstAttribute="leading" secondItem="gAf-0k-TgR" secondAttribute="leading" constant="8" id="GyH-Fw-djq"/>
+                                    <constraint firstItem="rCf-8D-hbI" firstAttribute="top" secondItem="gAf-0k-TgR" secondAttribute="top" constant="4" id="OM3-qm-ZXE"/>
+                                    <constraint firstAttribute="trailing" secondItem="rCf-8D-hbI" secondAttribute="trailing" constant="8" id="Uqf-0I-tRp"/>
+                                    <constraint firstItem="QXN-I2-sVL" firstAttribute="leading" secondItem="gAf-0k-TgR" secondAttribute="leading" constant="8" id="jrf-Bt-zEt"/>
+                                    <constraint firstAttribute="trailing" secondItem="BLg-pk-vAn" secondAttribute="trailing" constant="8" id="oEH-gq-Suq"/>
+                                    <constraint firstItem="QXN-I2-sVL" firstAttribute="top" secondItem="gAf-0k-TgR" secondAttribute="top" constant="45" id="qzi-rX-7jV"/>
+                                    <constraint firstItem="BLg-pk-vAn" firstAttribute="leading" secondItem="gAf-0k-TgR" secondAttribute="leading" constant="8" id="tiw-TX-h0h"/>
+                                    <constraint firstItem="BLg-pk-vAn" firstAttribute="top" secondItem="gAf-0k-TgR" secondAttribute="top" constant="22" id="xsZ-uX-6cu"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Wjw-4L-7Od" secondAttribute="bottom" id="7gB-Kh-Yxb"/>
-                            <constraint firstItem="9er-7t-vqR" firstAttribute="top" secondItem="0IV-hM-sXf" secondAttribute="top" id="Wd1-Pt-WQr"/>
-                            <constraint firstAttribute="trailing" secondItem="Wjw-4L-7Od" secondAttribute="trailing" id="aW1-ud-bpu"/>
-                            <constraint firstItem="9er-7t-vqR" firstAttribute="leading" secondItem="0IV-hM-sXf" secondAttribute="leading" id="fgK-Kl-EJh"/>
-                            <constraint firstAttribute="trailing" secondItem="9er-7t-vqR" secondAttribute="trailing" id="gxV-xd-ynY"/>
-                            <constraint firstAttribute="bottom" secondItem="9er-7t-vqR" secondAttribute="bottom" id="qnI-Ai-cFi"/>
-                            <constraint firstItem="Wjw-4L-7Od" firstAttribute="leading" secondItem="0IV-hM-sXf" secondAttribute="leading" id="tbT-L4-C4L"/>
+                            <constraint firstItem="gAf-0k-TgR" firstAttribute="top" secondItem="0IV-hM-sXf" secondAttribute="top" constant="180" id="856-xJ-HNG"/>
+                            <constraint firstAttribute="trailing" secondItem="9er-7t-vqR" secondAttribute="trailing" constant="12" id="Jqb-FN-vqL"/>
+                            <constraint firstItem="gAf-0k-TgR" firstAttribute="leading" secondItem="0IV-hM-sXf" secondAttribute="leading" constant="12" id="PcJ-Yf-4B8"/>
+                            <constraint firstAttribute="bottom" secondItem="9er-7t-vqR" secondAttribute="bottom" constant="133" id="XUa-3X-lEB"/>
+                            <constraint firstItem="9er-7t-vqR" firstAttribute="top" secondItem="0IV-hM-sXf" secondAttribute="top" constant="12" id="esC-a7-NZ7"/>
+                            <constraint firstAttribute="bottom" secondItem="gAf-0k-TgR" secondAttribute="bottom" constant="12" id="fMQ-aG-5fW"/>
+                            <constraint firstAttribute="trailing" secondItem="gAf-0k-TgR" secondAttribute="trailing" constant="12" id="fa9-ab-84S"/>
+                            <constraint firstItem="9er-7t-vqR" firstAttribute="leading" secondItem="0IV-hM-sXf" secondAttribute="leading" constant="12" id="h5l-6l-ibP"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -97,14 +115,16 @@
                 <constraint firstItem="0IV-hM-sXf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="t6B-DF-M54"/>
                 <constraint firstAttribute="bottom" secondItem="BPV-xq-Wlt" secondAttribute="bottom" id="ubV-Qx-yLR"/>
             </constraints>
-            <size key="customSize" width="373" height="180"/>
+            <size key="customSize" width="361" height="305"/>
             <connections>
                 <outlet property="containerView" destination="0IV-hM-sXf" id="EHt-u8-ccf"/>
                 <outlet property="deleteView" destination="BPV-xq-Wlt" id="QK6-na-nDx"/>
+                <outlet property="diaryDate" destination="rCf-8D-hbI" id="3yt-hR-5io"/>
                 <outlet property="diaryPhoto" destination="9er-7t-vqR" id="tzc-sp-WCE"/>
-                <outlet property="diaryTitle" destination="LvI-23-YkD" id="SuU-sr-4Nf"/>
+                <outlet property="diaryText" destination="QXN-I2-sVL" id="LUN-e3-ONB"/>
+                <outlet property="diaryTitle" destination="BLg-pk-vAn" id="r3c-go-3uX"/>
             </connections>
-            <point key="canvasLocation" x="-22.137404580152669" y="83.098591549295776"/>
+            <point key="canvasLocation" x="-8.3969465648854964" y="125.70422535211269"/>
         </collectionViewCell>
     </objects>
     <resources>
