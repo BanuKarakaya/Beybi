@@ -32,15 +32,84 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="2bK-D3-XGC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.23921568627450979" green="0.15686274509803921" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-dp-HtS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-dp-HtS" userLabel="View1">
                                 <rect key="frame" x="4" y="209" width="164.66666666666666" height="28"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Y1g-fH-zve">
+                                        <rect key="frame" x="0.0" y="0.99999999999999822" width="12" height="10.666666666666668"/>
+                                        <color key="tintColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="CbA-Cw-SMt"/>
+                                            <constraint firstAttribute="width" constant="12" id="Pwq-k7-bS7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-ke-n0R">
+                                        <rect key="frame" x="16" y="0.0" width="33" height="12"/>
+                                        <color key="tintColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="o17-BG-2O2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carrot" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mzi-y4-knr">
+                                        <rect key="frame" x="57" y="-0.66666666666666785" width="12" height="12.000000000000002"/>
+                                        <color key="tintColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10.33" id="04O-mq-OQI"/>
+                                            <constraint firstAttribute="width" constant="12" id="f0v-9d-TMU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFF-KP-LHM">
+                                        <rect key="frame" x="73" y="0.0" width="65.333333333333314" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="njF-NO-iXy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flame" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="124-qQ-w4G">
+                                        <rect key="frame" x="0.0" y="15.666666666666668" width="12" height="11"/>
+                                        <color key="tintColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="HWb-E3-BF7"/>
+                                            <constraint firstAttribute="height" constant="11.33" id="KBa-Os-6aT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="220 cal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av5-KD-66e">
+                                        <rect key="frame" x="16" y="16" width="36" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="SNQ-nU-2ik"/>
+                                            <constraint firstAttribute="height" constant="12" id="tyI-el-LLJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="0.8980392157" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="Y1g-fH-zve" firstAttribute="leading" secondItem="MOI-dp-HtS" secondAttribute="leading" id="2JB-6R-Oah"/>
+                                    <constraint firstItem="8KF-ke-n0R" firstAttribute="leading" secondItem="Y1g-fH-zve" secondAttribute="trailing" constant="4" id="AXR-eh-Ncv"/>
+                                    <constraint firstItem="av5-KD-66e" firstAttribute="leading" secondItem="124-qQ-w4G" secondAttribute="trailing" constant="4" id="CHk-z4-ZOh"/>
+                                    <constraint firstItem="DFF-KP-LHM" firstAttribute="leading" secondItem="mzi-y4-knr" secondAttribute="trailing" constant="4" id="FH4-cP-JSO"/>
+                                    <constraint firstItem="124-qQ-w4G" firstAttribute="top" secondItem="Y1g-fH-zve" secondAttribute="bottom" constant="4" id="KFp-It-pac"/>
+                                    <constraint firstAttribute="bottom" secondItem="124-qQ-w4G" secondAttribute="bottom" id="N7R-4I-Vsf"/>
+                                    <constraint firstItem="DFF-KP-LHM" firstAttribute="top" secondItem="MOI-dp-HtS" secondAttribute="top" id="NgD-0t-038"/>
+                                    <constraint firstItem="mzi-y4-knr" firstAttribute="leading" secondItem="8KF-ke-n0R" secondAttribute="trailing" constant="8" id="RAj-yY-wpz"/>
+                                    <constraint firstItem="8KF-ke-n0R" firstAttribute="top" secondItem="MOI-dp-HtS" secondAttribute="top" id="RPs-rL-zqa"/>
+                                    <constraint firstItem="Y1g-fH-zve" firstAttribute="top" secondItem="MOI-dp-HtS" secondAttribute="top" id="SMY-zF-cpj"/>
+                                    <constraint firstAttribute="bottom" secondItem="av5-KD-66e" secondAttribute="bottom" id="aR2-VC-fQt"/>
+                                    <constraint firstItem="mzi-y4-knr" firstAttribute="top" secondItem="MOI-dp-HtS" secondAttribute="top" id="bM3-vo-tWB"/>
+                                    <constraint firstItem="av5-KD-66e" firstAttribute="top" secondItem="8KF-ke-n0R" secondAttribute="bottom" constant="4" id="lf4-WK-QwC"/>
                                     <constraint firstAttribute="height" constant="28" id="tvX-3r-fJD"/>
+                                    <constraint firstItem="124-qQ-w4G" firstAttribute="leading" secondItem="MOI-dp-HtS" secondAttribute="leading" id="veh-OH-R30"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -77,11 +146,11 @@
     </objects>
     <resources>
         <image name="Balkabaklı püre" width="1402" height="1402"/>
+        <image name="carrot" catalog="system" width="128" height="122"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
+        <image name="flame" catalog="system" width="106" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

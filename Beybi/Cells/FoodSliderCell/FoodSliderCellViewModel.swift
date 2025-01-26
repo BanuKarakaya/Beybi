@@ -230,6 +230,10 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
             if let food = snacks?[index] {
                 return food
             }
+        } else if type == "Recommended Recipes" {
+            if let food = snacks?[index] {
+                return food
+            }
         }
         return nil
     }
@@ -251,7 +255,7 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
         } else if type == "Snacks" {
             return snacks?.count ?? 0
         } else {
-            return 5
+            return snacks?.count ?? 2
         }
     }
     

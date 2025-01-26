@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="244" id="ThK-ls-uD4"/>
                                     <constraint firstAttribute="height" constant="19" id="gdj-QT-sn3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" red="0.23921568627450979" green="0.15686274509803921" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

@@ -16,11 +16,12 @@ protocol AllFoodsPageViewModelProtocol {
 protocol AllFoodsPageViewModelDelegate: AnyObject {
     func setUI()
     func prepareCollectionView()
+    func prepareSearchController()
 }
 
 final class AllFoodsPageViewModel {
     private weak var delegate: AllFoodsPageViewModelDelegate?
-    private var types = ["Breakfast","Soups","Main Dishes","Purees","Snacks"]
+    private var types = ["Breakfast","Soups","Main Dishes","Purees","Snacks","Recommended Recipes"]
     
     init(delegate: AllFoodsPageViewModelDelegate) {
         self.delegate = delegate
@@ -34,11 +35,12 @@ extension AllFoodsPageViewModel: AllFoodsPageViewModelProtocol {
     }
     
     func numberOfItemsInSection() -> Int {
-        5
+        10
     }
     
     func viewDidLoad() {
         delegate?.setUI()
         delegate?.prepareCollectionView()
+        delegate?.prepareSearchController()
     }
 }

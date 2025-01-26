@@ -73,6 +73,8 @@
 		FADAE4E72D426C9E0020AF3F /* Food.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE4E52D426C9E0020AF3F /* Food.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FADAE51A2D4270570020AF3F /* CommonModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE5192D4270570020AF3F /* CommonModule.framework */; };
 		FADAE51B2D4270570020AF3F /* CommonModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE5192D4270570020AF3F /* CommonModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FADAE5282D46A9BE0020AF3F /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE5262D46A9BE0020AF3F /* CategoriesCell.swift */; };
+		FADAE5292D46A9BE0020AF3F /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADAE5272D46A9BE0020AF3F /* CategoriesCell.xib */; };
 		FAF5C0972CF2046B000ADD1F /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */; };
 		FAF5C0992CF210D0000ADD1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5C0982CF210D0000ADD1F /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -173,6 +175,8 @@
 		FADAE4BA2D4260B60020AF3F /* FoodDetailPageModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoodDetailPageModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADAE4E52D426C9E0020AF3F /* Food.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Food.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADAE5192D4270570020AF3F /* CommonModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FADAE5262D46A9BE0020AF3F /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
+		FADAE5272D46A9BE0020AF3F /* CategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
 		FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
 		FAF5C0982CF210D0000ADD1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -493,6 +497,7 @@
 		FAAC8D712C9C7BB400264E4B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FADAE5252D46A98A0020AF3F /* CategoriesCell */,
 				FA117F2A2D195EB80024575F /* DiaryCell */,
 				FA22AA142CAADD6900F6B169 /* ViewMoreCell */,
 				FAAC8D632C9C682F00264E4B /* DailyMenuCell */,
@@ -510,6 +515,15 @@
 				FADAE4BA2D4260B60020AF3F /* FoodDetailPageModule.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FADAE5252D46A98A0020AF3F /* CategoriesCell */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE5262D46A9BE0020AF3F /* CategoriesCell.swift */,
+				FADAE5272D46A9BE0020AF3F /* CategoriesCell.xib */,
+			);
+			path = CategoriesCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -629,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAC8D3B2C95CF1100264E4B /* FoodSliderCellController.xib in Resources */,
+				FADAE5292D46A9BE0020AF3F /* CategoriesCell.xib in Resources */,
 				FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */,
 				FA22AA182CAADD9300F6B169 /* ViewMoreCell.xib in Resources */,
 				FAAC8D472C973ADC00264E4B /* DailyMenuCell.xib in Resources */,
@@ -688,6 +703,7 @@
 				FA5BA8AC2D1D661000CE5E4A /* DiaryDetailViewModel.swift in Sources */,
 				FA5BA8AA2D1D65F800CE5E4A /* DiaryDetailViewController.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,
+				FADAE5282D46A9BE0020AF3F /* CategoriesCell.swift in Sources */,
 				FAAC8D652C9C685A00264E4B /* DailyMenuCellViewModel.swift in Sources */,
 				FA22AA172CAADD9300F6B169 /* ViewMoreCell.swift in Sources */,
 			);

@@ -31,9 +31,9 @@ extension ViewMoreViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeCell(cellType: ViewMoreCell.self, indexPath: indexPath)
+        let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
         if let food = viewModel.foodAtIndex(index: indexPath.item) {
-            let cellViewModel = ViewMoreCellViewModel(delegate: cell, food: food)
+            let cellViewModel = FoodCellViewModel(delegate: cell, food: food)
             cell.viewModel = cellViewModel
         }
         return cell
@@ -46,11 +46,15 @@ extension ViewMoreViewController: UICollectionViewDataSource {
 
 extension ViewMoreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: viewMoreCollectionView.frame.width - 18, height: 90)
+        .init(width: 172.5, height: 237)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 6.5, left: 6.5, bottom: 6.5, right: 6.5)
+        .init(top: 16, left: 16, bottom: 0, right: 16)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
 
@@ -75,6 +79,6 @@ extension ViewMoreViewController: ViewMoreViewModelDelegate {
         viewMoreCollectionView.delegate = self
         viewMoreCollectionView.dataSource = self
         viewMoreCollectionView.showsVerticalScrollIndicator = false
-        viewMoreCollectionView.register(cellType: ViewMoreCell.self)
+        viewMoreCollectionView.register(cellType: FoodCell.self)
     }
 }
