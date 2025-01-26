@@ -14,14 +14,13 @@ final class DailyMenuCell: UICollectionViewCell {
     @IBOutlet private weak var breakfastButton: UIButton!
     @IBOutlet private weak var lunchButton: UIButton!
     @IBOutlet private weak var dinnerButton: UIButton!
-    @IBOutlet private weak var breakfastButtonLabel: UILabel!
-    @IBOutlet private weak var lunchButtonLabel: UILabel!
-    @IBOutlet private weak var dinnerButtonLabel: UILabel!
     var isBreakfastButtonTapped = false
     var isLunchButtonTapped = false
     var isDinnerButtonTapped = false
-    var beybiColor = UIColor(red: 162/255.0, green: 10/255.0, blue: 30/255.0, alpha: 0.9)
-
+    var beybiColor = UIColor(red: 237/255, green: 136/255, blue: 74/255, alpha: 1.0)
+    var beybiColor2 = UIColor(red: 255/255, green: 243/255, blue: 219/255, alpha: 1.0)
+    var beybiWhite = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+    var borderColor = UIColor(red: 237/255, green: 136/255, blue: 74/255, alpha: 0.25)
 
     private lazy var viewModel: DailyMenuCellViewModelProtocol = DailyMenuCellViewModel(delegate: self)
     
@@ -36,18 +35,19 @@ final class DailyMenuCell: UICollectionViewCell {
         isDinnerButtonTapped = false
         
         breakfastButton.backgroundColor = beybiColor
-        breakfastButtonLabel.textColor = .white
-        breakfastButton.layer.borderColor = beybiColor.cgColor
-        lunchButton.layer.borderWidth = 0.5
-        lunchButton.layer.borderColor = UIColor.systemGray2.cgColor
-        lunchButton.layer.cornerRadius = 6
-        lunchButton.backgroundColor = .systemGray6
-        lunchButtonLabel.textColor = .black
-        dinnerButton.layer.borderWidth = 0.5
-        dinnerButton.layer.borderColor = UIColor.systemGray2.cgColor
-        dinnerButton.layer.cornerRadius = 6
-        dinnerButton.backgroundColor = .systemGray6
-        dinnerButtonLabel.textColor = .black
+        breakfastButton.titleLabel?.tintColor = beybiWhite
+        breakfastButton.layer.borderColor = borderColor.cgColor
+        lunchButton.layer.borderWidth = 0.7
+        lunchButton.layer.borderColor = borderColor.cgColor
+        lunchButton.layer.cornerRadius = 8
+        lunchButton.backgroundColor = beybiColor2
+        lunchButton.titleLabel?.tintColor = beybiColor
+        dinnerButton.layer.borderWidth = 0.7
+        dinnerButton.layer.borderColor = borderColor.cgColor
+        dinnerButton.layer.cornerRadius = 8
+        dinnerButton.backgroundColor = beybiColor2
+        dinnerButton.titleLabel?.tintColor = beybiColor
+        
         reloadData()
     }
     
@@ -57,18 +57,19 @@ final class DailyMenuCell: UICollectionViewCell {
         isDinnerButtonTapped = false
         
         lunchButton.backgroundColor = beybiColor
-        lunchButtonLabel.textColor = .white
-        lunchButton.layer.borderColor = beybiColor.cgColor
-        breakfastButton.layer.borderWidth = 0.5
-        breakfastButton.layer.borderColor = UIColor.systemGray2.cgColor
-        breakfastButton.layer.cornerRadius = 6
-        breakfastButton.backgroundColor = .systemGray6
-        breakfastButtonLabel.textColor = .black
-        dinnerButton.layer.borderWidth = 0.5
-        dinnerButton.layer.borderColor = UIColor.systemGray2.cgColor
-        dinnerButton.layer.cornerRadius = 6
-        dinnerButton.backgroundColor = .systemGray6
-        dinnerButtonLabel.textColor = .black
+        lunchButton.titleLabel?.tintColor = beybiWhite
+        lunchButton.layer.borderColor = borderColor.cgColor
+        breakfastButton.layer.borderWidth = 0.7
+        breakfastButton.layer.borderColor = borderColor.cgColor
+        breakfastButton.layer.cornerRadius = 8
+        breakfastButton.backgroundColor = beybiColor2
+        breakfastButton.titleLabel?.tintColor = beybiColor
+        dinnerButton.layer.borderWidth = 0.7
+        dinnerButton.layer.borderColor = borderColor.cgColor
+        dinnerButton.layer.cornerRadius = 8
+        dinnerButton.backgroundColor = beybiColor2
+        dinnerButton.titleLabel?.tintColor = beybiColor
+        
         reloadData()
     }
     
@@ -78,18 +79,20 @@ final class DailyMenuCell: UICollectionViewCell {
         isDinnerButtonTapped = true
         
         dinnerButton.backgroundColor = beybiColor
-        dinnerButtonLabel.textColor = .white
-        dinnerButton.layer.borderColor = beybiColor.cgColor
-        breakfastButton.layer.borderWidth = 0.5
-        breakfastButton.layer.borderColor = UIColor.systemGray2.cgColor
-        breakfastButton.layer.cornerRadius = 6
-        breakfastButton.backgroundColor = .systemGray6
-        breakfastButtonLabel.textColor = .black
-        lunchButton.layer.borderWidth = 0.5
-        lunchButton.layer.borderColor = UIColor.systemGray2.cgColor
-        lunchButton.layer.cornerRadius = 6
-        lunchButton.backgroundColor = .systemGray6
-        lunchButtonLabel.textColor = .black
+        dinnerButton.titleLabel?.textColor = beybiWhite
+        dinnerButton.layer.borderColor = borderColor.cgColor
+        dinnerButton.titleLabel?.tintColor = beybiWhite
+        breakfastButton.layer.borderWidth = 0.7
+        breakfastButton.layer.borderColor = borderColor.cgColor
+        breakfastButton.layer.cornerRadius = 8
+        breakfastButton.backgroundColor = beybiColor2
+        breakfastButton.titleLabel?.tintColor = beybiColor
+        lunchButton.layer.borderWidth = 0.7
+        lunchButton.layer.borderColor = borderColor.cgColor
+        lunchButton.layer.cornerRadius = 8
+        lunchButton.backgroundColor = beybiColor2
+        lunchButton.titleLabel?.tintColor = beybiColor
+        
         reloadData()
     }
 }
@@ -118,11 +121,15 @@ extension DailyMenuCell: UICollectionViewDataSource {
 
 extension DailyMenuCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: (menuCollectionView.frame.width - 48) / 2, height: 237)
+        .init(width: 220, height: 303)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16 )
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0 )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
 
@@ -132,13 +139,13 @@ extension DailyMenuCell: DailyMenuCellViewModelDelegate {
     }
     
     func prepareUI() {
-        dinnerButton.layer.cornerRadius = 6
-        lunchButton.layer.borderWidth = 0.5
-        lunchButton.layer.borderColor = UIColor.systemGray2.cgColor
-        lunchButton.layer.cornerRadius = 6
-        breakfastButton.layer.borderWidth = 0.5
-        breakfastButton.layer.borderColor = UIColor.systemGray2.cgColor
-        breakfastButton.layer.cornerRadius = 6
+        dinnerButton.layer.cornerRadius = 8
+        lunchButton.layer.borderWidth = 0.7
+        lunchButton.layer.borderColor = borderColor.cgColor
+        lunchButton.layer.cornerRadius = 8
+        breakfastButton.layer.borderWidth = 0.7
+        breakfastButton.layer.borderColor = borderColor.cgColor
+        breakfastButton.layer.cornerRadius = 8
     }
     
     func prepareCollectionView() {
