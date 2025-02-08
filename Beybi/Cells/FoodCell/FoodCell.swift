@@ -13,6 +13,7 @@ final class FoodCell: UICollectionViewCell {
     
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet private weak var foodImage: UIImageView!
+    @IBOutlet weak var favView: UIView!
     
     var viewModel: FoodCellViewModelProtocol! {
         didSet {
@@ -37,5 +38,6 @@ extension FoodCell: FoodCellViewModelDelegate {
     func setUI() {
         self.layer.cornerRadius = 10
         foodImage.layer.cornerRadius = 10
+        favView.layer.cornerRadius = 100
     }
 }

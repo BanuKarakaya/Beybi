@@ -15,6 +15,7 @@ protocol DiaryDetailViewModelDelegate: AnyObject {
     func prepareUI()
     func configure(selectedDiary: DemoEntity?)
     func NSToUIImage(image: Data) -> Image
+    func prepareCollectionView()
 }
 
 final class DiaryDetailViewModel {
@@ -30,5 +31,6 @@ extension DiaryDetailViewModel: DiaryDetailViewModelProtocol {
     func viewDidLoad() {
         delegate?.prepareUI()
         delegate?.configure(selectedDiary: selectedDiary)
+        delegate?.prepareCollectionView()
     }
 }

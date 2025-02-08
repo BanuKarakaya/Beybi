@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="PhotoCell" customModule="Beybi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="361" height="320"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="361" height="320"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIl-GR-Q0i">
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="320"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banuş" translatesAutoresizingMaskIntoConstraints="NO" id="cZM-H4-bem">
+                                <rect key="frame" x="0.0" y="0.0" width="361" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="Wbk-It-7uW"/>
+                                    <constraint firstAttribute="height" constant="320" id="sPj-go-Pwy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cZM-H4-bem" secondAttribute="bottom" id="1Zp-Wy-clj"/>
+                            <constraint firstItem="cZM-H4-bem" firstAttribute="leading" secondItem="LIl-GR-Q0i" secondAttribute="leading" id="K5s-7h-Pe9"/>
+                            <constraint firstAttribute="trailing" secondItem="cZM-H4-bem" secondAttribute="trailing" id="hVR-sw-24b"/>
+                            <constraint firstItem="cZM-H4-bem" firstAttribute="top" secondItem="LIl-GR-Q0i" secondAttribute="top" id="k7q-gq-Jqk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LIl-GR-Q0i" secondAttribute="bottom" id="Psh-RL-lN8"/>
+                <constraint firstItem="LIl-GR-Q0i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="W3r-vY-Ws0"/>
+                <constraint firstItem="LIl-GR-Q0i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ij9-qT-7dY"/>
+                <constraint firstAttribute="trailing" secondItem="LIl-GR-Q0i" secondAttribute="trailing" id="zJN-qm-eUv"/>
+            </constraints>
+            <size key="customSize" width="361" height="320"/>
+            <point key="canvasLocation" x="228.24427480916029" y="83.098591549295776"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Banuş" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

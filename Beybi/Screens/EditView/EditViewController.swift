@@ -13,11 +13,15 @@ typealias Button = UIButton
 class EditViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var diaryPhoto: UIImageView!
-    @IBOutlet weak var placeHolderLabel: UILabel!
+    @IBOutlet weak var placeHolder: UILabel!
+    
+    var borderColor = UIColor(red: 174/255, green: 165/255, blue: 164/255, alpha: 0.25)
+    var placeHolderColor = UIColor(red: 61/255, green: 40/255, blue: 32/255, alpha: 0.25)
+
     
     private lazy var viewModel: EditViewModelProtocol = EditViewModel(delegate: self)
     
@@ -99,7 +103,7 @@ extension EditViewController: UITextFieldDelegate {
 
 extension EditViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        placeHolderLabel.isHidden = !textView.text.isEmpty
+        placeHolder.isHidden = !textView.text.isEmpty
     }
 }
 
@@ -163,14 +167,19 @@ extension EditViewController: EditViewModelDelegate {
     
     func prepareUI() {
         titleTextField.placeholder = "Please enter a title"
+        titleTextField.layer.cornerRadius = 12
+        titleTextField.layer.borderWidth = 0.5
+        titleTextField.clipsToBounds = true
+        diaryTextView.layer.cornerRadius = 12
+        diaryTextView.layer.borderWidth = 0.5
+        diaryTextView.layer.borderColor = borderColor.cgColor
+        titleTextField.layer.borderColor = borderColor.cgColor
         titleTextField.delegate = self
         diaryTextView.delegate = self
         titleTextField.isUserInteractionEnabled = true
         diaryTextView.isScrollEnabled = false
         scrollView.showsVerticalScrollIndicator = false
         diaryPhoto.layer.cornerRadius = 8
-        addPhotoButton.layer.cornerRadius = 32
-        addPhotoButton.layer.masksToBounds = true
         scrollView.showsVerticalScrollIndicator = false
         self.tabBarController?.tabBar.isHidden = true
         let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveButtonTapped))

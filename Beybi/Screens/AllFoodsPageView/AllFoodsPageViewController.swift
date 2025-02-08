@@ -25,37 +25,6 @@ final class AllFoodsPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(getFoodTypeLabelValue(_:)), name: .getTypeLabelValue, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToDetail(_:)), name: .foodSliderCellTapped, object: nil)
-    }
- 
-    @objc func getFoodTypeLabelValue(_ notification: NSNotification) {
-        print(notification.userInfo)
-        if let dict = notification.userInfo as NSDictionary? {
-            if let foodType = dict["foodType"] as? String {
-                let viewMoreVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewMoreViewController") as! ViewMoreViewController
-                let viewMoreVM = ViewMoreViewModel(delegate: viewMoreVC)
-                viewMoreVM.foodType = foodType
-                viewMoreVC.viewModel = viewMoreVM
-                navigationController?.pushViewController(viewMoreVC, animated: true)
-            }
-        }
-    }
-    
-    @objc func navigateToDetail(_ notification: NSNotification) {
-        if let dict = notification.userInfo as NSDictionary? {
-            if let selectedCell = dict["selectedCell"] as? Food {
-                let detailVC = UIStoryboard(name: "DetailStoryboard", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
-                let detailVM = FoodDetailPageViewModel(delegate: detailVC)
-                detailVM.selectedFood = selectedCell
-                detailVC.viewModel = detailVM
-                navigationController?.pushViewController(detailVC, animated: true)
-            }
-        }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .viewMoreButtonTapped, object: nil)
     }
 }
 
@@ -81,10 +50,17 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
             return cell
         } else if collectionView == allFoodsCollectionView {
             let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
-       
+            if let food = viewModel.foodAtIndex(index: indexPath.item) {
+                let cellViewModel = FoodCellViewModel(delegate: cell, food: food)
+                cell.viewModel = cellViewModel
+            }
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(index: indexPath.item)
     }
 }
 
@@ -103,9 +79,25 @@ extension AllFoodsPageViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == categoriesCollectionView {
             return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         } else if collectionView == allFoodsCollectionView {
-            return UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
+            return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         } else {
             return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == allFoodsCollectionView {
+            return 16
+        } else {
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == categoriesCollectionView {
+            return 16
+        } else {
+            return 16
         }
     }
 }
@@ -115,6 +107,18 @@ extension AllFoodsPageViewController: UISearchBarDelegate {
 }
 
 extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
+    func navigateToDetail(selectedCell: Food) {
+        let detailVC = UIStoryboard(name: "DetailStoryboard", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+        let detailVM = FoodDetailPageViewModel(delegate: detailVC)
+        detailVM.selectedFood = selectedCell
+        detailVC.viewModel = detailVM
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    func reloadData() {
+        allFoodsCollectionView.reloadData()
+    }
+    
     func prepareSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = true
@@ -158,7 +162,6 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
     func setUI() {
         self.title = "Foods"
         let appearance = UINavigationBarAppearance()
-        //appearance.configureWithDefaultBackground()
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         appearance.backgroundColor = beybiWhite

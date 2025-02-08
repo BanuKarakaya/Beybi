@@ -9,9 +9,9 @@ import UIKit
 
 final class RecipeCell: UICollectionViewCell {
 
-    @IBOutlet private weak var view: UIView!
-    @IBOutlet private weak var stepLabel: UILabel!
-    @IBOutlet private weak var stepNumber: UILabel!
+    @IBOutlet weak var stepView: UIView!
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet weak var stepNumber: UILabel!
     
     var viewModel: RecipeViewModelProtocol! {
         didSet {
@@ -21,8 +21,8 @@ final class RecipeCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        view.layer.cornerRadius = 10
         stepLabel.numberOfLines = 0
+        stepView.layer.cornerRadius = 100
     }
 }
 

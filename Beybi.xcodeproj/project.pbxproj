@@ -44,6 +44,8 @@
 		FA9C58162D384F8B00196E24 /* MockViewMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58152D384F8B00196E24 /* MockViewMoreViewController.swift */; };
 		FA9C58192D38522E00196E24 /* FoodDetailPageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C58182D38522E00196E24 /* FoodDetailPageViewModelTests.swift */; };
 		FA9C581B2D38530C00196E24 /* MockFoodDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C581A2D38530C00196E24 /* MockFoodDetailPageViewController.swift */; };
+		FA9F0FAF2D4D1509007C8BDD /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F0FAD2D4D1509007C8BDD /* PhotoCell.swift */; };
+		FA9F0FB02D4D1509007C8BDD /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9F0FAE2D4D1509007C8BDD /* PhotoCell.xib */; };
 		FAA9D91C2CF137BD00CB83B2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */; };
 		FAA9D91E2CF1382A00CB83B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */; };
 		FAAC8CF92C9456B000264E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC8CF82C9456B000264E4B /* AppDelegate.swift */; };
@@ -75,6 +77,7 @@
 		FADAE51B2D4270570020AF3F /* CommonModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE5192D4270570020AF3F /* CommonModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FADAE5282D46A9BE0020AF3F /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE5262D46A9BE0020AF3F /* CategoriesCell.swift */; };
 		FADAE5292D46A9BE0020AF3F /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADAE5272D46A9BE0020AF3F /* CategoriesCell.xib */; };
+		FADAE5312D47914C0020AF3F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE5302D47914C0020AF3F /* FavoritesViewController.swift */; };
 		FAF5C0972CF2046B000ADD1F /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */; };
 		FAF5C0992CF210D0000ADD1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5C0982CF210D0000ADD1F /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -145,6 +148,8 @@
 		FA9C58152D384F8B00196E24 /* MockViewMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewMoreViewController.swift; sourceTree = "<group>"; };
 		FA9C58182D38522E00196E24 /* FoodDetailPageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailPageViewModelTests.swift; sourceTree = "<group>"; };
 		FA9C581A2D38530C00196E24 /* MockFoodDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFoodDetailPageViewController.swift; sourceTree = "<group>"; };
+		FA9F0FAD2D4D1509007C8BDD /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		FA9F0FAE2D4D1509007C8BDD /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		FAA9D91B2CF137BD00CB83B2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAA9D91D2CF1382A00CB83B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FAAC8CF52C9456B000264E4B /* Beybi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beybi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +182,7 @@
 		FADAE5192D4270570020AF3F /* CommonModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADAE5262D46A9BE0020AF3F /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
 		FADAE5272D46A9BE0020AF3F /* CategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
+		FADAE5302D47914C0020AF3F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		FAF5C0962CF2046A000ADD1F /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
 		FAF5C0982CF210D0000ADD1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -348,6 +354,15 @@
 			path = FoodDetailPageView;
 			sourceTree = "<group>";
 		};
+		FA9F0FAC2D4D14E9007C8BDD /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F0FAD2D4D1509007C8BDD /* PhotoCell.swift */,
+				FA9F0FAE2D4D1509007C8BDD /* PhotoCell.xib */,
+			);
+			path = PhotoCell;
+			sourceTree = "<group>";
+		};
 		FAA9D9162CF1371000CB83B2 /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +498,7 @@
 		FAAC8D702C9C7B4900264E4B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FADAE52F2D4791180020AF3F /* FavoritesView */,
 				FA5BA8A82D1D65D800CE5E4A /* DiaryDetailView */,
 				FA117F312D1980100024575F /* EditView */,
 				FA117F252D1955F30024575F /* EmotionalDiaryView */,
@@ -497,6 +513,7 @@
 		FAAC8D712C9C7BB400264E4B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FA9F0FAC2D4D14E9007C8BDD /* PhotoCell */,
 				FADAE5252D46A98A0020AF3F /* CategoriesCell */,
 				FA117F2A2D195EB80024575F /* DiaryCell */,
 				FA22AA142CAADD6900F6B169 /* ViewMoreCell */,
@@ -524,6 +541,14 @@
 				FADAE5272D46A9BE0020AF3F /* CategoriesCell.xib */,
 			);
 			path = CategoriesCell;
+			sourceTree = "<group>";
+		};
+		FADAE52F2D4791180020AF3F /* FavoritesView */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE5302D47914C0020AF3F /* FavoritesViewController.swift */,
+			);
+			path = FavoritesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -642,6 +667,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9F0FB02D4D1509007C8BDD /* PhotoCell.xib in Resources */,
 				FAAC8D3B2C95CF1100264E4B /* FoodSliderCellController.xib in Resources */,
 				FADAE5292D46A9BE0020AF3F /* CategoriesCell.xib in Resources */,
 				FAAC8D052C9456B200264E4B /* LaunchScreen.storyboard in Resources */,
@@ -701,10 +727,12 @@
 				FAAC8D4A2C97689D00264E4B /* FoodCell.swift in Sources */,
 				FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */,
 				FA5BA8AC2D1D661000CE5E4A /* DiaryDetailViewModel.swift in Sources */,
+				FA9F0FAF2D4D1509007C8BDD /* PhotoCell.swift in Sources */,
 				FA5BA8AA2D1D65F800CE5E4A /* DiaryDetailViewController.swift in Sources */,
 				FAAC8CFB2C9456B000264E4B /* SceneDelegate.swift in Sources */,
 				FADAE5282D46A9BE0020AF3F /* CategoriesCell.swift in Sources */,
 				FAAC8D652C9C685A00264E4B /* DailyMenuCellViewModel.swift in Sources */,
+				FADAE5312D47914C0020AF3F /* FavoritesViewController.swift in Sources */,
 				FA22AA172CAADD9300F6B169 /* ViewMoreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

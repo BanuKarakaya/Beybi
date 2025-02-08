@@ -17,7 +17,6 @@ final class FoodSliderCellController: UICollectionViewCell {
     var viewModel: FoodSliderCellViewModelProtocol! {
         didSet {
             viewModel.viewDidLoad()
-            viewModel.load()
         }
     }
 
@@ -39,8 +38,8 @@ extension FoodSliderCellController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
         if let food = viewModel.foodAtIndex(index: indexPath.item) {
-            let cellViewModel = FoodCellViewModel(delegate: cell, food: food)
-            cell.viewModel = cellViewModel
+           let cellViewModel = FoodCellViewModel(delegate: cell, food: food)
+           cell.viewModel = cellViewModel
         }
         return cell
     }
@@ -53,11 +52,15 @@ extension FoodSliderCellController: UICollectionViewDataSource {
 
 extension FoodSliderCellController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 172.5, height: 237)
+        return .init(width: 160, height: 237)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         viewModel.minimumInteritemSpacingForSectionAt()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

@@ -23,8 +23,34 @@ final class HomeViewController: UIViewController {
         viewModel.viewDidLoad()
         readrecipe()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToDetail(_:)), name: .favSliderCellTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(foodCellToDetail(_:)), name: .foodCellTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getFoodTypeLabelValue(_:)), name: .getTypeLabelValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToDetail(_:)), name: .foodSliderCellTapped, object: nil)
+    }
+    
+    @objc func foodCellToDetail(_ notification: NSNotification) {
+        if let dict = notification.userInfo as NSDictionary? {
+            if let selectedCell = dict["selectedCell"] as? Food {
+                let detailVC = UIStoryboard(name: "DetailStoryboard", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+                let detailVM = FoodDetailPageViewModel(delegate: detailVC)
+                detailVM.selectedFood = selectedCell
+                detailVC.viewModel = detailVM
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
+    }
+    
+    @objc func getFoodTypeLabelValue(_ notification: NSNotification) {
+        print(notification.userInfo)
+        if let dict = notification.userInfo as NSDictionary? {
+            if let foodType = dict["foodType"] as? String {
+                let viewMoreVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewMoreViewController") as! ViewMoreViewController
+                let viewMoreVM = ViewMoreViewModel(delegate: viewMoreVC)
+                viewMoreVM.foodType = foodType
+                viewMoreVC.viewModel = viewMoreVM
+                navigationController?.pushViewController(viewMoreVC, animated: true)
+            }
+        }
     }
     
     @objc func navigateToDetail(_ notification: NSNotification) {
@@ -39,16 +65,8 @@ final class HomeViewController: UIViewController {
         }
     }
     
-    @objc func foodCellToDetail(_ notification: NSNotification) {
-        if let dict = notification.userInfo as NSDictionary? {
-            if let selectedCell = dict["selectedCell"] as? Food {
-                let detailVC = UIStoryboard(name: "Main", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
-                let detailVM = FoodDetailPageViewModel(delegate: detailVC)
-                detailVM.selectedFood = selectedCell
-                detailVC.viewModel = detailVM
-                navigationController?.pushViewController(detailVC, animated: true)
-            }
-        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .viewMoreButtonTapped, object: nil)
     }
     
     func readrecipe() {
@@ -86,6 +104,8 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeCell(cellType: FoodSliderCellController.self, indexPath: indexPath)
+            let cellViewModel = FoodSliderCellViewModel(delegate: cell)
+            cell.viewModel = cellViewModel
             return cell
         }
     }

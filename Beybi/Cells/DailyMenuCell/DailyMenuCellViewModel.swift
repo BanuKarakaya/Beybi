@@ -195,7 +195,7 @@ extension DailyMenuCellViewModel: DailyMenuCellViewModelProtocol {
     
     func sendSelectedCell() {
         let selectedCell: [String: Food?] = ["selectedCell": selectedCell]
-        NotificationCenter.default.post(name: .foodCellTapped, object: nil, userInfo: selectedCell)
+        NotificationCenter.default.post(name: .foodCellTapped, object: nil, userInfo: selectedCell as [AnyHashable : Any])
     }
     
     func foodAtIndex(index: Int, breakfastTapped: Bool, lunchTapped: Bool, dinnerTapped: Bool) -> Food? {
