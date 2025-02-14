@@ -18,6 +18,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var diaryPhoto: UIImageView!
     @IBOutlet weak var placeHolder: UILabel!
+    @IBOutlet weak var photoCollectionView: UICollectionView!
     
     var borderColor = UIColor(red: 174/255, green: 165/255, blue: 164/255, alpha: 0.25)
     var placeHolderColor = UIColor(red: 61/255, green: 40/255, blue: 32/255, alpha: 0.25)
@@ -67,6 +68,7 @@ class EditViewController: UIViewController {
             }
     }
     
+    
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
         viewModel.addPhotoButtonTappedd(sender: sender as! Button)
     }
@@ -75,6 +77,35 @@ class EditViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension EditViewController: UICollectionViewDelegate {
+    
+}
+
+extension EditViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeCell(cellType: AddPhotoCell.self, indexPath: indexPath)
+        return cell
+    }
+}
+
+extension EditViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .init(width: 88, height: 88)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .init(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
 
@@ -108,6 +139,12 @@ extension EditViewController: UITextViewDelegate {
 }
 
 extension EditViewController: EditViewModelDelegate {
+    func prepareCollectionView() {
+        photoCollectionView.dataSource = self
+        photoCollectionView.delegate = self
+        photoCollectionView.register(cellType: AddPhotoCell.self)
+    }
+    
     func openPhotoLibrary() {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
             showAlert("Gallery Unavailable", "The gallery is not accessible on this device.")

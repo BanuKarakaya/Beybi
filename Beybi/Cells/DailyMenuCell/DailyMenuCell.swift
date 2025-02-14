@@ -5,6 +5,7 @@
 //  Created by Banu on 15.09.2024.
 //
 
+
 import UIKit
 import CommonModule
 
@@ -155,4 +156,4 @@ extension DailyMenuCell: DailyMenuCellViewModelDelegate {
         
         menuCollectionView.register(cellType: FoodCell.self)
     }
-}
+ }

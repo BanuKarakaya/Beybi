@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddPhotoCell" customModule="Beybi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-V4-X2n">
+                        <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banuş" translatesAutoresizingMaskIntoConstraints="NO" id="Phf-2E-GWt">
+                                <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Phf-2E-GWt" secondAttribute="bottom" id="SxV-cT-mSU"/>
+                            <constraint firstItem="Phf-2E-GWt" firstAttribute="leading" secondItem="NMa-V4-X2n" secondAttribute="leading" id="aXm-nD-mTt"/>
+                            <constraint firstAttribute="trailing" secondItem="Phf-2E-GWt" secondAttribute="trailing" id="awE-yT-HoW"/>
+                            <constraint firstItem="Phf-2E-GWt" firstAttribute="top" secondItem="NMa-V4-X2n" secondAttribute="top" id="gIw-Fz-IZE"/>
+                            <constraint firstAttribute="width" constant="88" id="kz4-Fj-ubE"/>
+                            <constraint firstAttribute="height" constant="88" id="oIW-1Z-kRn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="NMa-V4-X2n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="73v-OV-Lxh"/>
+                <constraint firstAttribute="bottom" secondItem="NMa-V4-X2n" secondAttribute="bottom" id="7Io-C5-zqA"/>
+                <constraint firstItem="NMa-V4-X2n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8TA-2F-hz3"/>
+                <constraint firstAttribute="trailing" secondItem="NMa-V4-X2n" secondAttribute="trailing" id="yas-TZ-jRd"/>
+            </constraints>
+            <size key="customSize" width="88" height="88"/>
+            <point key="canvasLocation" x="157.25190839694656" y="2.1126760563380285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Banuş" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

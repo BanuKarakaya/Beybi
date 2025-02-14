@@ -5,6 +5,7 @@
 //  Created by Banu on 19.09.2024.
 //
 
+
 import UIKit
 import Food
 import FoodDetailPageModule
@@ -81,4 +82,4 @@ extension ViewMoreViewController: ViewMoreViewModelDelegate {
         viewMoreCollectionView.showsVerticalScrollIndicator = false
         viewMoreCollectionView.register(cellType: FoodCell.self)
     }
-}
+ }

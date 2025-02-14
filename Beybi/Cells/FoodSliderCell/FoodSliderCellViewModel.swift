@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseFirestore
-import FirebaseStorage
 import Food
 
 protocol FoodSliderCellViewModelProtocol {
@@ -28,41 +26,29 @@ protocol FoodSliderCellViewModelDelegate: AnyObject {
 
 final class FoodSliderCellViewModel {
     private weak var delegate: FoodSliderCellViewModelDelegate?
-    private var breakfasts: [Food]? = []
-    private var soups: [Food]? = []
-    private var mainDishes: [Food]? = []
-    private var purees: [Food]? = []
-    private var snacks: [Food]? = []
+    private var recommendedRecipes: [Food]? = []
     private var type: String?
-    let firestore = Firestore.firestore()
+    private let networkManager: NetworkManagerInterface
     var selectedCell: Food?
     
-    init(delegate: FoodSliderCellViewModelDelegate?) {
+    init(delegate: FoodSliderCellViewModelDelegate?, networkManager: NetworkManagerInterface = NetworkManager.shared) {
         self.delegate = delegate
+        self.networkManager = networkManager
     }
 
-    func readSnacks() {
-        
-        firestore.collection("snacks").getDocuments { (querySnapshot, error) in
-            
-            if let error = error {
-                print("Hata: \(error.localizedDescription)")
-            } else if let querySnapshot = querySnapshot {
-                for document in querySnapshot.documents {
-                    let data = document.data()
-                    let name = data["name"] as? String ?? "No name"
-                    let cookingTime = data["cooking time"] as? String ?? "20-25 min"
-                    let recipe = data["recipe"] as? String ?? "No recipe"
-                    let imageUrl = data["imageUrl"] as? String ?? "No image"
-                    let type = data["type"] as? String ?? "No type"
-                    let introText = data["introText"] as? String ?? "No intro text"
-                    let ingredients = data["ingredients"] as? [String] ?? ["No ingredients"]
-                    let recipeStep = data["recipeStep"] as? [String] ?? ["No recipe"]
-                    
-                    let food = Food(name: name, cookingTime: cookingTime, recipe: recipe, imageUrl: imageUrl, type: type, introText: introText, ingredients: ingredients, recipeStep: recipeStep)
-                    self.snacks?.append(food)
+    func readRecommendedRecipes() {
+        networkManager.getRecommendedRecipes { responseData in
+            switch responseData {
+            case .success(let foods):
+                self.recommendedRecipes = foods
+                DispatchQueue.main.async {
+                    self.delegate?.reloadData()
                 }
-                self.delegate?.reloadData()
+                print(foods)
+                break
+            case .failure(let error):
+                print(error)
+                break
             }
         }
     }
@@ -75,7 +61,7 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
 
     func didSelectItemAt(index: Int) -> Food? {
-        selectedCell = snacks?[index]
+        selectedCell = recommendedRecipes?[index]
         return selectedCell
     }
 //
@@ -86,7 +72,7 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
 //    //}
 //    
     func foodAtIndex(index: Int) -> Food? {
-        if let food = snacks?[index] {
+        if let food = recommendedRecipes?[index] {
                 return food
         }
         return nil
@@ -97,11 +83,11 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
     
     func numberOfItemsInSection() -> Int {
-        return snacks?.count ?? 0
+        return recommendedRecipes?.count ?? 0
     }
     
     func viewDidLoad() {
-        readSnacks()
+        readRecommendedRecipes()
         delegate?.prepareCollectionView()
     }
 }

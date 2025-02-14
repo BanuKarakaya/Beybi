@@ -9,19 +9,68 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
+    @IBOutlet weak var favCollectionView: UICollectionView!
     var beybiColor = UIColor(red: 237/255, green: 136/255, blue: 74/255, alpha: 1.0)
     var borderColor = UIColor(red: 237/255, green: 136/255, blue: 74/255, alpha: 0.25)
     var searchRecipe = UIColor(red: 174/255, green: 165/255, blue: 164/255, alpha: 0.5)
     var beybiWhite = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+    
+    private lazy var viewModel: FavoritesViewModelProtocol = FavoritesViewModel(delegate: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Favorites"
-        let appearance = UINavigationBarAppearance()
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        appearance.backgroundColor = .white
+        viewModel.viewDidLoad()
         prepareSearchController()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillApear()
+    }
+}
+ 
+extension FavoritesViewController: UICollectionViewDelegate {
+    
+}
+
+extension FavoritesViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.numberOfItems()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
+        if let food = viewModel.foodAtIndex(index: indexPath.item) {
+            let cellViewModel = FoodCellViewModel(delegate: cell, food: food)
+            cell.viewModel = cellViewModel
+        }
+        return cell
+    }
+}
+
+extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .init(width: 172.5, height: 237)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .init(top: 16, left: 16, bottom: 16, right: 16)
+    }
+}
+
+extension FavoritesViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchBarSearchButtonClicked(searchText: searchBar.text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchBarCancelButtonClicked()
+    }
+}
+
+extension FavoritesViewController: FavoritesViewModelDelegate {
+    func reloadData() {
+        favCollectionView.reloadData()
     }
     
     func prepareSearchController() {
@@ -51,9 +100,18 @@ class FavoritesViewController: UIViewController {
         
         searchController.searchBar.delegate = self
     }
-}
-
-
-extension FavoritesViewController: UISearchBarDelegate {
     
+    func prepareUI() {
+        self.title = "Favorites"
+        let appearance = UINavigationBarAppearance()
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        appearance.backgroundColor = .white
+    }
+    
+    func prepareCollectionView() {
+        favCollectionView.dataSource = self
+        favCollectionView.delegate = self
+        favCollectionView.register(cellType: FoodCell.self)
+    }
 }

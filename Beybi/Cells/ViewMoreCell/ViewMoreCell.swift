@@ -5,6 +5,7 @@
 //  Created by Banu on 30.09.2024.
 //
 
+
 import UIKit
 import SDWebImage
 import Food
@@ -48,4 +49,4 @@ extension ViewMoreCell: ViewMoreCellViewModelDelegate {
     
     
     
-}
+ }

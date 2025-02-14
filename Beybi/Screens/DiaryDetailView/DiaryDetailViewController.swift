@@ -22,6 +22,7 @@ final class DiaryDetailViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         pageControl.layer.cornerRadius = 12
+        photoCollectionView.layer.cornerRadius = 10
     }
 }
 

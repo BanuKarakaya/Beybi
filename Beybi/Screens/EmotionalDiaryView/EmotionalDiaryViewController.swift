@@ -13,6 +13,8 @@ class EmotionalDiaryViewController: UIViewController {
 
     @IBOutlet weak var diaryCollectionView: UICollectionView!
     @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var emptyText: UILabel!
+    @IBOutlet weak var emptyButton: UIButton!
     
     var lastSwipedCell: DiaryCell?
     
@@ -48,12 +50,17 @@ class EmotionalDiaryViewController: UIViewController {
     
     @objc func addCell() {
         viewModel.fetchDiariesFromCoreData()
-        viewModel.emptyImageViewIsHidden()
+        viewModel.emptyViewIsHidden()
     }
     
     @IBAction func addDiaryButtonTapped(_ sender: Any) {
         viewModel.addDiaryButtonTapped()
     }
+    
+    @IBAction func emptyAddRecordButton(_ sender: Any) {
+        viewModel.addDiaryButtonTapped()
+    }
+    
 }
 
 extension EmotionalDiaryViewController: UICollectionViewDataSource {
@@ -106,11 +113,13 @@ extension EmotionalDiaryViewController: EmotionalDiaryViewModelDelegate {
                 print("Hata: Veri silinemedi - \(error.localizedDescription)")
             }
             viewModel.fetchDiariesFromCoreData()
-            viewModel.emptyImageViewIsHidden()
+            viewModel.emptyViewIsHidden()
     }
     
-    func emptyImageView(hidden: Bool) {
+    func emptyView(hidden: Bool) {
         emptyImage.isHidden = hidden
+        emptyText.isHidden = hidden
+        emptyButton.isHidden = hidden
     }
     
     func navigateToDetailVC(selectedCell: DemoEntity?) {

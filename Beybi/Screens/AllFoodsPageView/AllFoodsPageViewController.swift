@@ -46,7 +46,10 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoriesCollectionView {
             let cell = collectionView.dequeCell(cellType: CategoriesCell.self, indexPath: indexPath)
-            
+            if let type = viewModel.typeAtIndex(index: indexPath.item) {
+                let cellViewModel = CategoriesCellViewModel(delegate: cell, foodTypeText: type)
+                cell.viewModel = cellViewModel
+            }
             return cell
         } else if collectionView == allFoodsCollectionView {
             let cell = collectionView.dequeCell(cellType: FoodCell.self, indexPath: indexPath)
@@ -60,7 +63,11 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.didSelectItemAt(index: indexPath.item)
+        if collectionView == allFoodsCollectionView {
+            viewModel.didSelectItemAt(index: indexPath.item)
+        } else if collectionView == categoriesCollectionView {
+            viewModel.didSelectItemAtCategories(index: indexPath.item)
+        }
     }
 }
 

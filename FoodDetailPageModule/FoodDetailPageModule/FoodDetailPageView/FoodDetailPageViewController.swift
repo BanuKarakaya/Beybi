@@ -61,9 +61,14 @@ public class FoodDetailPageViewController: UIViewController {
     
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if let heightConstraint = recipeCollectionView.constraints.first(where: { $0.identifier == "collectionViewHeight" }) {
-            heightConstraint.constant = recipeCollectionView.contentSize.height
+        
+        if let recipeHeightConstraint = recipeCollectionView.constraints.first(where: { $0.identifier == "recipeCollectionViewHeight" }) {
+                recipeHeightConstraint.constant = recipeCollectionView.contentSize.height
         }
+
+//        if let ingredientsHeightConstraint = ingredientsCollectionView.constraints.first(where: { $0.identifier == "ingredientsCollectionViewHeight" }) {
+//                ingredientsHeightConstraint.constant = ingredientsCollectionView.contentSize.height
+//        }
     }
 }
 
@@ -101,6 +106,16 @@ extension FoodDetailPageViewController: UICollectionViewDataSource {
     }
 }
 
+extension FoodDetailPageViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == recipeCollectionView {
+            return 16
+        } else {
+            return 16
+        }
+    }
+}
+
 extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
     public func prepareCollectionView() {
         ingredientsCollectionView.delegate = self
@@ -114,8 +129,8 @@ extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
     }
     
     public func prepareUI() {
-//        recipeLabel.numberOfLines = 0
-//        ingredientsCollectionView.showsHorizontalScrollIndicator = false
+        //        recipeLabel.numberOfLines = 0
+        //        ingredientsCollectionView.showsHorizontalScrollIndicator = false
     }
     
     public func prepareBannerImage(with urlString: String?) {
@@ -125,11 +140,11 @@ extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
     }
     
     public func configure(selectedFood: Food?) {
-        //foodName.text = """
-       
-          prepareBannerImage(with: selectedFood?.imageUrl)
-//          recipeLabel.text = selectedFood?.introText
-          self.title = selectedFood?.name
+        foodName.text = selectedFood?.name
+        
+        prepareBannerImage(with: selectedFood?.imageUrl)
+        // recipeLabel.text = selectedFood?.introText
+        self.title = selectedFood?.name
     }
 }
 

@@ -29,6 +29,6 @@ final class RecipeCell: UICollectionViewCell {
 extension RecipeCell: RecipeViewModelDelegate {
     func configure(recipeStep: String?, index: Int) {
         stepLabel.text = recipeStep
-        stepNumber.text = "Step \(index + 1)"
+        stepNumber.text = "\(index + 1)"
     }
 }

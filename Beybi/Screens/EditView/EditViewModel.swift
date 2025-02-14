@@ -16,6 +16,7 @@ protocol EditViewModelProtocol {
 
 protocol EditViewModelDelegate: AnyObject {
     func prepareUI()
+    func prepareCollectionView()
     func addPhotoButtonTapped(sender: Button)
     func openCamera()
     func openPhotoLibrary()
@@ -44,5 +45,6 @@ extension EditViewModel: EditViewModelProtocol {
     
     func viewDidLoad() {
         delegate?.prepareUI()
+        delegate?.prepareCollectionView()
     }
 }
