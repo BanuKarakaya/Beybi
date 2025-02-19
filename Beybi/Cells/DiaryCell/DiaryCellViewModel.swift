@@ -15,7 +15,7 @@ protocol DiaryCellViewModelProtocol {
 protocol DiaryCellViewModelDelegate: AnyObject {
     func prepareUI()
     func configureDiaryCell(diary: DemoEntity)
-    func NSToUIImage(image: Data) -> Image
+    func imagesFromCoreData(object: Data?) -> [Image]?
 }
 
 final class DiaryCellViewModel {

@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-ce-cm1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="408"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPF-o3-Jgx" userLabel="View1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPF-o3-Jgx" userLabel="View1">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="47"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7Z-fx-ptq">
@@ -53,15 +53,12 @@
                                     <constraint firstItem="u7Z-fx-ptq" firstAttribute="top" secondItem="nPF-o3-Jgx" secondAttribute="top" id="fcN-s5-FEY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drl-Wz-8qn" userLabel="View2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drl-Wz-8qn" userLabel="View2">
                                 <rect key="frame" x="0.0" y="63" width="393" height="345"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CRa-Ak-Huu">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="354"/>
+                                        <rect key="frame" x="0.0" y="42" width="393" height="303"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="354" id="k5T-Nj-qr2"/>
-                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tWi-qh-pnz">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -163,6 +160,7 @@
                 <outlet property="breakfastButton" destination="A2z-KR-6ej" id="DRy-S0-qt7"/>
                 <outlet property="dinnerButton" destination="jiH-xa-jmi" id="JXS-sa-OwV"/>
                 <outlet property="lunchButton" destination="NlL-RY-tNs" id="bjI-2X-yIh"/>
+                <outlet property="mainView" destination="Kj7-ce-cm1" id="W1R-eH-qBu"/>
                 <outlet property="menuCollectionView" destination="CRa-Ak-Huu" id="DSt-my-LPg"/>
             </connections>
             <point key="canvasLocation" x="49.618320610687022" y="24.647887323943664"/>

@@ -22,7 +22,7 @@ final class RecipeCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         stepLabel.numberOfLines = 0
-        stepView.layer.cornerRadius = 100
+        stepView.layer.cornerRadius = 10
     }
 }
 

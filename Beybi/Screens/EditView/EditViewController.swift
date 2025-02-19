@@ -19,6 +19,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var diaryPhoto: UIImageView!
     @IBOutlet weak var placeHolder: UILabel!
     @IBOutlet weak var photoCollectionView: UICollectionView!
+    var imageArray: [UIImage] = []
     
     var borderColor = UIColor(red: 174/255, green: 165/255, blue: 164/255, alpha: 0.25)
     var placeHolderColor = UIColor(red: 61/255, green: 40/255, blue: 32/255, alpha: 0.25)
@@ -46,23 +47,30 @@ class EditViewController: UIViewController {
     @objc func saveButtonTapped() {
         saveDiary(title: titleTextField.text ?? "",
                   text: diaryTextView.text ?? "",
-                  image:diaryPhoto.image ?? UIImage(named: "Barış")!)
+                  imageArray: imageArray ?? [] )
         navigationController?.popViewController(animated: true)
         NotificationCenter.default.post(name: .saveButtonTapped, object: nil)
     }
     
-    func saveDiary(title: String, text: String, image: UIImage) {
+    func saveDiary(title: String, text: String, imageArray: [UIImage]) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
+        let dataArray = NSMutableArray()
         
         let diary = DemoEntity(context: context)
         diary.emotionalText = text
         diary.emotionalTitle = title
-        diary.emotionalImage = image.pngData()
+        
+        for i in 0 ..< imageArray.count {
+            if let data = imageArray[i].pngData() {
+                dataArray.add(data)
+            }
+        }
+        diary.emotionalImage = try? NSKeyedArchiver.archivedData(withRootObject: dataArray, requiringSecureCoding: true)
         
         do {
-                try context.save()
-                print("Diary saved successfully!")
+            try context.save()
+            print("Diary saved successfully!")
             } catch {
                 print("Failed to save diary: \(error.localizedDescription)")
             }
@@ -86,11 +94,15 @@ extension EditViewController: UICollectionViewDelegate {
 
 extension EditViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        return imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: AddPhotoCell.self, indexPath: indexPath)
+        let image = imageArray[indexPath.item]
+        let cellViewModel = AddPhotoCellViewModel(delegate: cell, image: image)
+        cell.viewModel = cellViewModel
+        
         return cell
     }
 }
@@ -113,7 +125,8 @@ extension EditViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let selectedImage = info[.originalImage] as? UIImage {
-            diaryPhoto.image = selectedImage
+            imageArray.append(selectedImage)
+            photoCollectionView.reloadData()
         }
     }
     

@@ -54,6 +54,23 @@ final class ViewMoreViewModel {
             }
         }
     }
+    
+    func readTraditionalRecipes() {
+        networkManager.getTraditionalRecipes { responseData in
+            switch responseData {
+            case .success(let foods):
+                self.foodArray = foods
+                DispatchQueue.main.async {
+                    self.delegate?.reloadData()
+                }
+                print(foods)
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
 }
 
 extension ViewMoreViewModel: ViewMoreViewModelProtocol {
@@ -85,6 +102,8 @@ extension ViewMoreViewModel: ViewMoreViewModelProtocol {
         
         if foodType == "Recommended Recipes" {
             readRecommendedRecipes()
+        } else {
+            readTraditionalRecipes()
         }
     }
 }

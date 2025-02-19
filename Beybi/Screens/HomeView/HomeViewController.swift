@@ -102,12 +102,20 @@ extension HomeViewController: UICollectionViewDataSource {
         if indexPath.section == 0 {
             let cell = collectionView.dequeCell(cellType: DailyMenuCell.self, indexPath: indexPath)
             return cell
-        } else {
+        } else if indexPath.section == 1 {
             let cell = collectionView.dequeCell(cellType: FoodSliderCellController.self, indexPath: indexPath)
-            let cellViewModel = FoodSliderCellViewModel(delegate: cell)
+            let cellViewModel = FoodSliderCellViewModel(delegate: cell, type: "Recommended Recipes")
             cell.viewModel = cellViewModel
+            
+            return cell
+        } else if indexPath.section == 2 {
+            let cell = collectionView.dequeCell(cellType: FoodSliderCellController.self, indexPath: indexPath)
+            let cellViewModel = FoodSliderCellViewModel(delegate: cell, type: "Traditional Recipes (Baby Version)")
+            cell.viewModel = cellViewModel
+            
             return cell
         }
+        return UICollectionViewCell()
     }
 }
 
@@ -115,7 +123,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
               case 0:
-                  return CGSize(width: 393, height: 408)
+            return CGSize(width: homeCollectionView.frame.width, height: homeCollectionView.frame.height / 1.6323 )
               case 1:
                   return CGSize(width: homeCollectionView.frame.width, height: 272)
               case 2:
@@ -128,7 +136,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 16, left: 0, bottom: 0, right: 0)
+        .init(top: 16, left: 0, bottom: 16, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

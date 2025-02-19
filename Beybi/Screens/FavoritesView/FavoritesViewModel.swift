@@ -15,6 +15,7 @@ protocol FavoritesViewModelProtocol {
     func numberOfItems() -> Int
     func searchBarSearchButtonClicked(searchText: String?)
     func searchBarCancelButtonClicked()
+    func didSelectItemAt(index: Int)
 }
 
 protocol FavoritesViewModelDelegate: AnyObject {
@@ -22,6 +23,7 @@ protocol FavoritesViewModelDelegate: AnyObject {
     func prepareUI()
     func prepareSearchController()
     func reloadData()
+    func navigateToDetail(selectedCell: Food)
 }
 
 final class FavoritesViewModel {
@@ -56,6 +58,17 @@ final class FavoritesViewModel {
 }
 
 extension FavoritesViewModel: FavoritesViewModelProtocol {
+    func didSelectItemAt(index: Int) {
+        var selectedCell: Food?
+        
+        if isSearching {
+            selectedCell = searchFoods[index]
+        } else {
+            selectedCell = favFoods[index]
+        }
+        delegate?.navigateToDetail(selectedCell: selectedCell!)
+    }
+    
     func searchBarCancelButtonClicked() {
         isSearching = false
         delegate?.reloadData()

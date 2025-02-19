@@ -10,10 +10,15 @@ import Food
 import FoodDetailPageModule
 import CommonModule
 
+typealias UIimage = UIImage
+
 final class AllFoodsPageViewController: UIViewController {
     
     @IBOutlet private weak var allFoodsCollectionView: UICollectionView!
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet weak var categoriesView: UIView!
+    
     
     private lazy var viewModel: AllFoodsPageViewModelProtocol = AllFoodsPageViewModel(delegate: self)
     private var previousOffsetY: CGFloat = 0
@@ -46,8 +51,8 @@ extension AllFoodsPageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoriesCollectionView {
             let cell = collectionView.dequeCell(cellType: CategoriesCell.self, indexPath: indexPath)
-            if let type = viewModel.typeAtIndex(index: indexPath.item) {
-                let cellViewModel = CategoriesCellViewModel(delegate: cell, foodTypeText: type)
+            if let category = viewModel.categoryAt(index: indexPath.item) {
+                let cellViewModel = CategoriesCellViewModel(delegate: cell, foodTypeText: category.name, isSelected: category.isSelected, foodTypeImage: category.image )
                 cell.viewModel = cellViewModel
             }
             return cell
@@ -76,7 +81,7 @@ extension AllFoodsPageViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == categoriesCollectionView {
             return CGSize(width: 89, height: 98)
         } else if collectionView == allFoodsCollectionView {
-            return CGSize(width: 172.5, height: 237)
+            return CGSize(width: ((allFoodsCollectionView.frame.width - 48)/2 ) , height: 237)
         } else {
             return CGSize(width: 89, height: 98)
         }
@@ -110,7 +115,15 @@ extension AllFoodsPageViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension AllFoodsPageViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        categoriesView.isHidden = true
+        viewModel.searchBarSearchButtonClicked(searchText: searchBar.text)
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchBarCancelButtonClicked()
+        categoriesView.isHidden = false
+    }
 }
 
 extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
@@ -124,6 +137,7 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
     
     func reloadData() {
         allFoodsCollectionView.reloadData()
+        categoriesCollectionView.reloadData()
     }
     
     func prepareSearchController() {
@@ -139,6 +153,7 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
             attributes: [NSAttributedString.Key.foregroundColor: searchRecipe]
         )
         searchBar.searchTextField.backgroundColor = .white
+        searchBar.backgroundColor = .white
         if let searchIconView = searchBar.searchTextField.leftView as? UIImageView {
            searchIconView.tintColor = beybiColor
         }
@@ -152,6 +167,10 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
         }
         
         searchController.searchBar.delegate = self
+        
+        if let searchBar = navigationItem.searchController?.searchBar {
+            searchBar.barTintColor = UIColor.white
+        }
     }
     
   
@@ -169,8 +188,11 @@ extension AllFoodsPageViewController: AllFoodsPageViewModelDelegate {
     func setUI() {
         self.title = "Foods"
         let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white // Burada istediğin rengi belirle
+        
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        appearance.backgroundColor = beybiWhite
+        navigationController?.navigationBar.compactAppearance = appearance
     }
 }

@@ -24,6 +24,7 @@ protocol NetworkManagerInterface {
     func getDailyBreakfastMenu(completion: @escaping (Swift.Result<[Food] , Error>) -> Void) -> Void
     func getDailyLunchMenu(completion: @escaping (Swift.Result<[Food] , Error>) -> Void) -> Void
     func getDailyDinnerMenu(completion: @escaping (Swift.Result<[Food] , Error>) -> Void) -> Void
+    func getTraditionalRecipes (completion: @escaping (Swift.Result<[Food] , Error>) ->Void) -> Void
 }
 
 final class NetworkManager: NetworkManagerInterface {
@@ -59,6 +60,11 @@ final class NetworkManager: NetworkManagerInterface {
         request(endpoint, completion: completion)
     }
     
+    func getTraditionalRecipes (completion: @escaping (Swift.Result<[Food] , Error>) ->Void) -> Void {
+        let endpoint = Endpoint.recommendedRecipes(query: "traditional")
+        request(endpoint, completion: completion)
+    }
+    
     func getSoups (completion: @escaping (Swift.Result<[Food] , Error>) ->Void) -> Void {
         let endpoint = Endpoint.recommendedRecipes(query: "soups")
         request(endpoint, completion: completion)
@@ -75,12 +81,12 @@ final class NetworkManager: NetworkManagerInterface {
     }
     
     func getPurees (completion: @escaping (Swift.Result<[Food] , Error>) ->Void) -> Void {
-        let endpoint = Endpoint.recommendedRecipes(query: "recommendedRecipe")
+        let endpoint = Endpoint.recommendedRecipes(query: "purees")
         request(endpoint, completion: completion)
     }
     
     func getSnacks (completion: @escaping (Swift.Result<[Food] , Error>) ->Void) -> Void {
-        let endpoint = Endpoint.recommendedRecipes(query: "recommendedRecipe")
+        let endpoint = Endpoint.recommendedRecipes(query: "snacks")
         request(endpoint, completion: completion)
     }
     

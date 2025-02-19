@@ -9,12 +9,13 @@ import UIKit
 
 final class DiaryDetailViewController: UIViewController {
 
-    @IBOutlet weak var diaryPhoto: UIImageView!
     @IBOutlet weak var diaryTitle: UILabel!
     @IBOutlet weak var diaryBodyText: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var photoCollectionView: UICollectionView!
+    
+    var diaryPhotos: [UIImage] = []
     
     lazy var viewModel: DiaryDetailViewModelProtocol = DiaryDetailViewModel(delegate: self)
     
@@ -23,20 +24,34 @@ final class DiaryDetailViewController: UIViewController {
         viewModel.viewDidLoad()
         pageControl.layer.cornerRadius = 12
         photoCollectionView.layer.cornerRadius = 10
+        if diaryPhotos.count < 2 {
+            pageControl.isHidden = true
+        } else {
+            pageControl.numberOfPages = diaryPhotos.count
+        }
+        photoCollectionView.showsHorizontalScrollIndicator = false
     }
 }
 
 extension DiaryDetailViewController: UICollectionViewDelegate {
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.width
+        let currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
+        pageControl.currentPage = currentPage
+    }
 }
 
 extension DiaryDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        diaryPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: PhotoCell.self, indexPath: indexPath)
+        let photo = diaryPhotos[indexPath.item]
+        let cellViewModel = PhotoCellViewModel(delegate: cell, image: photo)
+        cell.viewModel = cellViewModel
+        
         return cell
     }
 }
@@ -59,19 +74,28 @@ extension DiaryDetailViewController: DiaryDetailViewModelDelegate {
         photoCollectionView.isPagingEnabled = true
     }
     
-    func NSToUIImage(image: Data) -> Image {
-        UIImage(data: image as Data, scale: 1.0)!
+    func imagesFromCoreData(object: Data?) -> [UIImage]? {
+        var retVal = [UIImage]()
+
+        guard let object = object else { return nil }
+        if let dataArray = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: object) {
+            for data in dataArray {
+                if let data = data as? Data, let image = UIImage(data: data) {
+                    retVal.append(image)
+                }
+            }
+        }
+        
+        return retVal
     }
     
     func configure(selectedDiary: DemoEntity?) {
         diaryTitle.text = selectedDiary?.emotionalTitle
         diaryBodyText.text = selectedDiary?.emotionalText
         
-//        if let emotionalImageData = selectedDiary?.emotionalImage {
-//            diaryPhoto.image = NSToUIImage(image: emotionalImageData)
-//        } else {
-//            diaryPhoto.image = UIImage(named: "Barış")
-//        }
+        if let emotionalImageData = selectedDiary?.emotionalImage {
+            diaryPhotos = imagesFromCoreData(object: selectedDiary?.emotionalImage) ?? []
+        }
     }
     
     func prepareUI() {

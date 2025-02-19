@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Food
+import FoodDetailPageModule
+import CommonModule
 
 class FavoritesViewController: UIViewController {
     
@@ -46,11 +49,15 @@ extension FavoritesViewController: UICollectionViewDataSource {
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(index: indexPath.item)
+    }
 }
 
 extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 172.5, height: 237)
+        .init(width: (favCollectionView.frame.width - 48)/2, height: 237)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -69,6 +76,14 @@ extension FavoritesViewController: UISearchBarDelegate {
 }
 
 extension FavoritesViewController: FavoritesViewModelDelegate {
+    func navigateToDetail(selectedCell: Food) {
+        let detailVC = UIStoryboard(name: "DetailStoryboard", bundle: .init(identifier: "com.banu.FoodDetailPageModule")).instantiateViewController(withIdentifier: "FoodDetailPageViewController") as! FoodDetailPageViewController
+        let detailVM = FoodDetailPageViewModel(delegate: detailVC)
+        detailVM.selectedFood = selectedCell
+        detailVC.viewModel = detailVM
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     func reloadData() {
         favCollectionView.reloadData()
     }

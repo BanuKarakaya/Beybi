@@ -13,10 +13,10 @@ final class FoodSliderCellController: UICollectionViewCell {
     @IBOutlet weak var foodTypeLabel: UILabel!
     @IBOutlet private weak var horizontalCollectionView: UICollectionView!
     
-    
     var viewModel: FoodSliderCellViewModelProtocol! {
         didSet {
             viewModel.viewDidLoad()
+            viewModel.load()
         }
     }
 

@@ -7,11 +7,22 @@
 
 import UIKit
 
+typealias uiImage = UIImage
+
 class PhotoCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    @IBOutlet weak var diaryPhoto: UIImageView!
+    
+    var viewModel: PhotoCellViewModelProtocol! {
+        didSet {
+             viewModel.load()
+         }
+     }
 }
+
+extension PhotoCell: PhotoCellViewModelDelegate {
+    func configure(image: uiImage) {
+        diaryPhoto.image = image
+    }
+}
+

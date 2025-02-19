@@ -19,7 +19,7 @@ public class FoodDetailPageViewController: UIViewController {
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var ingredientsCollectionView: UICollectionView!
     @IBOutlet weak var recipeCollectionView: UICollectionView!
-    
+    @IBOutlet weak var introText: UILabel!
     
     var beybiColor = UIColor(red: 162/255.0, green: 10/255.0, blue: 30/255.0, alpha: 0.9)
     var darkBeybiColor = UIColor(red: 113/255.0, green: 27/255.0, blue: 41/255.0, alpha: 1)
@@ -110,8 +110,26 @@ extension FoodDetailPageViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == recipeCollectionView {
             return 16
+        } else if collectionView == ingredientsCollectionView {
+            return 12
         } else {
-            return 16
+            return 0
+        }
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == ingredientsCollectionView {
+            return 12
+        } else {
+            return 0
+        }
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == ingredientsCollectionView {
+            return CGSize(width: 81.33, height: 97.67)
+        } else {
+            return CGSize(width: 89, height: 98)
         }
     }
 }
@@ -141,9 +159,8 @@ extension FoodDetailPageViewController: FoodDetailPageViewModelDelegate {
     
     public func configure(selectedFood: Food?) {
         foodName.text = selectedFood?.name
-        
         prepareBannerImage(with: selectedFood?.imageUrl)
-        // recipeLabel.text = selectedFood?.introText
+        introText.text = selectedFood?.introText
         self.title = selectedFood?.name
     }
 }

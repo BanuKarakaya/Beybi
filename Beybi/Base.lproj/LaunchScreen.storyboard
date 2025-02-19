@@ -29,11 +29,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beybi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB2-gE-2Qp">
                                         <rect key="frame" x="163.33333333333334" y="404.66666666666669" width="66.333333333333343" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
-                                        <color key="textColor" red="0.47058826679999999" green="0.18039217590000001" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.76862745098039209" green="0.40784313725490196" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99607843159999998" green="0.97647058959999999" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.96470588235294119" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="oB2-gE-2Qp" firstAttribute="centerX" secondItem="g8k-ia-dbx" secondAttribute="centerX" id="HfA-Dp-wgq"/>
                                     <constraint firstItem="oB2-gE-2Qp" firstAttribute="top" secondItem="X50-uV-8mw" secondAttribute="bottom" id="UmR-Mr-mlF"/>
@@ -58,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="1056" height="1052"/>
+        <image name="icon" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

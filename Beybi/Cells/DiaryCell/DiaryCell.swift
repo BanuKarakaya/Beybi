@@ -18,6 +18,7 @@ class DiaryCell: UICollectionViewCell {
     @IBOutlet weak var diaryDate: UILabel!
     @IBOutlet weak var diaryText: UILabel!
     
+    var diaryPhotos: [UIImage?] = []
     
     var viewModel: DiaryCellViewModelProtocol! {
         didSet {
@@ -84,17 +85,33 @@ class DiaryCell: UICollectionViewCell {
 }
 
 extension DiaryCell: DiaryCellViewModelDelegate {
-    func NSToUIImage(image: Data) -> Image {
-        UIImage(data: image as Data, scale: 1.0)!
+    
+    func imagesFromCoreData(object: Data?) -> [UIImage]? {
+        var retVal = [UIImage]()
+
+        guard let object = object else { return nil }
+        if let dataArray = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: object) {
+            for data in dataArray {
+                if let data = data as? Data, let image = UIImage(data: data) {
+                    retVal.append(image)
+                }
+            }
+        }
+        
+        return retVal
     }
     
     func configureDiaryCell(diary: DemoEntity) {
         diaryTitle.text = diary.emotionalTitle
+        diaryText.text = diary.emotionalText
         
         if let emotionalImageData = diary.emotionalImage  {
-            diaryPhoto.image = NSToUIImage(image: emotionalImageData)
-        } else {
-            diaryPhoto.image = UIImage(named: "banuş")
+            diaryPhotos = imagesFromCoreData(object: emotionalImageData) ?? []
+            if diaryPhotos.count > 0, let photo = diaryPhotos[0] {
+                diaryPhoto.image = photo
+            } else {
+                diaryPhoto.image = UIImage(named: "Barış")
+            }
         }
     }
     

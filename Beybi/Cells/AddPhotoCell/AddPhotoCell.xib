@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-V4-X2n">
                         <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banuş" translatesAutoresizingMaskIntoConstraints="NO" id="Phf-2E-GWt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banuş" translatesAutoresizingMaskIntoConstraints="NO" id="Phf-2E-GWt">
                                 <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
                             </imageView>
                         </subviews>
@@ -44,6 +44,9 @@
                 <constraint firstAttribute="trailing" secondItem="NMa-V4-X2n" secondAttribute="trailing" id="yas-TZ-jRd"/>
             </constraints>
             <size key="customSize" width="88" height="88"/>
+            <connections>
+                <outlet property="diaryPhoto" destination="Phf-2E-GWt" id="vdv-4j-YTI"/>
+            </connections>
             <point key="canvasLocation" x="157.25190839694656" y="2.1126760563380285"/>
         </collectionViewCell>
     </objects>

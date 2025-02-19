@@ -21,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="272"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDs-jg-Lik">
-                                <rect key="frame" x="16" y="0.0" width="244" height="19"/>
+                                <rect key="frame" x="16" y="0.0" width="177.66666666666666" height="19"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="244" id="ThK-ls-uD4"/>
                                     <constraint firstAttribute="height" constant="19" id="gdj-QT-sn3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>

@@ -24,8 +24,6 @@ final class IngredientsCell: UICollectionViewCell {
 extension IngredientsCell: IngredientsCellViewModelDelegate {
     func setUI() {
         self.layer.cornerRadius = 5
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = darkBeybiColor.cgColor
     }
     
     func configure(ingredients: String?) {

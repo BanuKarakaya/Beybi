@@ -15,6 +15,8 @@ final class DailyMenuCell: UICollectionViewCell {
     @IBOutlet private weak var breakfastButton: UIButton!
     @IBOutlet private weak var lunchButton: UIButton!
     @IBOutlet private weak var dinnerButton: UIButton!
+    @IBOutlet weak var mainView: UIView!
+
     var isBreakfastButtonTapped = false
     var isLunchButtonTapped = false
     var isDinnerButtonTapped = false

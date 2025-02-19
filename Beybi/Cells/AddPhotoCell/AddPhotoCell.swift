@@ -7,11 +7,25 @@
 
 import UIKit
 
+typealias uiimage = UIImage
+
 class AddPhotoCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    @IBOutlet weak var diaryPhoto: UIImageView!
+
+   var viewModel: AddPhotoCellViewModelProtocol! {
+       didSet {
+            viewModel.load()
+        }
+    }
+}
+
+extension AddPhotoCell: AddPhotoCellViewModelDelegate {
+    func setUI() {
         self.layer.cornerRadius = 10
     }
-
+    
+    func configure(image: uiimage) {
+        diaryPhoto.image = image
+    }
 }

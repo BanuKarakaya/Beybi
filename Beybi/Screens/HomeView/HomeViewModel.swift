@@ -33,7 +33,7 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
     
     func numberOfSections() -> Int {
-        return 4
+        return 3
     }
     
     func viewDidLoad() {

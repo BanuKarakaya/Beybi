@@ -185,6 +185,8 @@
                     <connections>
                         <outlet property="allFoodsCollectionView" destination="Crk-uD-qBu" id="OaI-7b-6Zc"/>
                         <outlet property="categoriesCollectionView" destination="jXL-4y-v45" id="RnJ-j7-3yT"/>
+                        <outlet property="categoriesLabel" destination="Elx-RP-Ne3" id="y6O-TS-Bhu"/>
+                        <outlet property="categoriesView" destination="KA7-Eg-nja" id="sGE-yh-Qle"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypF-6K-cX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -632,12 +634,13 @@
                                                 <color key="textColor" red="0.23921568627450979" green="0.15686274509803921" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="i78-qA-DkI">
+                                            <pageControl opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="i78-qA-DkI">
                                                 <rect key="frame" x="121.33333333333333" y="302" width="150.66666666666669" height="24"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="vHX-6L-j9L"/>
                                                 </constraints>
+                                                <color key="currentPageIndicatorTintColor" red="1" green="0.96470588239999999" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -682,7 +685,7 @@
                     <connections>
                         <outlet property="diaryBodyText" destination="or4-a6-Yex" id="H5m-qu-xHm"/>
                         <outlet property="diaryTitle" destination="tGK-0h-mCI" id="qYg-dE-NXZ"/>
-                        <outlet property="pageControl" destination="i78-qA-DkI" id="vMP-x6-4Zc"/>
+                        <outlet property="pageControl" destination="i78-qA-DkI" id="VYK-HB-BEG"/>
                         <outlet property="photoCollectionView" destination="qiS-aQ-pxU" id="NNZ-sP-c8h"/>
                         <outlet property="scrollView" destination="Hz4-sY-yQY" id="zaL-NO-G9Y"/>
                     </connections>

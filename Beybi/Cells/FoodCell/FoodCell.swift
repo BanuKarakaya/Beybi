@@ -15,6 +15,8 @@ final class FoodCell: UICollectionViewCell {
     @IBOutlet weak var favView: UIView!
     @IBOutlet weak var heartImage: UIImageView!
     @IBOutlet weak var mealIDLabel: UILabel!
+    @IBOutlet weak var ingredientsCountLabel: UILabel!
+    
     
     var viewModel: FoodCellViewModelProtocol! {
         didSet {
@@ -62,7 +64,15 @@ extension FoodCell: FoodCellViewModelDelegate {
     func configureCell(food: Food?) {
         foodName.text = food?.name
         mealIDLabel.text = food?.mealId
-        //prepareBannerImage(with: food?.imageUrl)
+        ingredientsCountLabel.text = "7 ingredients"
+        if food?.isFav == true {
+            heartImage.image = .init(systemName: "heart.fill")
+            heartImage.tintColor = .orange
+        } else {
+            heartImage.image = .init(systemName: "heart")
+            heartImage.tintColor = .systemGray4
+        }
+        prepareBannerImage(with: food?.imageUrl)
     }
     
     func setUI() {

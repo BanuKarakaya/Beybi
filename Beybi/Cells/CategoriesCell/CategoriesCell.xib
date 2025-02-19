@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1C-IH-aWY">
                         <rect key="frame" x="0.0" y="0.0" width="89" height="98"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="çorba" translatesAutoresizingMaskIntoConstraints="NO" id="Al5-3g-1Dz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="Al5-3g-1Dz">
                                 <rect key="frame" x="0.0" y="0.0" width="89" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="2Ms-c5-Asw"/>
@@ -28,22 +28,23 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-gD-RAH">
-                                <rect key="frame" x="23" y="67" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="29" y="7" width="31" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="j3A-Z1-LQ5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.23921568630000001" green="0.15686274510000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Al5-3g-1Dz" firstAttribute="top" secondItem="c1C-IH-aWY" secondAttribute="top" id="1TV-lB-WF0"/>
+                            <constraint firstItem="xiY-gD-RAH" firstAttribute="centerX" secondItem="c1C-IH-aWY" secondAttribute="centerX" id="3SE-MM-Lc9"/>
                             <constraint firstAttribute="trailing" secondItem="Al5-3g-1Dz" secondAttribute="trailing" id="48E-gv-kGZ"/>
+                            <constraint firstItem="xiY-gD-RAH" firstAttribute="top" secondItem="c1C-IH-aWY" secondAttribute="top" constant="7" id="CMf-7Z-W8k"/>
                             <constraint firstItem="Al5-3g-1Dz" firstAttribute="leading" secondItem="c1C-IH-aWY" secondAttribute="leading" id="OUW-3b-xLL"/>
-                            <constraint firstItem="xiY-gD-RAH" firstAttribute="leading" secondItem="c1C-IH-aWY" secondAttribute="leading" constant="23" id="SWd-E8-owP"/>
                             <constraint firstAttribute="bottom" secondItem="Al5-3g-1Dz" secondAttribute="bottom" id="ahK-mJ-A3u"/>
-                            <constraint firstAttribute="trailing" secondItem="xiY-gD-RAH" secondAttribute="trailing" constant="24" id="dze-g5-4HW"/>
-                            <constraint firstAttribute="bottom" secondItem="xiY-gD-RAH" secondAttribute="bottom" constant="10" id="s5I-Gw-Hdc"/>
-                            <constraint firstItem="xiY-gD-RAH" firstAttribute="top" secondItem="c1C-IH-aWY" secondAttribute="top" constant="67" id="z0I-Ko-oId"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -57,13 +58,14 @@
             </constraints>
             <size key="customSize" width="89" height="98"/>
             <connections>
+                <outlet property="typeImage" destination="Al5-3g-1Dz" id="sKO-yq-aEz"/>
                 <outlet property="typeLabel" destination="xiY-gD-RAH" id="vf6-fS-gAg"/>
             </connections>
             <point key="canvasLocation" x="159.54198473282443" y="5.6338028169014089"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="çorba" width="981" height="1024"/>
+        <image name="3" width="267" height="294"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

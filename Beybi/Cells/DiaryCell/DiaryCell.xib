@@ -78,6 +78,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="QXN-I2-sVL" secondAttribute="bottom" constant="4" id="2HQ-dS-s3d"/>
+                                    <constraint firstItem="QXN-I2-sVL" firstAttribute="top" secondItem="BLg-pk-vAn" secondAttribute="bottom" constant="3.6699999999999999" id="Af8-Ii-spo"/>
                                     <constraint firstAttribute="trailing" secondItem="QXN-I2-sVL" secondAttribute="trailing" constant="8" id="Gm1-YU-Kc2"/>
                                     <constraint firstItem="rCf-8D-hbI" firstAttribute="leading" secondItem="gAf-0k-TgR" secondAttribute="leading" constant="8" id="GyH-Fw-djq"/>
                                     <constraint firstItem="rCf-8D-hbI" firstAttribute="top" secondItem="gAf-0k-TgR" secondAttribute="top" constant="4" id="OM3-qm-ZXE"/>
@@ -131,7 +132,7 @@
         <image name="Banuş" width="1024" height="1024"/>
         <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

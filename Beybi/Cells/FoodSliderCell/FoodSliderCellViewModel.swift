@@ -13,7 +13,7 @@ protocol FoodSliderCellViewModelProtocol {
     func numberOfItemsInSection() -> Int
     func minimumInteritemSpacingForSectionAt() -> CGFloat
     func foodAtIndex(index: Int) -> Food?
-    //func load()
+    func load()
     func didSelectItemAt(index: Int) -> Food?
     func sendSelectedCell()
 }
@@ -27,13 +27,15 @@ protocol FoodSliderCellViewModelDelegate: AnyObject {
 final class FoodSliderCellViewModel {
     private weak var delegate: FoodSliderCellViewModelDelegate?
     private var recommendedRecipes: [Food]? = []
+    private var traditionalRecipes: [Food]? = []
     private var type: String?
     private let networkManager: NetworkManagerInterface
     var selectedCell: Food?
     
-    init(delegate: FoodSliderCellViewModelDelegate?, networkManager: NetworkManagerInterface = NetworkManager.shared) {
+    init(delegate: FoodSliderCellViewModelDelegate?, type: String?, networkManager: NetworkManagerInterface = NetworkManager.shared) {
         self.delegate = delegate
         self.networkManager = networkManager
+        self.type = type
     }
 
     func readRecommendedRecipes() {
@@ -41,6 +43,23 @@ final class FoodSliderCellViewModel {
             switch responseData {
             case .success(let foods):
                 self.recommendedRecipes = foods
+                DispatchQueue.main.async {
+                    self.delegate?.reloadData()
+                }
+                print(foods)
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
+    
+    func readTraditionalRecipes() {
+        networkManager.getTraditionalRecipes { responseData in
+            switch responseData {
+            case .success(let foods):
+                self.traditionalRecipes = foods
                 DispatchQueue.main.async {
                     self.delegate?.reloadData()
                 }
@@ -61,20 +80,31 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
 
     func didSelectItemAt(index: Int) -> Food? {
-        selectedCell = recommendedRecipes?[index]
+        if type == "Recommended Recipes" {
+            selectedCell = recommendedRecipes?[index]
+        } else {
+            selectedCell = traditionalRecipes?[index]
+        }
         return selectedCell
     }
-//
-//    //func load() {
-//    //    if let type = type {
-//     //       delegate?.configureCell(type: type)
-//    //    }
-//    //}
-//    
-    func foodAtIndex(index: Int) -> Food? {
-        if let food = recommendedRecipes?[index] {
-                return food
+
+    func load() {
+       if let type = type {
+            delegate?.configureCell(type: type)
         }
+    }
+    
+    func foodAtIndex(index: Int) -> Food? {
+        if type == "Recommended Recipes" {
+            if let food = recommendedRecipes?[index] {
+                return food
+            }
+        } else {
+            if let food = traditionalRecipes?[index] {
+                return food
+            }
+        }
+        
         return nil
     }
     
@@ -83,11 +113,16 @@ extension FoodSliderCellViewModel: FoodSliderCellViewModelProtocol {
     }
     
     func numberOfItemsInSection() -> Int {
-        return recommendedRecipes?.count ?? 0
+        if type == "Recommended Recipes" {
+            return recommendedRecipes?.count ?? 0
+        } else {
+            return traditionalRecipes?.count ?? 0
+        }
     }
     
     func viewDidLoad() {
         readRecommendedRecipes()
+        readTraditionalRecipes()
         delegate?.prepareCollectionView()
     }
 }

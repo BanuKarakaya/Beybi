@@ -186,6 +186,7 @@
                 <outlet property="foodImage" destination="tRn-LB-9DI" id="nQl-98-gTG"/>
                 <outlet property="foodName" destination="5EA-hi-oaH" id="EsO-xU-frK"/>
                 <outlet property="heartImage" destination="wwX-vb-J2p" id="sKS-tF-H8t"/>
+                <outlet property="ingredientsCountLabel" destination="DFF-KP-LHM" id="FJD-Ns-ieT"/>
                 <outlet property="mealIDLabel" destination="bfO-Hr-gNs" id="Fdl-44-QP3"/>
             </connections>
             <point key="canvasLocation" x="133.58778625954199" y="49.647887323943664"/>

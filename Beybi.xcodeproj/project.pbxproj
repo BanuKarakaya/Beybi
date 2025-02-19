@@ -25,6 +25,8 @@
 		FA22AA1C2CAD5D9400F6B169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA22AA1B2CAD5D9400F6B169 /* Assets.xcassets */; };
 		FA22AA1F2CAD95A700F6B169 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA1E2CAD95A700F6B169 /* SDWebImage */; };
 		FA22AA212CAD95A700F6B169 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA22AA202CAD95A700F6B169 /* SDWebImageMapKit */; };
+		FA49E8D02D60BD3900DFC4C2 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E8CF2D60BD3900DFC4C2 /* PhotoCellViewModel.swift */; };
+		FA49E8D22D60BF9B00DFC4C2 /* AddPhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E8D12D60BF9B00DFC4C2 /* AddPhotoCellViewModel.swift */; };
 		FA545B182D592808009A5EF6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545B172D592808009A5EF6 /* NetworkManager.swift */; };
 		FA545B1A2D59282A009A5EF6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545B192D59282A009A5EF6 /* Endpoint.swift */; };
 		FA545B1C2D5BDA83009A5EF6 /* CategoriesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545B1B2D5BDA83009A5EF6 /* CategoriesCellViewModel.swift */; };
@@ -139,6 +141,8 @@
 		FA22AA162CAADD9300F6B169 /* ViewMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewMoreCell.xib; sourceTree = "<group>"; };
 		FA22AA192CABC95F00F6B169 /* ViewMoreCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreCellViewModel.swift; sourceTree = "<group>"; };
 		FA22AA1B2CAD5D9400F6B169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA49E8CF2D60BD3900DFC4C2 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
+		FA49E8D12D60BF9B00DFC4C2 /* AddPhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoCellViewModel.swift; sourceTree = "<group>"; };
 		FA545B172D592808009A5EF6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA545B192D59282A009A5EF6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FA545B1B2D5BDA83009A5EF6 /* CategoriesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCellViewModel.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 			children = (
 				FA8C495D2D5D592300CAC767 /* AddPhotoCell.swift */,
 				FA8C495E2D5D592300CAC767 /* AddPhotoCell.xib */,
+				FA49E8D12D60BF9B00DFC4C2 /* AddPhotoCellViewModel.swift */,
 			);
 			path = AddPhotoCell;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 			children = (
 				FA9F0FAD2D4D1509007C8BDD /* PhotoCell.swift */,
 				FA9F0FAE2D4D1509007C8BDD /* PhotoCell.xib */,
+				FA49E8CF2D60BD3900DFC4C2 /* PhotoCellViewModel.swift */,
 			);
 			path = PhotoCell;
 			sourceTree = "<group>";
@@ -791,11 +797,13 @@
 				FA117F272D1956380024575F /* EmotionalDiaryViewController.swift in Sources */,
 				FA545B182D592808009A5EF6 /* NetworkManager.swift in Sources */,
 				FAAC8D682C9C6A0C00264E4B /* FoodCellViewModel.swift in Sources */,
+				FA49E8D02D60BD3900DFC4C2 /* PhotoCellViewModel.swift in Sources */,
 				FA545B1C2D5BDA83009A5EF6 /* CategoriesCellViewModel.swift in Sources */,
 				FA8C49682D5FE6AD00CAC767 /* Onboarding2ViewModel.swift in Sources */,
 				FA8C495F2D5D592300CAC767 /* AddPhotoCell.swift in Sources */,
 				FAAC8D4A2C97689D00264E4B /* FoodCell.swift in Sources */,
 				FAAC8D2A2C95C50F00264E4B /* AllFoodsPageViewController.swift in Sources */,
+				FA49E8D22D60BF9B00DFC4C2 /* AddPhotoCellViewModel.swift in Sources */,
 				FA5BA8AC2D1D661000CE5E4A /* DiaryDetailViewModel.swift in Sources */,
 				FA9F0FAF2D4D1509007C8BDD /* PhotoCell.swift in Sources */,
 				FA5BA8AA2D1D65F800CE5E4A /* DiaryDetailViewController.swift in Sources */,
