@@ -91,9 +91,9 @@ extension AllFoodsPageViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == categoriesCollectionView {
             return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         } else if collectionView == allFoodsCollectionView {
-            return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+            return UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
         } else {
-            return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+            return UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 0)
         }
     }
     

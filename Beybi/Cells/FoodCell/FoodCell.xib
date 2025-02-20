@@ -182,6 +182,8 @@
             </constraints>
             <size key="customSize" width="158.33333333333334" height="222"/>
             <connections>
+                <outlet property="calLabel" destination="av5-KD-66e" id="Ac0-1v-YPu"/>
+                <outlet property="cookingTimeLabel" destination="8KF-ke-n0R" id="eRD-0g-FC4"/>
                 <outlet property="favView" destination="dLu-Sq-aGz" id="N6U-Oc-94n"/>
                 <outlet property="foodImage" destination="tRn-LB-9DI" id="nQl-98-gTG"/>
                 <outlet property="foodName" destination="5EA-hi-oaH" id="EsO-xU-frK"/>

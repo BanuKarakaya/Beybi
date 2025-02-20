@@ -20,8 +20,9 @@ public struct Food: Codable {
     public var recipeStep: [String?]
     public var mealId: String?
     public var isFav: Bool?
+    public var cal: String?
     
-    public init(name: String? = nil, cookingTime: String? = nil, recipe: String? = nil, imageUrl: String? = nil, type: String? = nil, introText: String? = nil, ingredients: [String?], recipeStep: [String?], mealId: String, isFav: Bool) {
+    public init(name: String? = nil, cookingTime: String? = nil, recipe: String? = nil, imageUrl: String? = nil, type: String? = nil, introText: String? = nil, ingredients: [String?], recipeStep: [String?], mealId: String, isFav: Bool, cal: String?) {
         self.name = name
         self.cookingTime = cookingTime
         self.recipe = recipe
@@ -32,6 +33,7 @@ public struct Food: Codable {
         self.recipeStep = recipeStep
         self.mealId = mealId
         self.isFav = isFav
+        self.cal = cal
     }
 }
 

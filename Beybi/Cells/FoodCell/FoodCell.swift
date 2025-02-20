@@ -16,7 +16,8 @@ final class FoodCell: UICollectionViewCell {
     @IBOutlet weak var heartImage: UIImageView!
     @IBOutlet weak var mealIDLabel: UILabel!
     @IBOutlet weak var ingredientsCountLabel: UILabel!
-    
+    @IBOutlet weak var cookingTimeLabel: UILabel!
+    @IBOutlet weak var calLabel: UILabel!
     
     var viewModel: FoodCellViewModelProtocol! {
         didSet {
@@ -63,8 +64,10 @@ extension FoodCell: FoodCellViewModelDelegate {
     
     func configureCell(food: Food?) {
         foodName.text = food?.name
+        calLabel.text = food?.cal
         mealIDLabel.text = food?.mealId
-        ingredientsCountLabel.text = "7 ingredients"
+        ingredientsCountLabel.text = "\(food?.ingredients.count ?? 0) ingredients"
+        cookingTimeLabel.text = "\(food?.cookingTime ?? "-") min"
         if food?.isFav == true {
             heartImage.image = .init(systemName: "heart.fill")
             heartImage.tintColor = .orange

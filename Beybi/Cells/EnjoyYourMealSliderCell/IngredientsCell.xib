@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,18 +22,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-Ug-F8m">
                                 <rect key="frame" x="0.0" y="0.0" width="81.333333333333329" height="62.666666666666664"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onion" highlightedImage="Onion" translatesAutoresizingMaskIntoConstraints="NO" id="e3w-CQ-h9v">
+                                        <rect key="frame" x="24" y="15" width="32" height="32.333333333333336"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="6m2-Bm-Gvj"/>
+                                            <constraint firstAttribute="height" constant="32.329999999999998" id="hsT-ON-NTG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.83137254901960778" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="e3w-CQ-h9v" firstAttribute="leading" secondItem="NfU-Ug-F8m" secondAttribute="leading" constant="24" id="7xm-iJ-QxW"/>
                                     <constraint firstAttribute="height" constant="62.670000000000002" id="P2U-bo-B2d"/>
+                                    <constraint firstItem="e3w-CQ-h9v" firstAttribute="top" secondItem="NfU-Ug-F8m" secondAttribute="top" constant="15" id="iK9-Ql-7mt"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onion" translatesAutoresizingMaskIntoConstraints="NO" id="e3w-CQ-h9v">
-                                <rect key="frame" x="24" y="15.666666666666664" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="4jM-dN-cNe"/>
-                                    <constraint firstAttribute="height" constant="32" id="HmY-AH-oEs"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awq-87-mhE">
                                 <rect key="frame" x="4" y="70" width="73" height="13"/>
                                 <constraints>
@@ -58,13 +64,11 @@
                             <constraint firstItem="U6K-cI-HY4" firstAttribute="leading" secondItem="Rft-jA-n76" secondAttribute="leading" constant="4" id="CgY-WE-GdE"/>
                             <constraint firstItem="NfU-Ug-F8m" firstAttribute="top" secondItem="Rft-jA-n76" secondAttribute="top" id="Ogd-Ny-IIh"/>
                             <constraint firstAttribute="trailing" secondItem="NfU-Ug-F8m" secondAttribute="trailing" id="Q8d-Qv-CUb"/>
-                            <constraint firstItem="e3w-CQ-h9v" firstAttribute="leading" secondItem="Rft-jA-n76" secondAttribute="leading" constant="24" id="aTf-Xl-ENY"/>
                             <constraint firstItem="U6K-cI-HY4" firstAttribute="top" secondItem="awq-87-mhE" secondAttribute="bottom" constant="2" id="cG0-w1-RDI"/>
                             <constraint firstAttribute="trailing" secondItem="awq-87-mhE" secondAttribute="trailing" constant="4.3300000000000001" id="oWu-Pb-auP"/>
                             <constraint firstItem="awq-87-mhE" firstAttribute="top" secondItem="NfU-Ug-F8m" secondAttribute="bottom" constant="7.3300000000000001" id="opL-2r-xLQ"/>
                             <constraint firstItem="NfU-Ug-F8m" firstAttribute="leading" secondItem="Rft-jA-n76" secondAttribute="leading" id="q5c-Az-WMg"/>
                             <constraint firstAttribute="trailing" secondItem="U6K-cI-HY4" secondAttribute="trailing" constant="4.3300000000000001" id="wcS-Fe-JRB"/>
-                            <constraint firstItem="e3w-CQ-h9v" firstAttribute="top" secondItem="Rft-jA-n76" secondAttribute="top" constant="15.67" id="zVa-wr-gaW"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -85,5 +89,8 @@
     </objects>
     <resources>
         <image name="Onion" width="479" height="512"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

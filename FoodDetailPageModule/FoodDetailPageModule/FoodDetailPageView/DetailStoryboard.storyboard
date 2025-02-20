@@ -129,14 +129,14 @@
                                                                         <color key="textColor" red="0.68235294120000001" green="0.64705882349999999" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Peanut" translatesAutoresizingMaskIntoConstraints="NO" id="TVR-Ko-bvf">
+                                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Peanut" translatesAutoresizingMaskIntoConstraints="NO" id="TVR-Ko-bvf">
                                                                         <rect key="frame" x="237" y="0.0" width="12" height="12"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="12" id="Ayd-Ms-kjy"/>
                                                                             <constraint firstAttribute="height" constant="12" id="YXr-YL-csq"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nut Warning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ig-eP-53Z">
+                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nut Warning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ig-eP-53Z">
                                                                         <rect key="frame" x="253.00000000000003" y="1" width="70.333333333333343" height="14"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="14" id="jpw-8a-BYa"/>
@@ -145,7 +145,7 @@
                                                                         <color key="textColor" red="0.68235294120000001" green="0.64705882349999999" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Milk" translatesAutoresizingMaskIntoConstraints="NO" id="Fry-0L-Nea">
+                                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Milk" translatesAutoresizingMaskIntoConstraints="NO" id="Fry-0L-Nea">
                                                                         <rect key="frame" x="0.0" y="22" width="12" height="12"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="12" id="AMd-8v-4Ef"/>
@@ -334,9 +334,12 @@
                     </view>
                     <connections>
                         <outlet property="blueView" destination="86e-2T-z3d" id="jeH-M4-Ov9"/>
+                        <outlet property="ccalLabel" destination="nrJ-w9-R0F" id="qWo-RW-D0F"/>
+                        <outlet property="cookingTimeLabel" destination="EsT-VK-gtd" id="St2-FH-MXB"/>
                         <outlet property="foodImage" destination="g85-Us-YFq" id="Po8-aB-Lrm"/>
                         <outlet property="foodName" destination="VY9-A5-hxs" id="xOD-5e-3N1"/>
                         <outlet property="ingredientsCollectionView" destination="0VY-0V-1gt" id="S4d-FN-kjD"/>
+                        <outlet property="ingredientsCountLabel" destination="KnJ-SL-N5M" id="5RW-GB-eAH"/>
                         <outlet property="introText" destination="NyW-fH-AfD" id="PKd-Qf-pMr"/>
                         <outlet property="recipeCollectionView" destination="TbR-SL-sWs" id="CPm-dR-6gl"/>
                         <outlet property="scrollViewLine" destination="t9I-rV-Njl" id="LYS-Me-JTc"/>
