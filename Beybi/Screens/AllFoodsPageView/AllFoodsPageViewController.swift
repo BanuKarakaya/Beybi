@@ -18,7 +18,7 @@ final class AllFoodsPageViewController: UIViewController {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var categoriesView: UIView!
-    
+    @IBOutlet weak var secondCollectionViewSafeAreaTop: NSLayoutConstraint!
     
     private lazy var viewModel: AllFoodsPageViewModelProtocol = AllFoodsPageViewModel(delegate: self)
     private var previousOffsetY: CGFloat = 0
@@ -30,6 +30,7 @@ final class AllFoodsPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        secondCollectionViewSafeAreaTop.constant = 168
     }
 }
 
@@ -116,12 +117,13 @@ extension AllFoodsPageViewController: UICollectionViewDelegateFlowLayout {
 
 extension AllFoodsPageViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        categoriesView.isHidden = true
+        secondCollectionViewSafeAreaTop.constant = 16
         viewModel.searchBarSearchButtonClicked(searchText: searchBar.text)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchBarCancelButtonClicked()
+        secondCollectionViewSafeAreaTop.constant = 168
         categoriesView.isHidden = false
     }
 }

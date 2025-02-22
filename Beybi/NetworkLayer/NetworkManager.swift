@@ -91,7 +91,10 @@ final class NetworkManager: NetworkManagerInterface {
     }
     
     func getFavs (completion: @escaping (Swift.Result<[Food] , Error>) ->Void) -> Void {
-        let endpoint = Endpoint.recommendedRecipes(query: "favorites/get")
+        let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
+        let query = "favorites/get?deviceid=\(deviceID)"
+        
+        let endpoint = Endpoint.getFavs(query: query)
         request(endpoint, completion: completion)
     }
     

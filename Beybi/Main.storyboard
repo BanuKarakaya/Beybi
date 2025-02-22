@@ -170,11 +170,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Crk-uD-qBu" firstAttribute="bottom" secondItem="KOk-DI-NYT" secondAttribute="bottom" id="4Cz-bP-9L8"/>
+                            <constraint firstItem="Crk-uD-qBu" firstAttribute="top" secondItem="KOk-DI-NYT" secondAttribute="top" constant="168" id="9DX-gh-z8o"/>
                             <constraint firstItem="KA7-Eg-nja" firstAttribute="leading" secondItem="KOk-DI-NYT" secondAttribute="leading" id="DPf-VQ-Sb5"/>
                             <constraint firstItem="Crk-uD-qBu" firstAttribute="bottom" secondItem="KOk-DI-NYT" secondAttribute="bottom" id="Fb7-Uy-Fcx"/>
                             <constraint firstItem="Crk-uD-qBu" firstAttribute="trailing" secondItem="KOk-DI-NYT" secondAttribute="trailing" id="JMH-Hr-xuJ"/>
                             <constraint firstItem="Crk-uD-qBu" firstAttribute="trailing" secondItem="KOk-DI-NYT" secondAttribute="trailing" id="JaT-FM-EHo"/>
-                            <constraint firstItem="Crk-uD-qBu" firstAttribute="top" secondItem="KA7-Eg-nja" secondAttribute="bottom" id="M8X-YF-eo7"/>
                             <constraint firstItem="KA7-Eg-nja" firstAttribute="top" secondItem="KOk-DI-NYT" secondAttribute="top" id="TC9-q0-qED"/>
                             <constraint firstItem="KA7-Eg-nja" firstAttribute="trailing" secondItem="KOk-DI-NYT" secondAttribute="trailing" id="X81-jg-04j"/>
                             <constraint firstItem="Crk-uD-qBu" firstAttribute="leading" secondItem="KOk-DI-NYT" secondAttribute="leading" id="jSd-sO-kJa"/>
@@ -187,6 +187,7 @@
                         <outlet property="categoriesCollectionView" destination="jXL-4y-v45" id="RnJ-j7-3yT"/>
                         <outlet property="categoriesLabel" destination="Elx-RP-Ne3" id="y6O-TS-Bhu"/>
                         <outlet property="categoriesView" destination="KA7-Eg-nja" id="sGE-yh-Qle"/>
+                        <outlet property="secondCollectionViewSafeAreaTop" destination="9DX-gh-z8o" id="QXP-fe-Iwd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypF-6K-cX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -593,7 +594,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="320" id="78G-eO-DtI"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hyH-15-sOH">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hyH-15-sOH">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -684,6 +685,7 @@
                     </view>
                     <connections>
                         <outlet property="diaryBodyText" destination="or4-a6-Yex" id="H5m-qu-xHm"/>
+                        <outlet property="diaryDate" destination="Ij4-6a-lfs" id="TNc-sx-8JH"/>
                         <outlet property="diaryTitle" destination="tGK-0h-mCI" id="qYg-dE-NXZ"/>
                         <outlet property="pageControl" destination="i78-qA-DkI" id="VYK-HB-BEG"/>
                         <outlet property="photoCollectionView" destination="qiS-aQ-pxU" id="NNZ-sP-c8h"/>

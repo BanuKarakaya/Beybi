@@ -14,6 +14,7 @@ final class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var photoCollectionView: UICollectionView!
+    @IBOutlet weak var diaryDate: UILabel!
     
     var diaryPhotos: [UIImage] = []
     
@@ -92,6 +93,7 @@ extension DiaryDetailViewController: DiaryDetailViewModelDelegate {
     func configure(selectedDiary: DemoEntity?) {
         diaryTitle.text = selectedDiary?.emotionalTitle
         diaryBodyText.text = selectedDiary?.emotionalText
+        diaryDate.text = selectedDiary?.emotionalDate
         
         if let emotionalImageData = selectedDiary?.emotionalImage {
             diaryPhotos = imagesFromCoreData(object: selectedDiary?.emotionalImage) ?? []

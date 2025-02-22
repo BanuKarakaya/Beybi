@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA49E8D42D67AAB100DFC4C2 /* foodDetailAssests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA49E8D32D67AAB100DFC4C2 /* foodDetailAssests.xcassets */; };
 		FADAE48C2D3F9D990020AF3F /* FoodDetailPageModule.docc in Sources */ = {isa = PBXBuildFile; fileRef = FADAE48B2D3F9D990020AF3F /* FoodDetailPageModule.docc */; };
 		FADAE4922D3F9D9A0020AF3F /* FoodDetailPageModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE4872D3F9D990020AF3F /* FoodDetailPageModule.framework */; };
 		FADAE4972D3F9D9A0020AF3F /* FoodDetailPageModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE4962D3F9D9A0020AF3F /* FoodDetailPageModuleTests.swift */; };
@@ -17,9 +18,7 @@
 		FADAE4BD2D42698B0020AF3F /* FoodDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE4A62D3FA2470020AF3F /* FoodDetailPageViewController.swift */; };
 		FADAE4BE2D4269900020AF3F /* FoodDetailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE4A72D3FA2470020AF3F /* FoodDetailPageViewModel.swift */; };
 		FADAE4EA2D426CA50020AF3F /* Food.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE4E92D426CA50020AF3F /* Food.framework */; };
-		FADAE4EB2D426CA50020AF3F /* Food.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE4E92D426CA50020AF3F /* Food.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FADAE5172D42704E0020AF3F /* CommonModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE5162D42704E0020AF3F /* CommonModule.framework */; };
-		FADAE5182D42704E0020AF3F /* CommonModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADAE5162D42704E0020AF3F /* CommonModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FADAE51C2D42718C0020AF3F /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE4AC2D3FA3CC0020AF3F /* IngredientsCell.swift */; };
 		FADAE51D2D4271900020AF3F /* IngredientsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE4AD2D3FA3CC0020AF3F /* IngredientsCellViewModel.swift */; };
 		FADAE51E2D4271940020AF3F /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE4A92D3FA3C30020AF3F /* RecipeCell.swift */; };
@@ -38,22 +37,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		FADAE4EC2D426CA50020AF3F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FADAE4EB2D426CA50020AF3F /* Food.framework in Embed Frameworks */,
-				FADAE5182D42704E0020AF3F /* CommonModule.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		FA49E8D32D67AAB100DFC4C2 /* foodDetailAssests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = foodDetailAssests.xcassets; sourceTree = "<group>"; };
 		FADAE4872D3F9D990020AF3F /* FoodDetailPageModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoodDetailPageModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADAE48A2D3F9D990020AF3F /* FoodDetailPageModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodDetailPageModule.h; sourceTree = "<group>"; };
 		FADAE48B2D3F9D990020AF3F /* FoodDetailPageModule.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FoodDetailPageModule.docc; sourceTree = "<group>"; };
@@ -122,6 +107,7 @@
 				FADAE4AB2D3FA3C30020AF3F /* RecipeCell */,
 				FADAE48A2D3F9D990020AF3F /* FoodDetailPageModule.h */,
 				FADAE48B2D3F9D990020AF3F /* FoodDetailPageModule.docc */,
+				FA49E8D32D67AAB100DFC4C2 /* foodDetailAssests.xcassets */,
 			);
 			path = FoodDetailPageModule;
 			sourceTree = "<group>";
@@ -195,7 +181,6 @@
 				FADAE4832D3F9D990020AF3F /* Sources */,
 				FADAE4842D3F9D990020AF3F /* Frameworks */,
 				FADAE4852D3F9D990020AF3F /* Resources */,
-				FADAE4EC2D426CA50020AF3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +261,7 @@
 				FADAE4B02D3FA4A80020AF3F /* IngredientsCell.xib in Resources */,
 				FADAE4B22D3FA4B30020AF3F /* RecipeCell.xib in Resources */,
 				FADAE4B42D3FCF250020AF3F /* DetailStoryboard.storyboard in Resources */,
+				FA49E8D42D67AAB100DFC4C2 /* foodDetailAssests.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -104,6 +104,7 @@ extension DiaryCell: DiaryCellViewModelDelegate {
     func configureDiaryCell(diary: DemoEntity) {
         diaryTitle.text = diary.emotionalTitle
         diaryText.text = diary.emotionalText
+        diaryDate.text = diary.emotionalDate
         
         if let emotionalImageData = diary.emotionalImage  {
             diaryPhotos = imagesFromCoreData(object: emotionalImageData) ?? []

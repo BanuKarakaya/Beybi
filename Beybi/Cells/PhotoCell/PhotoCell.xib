@@ -21,10 +21,6 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banuş" translatesAutoresizingMaskIntoConstraints="NO" id="cZM-H4-bem">
                                 <rect key="frame" x="0.0" y="0.0" width="361" height="320"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="361" id="Wbk-It-7uW"/>
-                                    <constraint firstAttribute="height" constant="320" id="sPj-go-Pwy"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

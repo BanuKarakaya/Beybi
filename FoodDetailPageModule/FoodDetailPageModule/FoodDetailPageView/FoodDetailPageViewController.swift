@@ -69,6 +69,18 @@ public class FoodDetailPageViewController: UIViewController {
                 recipeHeightConstraint.constant = recipeCollectionView.contentSize.height
         }
     }
+    
+    func textHeight(for text: String, font: UIFont, width: CGFloat) -> CGFloat {
+        let constraintSize = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let attributes = [NSAttributedString.Key.font: font]
+        
+        let boundingBox = text.boundingRect(with: constraintSize,
+                                            options: .usesLineFragmentOrigin,
+                                            attributes: attributes,
+                                            context: nil)
+        
+        return ceil(boundingBox.height) // Yuvarlayarak daha doğru bir değer alırız
+    }
 }
 
 extension FoodDetailPageViewController: UICollectionViewDelegate {
@@ -126,9 +138,9 @@ extension FoodDetailPageViewController: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == ingredientsCollectionView {
-            return CGSize(width: 81.33, height: 97.67)
+            return CGSize(width: 81, height: 50)
         } else {
-            return CGSize(width: 89, height: 98)
+            return CGSize(width: recipeCollectionView.frame.width, height: textHeight(for: viewModel.recipeStepAtIndex(index: indexPath.item) ?? "", font: .systemFont(ofSize: 12), width: recipeCollectionView.frame.width - 28) + 10)
         }
     }
 }

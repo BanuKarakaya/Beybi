@@ -22,10 +22,6 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruit" translatesAutoresizingMaskIntoConstraints="NO" id="tRn-LB-9DI">
                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="3MQ-c6-wvB"/>
-                                    <constraint firstAttribute="height" constant="180" id="ouv-y2-okx"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EA-hi-oaH">
                                 <rect key="frame" x="4" y="188" width="164.66666666666666" height="17"/>
@@ -169,6 +165,7 @@
                             <constraint firstAttribute="trailing" secondItem="tRn-LB-9DI" secondAttribute="trailing" id="huJ-zK-gBR"/>
                             <constraint firstAttribute="trailing" secondItem="dLu-Sq-aGz" secondAttribute="trailing" constant="7.6699999999999999" id="kjK-yQ-Spx"/>
                             <constraint firstItem="bfO-Hr-gNs" firstAttribute="leading" secondItem="ugs-xA-uib" secondAttribute="leading" constant="8" id="oRh-fh-Ugh"/>
+                            <constraint firstAttribute="bottom" secondItem="tRn-LB-9DI" secondAttribute="bottom" constant="57" id="orz-7j-Wlz"/>
                         </constraints>
                     </view>
                 </subviews>

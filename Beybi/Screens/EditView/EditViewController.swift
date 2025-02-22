@@ -45,14 +45,22 @@ class EditViewController: UIViewController {
     }
     
     @objc func saveButtonTapped() {
+        var currentTime = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, dd MMMM, yyyy"
+        formatter.locale = Locale(identifier: "en_US") // İngilizce dil desteği
+        formatter.timeZone = TimeZone.current
+        let formattedTime = formatter.string(from: currentTime)
+        
         saveDiary(title: titleTextField.text ?? "",
                   text: diaryTextView.text ?? "",
-                  imageArray: imageArray ?? [] )
+                  imageArray: imageArray ?? [], 
+                  date: formattedTime )
         navigationController?.popViewController(animated: true)
         NotificationCenter.default.post(name: .saveButtonTapped, object: nil)
     }
     
-    func saveDiary(title: String, text: String, imageArray: [UIImage]) {
+    func saveDiary(title: String, text: String, imageArray: [UIImage], date: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         let dataArray = NSMutableArray()
@@ -60,6 +68,7 @@ class EditViewController: UIViewController {
         let diary = DemoEntity(context: context)
         diary.emotionalText = text
         diary.emotionalTitle = title
+        diary.emotionalDate = date
         
         for i in 0 ..< imageArray.count {
             if let data = imageArray[i].pngData() {
