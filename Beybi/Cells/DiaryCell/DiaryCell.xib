@@ -68,8 +68,8 @@
                                         <color key="textColor" red="0.23921568627450979" green="0.15686274509803921" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXN-I2-sVL">
-                                        <rect key="frame" x="8" y="45" width="321" height="64"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXN-I2-sVL">
+                                        <rect key="frame" x="8" y="45" width="321" height="57.333333333333343"/>
                                         <string key="text">Our baby’s first steps! 🐾✨ It feels like just yesterday we brought you home, and now you’re on your way to exploring the world. You’re growing up so fast, but you’ll always be our little baby. We love you endlessly! 💕</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.68235294117647061" green="0.6470588235294118" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -77,7 +77,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="QXN-I2-sVL" secondAttribute="bottom" constant="4" id="2HQ-dS-s3d"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QXN-I2-sVL" secondAttribute="bottom" constant="4" id="2HQ-dS-s3d"/>
                                     <constraint firstItem="QXN-I2-sVL" firstAttribute="top" secondItem="BLg-pk-vAn" secondAttribute="bottom" constant="3.6699999999999999" id="Af8-Ii-spo"/>
                                     <constraint firstAttribute="trailing" secondItem="QXN-I2-sVL" secondAttribute="trailing" constant="8" id="Gm1-YU-Kc2"/>
                                     <constraint firstItem="rCf-8D-hbI" firstAttribute="leading" secondItem="gAf-0k-TgR" secondAttribute="leading" constant="8" id="GyH-Fw-djq"/>
@@ -85,7 +85,6 @@
                                     <constraint firstAttribute="trailing" secondItem="rCf-8D-hbI" secondAttribute="trailing" constant="8" id="Uqf-0I-tRp"/>
                                     <constraint firstItem="QXN-I2-sVL" firstAttribute="leading" secondItem="gAf-0k-TgR" secondAttribute="leading" constant="8" id="jrf-Bt-zEt"/>
                                     <constraint firstAttribute="trailing" secondItem="BLg-pk-vAn" secondAttribute="trailing" constant="8" id="oEH-gq-Suq"/>
-                                    <constraint firstItem="QXN-I2-sVL" firstAttribute="top" secondItem="gAf-0k-TgR" secondAttribute="top" constant="45" id="qzi-rX-7jV"/>
                                     <constraint firstItem="BLg-pk-vAn" firstAttribute="leading" secondItem="gAf-0k-TgR" secondAttribute="leading" constant="8" id="tiw-TX-h0h"/>
                                     <constraint firstItem="BLg-pk-vAn" firstAttribute="top" secondItem="gAf-0k-TgR" secondAttribute="top" constant="22" id="xsZ-uX-6cu"/>
                                 </constraints>
