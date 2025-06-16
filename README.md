@@ -39,11 +39,11 @@
 
 ## 📸 Screenshots 
 <p float="left">
-  <img src="https://github.com/user-attachments/assets/b481e2b5-649e-4a8f-b832-89be6396dad8" width="330" alt="Screenshot 5" />
-  <img src="https://github.com/user-attachments/assets/4a92aa3c-004b-4e4e-8e1c-d1798b7bed0c" width="330" alt="Screenshot 3" />
-  <img src="https://github.com/user-attachments/assets/8155313f-bc23-4390-85e5-05e922441b1a" width="330" alt="Screenshot 4" />
-  <img src="https://github.com/user-attachments/assets/b425309b-6167-4026-a3c2-3f332d005e23" width="330" alt="Screenshot 2" />
-  <img src="https://github.com/user-attachments/assets/a376e3c5-83af-490c-ae55-d82473497a49" width="330" alt="Screenshot 1" />
+  <img src="https://github.com/user-attachments/assets/b481e2b5-649e-4a8f-b832-89be6396dad8" width="300" alt="Screenshot 5" />
+  <img src="https://github.com/user-attachments/assets/4a92aa3c-004b-4e4e-8e1c-d1798b7bed0c" width="300" alt="Screenshot 3" />
+  <img src="https://github.com/user-attachments/assets/8155313f-bc23-4390-85e5-05e922441b1a" width="300" alt="Screenshot 4" />
+  <img src="https://github.com/user-attachments/assets/b425309b-6167-4026-a3c2-3f332d005e23" width="300" alt="Screenshot 2" />
+  <img src="https://github.com/user-attachments/assets/a376e3c5-83af-490c-ae55-d82473497a49" width="300" alt="Screenshot 1" />
   
 </p>
 
